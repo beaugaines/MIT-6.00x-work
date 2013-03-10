@@ -4624,5 +4624,399 @@ val! 2
 <span class="prompt">... </span>    <span class="keyword">if</span> <span class="builtin">len</span>(word) == n:
 <span class="prompt">... </span>        score += <span class="number">50</span>
 <span class="prompt">... </span>    <span class="keyword">return</span> score
-</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand = {<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'x'</span>:<span class="number">2</span>, <span class="string">'l'</span>:<span class="number">3</span>, <span class="string">'e'</span>:<span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> letter <span class="keyword">in</span> hand.keys():
+<span class="prompt">... </span>    <span class="keyword">print</span> letter
+</span><span class="commandsep"></span><span class="output"><span class="stdout">a
+x
+e
+l
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> letter <span class="keyword">in</span> hand.keys():
+<span class="prompt">... </span>    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(hand[letter]):
+<span class="prompt">... </span>        <span class="keyword">print</span> letter
+</span><span class="commandsep"></span><span class="output"><span class="stdout">a
+x
+x
+e
+l
+l
+l
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">range</span>(hand[<span class="number">2</span>])
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#3&gt;", line 1, in &lt;module&gt;
+    range(hand[2])
+KeyError: 2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">range</span>(hand[<span class="string">'x'</span>])
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">[0, 1]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = random.randrage(<span class="number">0</span>,<span class="number">8</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#5&gt;", line 1, in &lt;module&gt;
+    a = random.randrage(0,8)
+NameError: name 'random' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = random.randrage(<span class="number">0</span>,<span class="number">8</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#7&gt;", line 1, in &lt;module&gt;
+    a = random.randrage(0,8)
+AttributeError: 'module' object has no attribute 'randrage'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = random.randrange(<span class="number">0</span>,<span class="number">8</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">5
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand, word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">for</span> a <span class="keyword">in</span> word:
+<span class="prompt">... </span>        <span class="keyword">if</span> a <span class="keyword">in</span> hand.keys():
+<span class="prompt">... </span>            hand.remove(a)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand = {<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'x'</span>:<span class="number">2</span>, <span class="string">'l'</span>:<span class="number">3</span>, <span class="string">'e'</span>:<span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand, <span class="string">'ars'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#12&gt;", line 1, in &lt;module&gt;
+    updateHand(hand, 'ars')
+  File "&lt;pyshell#10&gt;", line 4, in updateHand
+    hand.remove(a)
+AttributeError: 'dict' object has no attribute 'remove'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">del</span> hand[a]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#13&gt;", line 1, in &lt;module&gt;
+    del hand[a]
+KeyError: 5
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">del</span> hand[<span class="string">'a'</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">{'e': 1, 'l': 3, 'x': 2}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand, word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">for</span> a <span class="keyword">in</span> word:
+<span class="prompt">... </span>        <span class="keyword">if</span> a <span class="keyword">in</span> hand.keys():
+<span class="prompt">... </span>            <span class="keyword">del</span> hand[a]</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand, <span class="string">'xel'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">{}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newHand = hand[:]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#19&gt;", line 1, in &lt;module&gt;
+    newHand = hand[:]
+TypeError: unhashable type
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newHand = hand.dup()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#20&gt;", line 1, in &lt;module&gt;
+    newHand = hand.dup()
+AttributeError: 'dict' object has no attribute 'dup'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>word = <span class="string">'hello'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>    <span class="keyword">print</span> c
+</span><span class="commandsep"></span><span class="output"><span class="stdout">h
+e
+l
+l
+o
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand = {<span class="string">'h'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'l'</span>: <span class="number">2</span>, <span class="string">'o'</span>: <span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newHand = {}
+<span class="prompt">... </span><span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>            newHand[c] = v -<span class="number">1</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">{'e': 1, 'h': 1, 'l': 2, 'o': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>word
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">'hello'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>            newHand[c] = v -<span class="number">1</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">{'e': 1, 'h': 1, 'l': 2, 'o': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newHand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">{'e': 0, 'h': 0, 'l': 1, 'o': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>        <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>            <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                newHand[c] = v - <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand, <span class="string">'hello'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">{'e': 0, 'h': 0, 'l': 1, 'o': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>        <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>            <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                newHand[c] = v - <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2 = {<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'i'</span>: <span class="number">1</span>, <span class="string">'m'</span>: <span class="number">1</span>, <span class="string">'l'</span>: <span class="number">2</span>, <span class="string">'q'</span>: <span class="number">1</span>, <span class="string">'u'</span>: <span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand2)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#34&gt;", line 1, in &lt;module&gt;
+    updateHand(hand2)
+TypeError: updateHand() takes exactly 2 arguments (1 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand2, <span class="string">'quail'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">{'a': 0, 'i': 0, 'l': 1, 'q': 0, 'u': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">if</span> k <span class="keyword">not</span> <span class="keyword">in</span> word:
+<span class="prompt">... </span>            newHand[k] = v
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>                <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                    newHand[c] = v - <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand2, <span class="string">'quail'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">{'a': 0, 'i': 0, 'l': 1, 'm': 1, 'q': 0, 'u': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(<span class="number">2</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#38&gt;", line 1, in &lt;module&gt;
+    len(2)
+TypeError: object of type 'int' has no len()
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">range</span>(<span class="number">2</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">11: </span><span class="result">[0, 1]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">if</span> k <span class="keyword">not</span> <span class="keyword">in</span> word:
+<span class="prompt">... </span>            newHand[k] = v
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>                <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                    newHand[c] = v - <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand2, <span class="string">'quail'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">12: </span><span class="result">{'a': 0, 'i': 0, 'l': 1, 'm': 1, 'q': 0, 'u': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">13: </span><span class="result">{'e': 1, 'h': 1, 'l': 2, 'o': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand, <span class="string">'hello'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">14: </span><span class="result">{'e': 0, 'h': 0, 'l': 1, 'o': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> recurUpdate(hand, word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = {}
+<span class="prompt">... </span>    <span class="keyword">if</span> word == <span class="string">'yo'</span>:
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'yo'</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand[<span class="number">1</span>:]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#45&gt;", line 1, in &lt;module&gt;
+    hand[1:]
+TypeError: unhashable type
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand.items()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">15: </span><span class="result">[('h', 1), ('e', 1), ('l', 2), ('o', 1)]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'hello'</span>[:]
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">16: </span><span class="result">'hello'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> <span class="string">'hello'</span>[:]:
+<span class="prompt">... </span>    <span class="keyword">print</span> c
+</span><span class="commandsep"></span><span class="output"><span class="stdout">h
+e
+l
+l
+o
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">17: </span><span class="result">{'e': 1, 'h': 1, 'l': 2, 'o': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newHand = hand
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newHand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">18: </span><span class="result">{'e': 1, 'h': 1, 'l': 2, 'o': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">19: </span><span class="result">{'e': 1, 'h': 1, 'l': 2, 'o': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(hand[k]):
+<span class="prompt">... </span>        <span class="keyword">print</span> k
+</span><span class="commandsep"></span><span class="output"><span class="stdout">h
+e
+l
+l
+o
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(hand[k]):
+<span class="prompt">... </span>        <span class="keyword">print</span> k
+<span class="prompt">... </span>        <span class="keyword">print</span> v
+<span class="prompt">... </span>        <span class="keyword">print</span> j
+</span><span class="commandsep"></span><span class="output"><span class="stdout">h
+1
+0
+e
+1
+0
+l
+2
+0
+l
+2
+1
+o
+1
+0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(hand[k]):
+<span class="prompt">... </span>        <span class="keyword">print</span> j
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0
+0
+0
+1
+0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> (k,v) <span class="keyword">in</span> <span class="builtin">list</span>.items():
+<span class="prompt">... </span>    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(hand[k]):
+<span class="prompt">... </span>        <span class="keyword">print</span> j
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#56&gt;", line 1, in &lt;module&gt;
+    for (k,v) in list.items():
+AttributeError: type object 'list' has no attribute 'items'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">list</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">20: </span><span class="result">&lt;type 'list'&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(hand[k]):
+<span class="prompt">... </span>        <span class="keyword">print</span> j
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0
+0
+0
+1
+0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;
+    hand
+NameError: name 'hand' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2 = {<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'i'</span>: <span class="number">1</span>, <span class="string">'m'</span>: <span class="number">1</span>, <span class="string">'l'</span>: <span class="number">2</span>, <span class="string">'q'</span>: <span class="number">1</span>, <span class="string">'u'</span>: <span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand = {<span class="string">'h'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'l'</span>: <span class="number">2</span>, <span class="string">'o'</span>: <span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(hand[k]):
+<span class="prompt">... </span>        <span class="keyword">print</span> j
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0
+0
+0
+1
+0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newHand = {}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">if</span> k <span class="keyword">not</span> <span class="keyword">in</span> word:
+<span class="prompt">... </span>            newHand[k] = v
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>                <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                    newHand[c] = v - <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#6&gt;", line 1, in &lt;module&gt;
+    updateHand(hand)
+TypeError: updateHand() takes exactly 2 arguments (1 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand, <span class="string">'hello'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">{'e': 0, 'h': 0, 'l': 1, 'o': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">{'e': 1, 'h': 1, 'l': 2, 'o': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">{'e': 1, 'h': 1, 'l': 2, 'o': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">if</span> k <span class="keyword">not</span> <span class="keyword">in</span> word:
+<span class="prompt">... </span>            newHand[k] = v
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>                <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                    newHand[c] -= <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand, <span class="string">'hello'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#11&gt;", line 1, in &lt;module&gt;
+    updateHand(hand, 'hello')
+  File "&lt;pyshell#10&gt;", line 9, in updateHand
+    newHand[c] -= 1
+KeyError: 'h'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">if</span> k <span class="keyword">not</span> <span class="keyword">in</span> word:
+<span class="prompt">... </span>            newHand[k] = v
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>                <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                    newHand[k] -= <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand, <span class="string">'hello'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#13&gt;", line 1, in &lt;module&gt;
+    updateHand(hand, 'hello')
+  File "&lt;pyshell#12&gt;", line 9, in updateHand
+    newHand[k] -= 1
+KeyError: 'h'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">if</span> k <span class="keyword">not</span> <span class="keyword">in</span> word:
+<span class="prompt">... </span>            newHand[k] = v
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>                <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                    <span class="keyword">print</span> c
+<span class="prompt">... </span>                    <span class="keyword">print</span> v
+<span class="prompt">... </span>                    newHand[k] -= <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand, <span class="string">'hello'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">h
+1
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#15&gt;", line 1, in &lt;module&gt;
+    updateHand(hand, 'hello')
+  File "&lt;pyshell#14&gt;", line 11, in updateHand
+    newHand[k] -= 1
+KeyError: 'h'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">if</span> k <span class="keyword">not</span> <span class="keyword">in</span> word:
+<span class="prompt">... </span>            newHand[k] = v
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>                <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                    <span class="keyword">print</span> c
+<span class="prompt">... </span>                    <span class="keyword">print</span> v
+<span class="prompt">... </span>                    newHand[k] = v - <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand, <span class="string">'hello'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">h
+1
+e
+1
+l
+2
+l
+2
+o
+1
+</span><span class="result-ind">3: </span><span class="result">{'e': 0, 'h': 0, 'l': 1, 'o': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = hand
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>            <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                newHand[k] -= <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand, <span class="string">'hello'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">{'e': 0, 'h': 0, 'l': 0, 'o': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = hand
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> hand.items():
+<span class="prompt">... </span>        <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>            <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                newHand[k] -= <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand = {<span class="string">'h'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'l'</span>: <span class="number">2</span>, <span class="string">'o'</span>: <span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2 = {<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'i'</span>: <span class="number">1</span>, <span class="string">'m'</span>: <span class="number">1</span>, <span class="string">'l'</span>: <span class="number">2</span>, <span class="string">'q'</span>: <span class="number">1</span>, <span class="string">'u'</span>: <span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>updateHand(hand2, <span class="string">'quill'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">{'a': 1, 'i': 0, 'l': 0, 'm': 1, 'q': 0, 'u': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
