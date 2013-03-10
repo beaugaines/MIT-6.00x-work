@@ -8,26 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "oddTuples.py",
+			"file": "ProblemSet4/test_ps4a.py",
 			"settings":
 			{
-				"buffer_size": 304,
+				"buffer_size": 6880,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "radiationExposure.py",
+			"file": "ProblemSet4/ps4a.py",
 			"settings":
 			{
-				"buffer_size": 618,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/sircharles/rails_projects/my_app_template.rb",
-			"settings":
-			{
-				"buffer_size": 1032,
+				"buffer_size": 7894,
 				"line_ending": "Unix"
 			}
 		}
@@ -72,6 +64,9 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/radiationExposure.py",
+		"/home/sircharles/programming/python/MIT course/oddTuples.py",
+		"/home/sircharles/rails_projects/my_app_template.rb",
 		"/home/sircharles/programming/python/MIT course/ProblemSet3/ps3_hangman.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet3/ps3_newton.py",
 		"/home/sircharles/programming/python/MIT course/semordinalap.py",
@@ -213,18 +208,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "oddTuples.py",
+					"file": "ProblemSet4/test_ps4a.py",
 					"settings":
 					{
-						"buffer_size": 304,
+						"buffer_size": 6880,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								246,
-								246
+								0,
+								0
 							]
 						],
 						"settings":
@@ -241,51 +236,25 @@
 				},
 				{
 					"buffer": 1,
-					"file": "radiationExposure.py",
+					"file": "ProblemSet4/ps4a.py",
 					"settings":
 					{
-						"buffer_size": 618,
+						"buffer_size": 7894,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								492,
-								492
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/sircharles/rails_projects/my_app_template.rb",
-					"settings":
-					{
-						"buffer_size": 1032,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								516,
-								516
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -341,6 +310,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"ps4",
+				"ProblemSet4/ps4a.py"
+			],
 			[
 				"ex",
 				"example.js"

@@ -79,8 +79,8 @@ def getWordScore(word, n):
 
     score = 0
     freq = getFrequencyDict(word)
-    for k in freq.keys():
-        score += (freq[k] * SCRABBLE_LETTER_VALUES[k])
+    for (k,v) in freq.items():
+        score += (v * SCRABBLE_LETTER_VALUES[k])
     score *= len(word)
     if len(word) == n:
         score += 50
