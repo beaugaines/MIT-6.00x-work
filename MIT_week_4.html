@@ -4152,5 +4152,401 @@ TypeError: 'int' object is not iterable
 TypeError: 'int' object is not iterable
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>program3([])
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">(0, None)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> loadWords():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    inFile = <span class="builtin">open</span>(WORDLIST_FILENAME, <span class="string">'r'</span>, <span class="number">0</span>)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    wordList = []
+<span class="prompt">... </span>    <span class="keyword">for</span> line <span class="keyword">in</span> inFile:
+<span class="prompt">... </span>        wordList.append(line.strip().lower())
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">" "</span>, <span class="builtin">len</span>(wordList), <span class="string">"words loaded"</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> wordList</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getFreq(seq):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    freq = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> s <span class="keyword">in</span> seq:
+<span class="prompt">... </span>        freq[s] = freq.get(x,<span class="number">0</span>) + <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> freq</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getFreq(<span class="string">'banana'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#2&gt;", line 1, in &lt;module&gt;
+    getFreq('banana')
+  File "&lt;pyshell#1&gt;", line 4, in getFreq
+    freq[s] = freq.get(x,0) + 1
+NameError: global name 'x' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getFreq(seq):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    freq = {}
+<span class="prompt">... </span>    <span class="keyword">for</span> s <span class="keyword">in</span> seq:
+<span class="prompt">... </span>        freq[s] = freq.get(s,<span class="number">0</span>) + <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> freq</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getFreq(<span class="string">'banana'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">{'a': 3, 'b': 1, 'n': 2}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = getFreq(<span class="string">'banana'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.keys()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">['a', 'b', 'n']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">sum</span>(a.values())
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">6
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>SCRABBLE_LETTER_VALUES = {
+<span class="prompt">... </span>    <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">3</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'d'</span>: <span class="number">2</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'f'</span>: <span class="number">4</span>, <span class="string">'g'</span>: <span class="number">2</span>, <span class="string">'h'</span>: <span class="number">4</span>, <span class="string">'i'</span>: <span class="number">1</span>, <span class="string">'j'</span>: <span class="number">8</span>, <span class="string">'k'</span>: <span class="number">5</span>, <span class="string">'l'</span>: <span class="number">1</span>, <span class="string">'m'</span>: <span class="number">3</span>, <span class="string">'n'</span>: <span class="number">1</span>, <span class="string">'o'</span>: <span class="number">1</span>, <span class="string">'p'</span>: <span class="number">3</span>, <span class="string">'q'</span>: <span class="number">10</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'s'</span>: <span class="number">1</span>, <span class="string">'t'</span>: <span class="number">1</span>, <span class="string">'u'</span>: <span class="number">1</span>, <span class="string">'v'</span>: <span class="number">4</span>, <span class="string">'w'</span>: <span class="number">4</span>, <span class="string">'x'</span>: <span class="number">8</span>, <span class="string">'y'</span>: <span class="number">4</span>, <span class="string">'z'</span>: <span class="number">10</span>
+<span class="prompt">... </span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>words = {(<span class="string">""</span>, <span class="number">7</span>):<span class="number">0</span>, (<span class="string">"it"</span>, <span class="number">7</span>):<span class="number">4</span>, (<span class="string">"was"</span>, <span class="number">7</span>):<span class="number">18</span>, (<span class="string">"scored"</span>, <span class="number">7</span>):<span class="number">54</span>, (<span class="string">"waybill"</span>, <span class="number">7</span>):<span class="number">155</span>, (<span class="string">"outgnaw"</span>, <span class="number">7</span>):<span class="number">127</span>, (<span class="string">"fork"</span>, <span class="number">7</span>):<span class="number">44</span>, (<span class="string">"fork"</span>, <span class="number">4</span>):<span class="number">94</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getFreq(words)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">{('', 7): 1,
+ ('fork', 4): 1,
+ ('fork', 7): 1,
+ ('it', 7): 1,
+ ('outgnaw', 7): 1,
+ ('scored', 7): 1,
+ ('was', 7): 1,
+ ('waybill', 7): 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getFreq(<span class="string">'banana'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">{'a': 3, 'b': 1, 'n': 2}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Returns the score for a word. Assumes the word is a valid word.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    The score for a word is the sum of the points for letters in the
+</span><span class="prompt">... </span><span class="string">    word, multiplied by the length of the word, PLUS 50 points if all n
+</span><span class="prompt">... </span><span class="string">    letters are used on the first turn.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Letters are scored as in Scrabble; A is worth 1, B is worth 3, C is
+</span><span class="prompt">... </span><span class="string">    worth 3, D is worth 2, E is worth 1, and so on (see SCRABBLE_LETTER_VALUES)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    word: string (lowercase letters)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">    returns: int &gt;= 0
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> freq:
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key: "</span> + k + <span class="string">"value: "</span> + v
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        score += (<span class="builtin">sum</span>(freq.values()) * <span class="builtin">len</span>(word))
+<span class="prompt">... </span>    score += <span class="number">50</span> <span class="keyword">if</span> <span class="builtin">len</span>(word) == n <span class="keyword">else</span> score
+<span class="prompt">... </span>    <span class="keyword">return</span> score</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getwordScore(<span class="string">'fork'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#13&gt;", line 1, in &lt;module&gt;
+    getwordScore('fork')
+NameError: name 'getwordScore' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'fork'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#14&gt;", line 1, in &lt;module&gt;
+    getWordScore('fork')
+TypeError: getWordScore() takes exactly 2 arguments (1 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'fork'</span>, <span class="number">4</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#15&gt;", line 1, in &lt;module&gt;
+    getWordScore('fork', 4)
+  File "&lt;pyshell#12&gt;", line 19, in getWordScore
+    for (k,v) in freq:
+ValueError: need more than 1 value to unpack
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Returns the score for a word. Assumes the word is a valid word.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    The score for a word is the sum of the points for letters in the
+</span><span class="prompt">... </span><span class="string">    word, multiplied by the length of the word, PLUS 50 points if all n
+</span><span class="prompt">... </span><span class="string">    letters are used on the first turn.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Letters are scored as in Scrabble; A is worth 1, B is worth 3, C is
+</span><span class="prompt">... </span><span class="string">    worth 3, D is worth 2, E is worth 1, and so on (see SCRABBLE_LETTER_VALUES)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    word: string (lowercase letters)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">    returns: int &gt;= 0
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> freq.items():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key: "</span> + k + <span class="string">"value: "</span> + v
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        score += (<span class="builtin">sum</span>(freq.values()) * <span class="builtin">len</span>(word))
+<span class="prompt">... </span>    score += <span class="number">50</span> <span class="keyword">if</span> <span class="builtin">len</span>(word) == n <span class="keyword">else</span> score
+<span class="prompt">... </span>    <span class="keyword">return</span> score</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'fork'</span>, <span class="number">4</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#17&gt;", line 1, in &lt;module&gt;
+    getWordScore('fork', 4)
+  File "&lt;pyshell#16&gt;", line 20, in getWordScore
+    print "key: " + k + "value: " + v
+TypeError: cannot concatenate 'str' and 'int' objects
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Returns the score for a word. Assumes the word is a valid word.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    The score for a word is the sum of the points for letters in the
+</span><span class="prompt">... </span><span class="string">    word, multiplied by the length of the word, PLUS 50 points if all n
+</span><span class="prompt">... </span><span class="string">    letters are used on the first turn.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Letters are scored as in Scrabble; A is worth 1, B is worth 3, C is
+</span><span class="prompt">... </span><span class="string">    worth 3, D is worth 2, E is worth 1, and so on (see SCRABBLE_LETTER_VALUES)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    word: string (lowercase letters)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">    returns: int &gt;= 0
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> freq.items():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key: "</span> + <span class="builtin">str</span>(k) + <span class="string">"value: "</span> + <span class="builtin">str</span>(v)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        score += (<span class="builtin">sum</span>(freq.values()) * <span class="builtin">len</span>(word))
+<span class="prompt">... </span>    score += <span class="number">50</span> <span class="keyword">if</span> <span class="builtin">len</span>(word) == n <span class="keyword">else</span> score
+<span class="prompt">... </span>    <span class="keyword">return</span> score</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'fork'</span>, <span class="number">4</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: kvalue: 1
+key: rvalue: 1
+key: ovalue: 1
+key: fvalue: 1
+</span><span class="result-ind">5: </span><span class="result">114
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Returns the score for a word. Assumes the word is a valid word.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    The score for a word is the sum of the points for letters in the
+</span><span class="prompt">... </span><span class="string">    word, multiplied by the length of the word, PLUS 50 points if all n
+</span><span class="prompt">... </span><span class="string">    letters are used on the first turn.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Letters are scored as in Scrabble; A is worth 1, B is worth 3, C is
+</span><span class="prompt">... </span><span class="string">    worth 3, D is worth 2, E is worth 1, and so on (see SCRABBLE_LETTER_VALUES)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    word: string (lowercase letters)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">    returns: int &gt;= 0
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> freq.items():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key: "</span> + <span class="builtin">str</span>(k) + <span class="string">", value: "</span> + <span class="builtin">str</span>(v)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        score += (<span class="builtin">sum</span>(freq.values()) * <span class="builtin">len</span>(word))
+<span class="prompt">... </span>    score += <span class="number">50</span> <span class="keyword">if</span> <span class="builtin">len</span>(word) == n <span class="keyword">else</span> score
+<span class="prompt">... </span>    <span class="keyword">return</span> score</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'fork'</span>, <span class="number">4</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: k, value: 1
+key: r, value: 1
+key: o, value: 1
+key: f, value: 1
+</span><span class="result-ind">6: </span><span class="result">114
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> freq.items():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key: "</span> + <span class="builtin">str</span>(k) + <span class="string">", value: "</span> + <span class="builtin">str</span>(v)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        score += (freq[c] * SCRABBLELETTERVALUES[C]) * <span class="builtin">len</span>(word)
+<span class="prompt">... </span>    score += <span class="number">50</span> <span class="keyword">if</span> <span class="builtin">len</span>(word) == n <span class="keyword">else</span> score
+<span class="prompt">... </span>    <span class="keyword">return</span> score
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'fork'</span>, <span class="number">4</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: k, value: 1
+key: r, value: 1
+key: o, value: 1
+key: f, value: 1
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#23&gt;", line 1, in &lt;module&gt;
+    getWordScore('fork', 4)
+  File "&lt;pyshell#22&gt;", line 8, in getWordScore
+    score += (freq[c] * SCRABBLELETTERVALUES[C]) * len(word)
+NameError: global name 'SCRABBLELETTERVALUES' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> freq.items():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key: "</span> + <span class="builtin">str</span>(k) + <span class="string">", value: "</span> + <span class="builtin">str</span>(v)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        score += (freq[c] * SCRABBLE_LETTER_VALUES[C]) * <span class="builtin">len</span>(word)
+<span class="prompt">... </span>    score += <span class="number">50</span> <span class="keyword">if</span> <span class="builtin">len</span>(word) == n <span class="keyword">else</span> score
+<span class="prompt">... </span>    <span class="keyword">return</span> score
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> freq.items():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key: "</span> + <span class="builtin">str</span>(k) + <span class="string">", value: "</span> + <span class="builtin">str</span>(v)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        score += (freq[c] * SCRABBLE_LETTER_VALUES[c]) * <span class="builtin">len</span>(word)
+<span class="prompt">... </span>    score += <span class="number">50</span> <span class="keyword">if</span> <span class="builtin">len</span>(word) == n <span class="keyword">else</span> score
+<span class="prompt">... </span>    <span class="keyword">return</span> score
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'fork'</span>, <span class="number">4</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: k, value: 1
+key: r, value: 1
+key: o, value: 1
+key: f, value: 1
+</span><span class="result-ind">7: </span><span class="result">94
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> freq.items():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key: "</span> + <span class="builtin">str</span>(k) + <span class="string">", value: "</span> + <span class="builtin">str</span>(v)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key! "</span> + <span class="builtin">str</span>(c)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"val! "</span> + <span class="builtin">str</span>(freq[c])
+<span class="prompt">... </span>        score += (freq[c] * SCRABBLE_LETTER_VALUES[c]) * <span class="builtin">len</span>(word)
+<span class="prompt">... </span>    score += <span class="number">50</span> <span class="keyword">if</span> <span class="builtin">len</span>(word) == n <span class="keyword">else</span> score
+<span class="prompt">... </span>    <span class="keyword">return</span> score
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'fork'</span>, <span class="number">4</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: k, value: 1
+key: r, value: 1
+key: o, value: 1
+key: f, value: 1
+key! k
+val! 1
+key! r
+val! 1
+key! o
+val! 1
+key! f
+val! 1
+</span><span class="result-ind">8: </span><span class="result">94
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'banana'</span>, <span class="number">6</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: a, value: 3
+key: b, value: 1
+key: n, value: 2
+key! a
+val! 3
+key! b
+val! 1
+key! n
+val! 2
+</span><span class="result-ind">9: </span><span class="result">98
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'banana'</span>, <span class="number">5</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: a, value: 3
+key: b, value: 1
+key: n, value: 2
+key! a
+val! 3
+key! b
+val! 1
+key! n
+val! 2
+</span><span class="result-ind">10: </span><span class="result">96
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> freq.items():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key: "</span> + <span class="builtin">str</span>(k) + <span class="string">", value: "</span> + <span class="builtin">str</span>(v)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key! "</span> + <span class="builtin">str</span>(c)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"val! "</span> + <span class="builtin">str</span>(freq[c])
+<span class="prompt">... </span>        score += (freq[c] * SCRABBLE_LETTER_VALUES[c]) * <span class="builtin">len</span>(word)
+<span class="prompt">... </span>    <span class="keyword">if</span> <span class="builtin">len</span>(word) == n:
+<span class="prompt">... </span>        score += <span class="number">50</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> score
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'banana'</span>, <span class="number">5</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: a, value: 3
+key: b, value: 1
+key: n, value: 2
+key! a
+val! 3
+key! b
+val! 1
+key! n
+val! 2
+</span><span class="result-ind">11: </span><span class="result">48
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'it'</span>, <span class="number">7</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: i, value: 1
+key: t, value: 1
+key! i
+val! 1
+key! t
+val! 1
+</span><span class="result-ind">12: </span><span class="result">4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'it'</span>, <span class="number">8</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: i, value: 1
+key: t, value: 1
+key! i
+val! 1
+key! t
+val! 1
+</span><span class="result-ind">13: </span><span class="result">4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'it'</span>, <span class="number">2</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: i, value: 1
+key: t, value: 1
+key! i
+val! 1
+key! t
+val! 1
+</span><span class="result-ind">14: </span><span class="result">54
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'it'</span>, <span class="number">8</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: i, value: 1
+key: t, value: 1
+key! i
+val! 1
+key! t
+val! 1
+</span><span class="result-ind">15: </span><span class="result">4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> freq.items():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key: "</span> + <span class="builtin">str</span>(k) + <span class="string">", value: "</span> + <span class="builtin">str</span>(v)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"key! "</span> + <span class="builtin">str</span>(c)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"val! "</span> + <span class="builtin">str</span>(freq[c])
+<span class="prompt">... </span>        score += (freq[c] * SCRABBLE_LETTER_VALUES[c])
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    score *= <span class="builtin">len</span>(word)
+<span class="prompt">... </span>    <span class="keyword">if</span> <span class="builtin">len</span>(word) == n:
+<span class="prompt">... </span>        score += <span class="number">50</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> score
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'it'</span>, <span class="number">8</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: i, value: 1
+key: t, value: 1
+key! i
+val! 1
+key! t
+val! 1
+</span><span class="result-ind">16: </span><span class="result">4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'was'</span>, <span class="number">7</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: a, value: 1
+key: s, value: 1
+key: w, value: 1
+key! a
+val! 1
+key! s
+val! 1
+key! w
+val! 1
+</span><span class="result-ind">17: </span><span class="result">18
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'it'</span>, <span class="number">2</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">key: i, value: 1
+key: t, value: 1
+key! i
+val! 1
+key! t
+val! 1
+</span><span class="result-ind">18: </span><span class="result">54
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getWordScore(word, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    score = <span class="number">0</span>
+<span class="prompt">... </span>    freq = getFreq(word)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> freq.keys():
+<span class="prompt">... </span>        score += (freq[c] * SCRABBLE_LETTER_VALUES[c])
+<span class="prompt">... </span>    score *= <span class="builtin">len</span>(word)
+<span class="prompt">... </span>    <span class="keyword">if</span> <span class="builtin">len</span>(word) == n:
+<span class="prompt">... </span>        score += <span class="number">50</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> score
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'it'</span>, <span class="number">2</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">19: </span><span class="result">54
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'it'</span>, <span class="number">7</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">20: </span><span class="result">4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'scored'</span>, <span class="number">7</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">21: </span><span class="result">54
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'waybill'</span>, <span class="number">7</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">22: </span><span class="result">155
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

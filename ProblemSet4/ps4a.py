@@ -76,7 +76,15 @@ def getWordScore(word, n):
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     returns: int >= 0
     """
-    # TO DO ... <-- Remove this comment when you code this function
+
+    score = 0
+    freq = getFrequencyDict(word)
+    for k in freq.keys():
+        score += (freq[k] * SCRABBLE_LETTER_VALUES[k])
+    score *= len(word)
+    if len(word) == n:
+        score += 50
+    return score
 
 
 
