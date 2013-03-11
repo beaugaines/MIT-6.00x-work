@@ -235,24 +235,25 @@ def playHand(hand, wordList, n):
       n: integer (HAND_SIZE; i.e., hand size required for additional points)
       
     """
-    # BEGIN PSEUDOCODE <-- Remove this comment when you code this function; do your coding within the pseudocode (leaving those comments in-place!)
-    # Keep track of the total score
+
+    # annoying I had to use sys.stdout.write to get the hand to display on same line...wil fix this.
+    
+    import sys
     totalScore = 0
     while calculateHandlen(hand) > 0:
-        print "Current hand: " + displayHand(hand)
-        word = raw_input("Enter word, or a "." to indicate you are finished: ")
-        if word == '.':    
+        sys.stdout.write("Current Hand: "), displayHand(hand)
+        word = raw_input('Enter word, or a "." to indicate you are finished: ')
+        if word == '.':
             break
         elif not isValidWord(word,hand,wordList):
             print "Invalid word, please try again.\n\n"
         else:
             score = getWordScore(word, n)
             totalScore += score
-            print (str(word) + " earned " + str(score) + " points. Total: " + str(totalScore) + ".\n\n")
-            updateHand(hand, word)
+            print (word + " earned " + str(score) + " points. Total: " + str(totalScore) + ".\n\n")
+            hand = updateHand(hand, word)
 
     print("Run out of letters.  Total score: " + str(totalScore))
-
 
 #
 # Problem #5: Playing a game
