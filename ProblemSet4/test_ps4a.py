@@ -186,6 +186,28 @@ def test_isValidWord(wordList):
         print "SUCCESS: test_isValidWord()"
 
 
+def test_calculateHandlen():
+    """
+    Unit test for calculateHandlen
+    """
+    # test 1
+    hand = {'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}
+
+    letterSum = calculateHandlen(hand)
+    expectedHandlen = 7
+    if expectedHandlen != 7:
+        print("Failure:  test_calculateHandlen:  expected" + str(7) + " and got" + str(letterSum))
+    else:
+        print("Success!  calculateHandlen is passing spec!")
+
+
+
+    # test 2
+    hand = {'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}
+    word = 'rapture'
+
+
+
 wordList = loadWords()
 print "----------------------------------------------------------------------"
 print "Testing getWordScore..."
@@ -196,5 +218,9 @@ test_updateHand()
 print "----------------------------------------------------------------------"
 print "Testing isValidWord..."
 test_isValidWord(wordList)
+print "----------------------------------------------------------------------"
+print "----------------------------------------------------------------------"
+print "Testing calculateHandlen..."
+test_calculateHandlen()
 print "----------------------------------------------------------------------"
 print "All done!"
