@@ -186,6 +186,9 @@ def test_isValidWord(wordList):
         print "SUCCESS: test_isValidWord()"
 
 
+
+# CALCULATE HAND
+
 def test_calculateHandlen():
     """
     Unit test for calculateHandlen
@@ -218,6 +221,46 @@ def test_calculateHandlen():
 
     if not failure:
         print("SUCCESS!  calculateHandlen is passing spec!")
+
+
+# PLAY HAND
+
+# def test_playHand():
+#     """
+#     Unit test for playHand
+#     """
+
+#     failure = False
+#     # test 1
+#     hand1 = {'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}
+    
+
+#     playHand(hand1, wordList, 7)
+
+
+#     expectedHandlen = 7
+#     if expectedHandlen != 7:
+#         print("Failure:  test_calculateHandlen:  expected" + str(7) + " and got" + str(letterSum))
+#         failure = True
+#     else:
+#         pass
+
+
+#     # test 2
+#     hand = {'r':2, 'a':1, 'p':1, 't':1, 'u':1, 'e':1}
+#     word = 'rapture'
+#     letterSum = calculateHandlen(hand)
+#     expectedHandlen = 7
+#     if expectedHandlen != 7:
+#         print("Failure:  test_calculateHandlen:  expected" + str(7) + " and got" + str(letterSum))
+#         failure = True
+#     else:
+#         pass
+
+
+    # if not failure:
+    #     print("SUCCESS!  calculateHandlen is passing spec!")
+
 
 wordList = loadWords()
 print "----------------------------------------------------------------------"
