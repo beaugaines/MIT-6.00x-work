@@ -205,7 +205,12 @@ def calculateHandlen(hand):
     hand: dictionary (string-> int)
     returns: integer
     """
-    # TO DO... <-- Remove this comment when you code this function
+    
+    letterSum = 0
+    for v in hand.values():
+        for j in range(v):
+            letterSum += 1
+    return letterSum
 
 
 
@@ -220,7 +225,7 @@ def playHand(hand, wordList, n):
       the user to choose another word until they enter a valid word or "."
     * When a valid word is entered, it uses up letters from the hand.
     * After every valid word: the score for that word is displayed,
-      the remaining letters in the hand are displayed, and the user
+      the remaining letters in the hand are displayed, and the userfor
       is asked to input another word.
     * The sum of the word scores is displayed when the hand finishes.
     * The hand finishes when there are no more unused letters or the user
