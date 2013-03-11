@@ -11,7 +11,7 @@
 			"file": "ProblemSet4/test_ps4a.py",
 			"settings":
 			{
-				"buffer_size": 6880,
+				"buffer_size": 7602,
 				"line_ending": "Unix"
 			}
 		},
@@ -19,7 +19,7 @@
 			"file": "ProblemSet4/ps4a.py",
 			"settings":
 			{
-				"buffer_size": 8265,
+				"buffer_size": 8343,
 				"line_ending": "Unix"
 			}
 		}
@@ -64,6 +64,7 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/MIT_Python.sublime-workspace",
 		"/home/sircharles/programming/python/MIT course/radiationExposure.py",
 		"/home/sircharles/programming/python/MIT course/oddTuples.py",
 		"/home/sircharles/rails_projects/my_app_template.rb",
@@ -203,7 +204,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -211,15 +212,15 @@
 					"file": "ProblemSet4/test_ps4a.py",
 					"settings":
 					{
-						"buffer_size": 6880,
+						"buffer_size": 7602,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1507,
-								1507
+								6772,
+								6772
 							]
 						],
 						"settings":
@@ -229,7 +230,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 449.0,
+						"translation.y": 3420.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -239,15 +240,15 @@
 					"file": "ProblemSet4/ps4a.py",
 					"settings":
 					{
-						"buffer_size": 8265,
+						"buffer_size": 8343,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4779,
-								4779
+								4281,
+								4281
 							]
 						],
 						"settings":
@@ -257,7 +258,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2976.0,
+						"translation.y": 2390.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -589,6 +590,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": false,
-	"side_bar_width": 383.0,
+	"side_bar_width": 241.0,
 	"status_bar_visible": false
 }

@@ -5397,5 +5397,31 @@ AttributeError: 'function' object has no attribute 'call'
 <span class="prompt">... </span>        tmp -= <span class="number">1</span>
 <span class="prompt">... </span>        hand3[c] = tmp
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">55: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2 = {<span class="string">'a'</span>: <span class="number">3</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'p'</span>: <span class="number">2</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'u'</span>: <span class="number">1</span>, <span class="string">'t'</span>: <span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand = {<span class="string">'a'</span>: <span class="number">3</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'p'</span>: <span class="number">2</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'u'</span>: <span class="number">1</span>, <span class="string">'t'</span>: <span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> v <span class="keyword">in</span> hand.values():
+<span class="prompt">... </span>    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(v):
+<span class="prompt">... </span>        <span class="keyword">print</span> v
+</span><span class="commandsep"></span><span class="output"><span class="stdout">3
+3
+3
+1
+2
+2
+1
+1
+1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">sum</span> = <span class="number">0</span>
+<span class="prompt">... </span><span class="keyword">for</span> v <span class="keyword">in</span> hand.values():
+<span class="prompt">... </span>    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(v):
+<span class="prompt">... </span>        <span class="builtin">sum</span> += <span class="number">1</span>
+<span class="prompt">... </span>    <span class="builtin">sum</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">9
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
