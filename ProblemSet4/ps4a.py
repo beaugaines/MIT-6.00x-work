@@ -155,8 +155,6 @@ def updateHand(hand, word):
     hand: dictionary (string -> int)    
     returns: dictionary (string -> int)
     """
-    # TO DO ... <-- Remove this comment when you code this function
-
 
     newHand = hand.copy()
     for (k,v) in newHand.items():
