@@ -1,4 +1,5 @@
 from ps4a import *
+from ps4b import *
 
 #
 # Test code
@@ -222,6 +223,23 @@ def test_calculateHandlen():
     if not failure:
         print("SUCCESS!  calculateHandlen is passing spec!")
 
+
+# COMPUTER PLAY HAND!
+
+def test_computerPlayHand():
+
+    # test 1
+    failure = False
+    wordList = ['quail', 'ail', 'qua']
+    hand = {'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}
+
+    compPlayHand(hand, wordList, 7)
+    expectedHandlen = 7
+    if expectedHandlen != 7:
+        print("Failure:  test_calculateHandlen:  expected" + str(7) + " and got" + str(letterSum))
+        failure = True
+    else:
+        pass
 
 # PLAY HAND
 

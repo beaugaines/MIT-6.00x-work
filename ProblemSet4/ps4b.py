@@ -29,8 +29,9 @@ def compChooseWord(hand, wordList, n):
         if isValidWord(word):
             score = getWordScore(word, n)
             if score > maxScore:
-                masScore = score
+                maxScore = score
                 bestWord = word
+
 
     return bestWord
 
@@ -58,6 +59,20 @@ def compPlayHand(hand, wordList, n):
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     """
     # TO DO ... <-- Remove this comment when you code this function
+
+
+    totalScore = 0
+
+    import sys
+    while calculateHandlen(hand) > 0:
+        sys.stdout.write("Current Hand: "), displayHand(hand)
+        word = compChooseWord(hand, wordList, n)
+        if word == None:
+            return("Total score: " + str(totalScore) + " points.")
+        else:
+            totalScore += maxScore
+            print ("'%s'" % bestWord + " earned " + str(maxScore) + " points. Total: " + str(totalScore))
+            hand = updateHand(hand, bestWord)
     
 #
 # Problem #8: Playing a game
