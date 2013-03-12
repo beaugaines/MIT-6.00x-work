@@ -7,6 +7,7 @@ import time
 # Problem #6: Computer chooses a word
 #
 #
+
 def compChooseWord(hand, wordList, n):
     """
     Given a hand and a wordList, find the word that gives 
@@ -33,6 +34,8 @@ def compChooseWord(hand, wordList, n):
             if score > maxScore:
                 maxScore = score
                 bestWord = word
+        # else:
+        #     break
 
 
     return bestWord
@@ -70,12 +73,17 @@ def compPlayHand(hand, wordList, n):
         sys.stdout.write("Current Hand: "), displayHand(hand)
         word = compChooseWord(hand, wordList, n)
         if word == None:
-            return("Total score: " + str(totalScore) + " points.")
+            print("Total score: " + str(totalScore) + " points.\n\n")
+            break
         else:
             totalScore += maxScore
             print ("'%s'" % word + " earned " + str(maxScore) + " points. Total: " + str(totalScore))
             hand = updateHand(hand, word)
-    print "Run out of letters. Total score: " + str(totalScore) + " points."
+
+    if calculateHandlen(hand) == 0:
+        print "Run out of letters. Total score: " + str(totalScore) + " points."
+    else:
+        pass
     
 #
 # Problem #8: Playing a game
@@ -147,6 +155,7 @@ def playGame(wordList):
             print "Invalid input, please try again."
 
     return None
+
 #
 # Build data structures used for entire session and play game
 #

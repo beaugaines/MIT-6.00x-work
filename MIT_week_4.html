@@ -37466,5 +37466,1631 @@ NameError: name 'hand5' is not defined
   File "&lt;pyshell#118&gt;", line 1, in &lt;module&gt;
     if hand5 is None:
 NameError: name 'hand5' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> playGame(wordList):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">while</span> <span class="builtin">True</span>:
+<span class="prompt">... </span>
+<span class="prompt">... </span>        playOpt = <span class="builtin">raw_input</span>(<span class="string">"Enter 'n' to play a random hand, 'r' to replay the last hand \
+</span><span class="prompt">... </span><span class="string">                        and 'e'e to exit the game."</span>)
+<span class="prompt">... </span>        <span class="keyword">if</span> playOpt == <span class="string">"n"</span>:
+<span class="prompt">... </span>            hand = dealHand(n)
+<span class="prompt">... </span>            playHand(hand, wordList, n)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">elif</span> playOpt == <span class="string">"r"</span>:
+<span class="prompt">... </span>            <span class="keyword">try</span>:
+<span class="prompt">... </span>                hand
+<span class="prompt">... </span>            <span class="keyword">except</span> <span class="builtin">NameError</span>:
+<span class="prompt">... </span>                hand = <span class="builtin">None</span>
+<span class="prompt">... </span>            <span class="keyword">if</span> hand <span class="keyword">is</span> <span class="builtin">None</span>:
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">"You have not played a hand yet.  Please play a hand first!"</span>
+<span class="prompt">... </span>                <span class="keyword">continue</span>
+<span class="prompt">... </span>            <span class="keyword">else</span>:
+<span class="prompt">... </span>                playHand(hand, wordList, n)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">elif</span> playOpt == <span class="string">"e"</span>:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">"Goodbye! Total score: "</span> + <span class="builtin">str</span>(totalScore)
+<span class="prompt">... </span>            <span class="keyword">break</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">"Invalid input, please try again."</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> playGame(wordList):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">while</span> <span class="builtin">True</span>:
+<span class="prompt">... </span>        playOpt = <span class="builtin">raw_input</span>(<span class="string">"Enter 'n' to play a random hand, 'r' to replay the last hand \
+</span><span class="prompt">... </span><span class="string">                        and 'e'e to exit the game."</span>)
+<span class="prompt">... </span>        <span class="keyword">if</span> playOpt == <span class="string">"n"</span>:
+<span class="prompt">... </span>            hand = dealHand(n)
+<span class="prompt">... </span>            playHand(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">elif</span> playOpt == <span class="string">"r"</span>:
+<span class="prompt">... </span>            <span class="keyword">try</span>:
+<span class="prompt">... </span>                hand
+<span class="prompt">... </span>            <span class="keyword">except</span> <span class="builtin">NameError</span>:
+<span class="prompt">... </span>                hand = <span class="builtin">None</span>
+<span class="prompt">... </span>            <span class="keyword">if</span> hand <span class="keyword">is</span> <span class="builtin">None</span>:
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">"You have not played a hand yet.  Please play a hand first!"</span>
+<span class="prompt">... </span>                <span class="keyword">continue</span>
+<span class="prompt">... </span>            <span class="keyword">else</span>:
+<span class="prompt">... </span>                playHand(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">elif</span> playOpt == <span class="string">"e"</span>:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">"Goodbye! Total score: "</span> + <span class="builtin">str</span>(totalScore)
+<span class="prompt">... </span>            <span class="keyword">break</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">"Invalid input, please try again."</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordList
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#121&gt;", line 1, in &lt;module&gt;
+    wordList
+NameError: name 'wordList' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#122&gt;", line 1, in &lt;module&gt;
+    wordlist
+NameError: name 'wordlist' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>WORD_LIST
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">15: </span><span class="result">['quail', 'ail', 'qua']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist =WORD_LIST
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand                         and 'e'e to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">r
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">You have not played a hand yet.  Please play a hand first!
+Enter 'n' to play a random hand, 'r' to replay the last hand                         and 'e'e to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">n
+</span></span></span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#125&gt;", line 1, in &lt;module&gt;
+    playGame(wordlist)
+  File "&lt;pyshell#120&gt;", line 6, in playGame
+    hand = dealHand(n)
+NameError: global name 'dealHand' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand                         and 'e'e to exit the game.</span><span class="exception">
+Traceback (most recent call last):
+  File "&lt;pyshell#126&gt;", line 1, in &lt;module&gt;
+    playGame(wordlist)
+  File "&lt;pyshell#120&gt;", line 4, in playGame
+    and 'e'e to exit the game.")
+KeyboardInterrupt
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> playGame(wordList):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">while</span> <span class="builtin">True</span>:
+<span class="prompt">... </span>        playOpt = <span class="builtin">raw_input</span>(<span class="string">"Enter 'n' to play a random hand, 'r' to replay the last hand, "</span> + \
+<span class="prompt">... </span>                        <span class="string">"and 'e' to exit the game."</span>)
+<span class="prompt">... </span>        <span class="keyword">if</span> playOpt == <span class="string">"n"</span>:
+<span class="prompt">... </span>            hand = dealHand(n)
+<span class="prompt">... </span>            playHand(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">elif</span> playOpt == <span class="string">"r"</span>:
+<span class="prompt">... </span>            <span class="keyword">try</span>:
+<span class="prompt">... </span>                hand
+<span class="prompt">... </span>            <span class="keyword">except</span> <span class="builtin">NameError</span>:
+<span class="prompt">... </span>                hand = <span class="builtin">None</span>
+<span class="prompt">... </span>            <span class="keyword">if</span> hand <span class="keyword">is</span> <span class="builtin">None</span>:
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">"You have not played a hand yet.  Please play a hand first!"</span>
+<span class="prompt">... </span>                <span class="keyword">continue</span>
+<span class="prompt">... </span>            <span class="keyword">else</span>:
+<span class="prompt">... </span>                playHand(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">elif</span> playOpt == <span class="string">"e"</span>:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">"Goodbye! Total score: "</span> + <span class="builtin">str</span>(totalScore)
+<span class="prompt">... </span>            <span class="keyword">break</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">"Invalid input, please try again."</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">e
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Goodbye! Total score: 79
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>totalScore = <span class="number">0</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>totalScore = <span class="number">0</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">e
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Goodbye! Total score: 0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">n
+</span></span></span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#132&gt;", line 1, in &lt;module&gt;
+    playGame(wordlist)
+  File "&lt;pyshell#127&gt;", line 6, in playGame
+    hand = dealHand(n)
+NameError: global name 'dealHand' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> string
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>VOWELS = <span class="string">'aeiou'</span>
+<span class="prompt">... </span>CONSONANTS = <span class="string">'bcdfghjklmnpqrstvwxyz'</span>
+<span class="prompt">... </span>HAND_SIZE = <span class="number">7</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>SCRABBLE_LETTER_VALUES = {
+<span class="prompt">... </span>    <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">3</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'d'</span>: <span class="number">2</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'f'</span>: <span class="number">4</span>, <span class="string">'g'</span>: <span class="number">2</span>, <span class="string">'h'</span>: <span class="number">4</span>, <span class="string">'i'</span>: <span class="number">1</span>, <span class="string">'j'</span>: <span class="number">8</span>, <span class="string">'k'</span>: <span class="number">5</span>, <span class="string">'l'</span>: <span class="number">1</span>, <span class="string">'m'</span>: <span class="number">3</span>, <span class="string">'n'</span>: <span class="number">1</span>, <span class="string">'o'</span>: <span class="number">1</span>, <span class="string">'p'</span>: <span class="number">3</span>, <span class="string">'q'</span>: <span class="number">10</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'s'</span>: <span class="number">1</span>, <span class="string">'t'</span>: <span class="number">1</span>, <span class="string">'u'</span>: <span class="number">1</span>, <span class="string">'v'</span>: <span class="number">4</span>, <span class="string">'w'</span>: <span class="number">4</span>, <span class="string">'x'</span>: <span class="number">8</span>, <span class="string">'y'</span>: <span class="number">4</span>, <span class="string">'z'</span>: <span class="number">10</span>
+<span class="prompt">... </span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> dealHand(n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    hand={}
+<span class="prompt">... </span>    numVowels = n / <span class="number">3</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(numVowels):
+<span class="prompt">... </span>        x = VOWELS[random.randrange(<span class="number">0</span>,<span class="builtin">len</span>(VOWELS))]
+<span class="prompt">... </span>        hand[x] = hand.get(x, <span class="number">0</span>) + <span class="number">1</span>
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(numVowels, n):    
+<span class="prompt">... </span>        x = CONSONANTS[random.randrange(<span class="number">0</span>,<span class="builtin">len</span>(CONSONANTS))]
+<span class="prompt">... </span>        hand[x] = hand.get(x, <span class="number">0</span>) + <span class="number">1</span>
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">return</span> hand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">e
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Goodbye! Total score: 0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">n
+</span></span></span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#138&gt;", line 1, in &lt;module&gt;
+    playGame(wordlist)
+  File "&lt;pyshell#127&gt;", line 6, in playGame
+    hand = dealHand(n)
+NameError: global name 'n' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> playGame(wordList):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    HAND_SIZE = <span class="number">7</span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">while</span> <span class="builtin">True</span>:
+<span class="prompt">... </span>        playOpt = <span class="builtin">raw_input</span>(<span class="string">"Enter 'n' to play a random hand, 'r' to replay the last hand, "</span> + \
+<span class="prompt">... </span>                        <span class="string">"and 'e' to exit the game."</span>)
+<span class="prompt">... </span>        <span class="keyword">if</span> playOpt == <span class="string">"n"</span>:
+<span class="prompt">... </span>            hand = dealHand(HAND_SIZE)
+<span class="prompt">... </span>            playHand(hand, wordList, HAND_SIZE)
+<span class="prompt">... </span>        <span class="keyword">elif</span> playOpt == <span class="string">"r"</span>:
+<span class="prompt">... </span>            <span class="keyword">try</span>:
+<span class="prompt">... </span>                hand
+<span class="prompt">... </span>            <span class="keyword">except</span> <span class="builtin">NameError</span>:
+<span class="prompt">... </span>                hand = <span class="builtin">None</span>
+<span class="prompt">... </span>            <span class="keyword">if</span> hand <span class="keyword">is</span> <span class="builtin">None</span>:
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">"You have not played a hand yet.  Please play a hand first!"</span>
+<span class="prompt">... </span>                <span class="keyword">continue</span>
+<span class="prompt">... </span>            <span class="keyword">else</span>:
+<span class="prompt">... </span>                playHand(hand, wordList, HAND_SIZE)
+<span class="prompt">... </span>        <span class="keyword">elif</span> playOpt == <span class="string">"e"</span>:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">"Goodbye! Total score: "</span> + <span class="builtin">str</span>(totalScore)
+<span class="prompt">... </span>            <span class="keyword">break</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">"Invalid input, please try again."</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">N
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">N
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">n
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: e k j o r x z
+Enter word, or a "." to indicate you are finished: </span><span class="exception">
+Traceback (most recent call last):
+  File "&lt;pyshell#140&gt;", line 1, in &lt;module&gt;
+    playGame(wordlist)
+  File "&lt;pyshell#139&gt;", line 11, in playGame
+    playHand(hand, wordList, HAND_SIZE)
+  File "&lt;pyshell#112&gt;", line 6, in playHand
+    word = raw_input('Enter word, or a "." to indicate you are finished: ')
+KeyboardInterrupt
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">n
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: </span></span><span class="command"><span class="output"><span class="stdin">ego
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: </span></span><span class="command"><span class="output"><span class="stdin">def playHand(hand, wordList, n):
+    import sys
+    totalScore = 0
+    while calculateHandlen(hand) &gt; 0:
+        sys.stdout.write("Current Hand: "), displayHand(hand)
+        word = raw_input('Enter word, or a "." to indicate you are finished: ')
+        if word == '.':
+            break
+        elif not isValidWord(word,hand,wordList):
+            print "Invalid word, please try again.\n\n"
+        else:
+            score = getWordScore(word, n)
+            totalScore += score
+            print (word + " earned " + str(score) + " points. Total: " + str(totalScore) + " points.\n\n")
+            hand = updateHand(hand, word)
+
+    print("Run out of letters.  Total score: " + str(totalScore))
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Invalid word, please try again.</span></span><span class="folded"><span class="output"><span class="stdout">
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: </span></span><span class="command"><span class="output"><span class="stdin">playGame(wordlist)
+</span></span></span></span><span class="fold-message">[About 68 more lines. Double-click to unfold]
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Invalid word, please try again.
+
+
+Current Hand: e g o s r y z
+Enter word, or a "." to indicate you are finished: </span></span><span class="command"><span class="output"><span class="stdin">.
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Run out of letters.  Total score: 0
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span><span class="exception">
+Traceback (most recent call last):
+  File "&lt;pyshell#141&gt;", line 1, in &lt;module&gt;
+    playGame(wordlist)
+  File "&lt;pyshell#139&gt;", line 8, in playGame
+    "and 'e' to exit the game.")
+KeyboardInterrupt
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">r
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">You have not played a hand yet.  Please play a hand first!
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">e
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Goodbye! Total score: 0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">n
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: b e l o q p v
+Enter word, or a "." to indicate you are finished: </span></span><span class="command"><span class="output"><span class="stdin">.
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Run out of letters.  Total score: 0
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">def playHand(hand, wordList, n):
+    import sys
+    totalScore = 0
+    while calculateHandlen(hand) &gt; 0:
+        sys.stdout.write("Current Hand: "), displayHand(hand)
+        word = raw_input('Enter word, or a "." to indicate you are finished: ')
+        if word == '.':
+            print "Goodbye! Total Score: " + str(totalScore)
+            break
+        elif not isValidWord(word,hand,wordList):
+            print "Invalid word, please try again.\n\n"
+        else:
+            score = getWordScore(word, n)
+            totalScore += score
+            print (word + " earned " + str(score) + " points. Total: " + str(totalScore) + " points.\n\n")
+            hand = updateHand(hand, word)
+
+    print("Run out of letters.  Total score: " + str(totalScore))
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">playGame(wordlist)
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Invalid input, please try again.
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">n
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a c i h l n q
+Enter word, or a "." to indicate you are finished: </span></span><span class="command"><span class="output"><span class="stdin">.
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Run out of letters.  Total score: 0
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span><span class="exception">
+Traceback (most recent call last):
+  File "&lt;pyshell#143&gt;", line 1, in &lt;module&gt;
+    playGame(wordlist)
+  File "&lt;pyshell#139&gt;", line 8, in playGame
+    "and 'e' to exit the game.")
+KeyboardInterrupt
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> playHand(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = <span class="builtin">raw_input</span>(<span class="string">'Enter word, or a "." to indicate you are finished: '</span>)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="string">'.'</span>:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">"Goodbye! Total Score: "</span> + <span class="builtin">str</span>(totalScore)
+<span class="prompt">... </span>            <span class="keyword">return</span>
+<span class="prompt">... </span>        <span class="keyword">elif</span> <span class="keyword">not</span> isValidWord(word,hand,wordList):
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">"Invalid word, please try again.\n\n"</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            totalScore += score
+<span class="prompt">... </span>            <span class="keyword">print</span> (word + <span class="string">" earned "</span> + <span class="builtin">str</span>(score) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points.\n\n"</span>)
+<span class="prompt">... </span>            hand = updateHand(hand, word)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">print</span>(<span class="string">"Run out of letters.  Total score: "</span> + <span class="builtin">str</span>(totalScore))</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>playGame(wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">n
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: c d o p u t y
+Enter word, or a "." to indicate you are finished: </span></span><span class="command"><span class="output"><span class="stdin">put
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Invalid word, please try again.
+
+
+Current Hand: c d o p u t y
+Enter word, or a "." to indicate you are finished: </span></span><span class="command"><span class="output"><span class="stdin">tup
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Invalid word, please try again.
+
+
+Current Hand: c d o p u t y
+Enter word, or a "." to indicate you are finished: </span></span><span class="command"><span class="output"><span class="stdin">.
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Goodbye! Total Score: 0
+Enter 'n' to play a random hand, 'r' to replay the last hand, and 'e' to exit the game.</span></span><span class="command"><span class="output"><span class="stdin">r
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: c d o p u t y
+Enter word, or a "." to indicate you are finished: </span></span><span class="command"><span class="output"><span class="stdin">cup
+</span></span></span><span class="commandsep"></span><span class="output"><span class="stdout">Invalid word, please try again.
+
+
+Current Hand: c d o p u t y
+Enter word, or a "." to indicate you are finished: </span><span class="exception">
+Traceback (most recent call last):
+  File "&lt;pyshell#145&gt;", line 1, in &lt;module&gt;
+    playGame(wordlist)
+  File "&lt;pyshell#139&gt;", line 21, in playGame
+    playHand(hand, wordList, HAND_SIZE)
+  File "&lt;pyshell#144&gt;", line 6, in playHand
+    word = raw_input('Enter word, or a "." to indicate you are finished: ')
+KeyboardInterrupt
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>var = <span class="string">'appels'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> var + <span class="string">' earned ljijoio'</span>
+</span><span class="commandsep"></span><span class="output"><span class="stdout">appels earned ljijoio
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">"%S"</span> % var + <span class="string">' earned ljijoio'</span>
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#148&gt;", line 1, in &lt;module&gt;
+    print "%S" % var + ' earned ljijoio'
+ValueError: unsupported format character 'S' (0x53) at index 1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">"%s"</span> % var + <span class="string">' earned ljijoio'</span>
+</span><span class="commandsep"></span><span class="output"><span class="stdout">appels earned ljijoio
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">"'%s'"</span> % var + <span class="string">' earned ljijoio'</span>
+</span><span class="commandsep"></span><span class="output"><span class="stdout">'appels' earned ljijoio
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Given a hand and a wordList, find the word that gives 
+</span><span class="prompt">... </span><span class="string">    the maximum value score, and return it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    This word should be calculated by considering all the words
+</span><span class="prompt">... </span><span class="string">    in the wordList.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    If no words in the wordList can be made from the hand, return None.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    returns: string or None
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Allows the computer to play the given hand, following the same procedure
+</span><span class="prompt">... </span><span class="string">    as playHand, except instead of the user choosing a word, the computer 
+</span><span class="prompt">... </span><span class="string">    chooses it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    1) The hand is displayed.
+</span><span class="prompt">... </span><span class="string">    2) The computer chooses a word.
+</span><span class="prompt">... </span><span class="string">    3) After every valid word: the word and the score for that word is 
+</span><span class="prompt">... </span><span class="string">    displayed, the remaining letters in the hand are displayed, and the 
+</span><span class="prompt">... </span><span class="string">    computer chooses another word.
+</span><span class="prompt">... </span><span class="string">    4)  The sum of the word scores is displayed when the hand finishes.
+</span><span class="prompt">... </span><span class="string">    5)  The hand finishes when the computer has exhausted its possible
+</span><span class="prompt">... </span><span class="string">    choices (i.e. compChooseWord returns None).
+</span><span class="prompt">... </span><span class="string"> 
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="comment"># TO DO ... &lt;-- Remove this comment when you code this function</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % bestWord + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">16: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 1, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">list</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">17: </span><span class="result">&lt;type 'list'&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">18: </span><span class="result">['quail', 'ail', 'qua']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">19: </span><span class="result">{'a': 1, 'i': 1, 'l': 2, 'm': 1, 'q': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand2, wordlist, <span class="number">7</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a i m l l q u
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#156&gt;", line 1, in &lt;module&gt;
+    compPlayHand(hand2, wordlist, 7)
+  File "&lt;pyshell#151&gt;", line 64, in compPlayHand
+    totalScore += maxScore
+NameError: global name 'maxScore' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Given a hand and a wordList, find the word that gives 
+</span><span class="prompt">... </span><span class="string">    the maximum value score, and return it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    This word should be calculated by considering all the words
+</span><span class="prompt">... </span><span class="string">    in the wordList.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    If no words in the wordList can be made from the hand, return None.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    returns: string or None
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Allows the computer to play the given hand, following the same procedure
+</span><span class="prompt">... </span><span class="string">    as playHand, except instead of the user choosing a word, the computer 
+</span><span class="prompt">... </span><span class="string">    chooses it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    1) The hand is displayed.
+</span><span class="prompt">... </span><span class="string">    2) The computer chooses a word.
+</span><span class="prompt">... </span><span class="string">    3) After every valid word: the word and the score for that word is 
+</span><span class="prompt">... </span><span class="string">    displayed, the remaining letters in the hand are displayed, and the 
+</span><span class="prompt">... </span><span class="string">    computer chooses another word.
+</span><span class="prompt">... </span><span class="string">    4)  The sum of the word scores is displayed when the hand finishes.
+</span><span class="prompt">... </span><span class="string">    5)  The hand finishes when the computer has exhausted its possible
+</span><span class="prompt">... </span><span class="string">    choices (i.e. compChooseWord returns None).
+</span><span class="prompt">... </span><span class="string"> 
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="comment"># TO DO ... &lt;-- Remove this comment when you code this function</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % bestWord + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="output"><span class="stderr">&lt;pyshell#157&gt;:19: SyntaxWarning: name 'maxScore' is assigned to before global declaration
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Given a hand and a wordList, find the word that gives 
+</span><span class="prompt">... </span><span class="string">    the maximum value score, and return it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    This word should be calculated by considering all the words
+</span><span class="prompt">... </span><span class="string">    in the wordList.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    If no words in the wordList can be made from the hand, return None.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    returns: string or None
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Allows the computer to play the given hand, following the same procedure
+</span><span class="prompt">... </span><span class="string">    as playHand, except instead of the user choosing a word, the computer 
+</span><span class="prompt">... </span><span class="string">    chooses it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    1) The hand is displayed.
+</span><span class="prompt">... </span><span class="string">    2) The computer chooses a word.
+</span><span class="prompt">... </span><span class="string">    3) After every valid word: the word and the score for that word is 
+</span><span class="prompt">... </span><span class="string">    displayed, the remaining letters in the hand are displayed, and the 
+</span><span class="prompt">... </span><span class="string">    computer chooses another word.
+</span><span class="prompt">... </span><span class="string">    4)  The sum of the word scores is displayed when the hand finishes.
+</span><span class="prompt">... </span><span class="string">    5)  The hand finishes when the computer has exhausted its possible
+</span><span class="prompt">... </span><span class="string">    choices (i.e. compChooseWord returns None).
+</span><span class="prompt">... </span><span class="string"> 
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="comment"># TO DO ... &lt;-- Remove this comment when you code this function</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % bestWord + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand2, wordlist, <span class="number">7</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a i m l l q u
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#159&gt;", line 1, in &lt;module&gt;
+    compPlayHand(hand2, wordlist, 7)
+  File "&lt;pyshell#158&gt;", line 66, in compPlayHand
+    print ("'%s'" % bestWord + " earned " + str(maxScore) + " points. Total: " + str(totalScore))
+NameError: global name 'bestWord' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Given a hand and a wordList, find the word that gives 
+</span><span class="prompt">... </span><span class="string">    the maximum value score, and return it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    This word should be calculated by considering all the words
+</span><span class="prompt">... </span><span class="string">    in the wordList.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    If no words in the wordList can be made from the hand, return None.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    returns: string or None
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Allows the computer to play the given hand, following the same procedure
+</span><span class="prompt">... </span><span class="string">    as playHand, except instead of the user choosing a word, the computer 
+</span><span class="prompt">... </span><span class="string">    chooses it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    1) The hand is displayed.
+</span><span class="prompt">... </span><span class="string">    2) The computer chooses a word.
+</span><span class="prompt">... </span><span class="string">    3) After every valid word: the word and the score for that word is 
+</span><span class="prompt">... </span><span class="string">    displayed, the remaining letters in the hand are displayed, and the 
+</span><span class="prompt">... </span><span class="string">    computer chooses another word.
+</span><span class="prompt">... </span><span class="string">    4)  The sum of the word scores is displayed when the hand finishes.
+</span><span class="prompt">... </span><span class="string">    5)  The hand finishes when the computer has exhausted its possible
+</span><span class="prompt">... </span><span class="string">    choices (i.e. compChooseWord returns None).
+</span><span class="prompt">... </span><span class="string"> 
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="comment"># TO DO ... &lt;-- Remove this comment when you code this function</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % bestWord + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Given a hand and a wordList, find the word that gives 
+</span><span class="prompt">... </span><span class="string">    the maximum value score, and return it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    This word should be calculated by considering all the words
+</span><span class="prompt">... </span><span class="string">    in the wordList.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    If no words in the wordList can be made from the hand, return None.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    returns: string or None
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">global</span> bestWord
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Allows the computer to play the given hand, following the same procedure
+</span><span class="prompt">... </span><span class="string">    as playHand, except instead of the user choosing a word, the computer 
+</span><span class="prompt">... </span><span class="string">    chooses it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    1) The hand is displayed.
+</span><span class="prompt">... </span><span class="string">    2) The computer chooses a word.
+</span><span class="prompt">... </span><span class="string">    3) After every valid word: the word and the score for that word is 
+</span><span class="prompt">... </span><span class="string">    displayed, the remaining letters in the hand are displayed, and the 
+</span><span class="prompt">... </span><span class="string">    computer chooses another word.
+</span><span class="prompt">... </span><span class="string">    4)  The sum of the word scores is displayed when the hand finishes.
+</span><span class="prompt">... </span><span class="string">    5)  The hand finishes when the computer has exhausted its possible
+</span><span class="prompt">... </span><span class="string">    choices (i.e. compChooseWord returns None).
+</span><span class="prompt">... </span><span class="string"> 
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="comment"># TO DO ... &lt;-- Remove this comment when you code this function</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % bestWord + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand2, wordlist, <span class="number">7</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a i m l l q u
+'quail' earned 70 points. Total: 70
+Current Hand: m l
+</span><span class="result-ind">20: </span><span class="result">'Total score: 70 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand2, wordlist, <span class="number">7</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a i m l l q u
+'quail' earned 70 points. Total: 70
+Current Hand: m l
+</span><span class="result-ind">21: </span><span class="result">'Total score: 70 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">list</span> = <span class="string">"aivlooejjsnpleixj"</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(<span class="builtin">list</span>, wordlist, <span class="number">17</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#165&gt;", line 1, in &lt;module&gt;
+    compPlayHand(list, wordlist, 17)
+  File "&lt;pyshell#161&gt;", line 60, in compPlayHand
+    while calculateHandlen(hand) &gt; 0:
+  File "&lt;pyshell#17&gt;", line 10, in calculateHandlen
+    for v in hand.values():
+AttributeError: 'str' object has no attribute 'values'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">list</span> = <span class="builtin">list</span>(<span class="builtin">list</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#166&gt;", line 1, in &lt;module&gt;
+    list = list(list)
+TypeError: 'str' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">list</span>(<span class="builtin">list</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#167&gt;", line 1, in &lt;module&gt;
+    list(list)
+TypeError: 'str' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">list</span> = {<span class="string">'a'</span>: <span class="number">3</span>, <span class="string">'f'</span>: <span class="number">2</span>, <span class="string">'g'</span>: <span class="number">2</span>, <span class="string">'i'</span>: <span class="number">1</span>, <span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'e'</span>: <span class="number">3</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(<span class="builtin">list</span>, wordlist, <span class="number">14</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a b b e e e g g f f i x
+</span><span class="result-ind">22: </span><span class="result">'Total score: 0 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">23: </span><span class="result">{'a': 1, 'i': 1, 'l': 2, 'm': 1, 'q': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">24: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 1, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r u t
+</span><span class="result-ind">25: </span><span class="result">'Total score: 0 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">26: </span><span class="result">{'a': 1, 'i': 1, 'l': 2, 'm': 1, 'q': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">27: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 1, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">28: </span><span class="result">['quail', 'ail', 'qua']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist[<span class="number">4</span>] = [<span class="string">'rapture'</span>]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#176&gt;", line 1, in &lt;module&gt;
+    wordlist[4] = ['rapture']
+IndexError: list assignment index out of range
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist[<span class="number">3</span>] = [<span class="string">'rapture'</span>]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#177&gt;", line 1, in &lt;module&gt;
+    wordlist[3] = ['rapture']
+IndexError: list assignment index out of range
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist.append(<span class="string">'rapture'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">29: </span><span class="result">['quail', 'ail', 'qua', 'rapture']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r u t
+</span><span class="result-ind">30: </span><span class="result">'Total score: 0 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">31: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 1, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">32: </span><span class="result">['quail', 'ail', 'qua', 'rapture']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Given a hand and a wordList, find the word that gives 
+</span><span class="prompt">... </span><span class="string">    the maximum value score, and return it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    This word should be calculated by considering all the words
+</span><span class="prompt">... </span><span class="string">    in the wordList.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    If no words in the wordList can be made from the hand, return None.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    returns: string or None
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Allows the computer to play the given hand, following the same procedure
+</span><span class="prompt">... </span><span class="string">    as playHand, except instead of the user choosing a word, the computer 
+</span><span class="prompt">... </span><span class="string">    chooses it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    1) The hand is displayed.
+</span><span class="prompt">... </span><span class="string">    2) The computer chooses a word.
+</span><span class="prompt">... </span><span class="string">    3) After every valid word: the word and the score for that word is 
+</span><span class="prompt">... </span><span class="string">    displayed, the remaining letters in the hand are displayed, and the 
+</span><span class="prompt">... </span><span class="string">    computer chooses another word.
+</span><span class="prompt">... </span><span class="string">    4)  The sum of the word scores is displayed when the hand finishes.
+</span><span class="prompt">... </span><span class="string">    5)  The hand finishes when the computer has exhausted its possible
+</span><span class="prompt">... </span><span class="string">    choices (i.e. compChooseWord returns None).
+</span><span class="prompt">... </span><span class="string"> 
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="comment"># TO DO ... &lt;-- Remove this comment when you code this function</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % bestWord + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">33: </span><span class="result">['quail', 'ail', 'qua', 'rapture']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist.append(<span class="string">'rap'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r u t
+'None' earned 15 points. Total: 15
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#186&gt;", line 1, in &lt;module&gt;
+    compPlayHand(hand, wordlist, 9)
+  File "&lt;pyshell#183&gt;", line 68, in compPlayHand
+    hand = updateHand(hand, bestWord)
+  File "&lt;pyshell#38&gt;", line 20, in updateHand
+    for c in word:
+TypeError: 'NoneType' object is not iterable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Given a hand and a wordList, find the word that gives 
+</span><span class="prompt">... </span><span class="string">    the maximum value score, and return it.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    This word should be calculated by considering all the words
+</span><span class="prompt">... </span><span class="string">    in the wordList.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    If no words in the wordList can be made from the hand, return None.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    hand: dictionary (string -&gt; int)
+</span><span class="prompt">... </span><span class="string">    wordList: list (string)
+</span><span class="prompt">... </span><span class="string">    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    returns: string or None
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % bestWord + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> updateHand(hand,word):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    newHand = hand.copy()
+<span class="prompt">... </span>    <span class="keyword">for</span> (k,v) <span class="keyword">in</span> newHand.items():
+<span class="prompt">... </span>        <span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>            <span class="keyword">if</span> c == k:
+<span class="prompt">... </span>                newHand[k] -= <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newHand</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r u t
+'None' earned 15 points. Total: 15
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#189&gt;", line 1, in &lt;module&gt;
+    compPlayHand(hand, wordlist, 9)
+  File "&lt;pyshell#187&gt;", line 48, in compPlayHand
+    hand = updateHand(hand, bestWord)
+  File "&lt;pyshell#188&gt;", line 4, in updateHand
+    for c in word:
+TypeError: 'NoneType' object is not iterable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">34: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 1, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % bestWord + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            <span class="keyword">print</span> hand
+<span class="prompt">... </span>            <span class="keyword">print</span> bestWord
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r u t
+'None' earned 15 points. Total: 15
+{'a': 3, 'e': 1, 'p': 2, 'r': 1, 'u': 1, 't': 1}
+None
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#192&gt;", line 1, in &lt;module&gt;
+    compPlayHand(hand, wordlist, 9)
+  File "&lt;pyshell#191&gt;", line 36, in compPlayHand
+    hand = updateHand(hand, bestWord)
+  File "&lt;pyshell#188&gt;", line 4, in updateHand
+    for c in word:
+TypeError: 'NoneType' object is not iterable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">35: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 1, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">36: </span><span class="result">{'a': 1, 'i': 1, 'l': 2, 'm': 1, 'q': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand[<span class="string">'r'</span>] += <span class="number">1</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">37: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 2, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r r u t
+'None' earned 63 points. Total: 63
+{'a': 3, 'e': 1, 'p': 2, 'r': 2, 'u': 1, 't': 1}
+None
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#197&gt;", line 1, in &lt;module&gt;
+    compPlayHand(hand, wordlist, 9)
+  File "&lt;pyshell#191&gt;", line 36, in compPlayHand
+    hand = updateHand(hand, bestWord)
+  File "&lt;pyshell#188&gt;", line 4, in updateHand
+    for c in word:
+TypeError: 'NoneType' object is not iterable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r r u t
+'None' earned 63 points. Total: 63
+{'a': 3, 'e': 1, 'p': 2, 'r': 2, 'u': 1, 't': 1}
+None
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#198&gt;", line 1, in &lt;module&gt;
+    compPlayHand(hand, wordlist, 9)
+  File "&lt;pyshell#191&gt;", line 36, in compPlayHand
+    hand = updateHand(hand, bestWord)
+  File "&lt;pyshell#188&gt;", line 4, in updateHand
+    for c in word:
+TypeError: 'NoneType' object is not iterable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> bestWord == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % bestWord + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            <span class="keyword">print</span> hand
+<span class="prompt">... </span>            <span class="keyword">print</span> bestWord
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r r u t
+</span><span class="result-ind">38: </span><span class="result">'Total score: 0 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">39: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 2, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">40: </span><span class="result">['quail', 'ail', 'qua', 'rapture', 'rap']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>isValidWord(<span class="string">'ail'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#203&gt;", line 1, in &lt;module&gt;
+    isValidWord('ail')
+TypeError: isValidWord() takes exactly 3 arguments (1 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>isValidWord(<span class="string">'ail'</span>, wordlist, <span class="number">6</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#204&gt;", line 1, in &lt;module&gt;
+    isValidWord('ail', wordlist, 6)
+  File "&lt;pyshell#20&gt;", line 12, in isValidWord
+    tempHand = hand.copy()
+AttributeError: 'list' object has no attribute 'copy'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>isValidWord(<span class="string">'ail'</span>, hand, wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">41: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">42: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 2, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>isValidWord(<span class="string">'rap'</span>, hand, wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">43: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getWordScore(<span class="string">'rap'</span>, <span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">44: </span><span class="result">65
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> bestWord == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % word + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            <span class="keyword">print</span> hand
+<span class="prompt">... </span>            <span class="keyword">print</span> bestWord
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r r u t
+</span><span class="result-ind">45: </span><span class="result">'Total score: 0 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'word eq '</span> + word
+<span class="prompt">... </span>        <span class="keyword">if</span> bestWord == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % word + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            <span class="keyword">print</span> hand
+<span class="prompt">... </span>            <span class="keyword">print</span> bestWord
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r r u t
+word eq rapture
+</span><span class="result-ind">46: </span><span class="result">'Total score: 0 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % word + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            <span class="keyword">print</span> hand
+<span class="prompt">... </span>            <span class="keyword">print</span> bestWord
+<span class="prompt">... </span>            hand = updateHand(hand, bestWord)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r r u t
+'rapture' earned 63 points. Total: 63
+{'a': 3, 'e': 1, 'p': 2, 'r': 2, 'u': 1, 't': 1}
+None
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#214&gt;", line 1, in &lt;module&gt;
+    compPlayHand(hand, wordlist, 9)
+  File "&lt;pyshell#213&gt;", line 36, in compPlayHand
+    hand = updateHand(hand, bestWord)
+  File "&lt;pyshell#188&gt;", line 4, in updateHand
+    for c in word:
+TypeError: 'NoneType' object is not iterable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % word + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            <span class="keyword">print</span> hand
+<span class="prompt">... </span>            <span class="keyword">print</span> bestWord
+<span class="prompt">... </span>            hand = updateHand(hand, word)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r r u t
+'rapture' earned 63 points. Total: 63
+{'a': 3, 'e': 1, 'p': 2, 'r': 2, 'u': 1, 't': 1}
+None
+Current Hand: a a p
+</span><span class="result-ind">47: </span><span class="result">'Total score: 63 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist[<span class="string">'p'</span>] += <span class="number">1</span>
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#217&gt;", line 1, in &lt;module&gt;
+    wordlist['p'] += 1
+TypeError: list indices must be integers, not str
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">48: </span><span class="result">['quail', 'ail', 'qua', 'rapture', 'rap']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist.append(<span class="string">'pap'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r r u t
+'rapture' earned 63 points. Total: 63
+{'a': 3, 'e': 1, 'p': 2, 'r': 2, 'u': 1, 't': 1}
+None
+Current Hand: a a p
+</span><span class="result-ind">49: </span><span class="result">'Total score: 63 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>isValidWord(<span class="string">'pap'</span>, hand, wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">50: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">51: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 2, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % word + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            <span class="keyword">print</span> hand
+<span class="prompt">... </span>            <span class="keyword">print</span> word
+<span class="prompt">... </span>            hand = updateHand(hand, word)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>isValidWord(<span class="string">'pap'</span>, hand, wordlist)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">52: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r r u t
+'rapture' earned 63 points. Total: 63
+{'a': 3, 'e': 1, 'p': 2, 'r': 2, 'u': 1, 't': 1}
+rapture
+Current Hand: a a p
+</span><span class="result-ind">53: </span><span class="result">'Total score: 63 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % word + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            hand = updateHand(hand, word)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand5 = {<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'p'</span>:<span class="number">2</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>comPlayHand(hand5, wordList, <span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#228&gt;", line 1, in &lt;module&gt;
+    comPlayHand(hand5, wordList, 3)
+NameError: name 'comPlayHand' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand5, wordList, <span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#229&gt;", line 1, in &lt;module&gt;
+    compPlayHand(hand5, wordList, 3)
+NameError: name 'wordList' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand5, wordlist, <span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a p p
+'pap' earned 71 points. Total: 71
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % word + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            hand = updateHand(hand, word)
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">"Run out of letters. Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand5, wordlist, <span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a p p
+'pap' earned 71 points. Total: 71
+Run out of letters. Total score: 71 points.
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p r r u t
+'rapture' earned 63 points. Total: 63
+Current Hand: a a p
+</span><span class="result-ind">54: </span><span class="result">'Total score: 63 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>wordlist
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">55: </span><span class="result">['quail', 'ail', 'qua', 'rapture', 'rap', 'pap']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">56: </span><span class="result">{'a': 3, 'e': 1, 'p': 2, 'r': 2, 't': 1, 'u': 1}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand[<span class="string">'p'</span>] += <span class="number">1</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compPlayHand(hand, wordlist, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Current Hand: a a a e p p p r r u t
+'rapture' earned 63 points. Total: 63
+Current Hand: a a p p
+'pap' earned 21 points. Total: 84
+Current Hand: a
+</span><span class="result-ind">57: </span><span class="result">'Total score: 84 points.'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compChooseWord(hand, wordList, n):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">global</span> bestScore
+<span class="prompt">... </span>    <span class="keyword">global</span> maxScore
+<span class="prompt">... </span>    maxScore = <span class="number">0</span>
+<span class="prompt">... </span>    bestWord = <span class="builtin">None</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> wordList:
+<span class="prompt">... </span>        <span class="keyword">if</span> isValidWord(word, hand, wordList):
+<span class="prompt">... </span>            score = getWordScore(word, n)
+<span class="prompt">... </span>            <span class="keyword">if</span> score &gt; maxScore:
+<span class="prompt">... </span>                maxScore = score
+<span class="prompt">... </span>                bestWord = word
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestWord
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="comment"># Problem #7: Computer plays a hand</span>
+<span class="prompt">... </span><span class="comment">#</span>
+<span class="prompt">... </span><span class="keyword">def</span> compPlayHand(hand, wordList, n):
+<span class="prompt">... </span>
+<span class="prompt">... </span>    totalScore = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">import</span> sys
+<span class="prompt">... </span>    <span class="keyword">while</span> calculateHandlen(hand) &gt; <span class="number">0</span>:
+<span class="prompt">... </span>        sys.stdout.write(<span class="string">"Current Hand: "</span>), displayHand(hand)
+<span class="prompt">... </span>        word = compChooseWord(hand, wordList, n)
+<span class="prompt">... </span>        <span class="keyword">if</span> word == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(<span class="string">"Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            totalScore += maxScore
+<span class="prompt">... </span>            <span class="keyword">print</span> (<span class="string">"'%s'"</span> % word + <span class="string">" earned "</span> + <span class="builtin">str</span>(maxScore) + <span class="string">" points. Total: "</span> + <span class="builtin">str</span>(totalScore))
+<span class="prompt">... </span>            hand = updateHand(hand, word)
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">"Run out of letters. Total score: "</span> + <span class="builtin">str</span>(totalScore) + <span class="string">" points."</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> my_fun(x):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">if</span> x == <span class="builtin">True</span>:
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'so much fun'</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>my_fun(<span class="builtin">False</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>my_fun(<span class="builtin">True</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">so much fun
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>lets = <span class="builtin">set</span>(<span class="string">'abcdefghijklmnopqrstuvwxyz\n'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>lets
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">58: </span><span class="result">set(['\n',
+     'a',
+     'b',
+     'c',
+     'd',
+     'e',
+     'f',
+     'g',
+     'h',
+     'i',
+     'j',
+     'k',
+     'l',
+     'm',
+     'n',
+     'o',
+     'p',
+     'q',
+     'r',
+     's',
+     't',
+     'u',
+     'v',
+     'w',
+     'x',
+     'y',
+     'z'])
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>word = <span class="string">'banana'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = <span class="builtin">set</span>(word) - lets
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">59: </span><span class="result">set()
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(<span class="builtin">set</span>(word) - lets) == <span class="number">0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">60: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(lets)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">61: </span><span class="result">27
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(word)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">62: </span><span class="result">6
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(<span class="builtin">set</span>(word))
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">63: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>lets
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">64: </span><span class="result">set(['\n',
+     'a',
+     'b',
+     'c',
+     'd',
+     'e',
+     'f',
+     'g',
+     'h',
+     'i',
+     'j',
+     'k',
+     'l',
+     'm',
+     'n',
+     'o',
+     'p',
+     'q',
+     'r',
+     's',
+     't',
+     'u',
+     'v',
+     'w',
+     'x',
+     'y',
+     'z'])
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">65: </span><span class="result">set()
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(a - lets) == <span class="number">0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">66: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>b = <span class="builtin">set</span>(<span class="string">'guy'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a - b
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">67: </span><span class="result">set()
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a - b == <span class="number">0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">68: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">69: </span><span class="result">set()
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(a-b) == <span class="number">0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">70: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(a)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">71: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(b)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">72: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a-b
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">73: </span><span class="result">set()
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> a-b
+</span><span class="commandsep"></span><span class="output"><span class="stdout">set([])
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">74: </span><span class="result">set()
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> a
+</span><span class="commandsep"></span><span class="output"><span class="stdout">set([])
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> a:
+<span class="prompt">... </span>    <span class="keyword">print</span> c
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(a)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">75: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(b)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">76: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(a-b)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">77: </span><span class="result">0
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

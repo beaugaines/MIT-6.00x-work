@@ -190,10 +190,10 @@ def isValidWord(word, hand, wordList):
     hand: dictionary (string -> int)
     wordList: list of lowercase strings
     """
-    tempHand = hand.copy()
     if word not in wordList:
         return False
     else:
+        tempHand = hand.copy()
         for c in word:
             if c in hand:
                 tempHand[c] = tempHand.get(c, 0) - 1
