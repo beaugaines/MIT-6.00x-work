@@ -23,6 +23,18 @@ SCRABBLE_LETTER_VALUES = {
 WORDLIST_FILENAME = "words.txt"
 
 
+def getValueDict(wordlist):
+    valueDict = {}
+    words = loadwords(WORDLIST_FILENAME)
+    
+    for word in words:
+        val = getWordScore(word, len(word))
+        valueDict[word] = val
+
+    return valueDict
+
+
+
 def loadWords():
     """
     Returns a list of valid words. Words are strings of lowercase letters.
@@ -244,7 +256,7 @@ def playHand(hand, wordList, n):
         sys.stdout.write("Current Hand: "), displayHand(hand)
         word = raw_input('Enter word, or a "." to indicate you are finished: ')
         if word == '.':
-            print "Goodbye! Total Score: " + str(totalScore)
+            print "Goodbye! Total Score: " + str(totalScore) + "\n\n"
             return
         elif not isValidWord(word,hand,wordList):
             print "Invalid word, please try again.\n\n"

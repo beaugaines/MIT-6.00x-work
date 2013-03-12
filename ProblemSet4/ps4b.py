@@ -23,10 +23,12 @@ def compChooseWord(hand, wordList, n):
 
     returns: string or None
     """
+    global maxScore
+    global bestWord
     maxScore = 0
     bestWord = None
     for word in wordList:
-        if isValidWord(word):
+        if isValidWord(word, hand, wordList):
             score = getWordScore(word, n)
             if score > maxScore:
                 maxScore = score
@@ -71,8 +73,9 @@ def compPlayHand(hand, wordList, n):
             return("Total score: " + str(totalScore) + " points.")
         else:
             totalScore += maxScore
-            print ("'%s'" % bestWord + " earned " + str(maxScore) + " points. Total: " + str(totalScore))
-            hand = updateHand(hand, bestWord)
+            print ("'%s'" % word + " earned " + str(maxScore) + " points. Total: " + str(totalScore))
+            hand = updateHand(hand, word)
+    print "Run out of letters. Total score: " + str(totalScore) + " points."
     
 #
 # Problem #8: Playing a game
@@ -102,10 +105,48 @@ def playGame(wordList):
 
     wordList: list (string)
     """
-    # TO DO... <-- Remove this comment when you code this function
-    print "playGame not yet implemented." # <-- Remove this when you code this function
 
+    HAND_SIZE = 8
+
+
+    def userChoice():
+        while True:
+            ans = raw_input("Enter u to have yourself play, c to have the computer play: ")
+            if ans == "u":
+                playHand(hand, wordList, HAND_SIZE)
+                return
+            elif ans == "c":
+                compPlayHand(hand, wordList, HAND_SIZE)
+                return
+            else:
+                print "Invalid Command."
         
+    while True:
+
+        playOpt = raw_input("Enter 'n' to play a random hand, 'r' to replay the last hand," + \
+                        " and e to exit the game. ")
+        if playOpt == "n":
+            hand = dealHand(HAND_SIZE)
+            userChoice()
+
+        elif playOpt == "r":
+            try:
+                hand
+            except NameError:
+                hand = None
+            if hand is None:
+                print "You have not played a hand yet.  Please play a hand first!"
+                continue
+            else:
+                userChoice()
+
+        elif playOpt == "e":
+            break
+
+        else:
+            print "Invalid input, please try again."
+
+    return None
 #
 # Build data structures used for entire session and play game
 #
