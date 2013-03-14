@@ -103,5 +103,311 @@ DreamPie 1.2.1
 <span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">False</span>
 <span class="prompt">... </span>    <span class="keyword">else</span>:
 <span class="prompt">... </span>        <span class="keyword">return</span> bSearch(L, e, <span class="number">0</span>, <span class="builtin">len</span>(L) -<span class="number">1</span>)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">range</span>(<span class="number">5</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">[0, 1, 2, 3, 4]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> search3(L, e):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">print</span>(<span class="string">"List L: "</span> + <span class="builtin">str</span>(L))
+<span class="prompt">... </span>    <span class="keyword">if</span> L[<span class="number">0</span>] == e:
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">True</span>
+<span class="prompt">... </span>    <span class="keyword">elif</span> L[<span class="number">0</span>] &gt; e:
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">False</span>
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        <span class="keyword">return</span> search3(L[<span class="number">1</span>:], e)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>search3([<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>], <span class="number">6</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">List L: [0, 1, 2, 3, 4, 6, 7, 8]
+List L: [1, 2, 3, 4, 6, 7, 8]
+List L: [2, 3, 4, 6, 7, 8]
+List L: [3, 4, 6, 7, 8]
+List L: [4, 6, 7, 8]
+List L: [6, 7, 8]
+</span><span class="result-ind">1: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>search3([<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>], <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">List L: [0, 1, 2, 3, 4, 6, 7, 8]
+List L: [1, 2, 3, 4, 6, 7, 8]
+List L: [2, 3, 4, 6, 7, 8]
+List L: [3, 4, 6, 7, 8]
+List L: [4, 6, 7, 8]
+List L: [6, 7, 8]
+List L: [7, 8]
+List L: [8]
+List L: []
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#3&gt;", line 1, in &lt;module&gt;
+    search3([0,1,2,3,4,6,7,8], 9)
+  File "&lt;pyshell#1&gt;", line 8, in search3
+    return search3(L[1:], e)
+  File "&lt;pyshell#1&gt;", line 8, in search3
+    return search3(L[1:], e)
+  File "&lt;pyshell#1&gt;", line 8, in search3
+    return search3(L[1:], e)
+  File "&lt;pyshell#1&gt;", line 8, in search3
+    return search3(L[1:], e)
+  File "&lt;pyshell#1&gt;", line 8, in search3
+    return search3(L[1:], e)
+  File "&lt;pyshell#1&gt;", line 8, in search3
+    return search3(L[1:], e)
+  File "&lt;pyshell#1&gt;", line 8, in search3
+    return search3(L[1:], e)
+  File "&lt;pyshell#1&gt;", line 8, in search3
+    return search3(L[1:], e)
+  File "&lt;pyshell#1&gt;", line 3, in search3
+    if L[0] == e:
+IndexError: list index out of range
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> search(L,e):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(L)):
+<span class="prompt">... </span>        <span class="keyword">if</span> L[i] == e:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">True</span>
+<span class="prompt">... </span>        <span class="keyword">elif</span> L[i] &gt; e:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">False</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="builtin">False</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l.append(<span class="builtin">range</span>(<span class="number">1</span>,<span class="number">10</span>,<span class="number">1</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">[[1, 2, 3, 4, 5, 6, 7, 8, 9]]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l = <span class="builtin">range</span>(<span class="number">1</span>,<span class="number">10</span>,<span class="number">1</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>search(l, <span class="number">11</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> search(L,e):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(L)):
+<span class="prompt">... </span>        <span class="keyword">if</span> L[i] == e:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">True</span>
+<span class="prompt">... </span>        <span class="keyword">elif</span> L[i] &gt; e:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">False</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="builtin">False</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>search(l, <span class="number">8</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l2 = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>search(l2, <span class="number">8</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l2[<span class="number">0</span>]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#15&gt;", line 1, in &lt;module&gt;
+    l2[0]
+IndexError: list index out of range
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(lenl2):
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'yo'</span>
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#16&gt;", line 1, in &lt;module&gt;
+    for i in range(lenl2):
+NameError: name 'lenl2' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(l2)):
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'yo'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(l2)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(l2)):
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'yo'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>):
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'yes!'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> search3(L, e):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">print</span>(<span class="string">"List L: "</span> + <span class="builtin">str</span>(L))
+<span class="prompt">... </span>    <span class="keyword">try</span>:
+<span class="prompt">... </span>        <span class="keyword">if</span> L[<span class="number">0</span>] == e:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">True</span>
+<span class="prompt">... </span>        <span class="keyword">elif</span> L[<span class="number">0</span>] &gt; e:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">False</span>
+<span class="prompt">... </span>    <span class="keyword">except</span> <span class="builtin">IndexError</span>:
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">False</span>
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        <span class="keyword">return</span> search3(L[<span class="number">1</span>:], e)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>search3([<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>], <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">List L: [0, 1, 2, 3, 4, 6, 7, 8]
+List L: [1, 2, 3, 4, 6, 7, 8]
+List L: [2, 3, 4, 6, 7, 8]
+List L: [3, 4, 6, 7, 8]
+List L: [4, 6, 7, 8]
+List L: [6, 7, 8]
+List L: [7, 8]
+List L: [8]
+List L: []
+</span><span class="result-ind">8: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> mySort(L):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    clear = <span class="builtin">False</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> <span class="keyword">not</span> clear:
+<span class="prompt">... </span>        clear = <span class="builtin">True</span>
+<span class="prompt">... </span>        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>, <span class="builtin">len</span>(L)):
+<span class="prompt">... </span>            <span class="keyword">print</span> L
+<span class="prompt">... </span>            <span class="keyword">if</span> L[j-<span class="number">1</span>] &gt; L[j]:
+<span class="prompt">... </span>                clear = <span class="builtin">False</span>
+<span class="prompt">... </span>                temp = L[j]
+<span class="prompt">... </span>                L[j] = L[j-<span class="number">1</span>]
+<span class="prompt">... </span>                L[j-<span class="number">1</span>] = temp
+<span class="prompt">... </span>                <span class="keyword">print</span> L</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">list</span> = [<span class="number">3</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">5</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>mySort(<span class="builtin">list</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">[3, 6, 8, 4, 2, 9, 1, 5]
+[3, 6, 8, 4, 2, 9, 1, 5]
+[3, 6, 8, 4, 2, 9, 1, 5]
+[3, 6, 4, 8, 2, 9, 1, 5]
+[3, 6, 4, 8, 2, 9, 1, 5]
+[3, 6, 4, 2, 8, 9, 1, 5]
+[3, 6, 4, 2, 8, 9, 1, 5]
+[3, 6, 4, 2, 8, 9, 1, 5]
+[3, 6, 4, 2, 8, 1, 9, 5]
+[3, 6, 4, 2, 8, 1, 9, 5]
+[3, 6, 4, 2, 8, 1, 5, 9]
+[3, 6, 4, 2, 8, 1, 5, 9]
+[3, 6, 4, 2, 8, 1, 5, 9]
+[3, 4, 6, 2, 8, 1, 5, 9]
+[3, 4, 6, 2, 8, 1, 5, 9]
+[3, 4, 2, 6, 8, 1, 5, 9]
+[3, 4, 2, 6, 8, 1, 5, 9]
+[3, 4, 2, 6, 8, 1, 5, 9]
+[3, 4, 2, 6, 1, 8, 5, 9]
+[3, 4, 2, 6, 1, 8, 5, 9]
+[3, 4, 2, 6, 1, 5, 8, 9]
+[3, 4, 2, 6, 1, 5, 8, 9]
+[3, 4, 2, 6, 1, 5, 8, 9]
+[3, 4, 2, 6, 1, 5, 8, 9]
+[3, 2, 4, 6, 1, 5, 8, 9]
+[3, 2, 4, 6, 1, 5, 8, 9]
+[3, 2, 4, 6, 1, 5, 8, 9]
+[3, 2, 4, 1, 6, 5, 8, 9]
+[3, 2, 4, 1, 6, 5, 8, 9]
+[3, 2, 4, 1, 5, 6, 8, 9]
+[3, 2, 4, 1, 5, 6, 8, 9]
+[3, 2, 4, 1, 5, 6, 8, 9]
+[3, 2, 4, 1, 5, 6, 8, 9]
+[2, 3, 4, 1, 5, 6, 8, 9]
+[2, 3, 4, 1, 5, 6, 8, 9]
+[2, 3, 4, 1, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> mySort(L):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    clear = <span class="builtin">False</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> <span class="keyword">not</span> clear:
+<span class="prompt">... </span>        clear = <span class="builtin">True</span>
+<span class="prompt">... </span>        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>, <span class="builtin">len</span>(L)):
+<span class="prompt">... </span>            <span class="keyword">print</span> L
+<span class="prompt">... </span>            <span class="keyword">if</span> L[j-<span class="number">1</span>] &gt; L[j]:
+<span class="prompt">... </span>                clear = <span class="builtin">False</span>
+<span class="prompt">... </span>                temp = L[j]
+<span class="prompt">... </span>                L[j] = L[j-<span class="number">1</span>]
+<span class="prompt">... </span>                L[j-<span class="number">1</span>] = temp</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>mySort(<span class="builtin">list</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">[1, 2, 3, 4, 5, 6, 8, 9]</span></span><span class="folded"><span class="output"><span class="stdout">
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+</span></span></span><span class="fold-message">[About 6 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">list</span> = [<span class="number">3</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">5</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>mySort(<span class="builtin">list</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">[3, 6, 8, 4, 2, 9, 1, 5]</span></span><span class="folded"><span class="output"><span class="stdout">
+[3, 6, 8, 4, 2, 9, 1, 5]
+[3, 6, 8, 4, 2, 9, 1, 5]
+[3, 6, 4, 8, 2, 9, 1, 5]
+[3, 6, 4, 2, 8, 9, 1, 5]
+[3, 6, 4, 2, 8, 9, 1, 5]
+[3, 6, 4, 2, 8, 1, 9, 5]
+[3, 6, 4, 2, 8, 1, 5, 9]
+[3, 6, 4, 2, 8, 1, 5, 9]
+[3, 4, 6, 2, 8, 1, 5, 9]
+[3, 4, 2, 6, 8, 1, 5, 9]
+[3, 4, 2, 6, 8, 1, 5, 9]
+[3, 4, 2, 6, 1, 8, 5, 9]
+[3, 4, 2, 6, 1, 5, 8, 9]
+[3, 4, 2, 6, 1, 5, 8, 9]
+[3, 4, 2, 6, 1, 5, 8, 9]
+[3, 2, 4, 6, 1, 5, 8, 9]
+[3, 2, 4, 6, 1, 5, 8, 9]
+[3, 2, 4, 1, 6, 5, 8, 9]
+[3, 2, 4, 1, 5, 6, 8, 9]
+[3, 2, 4, 1, 5, 6, 8, 9]
+[3, 2, 4, 1, 5, 6, 8, 9]
+[2, 3, 4, 1, 5, 6, 8, 9]
+[2, 3, 4, 1, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 3, 1, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[2, 1, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+[1, 2, 3, 4, 5, 6, 8, 9]
+</span></span></span><span class="fold-message">[About 48 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> merge(left, right, compare):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    result = []
+<span class="prompt">... </span>    i,j = <span class="number">0</span>,<span class="number">0</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> i &lt; <span class="builtin">len</span>(left) <span class="keyword">and</span> j &lt; <span class="builtin">len</span>(right):
+<span class="prompt">... </span>        <span class="keyword">if</span> compare(left[i], right[j]):
+<span class="prompt">... </span>            result.append(left[i])
+<span class="prompt">... </span>            i += <span class="number">1</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            result.append(right[j])
+<span class="prompt">... </span>            j += <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> (i &lt; <span class="builtin">len</span>(left)):
+<span class="prompt">... </span>        result.append(left[i])
+<span class="prompt">... </span>        i += <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> (j &lt; <span class="builtin">len</span>(right)):
+<span class="prompt">... </span>        result.append(right[j])
+<span class="prompt">... </span>        j += <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> result</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>compare(<span class="number">1</span>,<span class="number">5</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#31&gt;", line 1, in &lt;module&gt;
+    compare(1,5)
+NameError: name 'compare' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> operator
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> mergeSort(L, compare = operator.lt):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">if</span> <span class="builtin">len</span>(L) &lt; <span class="number">2</span>:
+<span class="prompt">... </span>        <span class="keyword">return</span> L[:]
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        middle = <span class="builtin">int</span>(<span class="builtin">len</span>(L)/<span class="number">2</span>)
+<span class="prompt">... </span>        left = mergeSort(L[:middle], compare)
+<span class="prompt">... </span>        right = mergeSort(L[middle:], compare)
+<span class="prompt">... </span>        <span class="keyword">return</span> merge(left,right,compare)</span></span><span class="command">
 </span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
