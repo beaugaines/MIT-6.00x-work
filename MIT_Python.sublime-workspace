@@ -14,6 +14,14 @@
 				"buffer_size": 8974,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "fileinfo.py",
+			"settings":
+			{
+				"buffer_size": 3032,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -199,6 +207,7 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -225,6 +234,34 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 3380.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "fileinfo.py",
+					"settings":
+					{
+						"buffer_size": 3032,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2208,
+								2208
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1044.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

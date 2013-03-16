@@ -54,8 +54,38 @@ class MP3FileInfo(FileInfo):
         # close the file to free up precious system resources!
         fsock.close()
       if tagdata[:3] == "TAG":
+
+        # iterate through tagDataMap; first time through the loop tag gets "title", start gets
+        # 3, end gets 33, and parseFunc is stripnulls.  No sweat.
+
         for tag, (start,end, parseFunc) in self.tagDataMap.items():
           self[tag] = parseFunc(tagdata[start:end])
+
     except IOError:
       # file does not exist...or the seek fails...or file is corrupted...or...
       pass
+
+  def __setitem__(self, key, item):
+    if key == "name" and item:
+      self.__parse(item)
+      FileInfo.__setitem__(self, key, item)
+
+def listDirectory(directory, fileExtList):
+  "get list of file info objects for files of particular extensions"
+
+  fileList = [os.path.normcase(f) for f in os.listdir(directory)]
+  fileList = [os.path.join(directory, f) for f in fileList
+                if os.path.splitext(f)[1] in fileExtList]
+
+  def getFileInfoClass(filename, module=sys.modules[FileInfo.__module__]):
+    "get file info class from filename extension"
+    subclass = "%sFileInfo" % os.path.splitext(filename)[1].upper()[1:]
+    return hasattr(module, subclass) and getattr(module, subclass) or FileInfo
+
+  return [getFileInfoClass(f)(f) for f in fileList]
+
+
+if __name__ == "__main__":
+  for info in listDirectory("/music/_singles", [".mp3"]):
+    print "\n".join(["%s=%s" % (k, v) for k, v in info.items()])
+    print
