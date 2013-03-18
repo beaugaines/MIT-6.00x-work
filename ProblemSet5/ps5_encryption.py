@@ -100,7 +100,7 @@ def buildCoder(shift):
     returns: dict
     """
 
-    if not shift.type() == int and 0 <= shift < 26:
+    if not type(shift) == int and 0 <= shift < 26:
         print "Invalid shift value"
         return
     else:
@@ -146,6 +146,7 @@ def applyShift(text, shift):
     """
     caesarDict = buildCoder(shift)
     caesarText = applyCoder(text, caesarDict)
+    return caesarText
 #
 # Problem 2: Decryption
 #
@@ -156,8 +157,25 @@ def findBestShift(wordList, text):
     text: string
     returns: 0 <= int < 26
     """
-    ### TODO
-    return "Not yet implemented." # Remove this comment when you code the function
+    maxWords = 0
+    bestShift = 0
+
+    for i in range(0,26):
+        count = 0
+        text = applyShift(text, i)
+
+        # split text on whitespace
+        shiftWordList = text.split()
+
+        for word in shiftWordList:
+            if isWord(wordList, word):
+                count += 1
+
+        if count > maxWords:
+            maxWords = count
+            bestShift = i
+
+    return i
 
 def decryptStory():
     """
