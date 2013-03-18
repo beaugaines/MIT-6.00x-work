@@ -161,11 +161,12 @@ def findBestShift(wordList, text):
     bestShift = 0
 
     for i in range(0,26):
+        shiftedText = ''
         count = 0
-        text = applyShift(text, i)
+        shiftedText = applyShift(text, i)
 
         # split text on whitespace
-        shiftWordList = text.split()
+        shiftWordList = shiftedText.split()
 
         for word in shiftWordList:
             if isWord(wordList, word):
@@ -173,9 +174,9 @@ def findBestShift(wordList, text):
 
         if count > maxWords:
             maxWords = count
-            bestShift = i
+            bestShift = i + 1
 
-    return i
+    return bestShift
 
 def decryptStory():
     """
@@ -198,6 +199,7 @@ if __name__ == '__main__':
     wordList = loadWords()
     s = applyShift('Hello, world!', 8)
     bestShift = findBestShift(wordList, s)
+    print bestShift
     assert applyShift(s, bestShift) == 'Hello, world!'
     # To test decryptStory, comment the above four lines and uncomment this line:
     #    decryptStory()
