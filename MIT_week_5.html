@@ -1464,5 +1464,190 @@ w
 x
 y
 z
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">'\n'</span>.join(<span class="builtin">list</span>(lower))
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;
+    print '\n'.join(list(lower))
+NameError: name 'lower' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>lower = string.ascii_lowercase
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
+    lower = string.ascii_lowercase
+NameError: name 'string' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> string
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>lower = string.ascii_lowercase
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">'\n'</span>.join(<span class="builtin">list</span>(lower))
+</span><span class="commandsep"></span><span class="output"><span class="stdout">a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>res = <span class="string">''</span>
+<span class="prompt">... </span><span class="keyword">for</span> c <span class="keyword">in</span> phrase:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">in</span> lower:
+<span class="prompt">... </span>        res += c
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#5&gt;", line 2, in &lt;module&gt;
+    for c in phrase:
+NameError: name 'phrase' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(charlist)):
+<span class="prompt">... </span>    lowerDict[i] = charlist[(i+shift)%<span class="builtin">len</span>(charlist)]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#6&gt;", line 1, in &lt;module&gt;
+    for i in range(len(charlist)):
+NameError: name 'charlist' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>charlist = {}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(charlist)):
+<span class="prompt">... </span>    lowerDict[i] = charlist[(i+shift)%<span class="builtin">len</span>(charlist)]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>charlist
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">{}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>charlist
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">{}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>charlist = <span class="builtin">list</span>(lower)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>lowerDict = {}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(charlist)):
+<span class="prompt">... </span>    lowerDict[i] = charlist[(i+shift)%<span class="builtin">len</span>(charlist)]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#13&gt;", line 2, in &lt;module&gt;
+    lowerDict[i] = charlist[(i+shift)%len(charlist)]
+NameError: name 'shift' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift = <span class="number">3</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(charlist)):
+<span class="prompt">... </span>    lowerDict[i] = charlist[(i+shift)%<span class="builtin">len</span>(charlist)]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>lowerDict
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">{0: 'd',
+ 1: 'e',
+ 2: 'f',
+ 3: 'g',
+ 4: 'h',
+ 5: 'i',
+ 6: 'j',
+ 7: 'k',
+ 8: 'l',
+ 9: 'm',
+ 10: 'n',
+ 11: 'o',
+ 12: 'p',
+ 13: 'q',
+ 14: 'r',
+ 15: 's',
+ 16: 't',
+ 17: 'u',
+ 18: 'v',
+ 19: 'w',
+ 20: 'x',
+ 21: 'y',
+ 22: 'z',
+ 23: 'a',
+ 24: 'b',
+ 25: 'c'}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">type</span>(<span class="number">3</span>) == Int
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#17&gt;", line 1, in &lt;module&gt;
+    type(3) == Int
+NameError: name 'Int' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">type</span>(<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">&lt;type 'int'&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">type</span>(<span class="number">3</span>) == <span class="builtin">int</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift = <span class="string">'3.45*'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift.strip()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">'3.45*'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">int</span>(shift)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#22&gt;", line 1, in &lt;module&gt;
+    int(shift)
+ValueError: invalid literal for int() with base 10: '3.45*'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift = <span class="string">'3. 045'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift.strip()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">'3. 045'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift.replace(<span class="string">'\00'</span>, <span class="string">''</span>).strip()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">'3. 045'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift = shift.replace(<span class="string">'\00'</span>, <span class="string">''</span>).strip()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">'3. 045'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift = shift.replace(<span class="string">'\00'</span>, <span class="string">''</span>).strip()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">'3. 045'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>letters = string.ascii_lowercase
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>numbers = <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">9</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>numbers
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">[0, 1, 2, 3, 4, 5, 6, 7, 8]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>numbers = <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>numbers
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">11: </span><span class="result">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> shift:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> numbers:
+<span class="prompt">... </span>        shift.replace(c, <span class="string">''</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">12: </span><span class="result">'3. 04'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">13: </span><span class="result">'3. 045'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>shift = <span class="string">'3!  .5'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> shift:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> numbers:
+<span class="prompt">... </span>        shift.replace(c, <span class="string">''</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">14: </span><span class="result">'3!  .'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newShift = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newShift = <span class="string">''</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> shift:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> numbers:
+<span class="prompt">... </span>        newShift += c
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newShift
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">15: </span><span class="result">'3!  .5'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> shift:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">in</span> numbers:
+<span class="prompt">... </span>        newShift += c
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>newShift
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">16: </span><span class="result">'3!  .5'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>numbers
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">17: </span><span class="result">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> newShift:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> numbers:
+<span class="prompt">... </span>        newShift.replace(c, <span class="string">''</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">18: </span><span class="result">'3!  .'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> newShift[:]:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> numbers:
+<span class="prompt">... </span>        newShift.replace(c, <span class="string">''</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">19: </span><span class="result">'3!  .'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> newShift:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> numbers:
+<span class="prompt">... </span>        newShift.replace(c, <span class="string">''</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">20: </span><span class="result">'3!  .'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> removeNonAscii(s):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">''</span>.join(i <span class="keyword">for</span> i <span class="keyword">in</span> s <span class="keyword">if</span> <span class="builtin">ord</span>(i) &lt; <span class="number">128</span>)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>removeNonAscii(shift)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">21: </span><span class="result">'3!  .5'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">ord</span>(<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#51&gt;", line 1, in &lt;module&gt;
+    ord(3)
+TypeError: ord() expected string of length 1, but int found
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

@@ -99,8 +99,22 @@ def buildCoder(shift):
     shift: 0 <= int < 26
     returns: dict
     """
-    ### TODO.
-    return "Not yet implemented." # Remove this comment when you code the function
+
+    if not shift.type() == int and 0 <= shift < 26:
+        print "Invalid shift value"
+        return
+    else:
+
+        letters = string.ascii_lowercase
+
+        charList = list(string.ascii_lowercase)
+
+        cipherDict = {}
+
+        for i in range(len(charList)):
+            cipherDict[i] = charList[(i + shift)%len(charList)]
+
+        return cipherDict
 
 def applyCoder(text, coder):
     """

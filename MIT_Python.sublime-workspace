@@ -16,10 +16,10 @@
 			}
 		},
 		{
-			"file": "fileinfo.py",
+			"file": "ProblemSet5/ps5_encryption.py",
 			"settings":
 			{
-				"buffer_size": 3032,
+				"buffer_size": 4496,
 				"line_ending": "Unix"
 			}
 		}
@@ -64,6 +64,7 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/fileinfo.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/ps4b.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/test_ps4a.py",
 		"/home/sircharles/programming/python/MIT course/methodSoup.py",
@@ -240,28 +241,28 @@
 				},
 				{
 					"buffer": 1,
-					"file": "fileinfo.py",
+					"file": "ProblemSet5/ps5_encryption.py",
 					"settings":
 					{
-						"buffer_size": 3032,
+						"buffer_size": 4496,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2208,
-								2208
+								2524,
+								2524
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1044.0,
+						"translation.y": 1562.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
