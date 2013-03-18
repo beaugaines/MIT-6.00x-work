@@ -58193,5 +58193,1901 @@ rer yi oekh kdsbu
 pcp wg mcif ibqzs
 obo vf lbhe hapyr
 </span><span class="result-ind">46: </span><span class="result">25
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        <span class="keyword">print</span> shiftWordList
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> i</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, <span class="string">'bob is your uncle'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">bob is your uncle
+['bob', 'is', 'your', 'uncle']
+cpc jt zpvs vodmf
+['cpc', 'jt', 'zpvs', 'vodmf']
+ere lv brxu xqfoh
+['ere', 'lv', 'brxu', 'xqfoh']
+huh oy euax atirk
+['huh', 'oy', 'euax', 'atirk']
+lyl sc iyeb exmvo
+['lyl', 'sc', 'iyeb', 'exmvo']
+qdq xh ndjg jcrat
+['qdq', 'xh', 'ndjg', 'jcrat']
+wjw dn tjpm pixgz
+['wjw', 'dn', 'tjpm', 'pixgz']
+dqd ku aqwt wpeng
+['dqd', 'ku', 'aqwt', 'wpeng']
+lyl sc iyeb exmvo
+['lyl', 'sc', 'iyeb', 'exmvo']
+uhu bl rhnk ngvex
+['uhu', 'bl', 'rhnk', 'ngvex']
+ere lv brxu xqfoh
+['ere', 'lv', 'brxu', 'xqfoh']
+pcp wg mcif ibqzs
+['pcp', 'wg', 'mcif', 'ibqzs']
+bob is your uncle
+['bob', 'is', 'your', 'uncle']
+obo vf lbhe hapyr
+['obo', 'vf', 'lbhe', 'hapyr']
+cpc jt zpvs vodmf
+['cpc', 'jt', 'zpvs', 'vodmf']
+rer yi oekh kdsbu
+['rer', 'yi', 'oekh', 'kdsbu']
+huh oy euax atirk
+['huh', 'oy', 'euax', 'atirk']
+yly fp vlro rkzib
+['yly', 'fp', 'vlro', 'rkzib']
+qdq xh ndjg jcrat
+['qdq', 'xh', 'ndjg', 'jcrat']
+jwj qa gwcz cvktm
+['jwj', 'qa', 'gwcz', 'cvktm']
+dqd ku aqwt wpeng
+['dqd', 'ku', 'aqwt', 'wpeng']
+yly fp vlro rkzib
+['yly', 'fp', 'vlro', 'rkzib']
+uhu bl rhnk ngvex
+['uhu', 'bl', 'rhnk', 'ngvex']
+rer yi oekh kdsbu
+['rer', 'yi', 'oekh', 'kdsbu']
+pcp wg mcif ibqzs
+['pcp', 'wg', 'mcif', 'ibqzs']
+obo vf lbhe hapyr
+['obo', 'vf', 'lbhe', 'hapyr']
+</span><span class="result-ind">47: </span><span class="result">25
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'success!  count now is: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> i</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, <span class="string">'bob is your uncle'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">bob is your uncle
+success!  count now is: 0
+success!  count now is: 1
+success!  count now is: 2
+success!  count now is: 3
+cpc jt zpvs vodmf
+ere lv brxu xqfoh
+huh oy euax atirk
+lyl sc iyeb exmvo
+qdq xh ndjg jcrat
+wjw dn tjpm pixgz
+dqd ku aqwt wpeng
+lyl sc iyeb exmvo
+uhu bl rhnk ngvex
+ere lv brxu xqfoh
+pcp wg mcif ibqzs
+bob is your uncle
+success!  count now is: 0
+success!  count now is: 1
+success!  count now is: 2
+success!  count now is: 3
+obo vf lbhe hapyr
+cpc jt zpvs vodmf
+rer yi oekh kdsbu
+huh oy euax atirk
+yly fp vlro rkzib
+qdq xh ndjg jcrat
+jwj qa gwcz cvktm
+dqd ku aqwt wpeng
+yly fp vlro rkzib
+uhu bl rhnk ngvex
+rer yi oekh kdsbu
+pcp wg mcif ibqzs
+obo vf lbhe hapyr
+</span><span class="result-ind">48: </span><span class="result">25
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'success!  count now is: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> maxWords
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>            <span class="keyword">print</span> i
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, <span class="string">'bob is your uncle'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">bob is your uncle
+success!  count now is: 0
+success!  count now is: 1
+success!  count now is: 2
+success!  count now is: 3
+4
+0
+cpc jt zpvs vodmf
+ere lv brxu xqfoh
+huh oy euax atirk
+lyl sc iyeb exmvo
+qdq xh ndjg jcrat
+wjw dn tjpm pixgz
+dqd ku aqwt wpeng
+lyl sc iyeb exmvo
+uhu bl rhnk ngvex
+ere lv brxu xqfoh
+pcp wg mcif ibqzs
+bob is your uncle
+success!  count now is: 0
+success!  count now is: 1
+success!  count now is: 2
+success!  count now is: 3
+obo vf lbhe hapyr
+cpc jt zpvs vodmf
+rer yi oekh kdsbu
+huh oy euax atirk
+yly fp vlro rkzib
+qdq xh ndjg jcrat
+jwj qa gwcz cvktm
+dqd ku aqwt wpeng
+yly fp vlro rkzib
+uhu bl rhnk ngvex
+rer yi oekh kdsbu
+pcp wg mcif ibqzs
+obo vf lbhe hapyr
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>,<span class="number">27</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'success!  count now is: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> maxWords
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>            <span class="keyword">print</span> i
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, <span class="string">'bob is your uncle'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">cpc jt zpvs vodmf</span></span><span class="folded"><span class="output"><span class="stdout">
+ere lv brxu xqfoh
+huh oy euax atirk
+lyl sc iyeb exmvo
+qdq xh ndjg jcrat
+wjw dn tjpm pixgz
+dqd ku aqwt wpeng
+lyl sc iyeb exmvo
+uhu bl rhnk ngvex
+ere lv brxu xqfoh
+pcp wg mcif ibqzs
+bob is your uncle
+success!  count now is: 0
+success!  count now is: 1
+success!  count now is: 2
+success!  count now is: 3
+4
+12
+obo vf lbhe hapyr
+cpc jt zpvs vodmf
+rer yi oekh kdsbu
+huh oy euax atirk
+yly fp vlro rkzib
+qdq xh ndjg jcrat
+jwj qa gwcz cvktm
+dqd ku aqwt wpeng
+yly fp vlro rkzib
+uhu bl rhnk ngvex
+rer yi oekh kdsbu
+pcp wg mcif ibqzs
+obo vf lbhe hapyr
+obo vf lbhe hapyr
+</span></span></span><span class="fold-message">[About 31 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>,<span class="number">27</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'success!  count now is: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, <span class="string">'bob is your uncle'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">cpc jt zpvs vodmf</span></span><span class="folded"><span class="output"><span class="stdout">
+ere lv brxu xqfoh
+huh oy euax atirk
+lyl sc iyeb exmvo
+qdq xh ndjg jcrat
+wjw dn tjpm pixgz
+dqd ku aqwt wpeng
+lyl sc iyeb exmvo
+uhu bl rhnk ngvex
+ere lv brxu xqfoh
+pcp wg mcif ibqzs
+bob is your uncle
+success!  count now is: 0
+success!  count now is: 1
+success!  count now is: 2
+success!  count now is: 3
+obo vf lbhe hapyr
+cpc jt zpvs vodmf
+rer yi oekh kdsbu
+huh oy euax atirk
+yly fp vlro rkzib
+qdq xh ndjg jcrat
+jwj qa gwcz cvktm
+dqd ku aqwt wpeng
+yly fp vlro rkzib
+uhu bl rhnk ngvex
+rer yi oekh kdsbu
+pcp wg mcif ibqzs
+obo vf lbhe hapyr
+obo vf lbhe hapyr
+</span><span class="result-ind">49: </span><span class="result">12
+</span></span></span><span class="fold-message">[About 30 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>,<span class="number">27</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, <span class="string">'bob is your uncle'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">50: </span><span class="result">12
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s = applyShift(<span class="string">'Hello, world!'</span>, <span class="number">8</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">51: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordlist, s)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#127&gt;", line 1, in &lt;module&gt;
+    findBestShift(wordlist, s)
+NameError: name 'wordlist' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordlist, <span class="string">'Bob is your uncle'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#128&gt;", line 1, in &lt;module&gt;
+    findBestShift(wordlist, 'Bob is your uncle')
+NameError: name 'wordlist' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, <span class="string">'Bob is your uncle'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">52: </span><span class="result">12
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, <span class="string">'Hey there'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">53: </span><span class="result">12
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, <span class="string">'holy guacamole'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">54: </span><span class="result">12
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>,<span class="number">27</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'new best count!'</span>
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestShift now: '</span>, <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">55: </span><span class="result">'Pmttw, ewztl!'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">56: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'new best count!'</span>
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestShift now: '</span>, <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, <span class="number">26</span> - i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'new best count!'</span>
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestShift now: '</span>, <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">new best count!
+bestShift now:  19
+</span><span class="result-ind">57: </span><span class="result">19
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>,<span class="number">27</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, <span class="number">26</span> - i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'new best count!'</span>
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestShift now: '</span>, <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">new best count!
+bestShift now:  19
+</span><span class="result-ind">58: </span><span class="result">19
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s = applyShift(<span class="string">'Hello, world!'</span>, <span class="number">8</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">new best count!
+bestShift now:  19
+</span><span class="result-ind">59: </span><span class="result">19
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, <span class="number">26</span> - i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'new best count!'</span>
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestShift now: '</span>, <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">new best count!
+bestShift now:  19
+</span><span class="result-ind">60: </span><span class="result">19
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, <span class="number">26</span> - i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'new best count!'</span>
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestShift now: '</span>, <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s2 = applyShift(<span class="string">'bob is your uncle'</span>, <span class="number">5</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">61: </span><span class="result">'gtg nx dtzw zshqj'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s2)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">62: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s2 = applyShift(<span class="string">'bass is your uncle'</span>, <span class="number">5</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s2)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">63: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, <span class="number">26</span> - i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                <span class="keyword">print</span> word
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'new best count!'</span>
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestShift now: '</span>, <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s2)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">64: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Hello,
+world!
+new best count!
+bestShift now:  19
+</span><span class="result-ind">65: </span><span class="result">19
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s = applyShift(<span class="string">'a bass in the park'</span>, <span class="number">10</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">66: </span><span class="result">'k lkcc sx dro zkbu'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">a
+bass
+in
+the
+park
+new best count!
+bestShift now:  4
+i
+a
+bass
+in
+the
+park
+i
+</span><span class="result-ind">67: </span><span class="result">4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = applyShift(s, <span class="number">22</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">68: </span><span class="result">'g hgyy ot znk vgxq'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                <span class="keyword">print</span> word
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'new best count!'</span>
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestShift now: '</span>, <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = applyShift(s, <span class="number">22</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">69: </span><span class="result">'g hgyy ot znk vgxq'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s = applyShift(<span class="string">'a bass in the park'</span>, <span class="number">10</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">a
+bass
+in
+the
+park
+new best count!
+bestShift now:  15
+a
+bass
+in
+the
+park
+</span><span class="result-ind">70: </span><span class="result">15
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">71: </span><span class="result">'k lkcc sx dro zkbu'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = applyShift(s, <span class="number">15</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">72: </span><span class="result">'z azrr hm sgd ozqj'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = applyShift(s, <span class="number">14</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">73: </span><span class="result">'y zyqq gl rfc nypi'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = applyShift(s, <span class="number">16</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">74: </span><span class="result">'a bass in the park'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                <span class="keyword">print</span> word
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'new best count!'</span>
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestShift now: '</span>, <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">a
+bass
+in
+the
+park
+new best count!
+bestShift now:  16
+a
+bass
+in
+the
+park
+</span><span class="result-ind">75: </span><span class="result">16
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s3 = <span class="string">'an apple a day keeps the doctor away'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d1 = applyShift(s3, <span class="number">9</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d1
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">76: </span><span class="result">'jw jyyun j mjh tnnyb cqn mxlcxa jfjh'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d1)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">77: </span><span class="result">20
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>applyShift(d1, <span class="number">20</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">78: </span><span class="result">'dq dssoh d gdb nhhsv wkh grfwru dzdb'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>applyShift(d1, <span class="number">19</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">79: </span><span class="result">'cp crrng c fca mggru vjg fqevqt cyca'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>applyShift(d1, <span class="number">20</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">80: </span><span class="result">'dq dssoh d gdb nhhsv wkh grfwru dzdb'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>applyShift(d1, <span class="number">21</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">81: </span><span class="result">'er ettpi e hec oiitw xli hsgxsv eaec'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>applyShift(d1, <span class="number">18</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">82: </span><span class="result">'bo bqqmf b ebz lffqt uif epdups bxbz'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d1)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">new count: 1
+</span><span class="result-ind">83: </span><span class="result">20
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">new count: 1
+new count: 2
+new count: 3
+new count: 4
+new count: 5
+new count: 1
+new count: 2
+new count: 3
+new count: 4
+new count: 5
+</span><span class="result-ind">84: </span><span class="result">16
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">word: a
+new count: 1
+word: bass
+new count: 2
+word: in
+new count: 3
+word: the
+new count: 4
+word: park
+new count: 5
+word: a
+new count: 1
+word: bass
+new count: 2
+word: in
+new count: 3
+word: the
+new count: 4
+word: park
+new count: 5
+</span><span class="result-ind">85: </span><span class="result">16
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'i: '</span> + <span class="builtin">str</span>(i)
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">i: 15
+word: a
+new count: 1
+i: 15
+word: bass
+new count: 2
+i: 15
+word: in
+new count: 3
+i: 15
+word: the
+new count: 4
+i: 15
+word: park
+new count: 5
+i: 23
+word: a
+new count: 1
+i: 23
+word: bass
+new count: 2
+i: 23
+word: in
+new count: 3
+i: 23
+word: the
+new count: 4
+i: 23
+word: park
+new count: 5
+</span><span class="result-ind">86: </span><span class="result">16
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'i: '</span> + <span class="builtin">str</span>(i)
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">k lkcc sx dro zkbu
+l mldd ty esp alcv
+n onff va gur cnex
+q rqii yd jxu fqha
+u vumm ch nby jule
+z azrr hm sgd ozqj
+f gfxx ns ymj ufwp
+m nmee uz ftq bmdw
+u vumm ch nby jule
+d edvv lq wkh sdun
+n onff va gur cnex
+y zyqq gl rfc nypi
+k lkcc sx dro zkbu
+x yxpp fk qeb mxoh
+l mldd ty esp alcv
+a bass in the park
+i: 15
+word: a
+new count: 1
+i: 15
+word: bass
+new count: 2
+i: 15
+word: in
+new count: 3
+i: 15
+word: the
+new count: 4
+i: 15
+word: park
+new count: 5
+q rqii yd jxu fqha
+h ihzz pu aol whyr
+z azrr hm sgd ozqj
+s tskk af lzw hsjc
+m nmee uz ftq bmdw
+h ihzz pu aol whyr
+d edvv lq wkh sdun
+a bass in the park
+i: 23
+word: a
+new count: 1
+i: 23
+word: bass
+new count: 2
+i: 23
+word: in
+new count: 3
+i: 23
+word: the
+new count: 4
+i: 23
+word: park
+new count: 5
+y zyqq gl rfc nypi
+x yxpp fk qeb mxoh
+</span><span class="result-ind">87: </span><span class="result">16
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'maxwords: '</span> + <span class="builtin">str</span>(maxWords)
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestshift: '</span> + <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, s)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">word: a
+new count: 1
+word: bass
+new count: 2
+word: in
+new count: 3
+word: the
+new count: 4
+word: park
+new count: 5
+maxwords: 5
+bestshift: 16
+word: a
+new count: 1
+word: bass
+new count: 2
+word: in
+new count: 3
+word: the
+new count: 4
+word: park
+new count: 5
+</span><span class="result-ind">88: </span><span class="result">16
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s3 = <span class="string">'an apple a day keeps the doctor away'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d1 = applyShift(s3, <span class="number">6</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d1)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">word: i
+new count: 1
+maxwords: 1
+bestshift: 8
+word: i
+new count: 1
+</span><span class="result-ind">89: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'maxwords: '</span> + <span class="builtin">str</span>(maxWords)
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestshift: '</span> + <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">90: </span><span class="result">'k lkcc sx dro zkbu'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">91: </span><span class="result">[0,
+ 1,
+ 2,
+ 3,
+ 4,
+ 5,
+ 6,
+ 7,
+ 8,
+ 9,
+ 10,
+ 11,
+ 12,
+ 13,
+ 14,
+ 15,
+ 16,
+ 17,
+ 18,
+ 19,
+ 20,
+ 21,
+ 22,
+ 23,
+ 24,
+ 25]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'text: '</span> + text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'shiftlist: '</span> + shiftWordList
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'maxwords: '</span> + <span class="builtin">str</span>(maxWords)
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestshift: '</span> + <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">92: </span><span class="result">[0,
+ 1,
+ 2,
+ 3,
+ 4,
+ 5,
+ 6,
+ 7,
+ 8,
+ 9,
+ 10,
+ 11,
+ 12,
+ 13,
+ 14,
+ 15,
+ 16,
+ 17,
+ 18,
+ 19,
+ 20,
+ 21,
+ 22,
+ 23,
+ 24,
+ 25]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d1)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">text: gt gvvrk g jge qkkvy znk juizux gcge
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#202&gt;", line 1, in &lt;module&gt;
+    findBestShift(wordList, d1)
+  File "&lt;pyshell#200&gt;", line 17, in findBestShift
+    print 'shiftlist: ' + shiftWordList
+TypeError: cannot concatenate 'str' and 'list' objects
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'text: '</span> + text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'shiftlist: '</span> + <span class="builtin">str</span>(shiftWordList)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'maxwords: '</span> + <span class="builtin">str</span>(maxWords)
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestshift: '</span> + <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d1)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">text: gt gvvrk g jge qkkvy znk juizux gcge
+shiftlist: ['gt', 'gvvrk', 'g', 'jge', 'qkkvy', 'znk', 'juizux', 'gcge']
+text: hu hwwsl h khf rllwz aol kvjavy hdhf
+shiftlist: ['hu', 'hwwsl', 'h', 'khf', 'rllwz', 'aol', 'kvjavy', 'hdhf']
+text: jw jyyun j mjh tnnyb cqn mxlcxa jfjh
+shiftlist: ['jw', 'jyyun', 'j', 'mjh', 'tnnyb', 'cqn', 'mxlcxa', 'jfjh']
+text: mz mbbxq m pmk wqqbe ftq paofad mimk
+shiftlist: ['mz', 'mbbxq', 'm', 'pmk', 'wqqbe', 'ftq', 'paofad', 'mimk']
+text: qd qffbu q tqo auufi jxu tesjeh qmqo
+shiftlist: ['qd', 'qffbu', 'q', 'tqo', 'auufi', 'jxu', 'tesjeh', 'qmqo']
+text: vi vkkgz v yvt fzzkn ocz yjxojm vrvt
+shiftlist: ['vi', 'vkkgz', 'v', 'yvt', 'fzzkn', 'ocz', 'yjxojm', 'vrvt']
+text: bo bqqmf b ebz lffqt uif epdups bxbz
+shiftlist: ['bo', 'bqqmf', 'b', 'ebz', 'lffqt', 'uif', 'epdups', 'bxbz']
+text: iv ixxtm i lig smmxa bpm lwkbwz ieig
+shiftlist: ['iv', 'ixxtm', 'i', 'lig', 'smmxa', 'bpm', 'lwkbwz', 'ieig']
+word: i
+new count: 1
+maxwords: 1
+bestshift: 8
+text: qd qffbu q tqo auufi jxu tesjeh qmqo
+shiftlist: ['qd', 'qffbu', 'q', 'tqo', 'auufi', 'jxu', 'tesjeh', 'qmqo']
+text: zm zookd z czx jddor sgd cnbsnq zvzx
+shiftlist: ['zm', 'zookd', 'z', 'czx', 'jddor', 'sgd', 'cnbsnq', 'zvzx']
+text: jw jyyun j mjh tnnyb cqn mxlcxa jfjh
+shiftlist: ['jw', 'jyyun', 'j', 'mjh', 'tnnyb', 'cqn', 'mxlcxa', 'jfjh']
+text: uh ujjfy u xus eyyjm nby xiwnil uqus
+shiftlist: ['uh', 'ujjfy', 'u', 'xus', 'eyyjm', 'nby', 'xiwnil', 'uqus']
+text: gt gvvrk g jge qkkvy znk juizux gcge
+shiftlist: ['gt', 'gvvrk', 'g', 'jge', 'qkkvy', 'znk', 'juizux', 'gcge']
+text: tg tiiex t wtr dxxil max whvmhk tptr
+shiftlist: ['tg', 'tiiex', 't', 'wtr', 'dxxil', 'max', 'whvmhk', 'tptr']
+text: hu hwwsl h khf rllwz aol kvjavy hdhf
+shiftlist: ['hu', 'hwwsl', 'h', 'khf', 'rllwz', 'aol', 'kvjavy', 'hdhf']
+text: wj wllha w zwu gaalo pda zkypkn wswu
+shiftlist: ['wj', 'wllha', 'w', 'zwu', 'gaalo', 'pda', 'zkypkn', 'wswu']
+text: mz mbbxq m pmk wqqbe ftq paofad mimk
+shiftlist: ['mz', 'mbbxq', 'm', 'pmk', 'wqqbe', 'ftq', 'paofad', 'mimk']
+text: dq dssoh d gdb nhhsv wkh grfwru dzdb
+shiftlist: ['dq', 'dssoh', 'd', 'gdb', 'nhhsv', 'wkh', 'grfwru', 'dzdb']
+text: vi vkkgz v yvt fzzkn ocz yjxojm vrvt
+shiftlist: ['vi', 'vkkgz', 'v', 'yvt', 'fzzkn', 'ocz', 'yjxojm', 'vrvt']
+text: ob oddzs o rom yssdg hvs rcqhcf okom
+shiftlist: ['ob', 'oddzs', 'o', 'rom', 'yssdg', 'hvs', 'rcqhcf', 'okom']
+text: iv ixxtm i lig smmxa bpm lwkbwz ieig
+shiftlist: ['iv', 'ixxtm', 'i', 'lig', 'smmxa', 'bpm', 'lwkbwz', 'ieig']
+word: i
+new count: 1
+text: dq dssoh d gdb nhhsv wkh grfwru dzdb
+shiftlist: ['dq', 'dssoh', 'd', 'gdb', 'nhhsv', 'wkh', 'grfwru', 'dzdb']
+text: zm zookd z czx jddor sgd cnbsnq zvzx
+shiftlist: ['zm', 'zookd', 'z', 'czx', 'jddor', 'sgd', 'cnbsnq', 'zvzx']
+text: wj wllha w zwu gaalo pda zkypkn wswu
+shiftlist: ['wj', 'wllha', 'w', 'zwu', 'gaalo', 'pda', 'zkypkn', 'wswu']
+text: uh ujjfy u xus eyyjm nby xiwnil uqus
+shiftlist: ['uh', 'ujjfy', 'u', 'xus', 'eyyjm', 'nby', 'xiwnil', 'uqus']
+text: tg tiiex t wtr dxxil max whvmhk tptr
+shiftlist: ['tg', 'tiiex', 't', 'wtr', 'dxxil', 'max', 'whvmhk', 'tptr']
+</span><span class="result-ind">93: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d1
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">94: </span><span class="result">'gt gvvrk g jge qkkvy znk juizux gcge'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s3 = <span class="string">'an apple a day keeps the doctor away'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d1 = applyShift(s3, <span class="number">15</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d1
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">95: </span><span class="result">'pc peeat p spn ztteh iwt sdridg plpn'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d1)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">text: pc peeat p spn ztteh iwt sdridg plpn
+shiftlist: ['pc', 'peeat', 'p', 'spn', 'ztteh', 'iwt', 'sdridg', 'plpn']
+text: qd qffbu q tqo auufi jxu tesjeh qmqo
+shiftlist: ['qd', 'qffbu', 'q', 'tqo', 'auufi', 'jxu', 'tesjeh', 'qmqo']
+text: sf shhdw s vsq cwwhk lzw vgulgj sosq
+shiftlist: ['sf', 'shhdw', 's', 'vsq', 'cwwhk', 'lzw', 'vgulgj', 'sosq']
+text: vi vkkgz v yvt fzzkn ocz yjxojm vrvt
+shiftlist: ['vi', 'vkkgz', 'v', 'yvt', 'fzzkn', 'ocz', 'yjxojm', 'vrvt']
+text: zm zookd z czx jddor sgd cnbsnq zvzx
+shiftlist: ['zm', 'zookd', 'z', 'czx', 'jddor', 'sgd', 'cnbsnq', 'zvzx']
+text: er ettpi e hec oiitw xli hsgxsv eaec
+shiftlist: ['er', 'ettpi', 'e', 'hec', 'oiitw', 'xli', 'hsgxsv', 'eaec']
+text: kx kzzvo k nki uoozc dro nymdyb kgki
+shiftlist: ['kx', 'kzzvo', 'k', 'nki', 'uoozc', 'dro', 'nymdyb', 'kgki']
+text: re rggcv r urp bvvgj kyv uftkfi rnrp
+shiftlist: ['re', 'rggcv', 'r', 'urp', 'bvvgj', 'kyv', 'uftkfi', 'rnrp']
+word: re
+new count: 1
+maxwords: 1
+bestshift: 8
+text: zm zookd z czx jddor sgd cnbsnq zvzx
+shiftlist: ['zm', 'zookd', 'z', 'czx', 'jddor', 'sgd', 'cnbsnq', 'zvzx']
+text: iv ixxtm i lig smmxa bpm lwkbwz ieig
+shiftlist: ['iv', 'ixxtm', 'i', 'lig', 'smmxa', 'bpm', 'lwkbwz', 'ieig']
+word: i
+new count: 1
+text: sf shhdw s vsq cwwhk lzw vgulgj sosq
+shiftlist: ['sf', 'shhdw', 's', 'vsq', 'cwwhk', 'lzw', 'vgulgj', 'sosq']
+text: dq dssoh d gdb nhhsv wkh grfwru dzdb
+shiftlist: ['dq', 'dssoh', 'd', 'gdb', 'nhhsv', 'wkh', 'grfwru', 'dzdb']
+text: pc peeat p spn ztteh iwt sdridg plpn
+shiftlist: ['pc', 'peeat', 'p', 'spn', 'ztteh', 'iwt', 'sdridg', 'plpn']
+text: cp crrng c fca mggru vjg fqevqt cyca
+shiftlist: ['cp', 'crrng', 'c', 'fca', 'mggru', 'vjg', 'fqevqt', 'cyca']
+text: qd qffbu q tqo auufi jxu tesjeh qmqo
+shiftlist: ['qd', 'qffbu', 'q', 'tqo', 'auufi', 'jxu', 'tesjeh', 'qmqo']
+text: fs fuuqj f ifd pjjux ymj ithytw fbfd
+shiftlist: ['fs', 'fuuqj', 'f', 'ifd', 'pjjux', 'ymj', 'ithytw', 'fbfd']
+text: vi vkkgz v yvt fzzkn ocz yjxojm vrvt
+shiftlist: ['vi', 'vkkgz', 'v', 'yvt', 'fzzkn', 'ocz', 'yjxojm', 'vrvt']
+text: mz mbbxq m pmk wqqbe ftq paofad mimk
+shiftlist: ['mz', 'mbbxq', 'm', 'pmk', 'wqqbe', 'ftq', 'paofad', 'mimk']
+text: er ettpi e hec oiitw xli hsgxsv eaec
+shiftlist: ['er', 'ettpi', 'e', 'hec', 'oiitw', 'xli', 'hsgxsv', 'eaec']
+text: xk xmmib x axv hbbmp qeb alzqlo xtxv
+shiftlist: ['xk', 'xmmib', 'x', 'axv', 'hbbmp', 'qeb', 'alzqlo', 'xtxv']
+text: re rggcv r urp bvvgj kyv uftkfi rnrp
+shiftlist: ['re', 'rggcv', 'r', 'urp', 'bvvgj', 'kyv', 'uftkfi', 'rnrp']
+word: re
+new count: 1
+text: mz mbbxq m pmk wqqbe ftq paofad mimk
+shiftlist: ['mz', 'mbbxq', 'm', 'pmk', 'wqqbe', 'ftq', 'paofad', 'mimk']
+text: iv ixxtm i lig smmxa bpm lwkbwz ieig
+shiftlist: ['iv', 'ixxtm', 'i', 'lig', 'smmxa', 'bpm', 'lwkbwz', 'ieig']
+word: i
+new count: 1
+text: fs fuuqj f ifd pjjux ymj ithytw fbfd
+shiftlist: ['fs', 'fuuqj', 'f', 'ifd', 'pjjux', 'ymj', 'ithytw', 'fbfd']
+text: dq dssoh d gdb nhhsv wkh grfwru dzdb
+shiftlist: ['dq', 'dssoh', 'd', 'gdb', 'nhhsv', 'wkh', 'grfwru', 'dzdb']
+text: cp crrng c fca mggru vjg fqevqt cyca
+shiftlist: ['cp', 'crrng', 'c', 'fca', 'mggru', 'vjg', 'fqevqt', 'cyca']
+</span><span class="result-ind">96: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">97: </span><span class="result">['bob', 'is', 'your', 'uncle']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>b
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#211&gt;", line 1, in &lt;module&gt;
+    b
+NameError: name 'b' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a1
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#212&gt;", line 1, in &lt;module&gt;
+    a1
+NameError: name 'a1' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = <span class="string">'Hello, world!'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = applyShift(a, <span class="number">8</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">98: </span><span class="result">'Pmttw, ewztl!'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Qnuux, fxaum!
+shiftlist: ['Qnuux,', 'fxaum!']
+text: Spwwz, hzcwo!
+shiftlist: ['Spwwz,', 'hzcwo!']
+text: Vszzc, kcfzr!
+shiftlist: ['Vszzc,', 'kcfzr!']
+text: Zwddg, ogjdv!
+shiftlist: ['Zwddg,', 'ogjdv!']
+text: Ebiil, tloia!
+shiftlist: ['Ebiil,', 'tloia!']
+text: Khoor, zruog!
+shiftlist: ['Khoor,', 'zruog!']
+text: Rovvy, gybvn!
+shiftlist: ['Rovvy,', 'gybvn!']
+text: Zwddg, ogjdv!
+shiftlist: ['Zwddg,', 'ogjdv!']
+text: Ifmmp, xpsme!
+shiftlist: ['Ifmmp,', 'xpsme!']
+text: Spwwz, hzcwo!
+shiftlist: ['Spwwz,', 'hzcwo!']
+text: Dahhk, sknhz!
+shiftlist: ['Dahhk,', 'sknhz!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Czggj, rjmgy!
+shiftlist: ['Czggj,', 'rjmgy!']
+text: Qnuux, fxaum!
+shiftlist: ['Qnuux,', 'fxaum!']
+text: Fcjjm, umpjb!
+shiftlist: ['Fcjjm,', 'umpjb!']
+text: Vszzc, kcfzr!
+shiftlist: ['Vszzc,', 'kcfzr!']
+text: Mjqqt, btwqi!
+shiftlist: ['Mjqqt,', 'btwqi!']
+text: Ebiil, tloia!
+shiftlist: ['Ebiil,', 'tloia!']
+text: Xubbe, mehbt!
+shiftlist: ['Xubbe,', 'mehbt!']
+text: Rovvy, gybvn!
+shiftlist: ['Rovvy,', 'gybvn!']
+text: Mjqqt, btwqi!
+shiftlist: ['Mjqqt,', 'btwqi!']
+text: Ifmmp, xpsme!
+shiftlist: ['Ifmmp,', 'xpsme!']
+text: Fcjjm, umpjb!
+shiftlist: ['Fcjjm,', 'umpjb!']
+text: Dahhk, sknhz!
+shiftlist: ['Dahhk,', 'sknhz!']
+text: Czggj, rjmgy!
+shiftlist: ['Czggj,', 'rjmgy!']
+</span><span class="result-ind">99: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Finds a shift key that can decrypt the encoded text.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    text: string
+</span><span class="prompt">... </span><span class="string">    returns: 0 &lt;= int &lt; 26
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>,<span class="number">27</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'text: '</span> + text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'shiftlist: '</span> + <span class="builtin">str</span>(shiftWordList)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'maxwords: '</span> + <span class="builtin">str</span>(maxWords)
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestshift: '</span> + <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">text: Qnuux, fxaum!
+shiftlist: ['Qnuux,', 'fxaum!']
+text: Spwwz, hzcwo!
+shiftlist: ['Spwwz,', 'hzcwo!']
+text: Vszzc, kcfzr!
+shiftlist: ['Vszzc,', 'kcfzr!']
+text: Zwddg, ogjdv!
+shiftlist: ['Zwddg,', 'ogjdv!']
+text: Ebiil, tloia!
+shiftlist: ['Ebiil,', 'tloia!']
+text: Khoor, zruog!
+shiftlist: ['Khoor,', 'zruog!']
+text: Rovvy, gybvn!
+shiftlist: ['Rovvy,', 'gybvn!']
+text: Zwddg, ogjdv!
+shiftlist: ['Zwddg,', 'ogjdv!']
+text: Ifmmp, xpsme!
+shiftlist: ['Ifmmp,', 'xpsme!']
+text: Spwwz, hzcwo!
+shiftlist: ['Spwwz,', 'hzcwo!']
+text: Dahhk, sknhz!
+shiftlist: ['Dahhk,', 'sknhz!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Czggj, rjmgy!
+shiftlist: ['Czggj,', 'rjmgy!']
+text: Qnuux, fxaum!
+shiftlist: ['Qnuux,', 'fxaum!']
+text: Fcjjm, umpjb!
+shiftlist: ['Fcjjm,', 'umpjb!']
+text: Vszzc, kcfzr!
+shiftlist: ['Vszzc,', 'kcfzr!']
+text: Mjqqt, btwqi!
+shiftlist: ['Mjqqt,', 'btwqi!']
+text: Ebiil, tloia!
+shiftlist: ['Ebiil,', 'tloia!']
+text: Xubbe, mehbt!
+shiftlist: ['Xubbe,', 'mehbt!']
+text: Rovvy, gybvn!
+shiftlist: ['Rovvy,', 'gybvn!']
+text: Mjqqt, btwqi!
+shiftlist: ['Mjqqt,', 'btwqi!']
+text: Ifmmp, xpsme!
+shiftlist: ['Ifmmp,', 'xpsme!']
+text: Fcjjm, umpjb!
+shiftlist: ['Fcjjm,', 'umpjb!']
+text: Dahhk, sknhz!
+shiftlist: ['Dahhk,', 'sknhz!']
+text: Czggj, rjmgy!
+shiftlist: ['Czggj,', 'rjmgy!']
+text: Czggj, rjmgy!
+shiftlist: ['Czggj,', 'rjmgy!']
+</span><span class="result-ind">100: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'hello world'</span>.split()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">101: </span><span class="result">['hello', 'world']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        text = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'text: '</span> + text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'shiftlist: '</span> + <span class="builtin">str</span>(shiftWordList)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'maxwords: '</span> + <span class="builtin">str</span>(maxWords)
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestshift: '</span> + <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">102: </span><span class="result">'Hello, world!'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>applyShift(a, <span class="number">8</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">103: </span><span class="result">'Pmttw, ewztl!'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>applyShift(a, <span class="number">1</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">104: </span><span class="result">'Ifmmp, xpsme!'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>applyShift(a, <span class="number">0</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">105: </span><span class="result">'Hello, world!'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>applyShift(a, <span class="number">2</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">106: </span><span class="result">'Jgnnq, yqtnf!'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        shiftedText = <span class="string">''</span>
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        shiftedText = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'text: '</span> + text
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'shiftlist: '</span> + <span class="builtin">str</span>(shiftWordList)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'maxwords: '</span> + <span class="builtin">str</span>(maxWords)
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestshift: '</span> + <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+</span><span class="result-ind">107: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        shiftedText = <span class="string">''</span>
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        shiftedText = applyShift(text, i)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'text: '</span> + shiftedText
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'shiftlist: '</span> + <span class="builtin">str</span>(shiftWordList)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'maxwords: '</span> + <span class="builtin">str</span>(maxWords)
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestshift: '</span> + <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Qnuux, fxaum!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Rovvy, gybvn!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Spwwz, hzcwo!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Tqxxa, iadxp!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Uryyb, jbeyq!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Vszzc, kcfzr!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Wtaad, ldgas!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Xubbe, mehbt!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Yvccf, nficu!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Zwddg, ogjdv!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Axeeh, phkew!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Byffi, qilfx!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Czggj, rjmgy!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Dahhk, sknhz!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Ebiil, tloia!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Fcjjm, umpjb!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Gdkkn, vnqkc!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Hello, world!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Ifmmp, xpsme!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Jgnnq, yqtnf!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Khoor, zruog!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Lipps, asvph!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Mjqqt, btwqi!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Nkrru, cuxrj!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Olssv, dvysk!
+shiftlist: ['Pmttw,', 'ewztl!']
+</span><span class="result-ind">108: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        shiftedText = <span class="string">''</span>
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        shiftedText = applyShift(text, <span class="number">26</span> - i)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'text: '</span> + shiftedText
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = text.split()
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'shiftlist: '</span> + <span class="builtin">str</span>(shiftWordList)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'maxwords: '</span> + <span class="builtin">str</span>(maxWords)
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestshift: '</span> + <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Olssv, dvysk!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Nkrru, cuxrj!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Mjqqt, btwqi!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Lipps, asvph!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Khoor, zruog!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Jgnnq, yqtnf!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Ifmmp, xpsme!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Hello, world!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Gdkkn, vnqkc!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Fcjjm, umpjb!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Ebiil, tloia!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Dahhk, sknhz!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Czggj, rjmgy!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Byffi, qilfx!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Axeeh, phkew!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Zwddg, ogjdv!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Yvccf, nficu!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Xubbe, mehbt!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Wtaad, ldgas!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Vszzc, kcfzr!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Uryyb, jbeyq!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Tqxxa, iadxp!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Spwwz, hzcwo!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Rovvy, gybvn!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Qnuux, fxaum!
+shiftlist: ['Pmttw,', 'ewztl!']
+</span><span class="result-ind">109: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findBestShift(wordList, text):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    maxWords = <span class="number">0</span>
+<span class="prompt">... </span>    bestShift = <span class="number">0</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>,<span class="number">26</span>):
+<span class="prompt">... </span>        shiftedText = <span class="string">''</span>
+<span class="prompt">... </span>        count = <span class="number">0</span>
+<span class="prompt">... </span>        shiftedText = applyShift(text, <span class="number">26</span> - i)
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'text: '</span> + shiftedText
+<span class="prompt">... </span>        <span class="comment"># split text on whitespace</span>
+<span class="prompt">... </span>        shiftWordList = shiftedText.split()
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'shiftlist: '</span> + <span class="builtin">str</span>(shiftWordList)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">for</span> word <span class="keyword">in</span> shiftWordList:
+<span class="prompt">... </span>            <span class="keyword">if</span> isWord(wordList, word):
+<span class="prompt">... </span>                count += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'word: '</span> + word
+<span class="prompt">... </span>                <span class="keyword">print</span> <span class="string">'new count: '</span> + <span class="builtin">str</span>(count)
+<span class="prompt">... </span>
+<span class="prompt">... </span>        <span class="keyword">if</span> count &gt; maxWords:
+<span class="prompt">... </span>            maxWords = count
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'maxwords: '</span> + <span class="builtin">str</span>(maxWords)
+<span class="prompt">... </span>            bestShift = i + <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> <span class="string">'bestshift: '</span> + <span class="builtin">str</span>(bestShift)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> bestShift</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>findBestShift(wordList, d)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">text: Pmttw, ewztl!
+shiftlist: ['Pmttw,', 'ewztl!']
+text: Olssv, dvysk!
+shiftlist: ['Olssv,', 'dvysk!']
+text: Nkrru, cuxrj!
+shiftlist: ['Nkrru,', 'cuxrj!']
+text: Mjqqt, btwqi!
+shiftlist: ['Mjqqt,', 'btwqi!']
+text: Lipps, asvph!
+shiftlist: ['Lipps,', 'asvph!']
+text: Khoor, zruog!
+shiftlist: ['Khoor,', 'zruog!']
+text: Jgnnq, yqtnf!
+shiftlist: ['Jgnnq,', 'yqtnf!']
+text: Ifmmp, xpsme!
+shiftlist: ['Ifmmp,', 'xpsme!']
+text: Hello, world!
+shiftlist: ['Hello,', 'world!']
+word: Hello,
+new count: 1
+word: world!
+new count: 2
+maxwords: 2
+bestshift: 9
+text: Gdkkn, vnqkc!
+shiftlist: ['Gdkkn,', 'vnqkc!']
+text: Fcjjm, umpjb!
+shiftlist: ['Fcjjm,', 'umpjb!']
+text: Ebiil, tloia!
+shiftlist: ['Ebiil,', 'tloia!']
+text: Dahhk, sknhz!
+shiftlist: ['Dahhk,', 'sknhz!']
+text: Czggj, rjmgy!
+shiftlist: ['Czggj,', 'rjmgy!']
+text: Byffi, qilfx!
+shiftlist: ['Byffi,', 'qilfx!']
+text: Axeeh, phkew!
+shiftlist: ['Axeeh,', 'phkew!']
+text: Zwddg, ogjdv!
+shiftlist: ['Zwddg,', 'ogjdv!']
+text: Yvccf, nficu!
+shiftlist: ['Yvccf,', 'nficu!']
+text: Xubbe, mehbt!
+shiftlist: ['Xubbe,', 'mehbt!']
+text: Wtaad, ldgas!
+shiftlist: ['Wtaad,', 'ldgas!']
+text: Vszzc, kcfzr!
+shiftlist: ['Vszzc,', 'kcfzr!']
+text: Uryyb, jbeyq!
+shiftlist: ['Uryyb,', 'jbeyq!']
+text: Tqxxa, iadxp!
+shiftlist: ['Tqxxa,', 'iadxp!']
+text: Spwwz, hzcwo!
+shiftlist: ['Spwwz,', 'hzcwo!']
+text: Rovvy, gybvn!
+shiftlist: ['Rovvy,', 'gybvn!']
+text: Qnuux, fxaum!
+shiftlist: ['Qnuux,', 'fxaum!']
+</span><span class="result-ind">110: </span><span class="result">9
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
