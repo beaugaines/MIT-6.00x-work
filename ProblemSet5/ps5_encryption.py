@@ -124,8 +124,14 @@ def applyCoder(text, coder):
     coder: dict with mappings of characters to shifted characters
     returns: text after mapping coder chars to original text
     """
-    ### TODO.
-    return "Not yet implemented." # Remove this comment when you code the function
+    cipherText = ''
+    for c in text:
+        if c in coder:
+            l = coder[c]
+            cipherText += l
+        else:
+            cipherText += c
+    return cipherText
 
 def applyShift(text, shift):
     """
