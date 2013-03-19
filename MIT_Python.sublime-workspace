@@ -8,18 +8,50 @@
 	"buffers":
 	[
 		{
-			"file": "ProblemSet4/ps4a.py",
+			"file": "ProblemSet5/ps5_encryption.py",
 			"settings":
 			{
-				"buffer_size": 8974,
+				"buffer_size": 5304,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ProblemSet5/ps5_encryption.py",
+			"file": "ProblemSet5/ps5_pseudo.txt",
 			"settings":
 			{
-				"buffer_size": 4496,
+				"buffer_size": 647,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ProblemSet5/ps5_recursion.py",
+			"settings":
+			{
+				"buffer_size": 2242,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "oddTuples.py",
+			"settings":
+			{
+				"buffer_size": 304,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "get_guessed_word.py",
+			"settings":
+			{
+				"buffer_size": 368,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "fileinfo.py",
+			"settings":
+			{
+				"buffer_size": 3032,
 				"line_ending": "Unix"
 			}
 		}
@@ -64,10 +96,13 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/Dropbox/CODE/Python/MIT Course/is_palindrome.py",
+		"/home/sircharles/programming/python/MIT course/gcdRecur.py",
+		"/home/sircharles/programming/python/MIT course/methodSoup.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet4/ps4a.py",
 		"/home/sircharles/programming/python/MIT course/fileinfo.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/ps4b.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/test_ps4a.py",
-		"/home/sircharles/programming/python/MIT course/methodSoup.py",
 		"/home/sircharles/programming/python/MIT course/MIT_Python.sublime-workspace",
 		"/home/sircharles/programming/python/MIT course/radiationExposure.py",
 		"/home/sircharles/programming/python/MIT course/oddTuples.py",
@@ -77,12 +112,10 @@
 		"/home/sircharles/programming/python/MIT course/semordinalap.py",
 		"/home/sircharles/programming/python/MIT course/charIsIn.py",
 		"/home/sircharles/Dropbox/CODE/Python/MIT Course/bisect_search.py",
-		"/home/sircharles/Dropbox/CODE/Python/MIT Course/is_palindrome.py",
 		"/home/sircharles/programming/javascript/sshare class/example.js",
 		"/home/sircharles/programming/javascript/sshare class/index.html",
 		"/home/sircharles/programming/javascript/sshare class/example2.js",
 		"/home/sircharles/programming/python/MIT course/prob_set_3-1.py",
-		"/home/sircharles/programming/python/MIT course/gcdRecur.py",
 		"/home/sircharles/programming/python/MIT course/prob_set_2.py",
 		"/home/sircharles/.config/sublime-text-2/Packages/User/javascript-node.sublime-build",
 		"/home/sircharles/rails_projects/RCasts/autocomplete_search_terms/lib/tasks/search_suggestions.rake",
@@ -208,23 +241,23 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "ProblemSet4/ps4a.py",
+					"file": "ProblemSet5/ps5_encryption.py",
 					"settings":
 					{
-						"buffer_size": 8974,
+						"buffer_size": 5304,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5150,
-								5150
+								4883,
+								4883
 							]
 						],
 						"settings":
@@ -234,25 +267,51 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3380.0,
+						"translation.y": 3210.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "ProblemSet5/ps5_encryption.py",
+					"file": "ProblemSet5/ps5_pseudo.txt",
 					"settings":
 					{
-						"buffer_size": 4496,
+						"buffer_size": 647,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2524,
-								2524
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "ProblemSet5/ps5_recursion.py",
+					"settings":
+					{
+						"buffer_size": 2242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1962,
+								1962
 							]
 						],
 						"settings":
@@ -262,7 +321,87 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1562.0,
+						"translation.y": 1316.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "oddTuples.py",
+					"settings":
+					{
+						"buffer_size": 304,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "get_guessed_word.py",
+					"settings":
+					{
+						"buffer_size": 368,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "fileinfo.py",
+					"settings":
+					{
+						"buffer_size": 3032,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -315,6 +454,30 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"file",
+				"fileinfo.py"
+			],
+			[
+				"get",
+				"get_guessed_word.py"
+			],
+			[
+				"odd",
+				"oddTuples.py"
+			],
+			[
+				"soup",
+				"methodSoup.py"
+			],
+			[
+				"recur",
+				"gcdRecur.py"
+			],
+			[
+				"pseu",
+				"ProblemSet5/ps5_pseudo.txt"
+			],
 			[
 				"test",
 				"ProblemSet4/test_ps4a.py"
