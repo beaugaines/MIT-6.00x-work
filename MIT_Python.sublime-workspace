@@ -54,6 +54,14 @@
 				"buffer_size": 3032,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "methodSoup.py",
+			"settings":
+			{
+				"buffer_size": 802,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -241,7 +249,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -256,8 +264,8 @@
 						"selection":
 						[
 							[
-								4883,
-								4883
+								4881,
+								4881
 							]
 						],
 						"settings":
@@ -310,8 +318,8 @@
 						"selection":
 						[
 							[
-								1962,
-								1962
+								1961,
+								1961
 							]
 						],
 						"settings":
@@ -390,8 +398,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								503,
+								503
 							]
 						],
 						"settings":
@@ -402,6 +410,33 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "methodSoup.py",
+					"settings":
+					{
+						"buffer_size": 802,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								744,
+								744
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4
+						},
+						"translation.x": 0.0,
+						"translation.y": 75.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -455,6 +490,10 @@
 		"selected_items":
 		[
 			[
+				"soup",
+				"methodSoup.py"
+			],
+			[
 				"file",
 				"fileinfo.py"
 			],
@@ -465,10 +504,6 @@
 			[
 				"odd",
 				"oddTuples.py"
-			],
-			[
-				"soup",
-				"methodSoup.py"
 			],
 			[
 				"recur",
