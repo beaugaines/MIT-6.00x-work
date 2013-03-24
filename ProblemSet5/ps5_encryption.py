@@ -130,6 +130,7 @@ def applyCoder(text, coder):
             l = coder[c]
             cipherText += l
         else:
+            # return punctuation and whitespace intact
             cipherText += c
     return cipherText
 
@@ -174,7 +175,7 @@ def findBestShift(wordList, text):
 
         if count > maxWords:
             maxWords = count
-            bestShift = i + 1
+            bestShift = i
 
     return bestShift
 
