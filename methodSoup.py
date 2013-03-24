@@ -1,7 +1,16 @@
+# my custom recursive range fcn
+
+def recurRange(x,y,step,storage=[]):    
+    storage.append(x)
+    if y - x == 1:
+        return storage
+    else:
+        return recurRange(x+step,y,step,storage)
+
+
 # to build up a frequency hash from a string
 
 freq = {}
-
 for c in string:
     freq[c] = freq.get(c, 0) + 1
 
@@ -38,3 +47,6 @@ def isPrime(n):
     # exited loop with no clean divisors - so the thing is prime
 
     return True
+
+
+

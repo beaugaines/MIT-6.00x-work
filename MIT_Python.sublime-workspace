@@ -8,46 +8,6 @@
 	"buffers":
 	[
 		{
-			"file": "ProblemSet5/ps5_encryption.py",
-			"settings":
-			{
-				"buffer_size": 5304,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ProblemSet5/ps5_pseudo.txt",
-			"settings":
-			{
-				"buffer_size": 647,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ProblemSet5/ps5_recursion.py",
-			"settings":
-			{
-				"buffer_size": 2242,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "oddTuples.py",
-			"settings":
-			{
-				"buffer_size": 304,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "get_guessed_word.py",
-			"settings":
-			{
-				"buffer_size": 368,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "fileinfo.py",
 			"settings":
 			{
@@ -59,7 +19,15 @@
 			"file": "methodSoup.py",
 			"settings":
 			{
-				"buffer_size": 802,
+				"buffer_size": 1004,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "translateBadly.py",
+			"settings":
+			{
+				"buffer_size": 1655,
 				"line_ending": "Unix"
 			}
 		}
@@ -104,6 +72,12 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/ProblemSet3/ps3_hangman.py",
+		"/home/sircharles/programming/python/MIT course/get_guessed_word.py",
+		"/home/sircharles/programming/python/MIT course/oddTuples.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_recursion.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_pseudo.txt",
 		"/home/sircharles/Dropbox/CODE/Python/MIT Course/is_palindrome.py",
 		"/home/sircharles/programming/python/MIT course/gcdRecur.py",
 		"/home/sircharles/programming/python/MIT course/methodSoup.py",
@@ -113,9 +87,7 @@
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/test_ps4a.py",
 		"/home/sircharles/programming/python/MIT course/MIT_Python.sublime-workspace",
 		"/home/sircharles/programming/python/MIT course/radiationExposure.py",
-		"/home/sircharles/programming/python/MIT course/oddTuples.py",
 		"/home/sircharles/rails_projects/my_app_template.rb",
-		"/home/sircharles/programming/python/MIT course/ProblemSet3/ps3_hangman.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet3/ps3_newton.py",
 		"/home/sircharles/programming/python/MIT course/semordinalap.py",
 		"/home/sircharles/programming/python/MIT course/charIsIn.py",
@@ -249,145 +221,11 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "ProblemSet5/ps5_encryption.py",
-					"settings":
-					{
-						"buffer_size": 5304,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4881,
-								4881
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3210.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "ProblemSet5/ps5_pseudo.txt",
-					"settings":
-					{
-						"buffer_size": 647,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "ProblemSet5/ps5_recursion.py",
-					"settings":
-					{
-						"buffer_size": 2242,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1961,
-								1961
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1316.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "oddTuples.py",
-					"settings":
-					{
-						"buffer_size": 304,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "get_guessed_word.py",
-					"settings":
-					{
-						"buffer_size": 368,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "fileinfo.py",
 					"settings":
 					{
@@ -398,8 +236,8 @@
 						"selection":
 						[
 							[
-								503,
-								503
+								499,
+								499
 							]
 						],
 						"settings":
@@ -415,28 +253,57 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 1,
 					"file": "methodSoup.py",
 					"settings":
 					{
-						"buffer_size": 802,
+						"buffer_size": 1004,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								744,
-								744
+								255,
+								255
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 75.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "translateBadly.py",
+					"settings":
+					{
+						"buffer_size": 1655,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								612,
+								612
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 437.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -489,6 +356,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"hang",
+				"ProblemSet3/ps3_hangman.py"
+			],
 			[
 				"soup",
 				"methodSoup.py"
@@ -781,6 +652,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"compass",
+				"/home/sircharles/web_dev/frontend_hack_project/compass_n_susy_project.sublime-project"
+			],
 			[
 				"rc",
 				"/home/sircharles/rails_projects/rcasts_todo_list/rcasts_todo.sublime-project"

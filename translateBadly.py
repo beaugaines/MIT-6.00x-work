@@ -1,5 +1,6 @@
 import string
-# our very useful English to French dictionary
+
+# our highly useful English to French dictionary
 
 EtoF = {'bread':'pain', 'wine':'vin', 'with':'avec', 'eats':'mange', 'drinks':'boit', 'John':'Jean', 'friends':'amis', 'and':'et', 'of':'du', 'red':'rouge'}
 
