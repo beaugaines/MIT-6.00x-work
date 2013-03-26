@@ -15,8 +15,8 @@ class Queue(object):
         self.storage.append(e)
         
     def remove(self):
-        ''' hack to emulate Perl's unshift method.  Why not just have
-        an unshift method in Python? '''
+        ''' hack to emulate Perl's shift method.  Why not just have
+        an shift method in Python? '''
         try:
             res = self.storage[0]
             del self.storage[0]
