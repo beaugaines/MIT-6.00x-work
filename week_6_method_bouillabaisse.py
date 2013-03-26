@@ -16,11 +16,13 @@ class Queue(object):
         
     def remove(self):
         ''' hack to emulate Perl's shift method.  Why not just have
-        an shift method in Python? '''
+        a shift method in Python? '''
         try:
-            res = self.storage[0]
-            del self.storage[0]
-            return res
+            # res = self.storage[0]
+            # del self.storage[0]
+            # return res
+            ''' ok - learned you can give an index argument to pop... '''
+            return self.storage.pop(0)
         except:
             raise ValueError()
 
