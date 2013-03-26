@@ -1,3 +1,30 @@
+# first (admittedly underwhelming) class written from scratch!
+
+class Queue(object):
+    
+    ''' a standard queue that stores elements in a list
+    and returns them in FIFO fashion. '''
+    
+    def __init__(self):
+        ''' store the junk in a regular list, inherited from object '''
+        self.storage = []
+        
+    
+    def insert(self, e):
+        ''' get thee to the end of the line, e '''
+        self.storage.append(e)
+        
+    def remove(self):
+        ''' hack to emulate Perl's unshift method.  Why not just have
+        an unshift method in Python? '''
+        try:
+            res = self.storage[0]
+            del self.storage[0]
+            return res
+        except:
+            raise ValueError()
+
+
 # custom intersect and len methods
 
 class intSet(object):
