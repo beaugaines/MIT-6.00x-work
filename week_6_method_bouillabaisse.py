@@ -1,3 +1,21 @@
+
+# a gloriously hideous regex I came up with - part of 'Dive into Python' - but 
+# I love regexes so much I assembled it on my own
+
+hideousRegex = """
+^
+\(?                # match a possible opening bracket for area code 
+(\d{3})            # area code at beginning of string
+\)?                # match a possible closing bracket
+\D*                # one or more 'non-word' character - e.g. a hyphen, a space
+(\d{3})            # trunk code
+\D*                # one or more 'non-word' chars
+(\d{4})            # last 4 digits
+\D*                # more non-words
+(\d*)?             # maybe an extension of one or more digits
+$
+"""
+
 # first (admittedly underwhelming) class written from scratch!
 
 class Queue(object):

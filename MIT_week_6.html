@@ -1126,5 +1126,276 @@ TypeError: object of type 'intSet' has no len()
   File "&lt;pyshell#47&gt;", line 21, in remove
     raise ValueError()
 ValueError
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Queue(<span class="builtin">object</span>):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="string">''' a standard queue that stores elements in a list
+</span><span class="prompt">... </span><span class="string">    and returns them in FIFO fashion. '''</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>        <span class="string">''' store the junk in a regular list, inherited from object '''</span>
+<span class="prompt">... </span>        self.storage = []
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    
+</span></span><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> insert(self, e):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>        <span class="string">''' get to the end of the line, e '''</span>
+<span class="prompt">... </span>        self.storage.append(e)
+<span class="prompt">... </span>        
+</span></span><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> remove(self):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>        <span class="keyword">try</span>:
+<span class="prompt">... </span>            self.storage.pop(<span class="number">0</span>)
+<span class="prompt">... </span>        <span class="keyword">except</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>()</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.insert(<span class="string">'chaiy oozhasniiy'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.remove()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">13: </span><span class="result">'chaiy oozhasniiy'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.remove()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#62&gt;", line 1, in &lt;module&gt;
+    q.remove()
+  File "&lt;pyshell#47&gt;", line 21, in remove
+    raise ValueError()
+ValueError
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q = Queue()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.insert(<span class="string">'yo'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.insert(<span class="string">'adrian'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.remove()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">14: </span><span class="result">&lt;__main__.Queue object at 0x2517ed0&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.remove()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.remove()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#69&gt;", line 1, in &lt;module&gt;
+    q.remove()
+  File "&lt;pyshell#59&gt;", line 19, in remove
+    raise ValueError()
+ValueError
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Queue(<span class="builtin">object</span>):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="string">''' a standard queue that stores elements in a list
+</span><span class="prompt">... </span><span class="string">    and returns them in FIFO fashion. '''</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>        <span class="string">''' store the junk in a regular list, inherited from object '''</span>
+<span class="prompt">... </span>        self.storage = []
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    
+</span></span><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> insert(self, e):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>        <span class="string">''' get to the end of the line, e '''</span>
+<span class="prompt">... </span>        self.storage.append(e)
+<span class="prompt">... </span>        
+</span></span><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> remove(self):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>        <span class="keyword">try</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> self.storage.pop(<span class="number">0</span>)
+<span class="prompt">... </span>        <span class="keyword">except</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>()</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q = Queue()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.insert(<span class="string">'adrian'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.remove()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">15: </span><span class="result">'adrian'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>q.remove()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#74&gt;", line 1, in &lt;module&gt;
+    q.remove()
+  File "&lt;pyshell#70&gt;", line 19, in remove
+    raise ValueError()
+ValueError
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> datetime
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Person(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, name):
+<span class="prompt">... </span>        self.name = name
+<span class="prompt">... </span>        self.birthday = <span class="builtin">None</span>
+<span class="prompt">... </span>        self.lastName = name.split(<span class="string">' '</span>)[-<span class="number">1</span>]
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getLastName(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.lastName
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> setBirthday(self, month, day, year):
+<span class="prompt">... </span>        self.birthday = datetime.date(year, month, day)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getAge(self):
+<span class="prompt">... </span>        <span class="keyword">if</span> self.birthday == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(datetime.date.today() - self.birthday).days
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> lt(self, other):
+<span class="prompt">... </span>        <span class="keyword">if</span> self.lastName == other.lastName:
+<span class="prompt">... </span>            <span class="keyword">return</span> self.name &lt; other.name
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> self.lastName &lt; other.lastName
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> <span class="builtin">str</span>(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.name</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>me = Person(<span class="string">"Charles Beauregard Gaines"</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> me
+</span><span class="commandsep"></span><span class="output"><span class="stdout">&lt;__main__.Person object at 0x252b710&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Person(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, name):
+<span class="prompt">... </span>        self.name = name
+<span class="prompt">... </span>        self.birthday = <span class="builtin">None</span>
+<span class="prompt">... </span>        self.lastName = name.split(<span class="string">' '</span>)[-<span class="number">1</span>]
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getLastName(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.lastName
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> setBirthday(self, month, day, year):
+<span class="prompt">... </span>        self.birthday = datetime.date(year, month, day)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getAge(self):
+<span class="prompt">... </span>        <span class="keyword">if</span> self.birthday == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(datetime.date.today() - self.birthday).days
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> lt(self, other):
+<span class="prompt">... </span>        <span class="keyword">if</span> self.lastName == other.lastName:
+<span class="prompt">... </span>            <span class="keyword">return</span> self.name &lt; other.name
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> self.lastName &lt; other.lastName
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.name</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>me = Person(<span class="string">"Charles Beauregard Gaines"</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> me
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Charles Beauregard Gaines
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>me.getLastName()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">16: </span><span class="result">'Gaines'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>me.setBirthday(<span class="number">6</span>, <span class="number">21</span>, <span class="number">1974</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>me.getAge
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">17: </span><span class="result">&lt;bound method Person.getAge of &lt;__main__.Person object at 0x2518b50&gt;&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>me.getAge()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">18: </span><span class="result">14158
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>me.birthday
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">19: </span><span class="result">datetime.date(1974, 6, 21)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> BerkeleyPerson(Person):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    nextIdNum = <span class="number">0</span>   <span class="comment"># next id num to assign</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, name):
+<span class="prompt">... </span>        Person.__init(self,name)      <span class="comment"># initialize Person attributes</span>
+<span class="prompt">... </span>        self.idNum = BerkeleyPerson.nextIdNum    <span class="comment"># extra attr for Berkeley person - a unique id num</span>
+<span class="prompt">... </span>        BerkeleyPeron.nextIdNum += <span class="number">1</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getIdNum(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.idNum
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="comment"># sorting Berkeley people uses their id numbers...</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __lt__(self, other):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.idNum &lt; other.idNum</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c = BerkeleyPerson(<span class="string">'Charlie Gaines'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#88&gt;", line 1, in &lt;module&gt;
+    c = BerkeleyPerson('Charlie Gaines')
+  File "&lt;pyshell#87&gt;", line 5, in __init__
+    Person.__init(self,name)      # initialize Person attributes
+AttributeError: type object 'Person' has no attribute '_BerkeleyPerson__init'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> BerkeleyPerson(Person):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    nextIdNum = <span class="number">0</span>   <span class="comment"># next id num to assign</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, name):
+<span class="prompt">... </span>        Person.__init__(self,name)      <span class="comment"># initialize Person attributes</span>
+<span class="prompt">... </span>        self.idNum = BerkeleyPerson.nextIdNum    <span class="comment"># extra attr for Berkeley person - a unique id num</span>
+<span class="prompt">... </span>        BerkeleyPeron.nextIdNum += <span class="number">1</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getIdNum(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.idNum
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="comment"># sorting Berkeley people uses their id numbers...</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __lt__(self, other):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.idNum &lt; other.idNum</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c = BerkeleyPerson(<span class="string">'Charlie Gaines'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#90&gt;", line 1, in &lt;module&gt;
+    c = BerkeleyPerson('Charlie Gaines')
+  File "&lt;pyshell#89&gt;", line 7, in __init__
+    BerkeleyPeron.nextIdNum += 1
+NameError: global name 'BerkeleyPeron' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> BerkeleyPerson(Person):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    nextIdNum = <span class="number">0</span>   <span class="comment"># next id num to assign</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, name):
+<span class="prompt">... </span>        Person.__init__(self,name)      <span class="comment"># initialize Person attributes</span>
+<span class="prompt">... </span>        self.idNum = BerkeleyPerson.nextIdNum    <span class="comment"># extra attr for Berkeley person - a unique id num</span>
+<span class="prompt">... </span>        BerkeleyPerson.nextIdNum += <span class="number">1</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getIdNum(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.idNum
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="comment"># sorting Berkeley people uses their id numbers...</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __lt__(self, other):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.idNum &lt; other.idNum</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c = BerkeleyPerson(<span class="string">'Charlie Gaines'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>j = BerkelyPerson(<span class="string">'James Ellis'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#93&gt;", line 1, in &lt;module&gt;
+    j = BerkelyPerson('James Ellis')
+NameError: name 'BerkelyPerson' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>j = BerkeleyPerson(<span class="string">'James Ellis'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = BerkeleyPerson(<span class="string">'Alan Phulps'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students = [c, j, a]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">20: </span><span class="result">[&lt;__main__.BerkeleyPerson object at 0x2518a50&gt;,
+ &lt;__main__.BerkeleyPerson object at 0x2518bd0&gt;,
+ &lt;__main__.BerkeleyPerson object at 0x2518d10&gt;]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students[<span class="number">0</span>]
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">21: </span><span class="result">&lt;__main__.BerkeleyPerson object at 0x2518a50&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students[<span class="number">0</span>].name
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">22: </span><span class="result">'Charlie Gaines'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students[<span class="number">1</span>].name
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">23: </span><span class="result">'James Ellis'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students[<span class="number">1</span>].idNum
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">24: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students = [a, j, c]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students.sort()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">25: </span><span class="result">[&lt;__main__.BerkeleyPerson object at 0x2518a50&gt;,
+ &lt;__main__.BerkeleyPerson object at 0x2518bd0&gt;,
+ &lt;__main__.BerkeleyPerson object at 0x2518d10&gt;]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students[<span class="number">0</span>]
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">26: </span><span class="result">&lt;__main__.BerkeleyPerson object at 0x2518a50&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students[<span class="number">0</span>].name()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#106&gt;", line 1, in &lt;module&gt;
+    students[0].name()
+TypeError: 'str' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students[<span class="number">0</span>].name
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">27: </span><span class="result">'Charlie Gaines'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>students[<span class="number">0</span>] &lt; students[<span class="number">1</span>]
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">28: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>p = Person(<span class="string">"John"</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">isinstance</span>(p, Person)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">29: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">isinstance</span>(c, Person)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">30: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> front_x(words):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">''' takes a list of strings, and returns a list with the strings
+</span><span class="prompt">... </span><span class="string">    in sorted order, with all the strings beginning with 'x' grouped '''</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    x_list = []
+<span class="prompt">... </span>    res = []
+<span class="prompt">... </span>    <span class="keyword">for</span> word <span class="keyword">in</span> words:
+<span class="prompt">... </span>        <span class="keyword">if</span> word[<span class="number">0</span>].lower() == <span class="string">'x'</span>:
+<span class="prompt">... </span>            x_list.append(word)
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            res.append(word)
+<span class="prompt">... </span>    res = <span class="builtin">sorted</span>(res)
+<span class="prompt">... </span>    x_list = <span class="builtin">sorted</span>(x_list)
+<span class="prompt">... </span>    x_list.extend(res)
+<span class="prompt">... </span>    <span class="keyword">return</span> x_list</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>words = [<span class="string">'xanadu'</span>, <span class="string">'xen'</span>, <span class="string">'dude'</span>, <span class="string">'phrenologist'</span>, <span class="string">'xacker'</span>, <span class="string">'aardvark'</span>, <span class="string">'xylaphone'</span>, <span class="string">'harpsichord'</span>, <span class="string">'harpie'</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>front_x(words)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">31: </span><span class="result">['xacker',
+ 'xanadu',
+ 'xen',
+ 'xylaphone',
+ 'aardvark',
+ 'dude',
+ 'harpie',
+ 'harpsichord',
+ 'phrenologist']
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

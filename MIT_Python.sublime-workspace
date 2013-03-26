@@ -43,7 +43,7 @@
 			"file": "week_6_method_bouillabaisse.py",
 			"settings":
 			{
-				"buffer_size": 692,
+				"buffer_size": 2133,
 				"line_ending": "Unix"
 			}
 		}
@@ -253,8 +253,8 @@
 						"selection":
 						[
 							[
-								497,
-								497
+								496,
+								496
 							]
 						],
 						"settings":
@@ -337,8 +337,8 @@
 						"selection":
 						[
 							[
-								4836,
-								4836
+								4835,
+								4835
 							]
 						],
 						"settings":
@@ -358,20 +358,22 @@
 					"file": "week_6_method_bouillabaisse.py",
 					"settings":
 					{
-						"buffer_size": 692,
+						"buffer_size": 2133,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								33,
-								33
+								792,
+								792
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
