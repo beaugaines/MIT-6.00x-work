@@ -642,5 +642,311 @@ TypeError: range() integer end argument expected, got float.
 <span class="prompt">... </span>    <span class="keyword">return</span> <span class="builtin">True</span></span></span><span class="command">
 </span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>isPrime(<span class="number">27</span>)
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">41: </span><span class="result">False
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Clock(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, time):
+<span class="prompt">... </span>	self.time = time
+<span class="prompt">... </span>    <span class="keyword">def</span> print_time(self):
+<span class="prompt">... </span>	time = <span class="string">'6:30'</span>
+<span class="prompt">... </span>	<span class="keyword">print</span> self.time
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span>clock = Clock(<span class="string">'5:30'</span>)
+<span class="prompt">... </span>clock.print_time()
+</span><span class="commandsep"></span><span class="output"><span class="stdout">5:30
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>b = a
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>b[<span class="number">0</span>] = <span class="string">'yo'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">['yo', 2, 3]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> intSet(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">''' a custom implementation of a set class, with insert, member
+</span><span class="prompt">... </span><span class="string">    and remove methods.  The value is represented by a list of ints,
+</span><span class="prompt">... </span><span class="string">    self.vals.  Each int in the set appears in self.vals exactly once.'''</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+<span class="prompt">... </span>        <span class="string">''' Create an empty set of integers'''</span>
+<span class="prompt">... </span>        self.vals = []
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> insert(self, e):
+<span class="prompt">... </span>        <span class="string">''' Assumes e is an integer and inserts e into self'''</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="keyword">not</span> e <span class="keyword">in</span> self.vals:
+<span class="prompt">... </span>            self.vals.append(e)
+<span class="prompt">... </span>            
+<span class="prompt">... </span>    <span class="keyword">def</span> member(self, e):
+<span class="prompt">... </span>        <span class="string">''' Assumes e is an integer
+</span><span class="prompt">... </span><span class="string">        Returns true if e is in self, False otherwise'''</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> e <span class="keyword">in</span> self.vals
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> remove(self, e):
+<span class="prompt">... </span>        <span class="string">''' Assumes e is an integer and removes e from self.vals
+</span><span class="prompt">... </span><span class="string">        Raises ValueError if e is not in self '''</span>
+<span class="prompt">... </span>        <span class="keyword">try</span>:
+<span class="prompt">... </span>            self.vals.remove(e)
+<span class="prompt">... </span>        <span class="keyword">except</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>(<span class="builtin">str</span>(e) + <span class="string">' not found'</span>)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="string">''' returns a string representation of self '''</span>
+<span class="prompt">... </span>        self.vals.sort()
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="string">'{'</span> + <span class="string">','</span>.join([<span class="builtin">str</span>(e) <span class="keyword">for</span> e <span class="keyword">in</span> self.vals]) + <span class="string">'}'</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i = intSet()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">&lt;__main__.intSet object at 0x25030d0&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> i
+</span><span class="commandsep"></span><span class="output"><span class="stdout">{}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.insert(<span class="string">'bob'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> i
+</span><span class="commandsep"></span><span class="output"><span class="stdout">{bob}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.insert(<span class="string">'is'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> i
+</span><span class="commandsep"></span><span class="output"><span class="stdout">{bob,is}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.insert(<span class="string">'your'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.insert(<span class="string">'uncle'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> i
+</span><span class="commandsep"></span><span class="output"><span class="stdout">{bob,is,uncle,your}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.member(<span class="string">'uncle'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>length(<span class="string">'yo'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#12&gt;", line 1, in &lt;module&gt;
+    length('yo')
+NameError: name 'length' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(<span class="string">'yo'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> intSet(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""An intSet is a set of integers
+</span><span class="prompt">... </span><span class="string">    The value is represented by a list of ints, self.vals.
+</span><span class="prompt">... </span><span class="string">    Each int in the set occurs in self.vals exactly once."""</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+<span class="prompt">... </span>        <span class="string">"""Create an empty set of integers"""</span>
+<span class="prompt">... </span>        self.vals = []
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> insert(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer and inserts e into self"""</span> 
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="keyword">not</span> e <span class="keyword">in</span> self.vals:
+<span class="prompt">... </span>            self.vals.append(e)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> member(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer
+</span><span class="prompt">... </span><span class="string">           Returns True if e is in self, and False otherwise"""</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> e <span class="keyword">in</span> self.vals
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> remove(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer and removes e from self
+</span><span class="prompt">... </span><span class="string">           Raises ValueError if e is not in self"""</span>
+<span class="prompt">... </span>        <span class="keyword">try</span>:
+<span class="prompt">... </span>            self.vals.remove(e)
+<span class="prompt">... </span>        <span class="keyword">except</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>(<span class="builtin">str</span>(e) + <span class="string">' not found'</span>)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="string">"""Returns a string representation of self"""</span>
+<span class="prompt">... </span>        self.vals.sort()
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="string">'{'</span> + <span class="string">','</span>.join([<span class="builtin">str</span>(e) <span class="keyword">for</span> e <span class="keyword">in</span> self.vals]) + <span class="string">'}'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> intersect(self, other):
+<span class="prompt">... </span>        <span class="string">''' Returns a set consisting of the intersecting elements
+</span><span class="prompt">... </span><span class="string">        of two distinct sets.  Returns an empty set if there is
+</span><span class="prompt">... </span><span class="string">        no intersection '''</span>
+<span class="prompt">... </span>        res = []
+<span class="prompt">... </span>        <span class="keyword">for</span> e <span class="keyword">in</span> self.vals:
+<span class="prompt">... </span>            <span class="keyword">if</span> e <span class="keyword">in</span> other.vals:
+<span class="prompt">... </span>                <span class="keyword">return</span> <span class="string">'{'</span> + <span class="string">','</span>.join(<span class="builtin">str</span>(e)) + <span class="string">'}'</span>
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> <span class="builtin">len</span>(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">len</span>(self.vals)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.<span class="builtin">len</span>
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#15&gt;", line 1, in &lt;module&gt;
+    i.len
+AttributeError: 'intSet' object has no attribute 'len'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.<span class="builtin">len</span>()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#16&gt;", line 1, in &lt;module&gt;
+    i.len()
+AttributeError: 'intSet' object has no attribute 'len'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> intSet(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""An intSet is a set of integers
+</span><span class="prompt">... </span><span class="string">    The value is represented by a list of ints, self.vals.
+</span><span class="prompt">... </span><span class="string">    Each int in the set occurs in self.vals exactly once."""</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+<span class="prompt">... </span>        <span class="string">"""Create an empty set of integers"""</span>
+<span class="prompt">... </span>        self.vals = []
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> insert(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer and inserts e into self"""</span> 
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="keyword">not</span> e <span class="keyword">in</span> self.vals:
+<span class="prompt">... </span>            self.vals.append(e)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> member(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer
+</span><span class="prompt">... </span><span class="string">           Returns True if e is in self, and False otherwise"""</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> e <span class="keyword">in</span> self.vals
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> remove(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer and removes e from self
+</span><span class="prompt">... </span><span class="string">           Raises ValueError if e is not in self"""</span>
+<span class="prompt">... </span>        <span class="keyword">try</span>:
+<span class="prompt">... </span>            self.vals.remove(e)
+<span class="prompt">... </span>        <span class="keyword">except</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>(<span class="builtin">str</span>(e) + <span class="string">' not found'</span>)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="string">"""Returns a string representation of self"""</span>
+<span class="prompt">... </span>        self.vals.sort()
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="string">'{'</span> + <span class="string">','</span>.join([<span class="builtin">str</span>(e) <span class="keyword">for</span> e <span class="keyword">in</span> self.vals]) + <span class="string">'}'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> intersect(self, other):
+<span class="prompt">... </span>        <span class="string">''' Returns a set consisting of the intersecting elements
+</span><span class="prompt">... </span><span class="string">        of two distinct sets.  Returns an empty set if there is
+</span><span class="prompt">... </span><span class="string">        no intersection '''</span>
+<span class="prompt">... </span>        res = []
+<span class="prompt">... </span>        <span class="keyword">for</span> e <span class="keyword">in</span> self.vals:
+<span class="prompt">... </span>            <span class="keyword">if</span> e <span class="keyword">in</span> other.vals:
+<span class="prompt">... </span>                res.append(e)
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">len</span>(res) == <span class="number">0</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="string">'{}'</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="string">'{'</span> + <span class="string">','</span>.join([<span class="builtin">str</span>(e) <span class="keyword">for</span> e <span class="keyword">in</span> res]) + <span class="string">'}'</span>
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> <span class="builtin">len</span>(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">len</span>(self.vals)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'yo'</span>.insert(<span class="string">'e'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#18&gt;", line 1, in &lt;module&gt;
+    'yo'.insert('e')
+AttributeError: 'str' object has no attribute 'insert'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i = intSet()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.insert(<span class="string">'yo'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.<span class="builtin">len</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">&lt;bound method intSet.len of &lt;__main__.intSet object at 0x2518210&gt;&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.<span class="builtin">len</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.insert(<span class="string">'adrian'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.<span class="builtin">len</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(<span class="string">'yo'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> intSet(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""An intSet is a set of integers
+</span><span class="prompt">... </span><span class="string">    The value is represented by a list of ints, self.vals.
+</span><span class="prompt">... </span><span class="string">    Each int in the set occurs in self.vals exactly once."""</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+<span class="prompt">... </span>        <span class="string">"""Create an empty set of integers"""</span>
+<span class="prompt">... </span>        self.vals = []
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> insert(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer and inserts e into self"""</span> 
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="keyword">not</span> e <span class="keyword">in</span> self.vals:
+<span class="prompt">... </span>            self.vals.append(e)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> member(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer
+</span><span class="prompt">... </span><span class="string">           Returns True if e is in self, and False otherwise"""</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> e <span class="keyword">in</span> self.vals
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> remove(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer and removes e from self
+</span><span class="prompt">... </span><span class="string">           Raises ValueError if e is not in self"""</span>
+<span class="prompt">... </span>        <span class="keyword">try</span>:
+<span class="prompt">... </span>            self.vals.remove(e)
+<span class="prompt">... </span>        <span class="keyword">except</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>(<span class="builtin">str</span>(e) + <span class="string">' not found'</span>)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="string">"""Returns a string representation of self"""</span>
+<span class="prompt">... </span>        self.vals
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> intersect(self, other):
+<span class="prompt">... </span>        <span class="string">''' Returns a set consisting of the intersecting elements
+</span><span class="prompt">... </span><span class="string">        of two distinct sets.  Returns an empty set if there is
+</span><span class="prompt">... </span><span class="string">        no intersection '''</span>
+<span class="prompt">... </span>        res = []
+<span class="prompt">... </span>        <span class="keyword">for</span> e <span class="keyword">in</span> self.vals:
+<span class="prompt">... </span>            <span class="keyword">if</span> e <span class="keyword">in</span> other.vals:
+<span class="prompt">... </span>                res.append(e)
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">len</span>(res) == <span class="number">0</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="string">'{}'</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="string">'{'</span> + <span class="string">','</span>.join([<span class="builtin">str</span>(e) <span class="keyword">for</span> e <span class="keyword">in</span> res]) + <span class="string">'}'</span>
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> <span class="builtin">len</span>(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">len</span>(self.vals)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i = intSet()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.insert(<span class="string">'adrian'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.insert(<span class="string">'yo'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(i)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#30&gt;", line 1, in &lt;module&gt;
+    len(i)
+TypeError: object of type 'intSet' has no len()
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.<span class="builtin">len</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> intSet(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""An intSet is a set of integers
+</span><span class="prompt">... </span><span class="string">    The value is represented by a list of ints, self.vals.
+</span><span class="prompt">... </span><span class="string">    Each int in the set occurs in self.vals exactly once."""</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+<span class="prompt">... </span>        <span class="string">"""Create an empty set of integers"""</span>
+<span class="prompt">... </span>        self.vals = []
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> insert(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer and inserts e into self"""</span> 
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="keyword">not</span> e <span class="keyword">in</span> self.vals:
+<span class="prompt">... </span>            self.vals.append(e)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> member(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer
+</span><span class="prompt">... </span><span class="string">           Returns True if e is in self, and False otherwise"""</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> e <span class="keyword">in</span> self.vals
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> remove(self, e):
+<span class="prompt">... </span>        <span class="string">"""Assumes e is an integer and removes e from self
+</span><span class="prompt">... </span><span class="string">           Raises ValueError if e is not in self"""</span>
+<span class="prompt">... </span>        <span class="keyword">try</span>:
+<span class="prompt">... </span>            self.vals.remove(e)
+<span class="prompt">... </span>        <span class="keyword">except</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>(<span class="builtin">str</span>(e) + <span class="string">' not found'</span>)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="string">"""Returns a string representation of self"""</span>
+<span class="prompt">... </span>        self.vals.sort()
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="string">'{'</span> + <span class="string">','</span>.join([<span class="builtin">str</span>(e) <span class="keyword">for</span> e <span class="keyword">in</span> self.vals]) + <span class="string">'}'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> intersect(self, other):
+<span class="prompt">... </span>        <span class="string">''' Returns a set consisting of the intersecting elements
+</span><span class="prompt">... </span><span class="string">        of two distinct sets.  Returns an empty set if there is
+</span><span class="prompt">... </span><span class="string">        no intersection '''</span>
+<span class="prompt">... </span>        res = []
+<span class="prompt">... </span>        <span class="keyword">for</span> e <span class="keyword">in</span> self.vals:
+<span class="prompt">... </span>            <span class="keyword">if</span> e <span class="keyword">in</span> other.vals:
+<span class="prompt">... </span>                res.append(e)
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">len</span>(res) == <span class="number">0</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="string">'{}'</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="string">'{'</span> + <span class="string">','</span>.join([<span class="builtin">str</span>(e) <span class="keyword">for</span> e <span class="keyword">in</span> res]) + <span class="string">'}'</span>
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> <span class="builtin">len</span>(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">len</span>(self.vals)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i = intSet()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.insert(<span class="string">'yo'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>i.insert(<span class="string">'adrian'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

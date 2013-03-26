@@ -38,6 +38,14 @@
 				"buffer_size": 5355,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "week_6_method_bouillabaisse.py",
+			"settings":
+			{
+				"buffer_size": 692,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -230,6 +238,7 @@
 	"groups":
 	[
 		{
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -244,8 +253,8 @@
 						"selection":
 						[
 							[
-								498,
-								498
+								497,
+								497
 							]
 						],
 						"settings":
@@ -328,8 +337,8 @@
 						"selection":
 						[
 							[
-								4837,
-								4837
+								4836,
+								4836
 							]
 						],
 						"settings":
@@ -340,6 +349,32 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 2831.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "week_6_method_bouillabaisse.py",
+					"settings":
+					{
+						"buffer_size": 692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								33
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
