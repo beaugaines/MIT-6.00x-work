@@ -30,6 +30,14 @@
 				"buffer_size": 1655,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "ProblemSet5/ps5_encryption.py",
+			"settings":
+			{
+				"buffer_size": 5355,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -72,6 +80,7 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/hardNuts.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet3/ps3_hangman.py",
 		"/home/sircharles/programming/python/MIT course/get_guessed_word.py",
 		"/home/sircharles/programming/python/MIT course/oddTuples.py",
@@ -221,7 +230,6 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
 				{
@@ -236,8 +244,8 @@
 						"selection":
 						[
 							[
-								499,
-								499
+								498,
+								498
 							]
 						],
 						"settings":
@@ -307,6 +315,34 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ProblemSet5/ps5_encryption.py",
+					"settings":
+					{
+						"buffer_size": 5355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4837,
+								4837
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2831.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
 			]
 		}
@@ -357,12 +393,16 @@
 		"selected_items":
 		[
 			[
-				"hang",
-				"ProblemSet3/ps3_hangman.py"
-			],
-			[
 				"soup",
 				"methodSoup.py"
+			],
+			[
+				"enc",
+				"ProblemSet5/ps5_encryption.py"
+			],
+			[
+				"hang",
+				"ProblemSet3/ps3_hangman.py"
 			],
 			[
 				"file",
