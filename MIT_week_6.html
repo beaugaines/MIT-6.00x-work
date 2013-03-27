@@ -1397,5 +1397,246 @@ TypeError: 'str' object is not callable
  'harpie',
  'harpsichord',
  'phrenologist']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> BerkeleyPerson(Person):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    nextIdNum = <span class="number">0</span>   <span class="comment"># next id num to assign</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, name):
+<span class="prompt">... </span>        Person.__init__(self,name)      <span class="comment"># initialize Person attributes</span>
+<span class="prompt">... </span>        self.idNum = BerkeleyPerson.nextIdNum    <span class="comment"># extra attr for Berkeley person - a unique id num</span>
+<span class="prompt">... </span>        BerkeleyPerson.nextIdNum += <span class="number">1</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getIdNum(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.idNum
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="comment"># sorting Berkeley people uses their id numbers...</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __lt__(self, other):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.idNum &lt; other.idNum</span></span><span class="command">
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;
+    class BerkeleyPerson(Person):
+NameError: name 'Person' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Person(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, name):
+<span class="prompt">... </span>        self.name = name
+<span class="prompt">... </span>        self.birthday = <span class="builtin">None</span>
+<span class="prompt">... </span>        self.lastName = name.split(<span class="string">' '</span>)[-<span class="number">1</span>]
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getLastName(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.lastName
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> setBirthday(self, month, day, year):
+<span class="prompt">... </span>        self.birthday = datetime.date(year, month, day)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getAge(self):
+<span class="prompt">... </span>        <span class="keyword">if</span> self.birthday == <span class="builtin">None</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span>(datetime.date.today() - self.birthday).days
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> lt(self, other):
+<span class="prompt">... </span>        <span class="keyword">if</span> self.lastName == other.lastName:
+<span class="prompt">... </span>            <span class="keyword">return</span> self.name &lt; other.name
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> self.lastName &lt; other.lastName
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.name</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> BerkeleyPerson(Person):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    nextIdNum = <span class="number">0</span>   <span class="comment"># next id num to assign</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, name):
+<span class="prompt">... </span>        Person.__init__(self,name)      <span class="comment"># initialize Person attributes</span>
+<span class="prompt">... </span>        self.idNum = BerkeleyPerson.nextIdNum    <span class="comment"># extra attr for Berkeley person - a unique id num</span>
+<span class="prompt">... </span>        BerkeleyPerson.nextIdNum += <span class="number">1</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getIdNum(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.idNum
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="comment"># sorting Berkeley people uses their id numbers...</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __lt__(self, other):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.idNum &lt; other.idNum</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> UG(BerkeleyPerson):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, name, classYear):
+<span class="prompt">... </span>        BerkeleyPerson.__init__(self, name)
+<span class="prompt">... </span>        self.year = classYear
+<span class="prompt">... </span>    
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">class</span> Grad(BerkeleyPerson):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">pass</span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> isStudent(obj):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">return</span> <span class="builtin">isinstance</span>(obj, UG) <span class="keyword">or</span> <span class="builtin">isinstance</span>(obj, Grad)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s1 = UG(<span class="string">'Achmed'</span>, <span class="number">2015</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s2 = Grad(<span class="string">'Sven'</span>, <span class="number">2013</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#5&gt;", line 1, in &lt;module&gt;
+    s2 = Grad('Sven', 2013)
+TypeError: __init__() takes exactly 2 arguments (3 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s2 = Grad(<span class="string">'Sven'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s1.isStudent
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#7&gt;", line 1, in &lt;module&gt;
+    s1.isStudent
+AttributeError: 'UG' object has no attribute 'isStudent'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s1.isstudent
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#8&gt;", line 1, in &lt;module&gt;
+    s1.isstudent
+AttributeError: 'UG' object has no attribute 'isstudent'
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>isStudent(s1)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>isStudent(s2)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> A(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+<span class="prompt">... </span>        self.a = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> x(self):
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"A.x"</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> y(self):
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"A.y"</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> z(self):
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"A.z"</span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">class</span> B(A):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+<span class="prompt">... </span>        A.__init__(self)
+<span class="prompt">... </span>        self.a = <span class="number">2</span>
+<span class="prompt">... </span>        self.b = <span class="number">3</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> y(self):
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"B.y"</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> z(self):
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"B.z"</span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">class</span> C(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+<span class="prompt">... </span>        self.a = <span class="number">4</span>
+<span class="prompt">... </span>        self.c = <span class="number">5</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> y(self):
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"C.y"</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> z(self):
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"C.z"</span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">class</span> D(C, B):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+<span class="prompt">... </span>        C.__init__(self)
+<span class="prompt">... </span>        B.__init__(self)
+<span class="prompt">... </span>        self.d = <span class="number">6</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> z(self):
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">"D.z"</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>o = D()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>o.a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Grades(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">''' mapping from students to list of grades '''</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self):
+<span class="prompt">... </span>        <span class="string">''' create empty grade book '''</span>
+<span class="prompt">... </span>        self.students = []       <span class="comment"># list of student objects</span>
+<span class="prompt">... </span>        self.grades = {}         <span class="comment"># maps idNum =&gt; list of grades</span>
+<span class="prompt">... </span>        self.isSorted = <span class="builtin">True</span>     <span class="comment"># True if self.students is sorted!</span>
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> addStudents(self, student):
+<span class="prompt">... </span>        <span class="string">''' assumes student is of type Student '''</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> student <span class="keyword">in</span> self.students:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>(<span class="string">'Duplicate student'</span>)
+<span class="prompt">... </span>        self.students.append(student)
+<span class="prompt">... </span>        self.grades[student.getIdNum()] = []
+<span class="prompt">... </span>        self.isSorted = <span class="builtin">False</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> addGrade(self, student, grade):
+<span class="prompt">... </span>        <span class="string">''' assumes grade is a float '''</span>
+<span class="prompt">... </span>        <span class="keyword">try</span>:                      
+<span class="prompt">... </span>            self.grades[student.getIdNum()].append(grade)
+<span class="prompt">... </span>        <span class="keyword">except</span> <span class="builtin">KeyError</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>(<span class="string">'Student not in grade book'</span>)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> getGrades(self, student):
+<span class="prompt">... </span>        <span class="string">''' return list of grades for student '''</span>
+<span class="prompt">... </span>        <span class="keyword">try</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> self.grades[student.getIdNum()][:]
+<span class="prompt">... </span>        <span class="keyword">except</span> <span class="builtin">KeyError</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>(<span class="string">'Student not in grade book'</span>)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> allStudents(self):
+<span class="prompt">... </span>        <span class="string">''' return a list of all students in the grade book '''</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="keyword">not</span> self.isSorted:
+<span class="prompt">... </span>            self.students.sort()
+<span class="prompt">... </span>            self.isSorted = <span class="builtin">True</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> self.students[:]     <span class="comment"># return a copy of list of students</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> gradeReport(course):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">''' assumes course of type grades '''</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    report = []
+<span class="prompt">... </span>    <span class="keyword">for</span> s <span class="keyword">in</span> course.allStudents():
+<span class="prompt">... </span>        tot = <span class="number">0.0</span>
+<span class="prompt">... </span>        numGrades = <span class="number">0</span>
+<span class="prompt">... </span>        <span class="keyword">for</span> g <span class="keyword">in</span> course.getGrades(s):
+<span class="prompt">... </span>            tot += g
+<span class="prompt">... </span>            numGrades += <span class="number">1</span>
+<span class="prompt">... </span>        <span class="keyword">try</span>:
+<span class="prompt">... </span>            average = tot/numGrades
+<span class="prompt">... </span>            report.append(<span class="builtin">str</span>(s) + <span class="string">'\'s mean grade is '</span> + <span class="builtin">str</span>(average))
+<span class="prompt">... </span>        <span class="keyword">except</span> <span class="builtin">ZeroDivisionError</span>:
+<span class="prompt">... </span>            report.append(<span class="builtin">str</span>(s) + <span class="string">' has no grades'</span>)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'\n'</span>.join(report)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>ug1 = UG(<span class="string">'Bob Dobbs'</span>, <span class="number">2014</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>ug1 = UG(<span class="string">'Dob Bobbs'</span>, <span class="number">2015</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>ug1 = UG(<span class="string">'Dan Nobbs'</span>, <span class="number">2013</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>ug1 = UG(<span class="string">'Bob Dobbs'</span>, <span class="number">2014</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>ug2 = UG(<span class="string">'Dob Bobbs'</span>, <span class="number">2015</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>ug3 = UG(<span class="string">'Dan Nobbs'</span>, <span class="number">2013</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g1 = Grad(<span class="string">'Bill Buckley'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g2 = Grad(<span class="string">'Chris Hitchens'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>six00 = Grades()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>six00.addStudent(g1)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#25&gt;", line 1, in &lt;module&gt;
+    six00.addStudent(g1)
+AttributeError: 'Grades' object has no attribute 'addStudent'
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>six00.addStudents(g1)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>six00.addStudents(ug2)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>six00.addStudents(ug1)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>six00.addStudents(g2)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> s <span class="keyword">in</span> six00.allStudents():
+<span class="prompt">... </span>    six00.addGrade(s, <span class="number">75</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>six00.addGrade(g1, <span class="number">25</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>six00.addGrade(g2, <span class="number">100</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>six00.addStudents(ug3)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> gradeReport()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#34&gt;", line 1, in &lt;module&gt;
+    print gradeReport()
+TypeError: gradeReport() takes exactly 1 argument (0 given)
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> gradeReport(six00)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Bob Dobbs's mean grade is 75.0</span></span><span class="folded"><span class="output"><span class="stdout">
+Dob Bobbs's mean grade is 75.0
+Dan Nobbs has no grades
+Bill Buckley's mean grade is 50.0
+Chris Hitchens's mean grade is 87.5
+</span></span></span><span class="fold-message">[About 4 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> s <span class="keyword">in</span> six00.allStudents():
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'Studen name: '</span> + s.name() + <span class="string">' and id: '</span> + <span class="builtin">str</span>(s.idNum)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#36&gt;", line 2, in &lt;module&gt;
+    print 'Studen name: ' + s.name() + ' and id: ' + str(s.idNum)
+TypeError: 'str' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> s <span class="keyword">in</span> six00.allStudents():
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'Studen name: '</span> + s.name + <span class="string">' and id: '</span> + <span class="builtin">str</span>(s.idNum)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Studen name: Bob Dobbs and id: 5
+Studen name: Dob Bobbs and id: 6
+Studen name: Dan Nobbs and id: 7
+Studen name: Bill Buckley and id: 8
+Studen name: Chris Hitchens and id: 9
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
