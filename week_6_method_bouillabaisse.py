@@ -4,6 +4,9 @@
 
 hideousRegex = """
 ^
+\D*                # match possible random worthless text e.g. 'work', 'home', etc.
+\d?                # match possible long-distance extension
+\D?                # match possible hyphen or space
 \(?                # match a possible opening bracket for area code 
 (\d{3})            # area code at beginning of string
 \)?                # match a possible closing bracket
