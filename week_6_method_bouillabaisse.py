@@ -1,17 +1,15 @@
 
 # a gloriously hideous regex I came up with - part of 'Dive into Python' - but 
-# I love regexes so much I assembled it on my own
+# I love regexes so much I assembled it on my own. Refactored to *not* match beginning
+# of string - so any superfluous verbiage before the number will be ignored
 
 hideousRegex = """
-^
-\D*                # match possible random worthless text e.g. 'work', 'home', etc.
-\d?                # match possible long-distance extension
-\D?                # match possible hyphen or space
+                   # don't match beginning of string, number can start anywhere
 \(?                # match a possible opening bracket for area code 
 (\d{3})            # area code at beginning of string
 \)?                # match a possible closing bracket
 \D*                # one or more 'non-word' character - e.g. a hyphen, a space
-(\d{3})            # trunk code
+(\d{3})            # trunk of number - 3 digits
 \D*                # one or more 'non-word' chars
 (\d{4})            # last 4 digits
 \D*                # more non-words

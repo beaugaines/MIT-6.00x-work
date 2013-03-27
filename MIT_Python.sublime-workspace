@@ -43,7 +43,7 @@
 			"file": "week_6_method_bouillabaisse.py",
 			"settings":
 			{
-				"buffer_size": 2133,
+				"buffer_size": 2960,
 				"line_ending": "Unix"
 			}
 		}
@@ -253,8 +253,8 @@
 						"selection":
 						[
 							[
-								496,
-								496
+								495,
+								495
 							]
 						],
 						"settings":
@@ -337,8 +337,8 @@
 						"selection":
 						[
 							[
-								4835,
-								4835
+								4834,
+								4834
 							]
 						],
 						"settings":
@@ -358,15 +358,15 @@
 					"file": "week_6_method_bouillabaisse.py",
 					"settings":
 					{
-						"buffer_size": 2133,
+						"buffer_size": 2960,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								792,
-								792
+								348,
+								348
 							]
 						],
 						"settings":
