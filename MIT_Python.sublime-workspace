@@ -24,26 +24,10 @@
 			}
 		},
 		{
-			"file": "translateBadly.py",
-			"settings":
-			{
-				"buffer_size": 1655,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ProblemSet5/ps5_encryption.py",
-			"settings":
-			{
-				"buffer_size": 5355,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "week_6_method_bouillabaisse.py",
 			"settings":
 			{
-				"buffer_size": 2960,
+				"buffer_size": 2971,
 				"line_ending": "Unix"
 			}
 		}
@@ -88,12 +72,14 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/translateBadly.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
+		"/home/sircharles/programming/python/MIT course/baseHTMLProcessor.py",
 		"/home/sircharles/programming/python/MIT course/hardNuts.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet3/ps3_hangman.py",
 		"/home/sircharles/programming/python/MIT course/get_guessed_word.py",
 		"/home/sircharles/programming/python/MIT course/oddTuples.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_recursion.py",
-		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_pseudo.txt",
 		"/home/sircharles/Dropbox/CODE/Python/MIT Course/is_palindrome.py",
 		"/home/sircharles/programming/python/MIT course/gcdRecur.py",
@@ -238,7 +224,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -253,8 +239,8 @@
 						"selection":
 						[
 							[
-								495,
-								495
+								494,
+								494
 							]
 						],
 						"settings":
@@ -281,8 +267,8 @@
 						"selection":
 						[
 							[
-								255,
-								255
+								706,
+								706
 							]
 						],
 						"settings":
@@ -292,81 +278,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 351.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "translateBadly.py",
-					"settings":
-					{
-						"buffer_size": 1655,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								612,
-								612
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 437.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "ProblemSet5/ps5_encryption.py",
-					"settings":
-					{
-						"buffer_size": 5355,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4834,
-								4834
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2831.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "week_6_method_bouillabaisse.py",
 					"settings":
 					{
-						"buffer_size": 2960,
+						"buffer_size": 2971,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								348,
-								348
+								646,
+								646
 							]
 						],
 						"settings":
