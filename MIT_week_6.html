@@ -1638,5 +1638,112 @@ Studen name: Dob Bobbs and id: 6
 Studen name: Dan Nobbs and id: 7
 Studen name: Bill Buckley and id: 8
 Studen name: Chris Hitchens and id: 9
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> genFib():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    fib_1 = <span class="number">1</span>
+<span class="prompt">... </span>    fib_0 = <span class="number">0</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> <span class="builtin">True</span>:
+<span class="prompt">... </span>        <span class="builtin">next</span> = fib_1 + fib_0
+<span class="prompt">... </span>        <span class="keyword">yield</span> <span class="builtin">next</span>
+<span class="prompt">... </span>        fib_2 = fib_1
+<span class="prompt">... </span>        fib_1 = <span class="builtin">next</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>genFib()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">&lt;generator object genFib at 0x11456e0&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g = genFib()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g.<span class="builtin">next</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g.<span class="builtin">next</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g.<span class="builtin">next</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> genFib():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    fib_1 = <span class="number">1</span>
+<span class="prompt">... </span>    fib_2 = <span class="number">0</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> <span class="builtin">True</span>:
+<span class="prompt">... </span>        <span class="builtin">next</span> = fib_1 + fib_2
+<span class="prompt">... </span>        <span class="keyword">yield</span> <span class="builtin">next</span>
+<span class="prompt">... </span>        fib_2 = fib_1
+<span class="prompt">... </span>        fib_1 = <span class="builtin">next</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g = genFib()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g.<span class="builtin">next</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g.<span class="builtin">next</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g.<span class="builtin">next</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g.<span class="builtin">next</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">5
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>g.<span class="builtin">next</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> findPayment(loan, r, m):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">return</span> loan * ((r*(<span class="number">1</span>+r)**m)/((<span class="number">1</span>+r)**m - <span class="number">1</span>))</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Mortgage(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, loan, annRate, months):
+<span class="prompt">... </span>        self.loan = loan
+<span class="prompt">... </span>        self.rate = annRate/<span class="number">12.0</span>
+<span class="prompt">... </span>        self.months = months
+<span class="prompt">... </span>        self.paid = [<span class="number">0.0</span>]
+<span class="prompt">... </span>        self.owed = [loan]
+<span class="prompt">... </span>        self.payment = findPayment(loan, self.rate, months)
+<span class="prompt">... </span>        self.legend = <span class="builtin">None</span>      <span class="comment"># description of mortgage</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> makePayment(self):
+<span class="prompt">... </span>        self.paid.append(self.payment)
+<span class="prompt">... </span>        reduction = self.payment - self.owed[-<span class="number">1</span>]*self.rate
+<span class="prompt">... </span>        self.owed.append(self.owed[-<span class="number">1</span>] - reduction)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> getTotalPaid(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">sum</span>(self.paid)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.legend</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Mortgage(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, loan, annRate, months):
+<span class="prompt">... </span>        self.loan = loan
+<span class="prompt">... </span>        self.rate = annRate/<span class="number">12.0</span>
+<span class="prompt">... </span>        self.months = months
+<span class="prompt">... </span>        self.paid = [<span class="number">0.0</span>]
+<span class="prompt">... </span>        self.owed = [loan]
+<span class="prompt">... </span>        self.payment = findPayment(loan, self.rate, months)
+<span class="prompt">... </span>        self.legend = <span class="builtin">None</span>      <span class="comment"># description of mortgage</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> makePayment(self):
+<span class="prompt">... </span>        self.paid.append(self.payment)
+<span class="prompt">... </span>        reduction = self.payment - self.owed[-<span class="number">1</span>]*self.rate
+<span class="prompt">... </span>        self.owed.append(self.owed[-<span class="number">1</span>] - reduction)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> getTotalPaid(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">sum</span>(self.paid)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.legend</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> hand_player(hand):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> hand:
+<span class="prompt">... </span>        <span class="keyword">yield</span> c</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand_player(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'c'</span>, <span class="string">'o'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#2&gt;", line 1, in &lt;module&gt;
+    hand_player('a', 'b', 'c', 'c', 'o')
+TypeError: hand_player() takes exactly 1 argument (5 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand_player([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'c'</span>, <span class="string">'o'</span>])
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">&lt;generator object hand_player at 0x1da83c0&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand_player([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'c'</span>, <span class="string">'o'</span>])
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">&lt;generator object hand_player at 0x1da8460&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>h = hand_player([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'c'</span>, <span class="string">'o'</span>])
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>h.<span class="builtin">next</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">'a'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>h.<span class="builtin">next</span>()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">'b'
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

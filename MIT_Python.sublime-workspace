@@ -24,6 +24,14 @@
 			}
 		},
 		{
+			"file": "dialect.py",
+			"settings":
+			{
+				"buffer_size": 238,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "week_6_method_bouillabaisse.py",
 			"settings":
 			{
@@ -224,7 +232,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -239,8 +247,8 @@
 						"selection":
 						[
 							[
-								494,
-								494
+								493,
+								493
 							]
 						],
 						"settings":
@@ -285,6 +293,32 @@
 				},
 				{
 					"buffer": 2,
+					"file": "dialect.py",
+					"settings":
+					{
+						"buffer_size": 238,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								237,
+								237
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "week_6_method_bouillabaisse.py",
 					"settings":
 					{
@@ -295,8 +329,8 @@
 						"selection":
 						[
 							[
-								646,
-								646
+								645,
+								645
 							]
 						],
 						"settings":
