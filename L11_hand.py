@@ -80,9 +80,9 @@ class Hand(object):
         word: string
         returns: Boolean (if the word was or was not made)
         """
-        hand_copy = self.hand
+        hand_copy = self.hand.copy()
         for c in word:
-            if c in hand_copy.keys():
+            if c in hand_copy.keys() and hand_copy[c] > 0:
                 hand_copy[c] -= 1
             else:
                 return False
