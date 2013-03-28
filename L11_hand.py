@@ -63,7 +63,7 @@ class Hand(object):
         Display a string representation of the hand.
         '''
         output = ''
-        for letter in sorted(self.hand_keys()):
+        for letter in sorted(self.hand.keys()):
                 output += letter * self.hand[letter]
         return output
 
@@ -82,7 +82,12 @@ class Hand(object):
         """
         hand_copy = self.hand
         for c in word:
-            if c in self.handj:
+            if c in hand_copy.keys():
+                hand_copy[c] -= 1
+            else:
+                return False
+        self.hand = hand_copy
+        return True
 
 
     
