@@ -1,10 +1,14 @@
 # primeGen generator fcn
 
 def primeGen():
+    ''' generator function that yields an prime sequence of arbitrary length  '''
+
     primes = []
     x = 1
     while True:
         x += 1
+        # nifty trick here - since primes is empty on the first run
+        # through this yields true for 2
         if all(x % m != 0 for m in primes):
             primes.append(x)
             yield x
