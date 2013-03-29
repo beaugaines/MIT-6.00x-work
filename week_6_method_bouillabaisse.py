@@ -1,3 +1,14 @@
+# primeGen generator fcn
+
+def primeGen():
+    primes = []
+    x = 1
+    while True:
+        x += 1
+        if all(x % m != 0 for m in primes):
+            primes.append(x)
+            yield x
+
 
 # a gloriously hideous regex I came up with - part of 'Dive into Python' - but 
 # I love regexes so much I assembled it on my own. Refactored to *not* match beginning

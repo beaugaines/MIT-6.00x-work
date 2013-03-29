@@ -1745,5 +1745,168 @@ TypeError: hand_player() takes exactly 1 argument (5 given)
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">'a'
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>h.<span class="builtin">next</span>()
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">'b'
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'c'</span>, <span class="string">'e'</span>, <span class="string">'e'</span>, <span class="string">'p'</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>word = <span class="string">'fab'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">in</span> hand:
+<span class="prompt">... </span>        hand.replace[c, <span class="string">''</span>]
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        <span class="builtin">False</span>
+<span class="prompt">... </span><span class="builtin">True</span>
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#10&gt;", line 3, in &lt;module&gt;
+    hand.replace[c, '']
+AttributeError: 'list' object has no attribute 'replace'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">in</span> hand:
+<span class="prompt">... </span>        hand.pop(c)
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        <span class="builtin">False</span>
+<span class="prompt">... </span><span class="builtin">True</span>
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#11&gt;", line 3, in &lt;module&gt;
+    hand.pop(c)
+TypeError: an integer is required
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">in</span> hand:
+<span class="prompt">... </span>        <span class="keyword">del</span>(c)
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        <span class="builtin">False</span>
+<span class="prompt">... </span><span class="builtin">True</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">in</span> hand:
+<span class="prompt">... </span>        <span class="keyword">del</span>(c)
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        <span class="builtin">False</span>
+<span class="prompt">... </span><span class="builtin">True</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">in</span> hand:
+<span class="prompt">... </span>        <span class="keyword">del</span>(c)
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        <span class="builtin">False</span>
+<span class="prompt">... </span><span class="builtin">True</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">['a', 'b', 'e', 'f', 'c', 'e', 'e', 'p']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand[<span class="string">'a'</span>]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#16&gt;", line 1, in &lt;module&gt;
+    hand['a']
+TypeError: list indices must be integers, not str
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand(<span class="string">'a'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#17&gt;", line 1, in &lt;module&gt;
+    hand('a')
+TypeError: 'list' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> c <span class="keyword">in</span> word:
+<span class="prompt">... </span>    <span class="keyword">if</span> c <span class="keyword">in</span> hand:
+<span class="prompt">... </span>        hand.remove(c)
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        <span class="builtin">False</span>
+<span class="prompt">... </span><span class="builtin">True</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">['e', 'c', 'e', 'e', 'p']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2 = {<span class="string">'a'</span>:<span class="number">2</span>, <span class="string">'f'</span>:<span class="number">1</span>, <span class="string">'g'</span>:<span class="number">1</span>, <span class="string">'o'</span>:<span class="number">2</span>, <span class="string">'w'</span>:<span class="number">2</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(hand2)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">5
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>res = <span class="number">0</span>
+<span class="prompt">... </span><span class="keyword">for</span> k <span class="keyword">in</span> hand2:
+<span class="prompt">... </span>    res +=<span class="number">1</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>res
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">11: </span><span class="result">5
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">del</span> hand2[<span class="string">'a'</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>res
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">12: </span><span class="result">5
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">13: </span><span class="result">{'f': 1, 'g': 1, 'o': 2, 'w': 2}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">del</span> hand2[<span class="string">'f'</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>res = <span class="number">0</span>
+<span class="prompt">... </span><span class="keyword">for</span> k <span class="keyword">in</span> hand2:
+<span class="prompt">... </span>    res +=<span class="number">1</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>res
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">14: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">15: </span><span class="result">{'g': 1, 'o': 2, 'w': 2}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2[<span class="string">'w'</span>] = <span class="number">0</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">16: </span><span class="result">{'g': 1, 'o': 2, 'w': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>res = <span class="number">0</span>
+<span class="prompt">... </span><span class="keyword">for</span> k <span class="keyword">in</span> hand2:
+<span class="prompt">... </span>    res +=<span class="number">1</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>res
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">17: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hand2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">18: </span><span class="result">{'g': 1, 'o': 2, 'w': 0}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Mortgage(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, loan, annRate, months):
+<span class="prompt">... </span>        self.loan = loan
+<span class="prompt">... </span>        self.rate = annRate/<span class="number">12.0</span>
+<span class="prompt">... </span>        self.months = months
+<span class="prompt">... </span>        self.paid = [<span class="number">0.0</span>]
+<span class="prompt">... </span>        self.owed = [loan]
+<span class="prompt">... </span>        self.payment = findPayment(loan, self.rate, months)
+<span class="prompt">... </span>        self.legend = <span class="builtin">None</span>      <span class="comment"># description of mortgage</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> makePayment(self):
+<span class="prompt">... </span>        self.paid.append(self.payment)
+<span class="prompt">... </span>        reduction = self.payment - self.owed[-<span class="number">1</span>]*self.rate
+<span class="prompt">... </span>        self.owed.append(self.owed[-<span class="number">1</span>] - reduction)
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> getTotalPaid(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">sum</span>(self.paid)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.legend</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Fixed(Mortgage):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, loan, r, months):
+<span class="prompt">... </span>        Mortgage.__init__(self, loan, r, months)
+<span class="prompt">... </span>        self.legend = <span class="string">'Fixed, '</span> + <span class="builtin">str</span>(r*<span class="number">100</span>) + <span class="string">'%'</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> FixedWithPts(Mortgage):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, loan, r, months, pts):
+<span class="prompt">... </span>        Fixed.__init__(self, loan, r, months)
+<span class="prompt">... </span>        self.pts = pts
+<span class="prompt">... </span>        self.paid = [loan*(pts/<span class="number">100.0</span>)]
+<span class="prompt">... </span>        self.legend += <span class="string">', '</span> + <span class="builtin">str</span>(pts) + <span class="string">' points'</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> TwoRate(Mortgage):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, loan, r, months, teaserRate, teaserMonths):
+<span class="prompt">... </span>        Mortgage.__init__(self, loan, r, months)
+<span class="prompt">... </span>        self.teaserMonths = teaserMonths
+<span class="prompt">... </span>        self.teaserRate = teaserRate
+<span class="prompt">... </span>        self.nextRate = r/<span class="number">12.0</span>
+<span class="prompt">... </span>        self.legend = <span class="builtin">str</span>(teaserRate * <span class="number">100</span>)\
+<span class="prompt">... </span>                      + <span class="string">'% for '</span> + <span class="builtin">str</span>(self.teaserMonths)\
+<span class="prompt">... </span>                      + <span class="string">' months, then '</span> + <span class="builtin">str</span>(r*<span class="number">100</span>) + <span class="string">'%'</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> makePayment(self):
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">len</span>(self.paid) == self.teaserMonths + <span class="number">1</span>:
+<span class="prompt">... </span>            self.rate = self.nextRate
+<span class="prompt">... </span>            self.payment = findPayment(self.owed[-<span class="number">1</span>], self.rate,
+<span class="prompt">... </span>                                       self.months - \
+<span class="prompt">... </span>                                       self.teaserMonths)
+<span class="prompt">... </span>            Mortgage.makePayment(self)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> compareMortgages(amt, years, fixedRate, pts, ptsRate, varRate1, varRate2, varMonths):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    totMonths = years * <span class="number">12</span>
+<span class="prompt">... </span>    fixed1 = Fixed(amt, fixedRate, totMonths)
+<span class="prompt">... </span>    fixed2 = FixedWithPts(amt, ptsRate, totMonths, pts)
+<span class="prompt">... </span>    twoRate = TwoRate(amt, varRate2, totMonths, varRate1, varMonths)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    morts = [fixed1, fixed2, twoRate]
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">for</span> m <span class="keyword">in</span> <span class="builtin">range</span>(totMonths):
+<span class="prompt">... </span>        <span class="keyword">for</span> mort <span class="keyword">in</span> morts:
+<span class="prompt">... </span>            mort.makePayment()
+<span class="prompt">... </span>            
+<span class="prompt">... </span>    <span class="keyword">for</span> m <span class="keyword">in</span> morts:
+<span class="prompt">... </span>        <span class="keyword">print</span> m
+<span class="prompt">... </span>        <span class="keyword">print</span> <span class="string">'Total payments = $'</span> + <span class="builtin">str</span>(<span class="builtin">int</span>(m.getTotalPaid()))</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

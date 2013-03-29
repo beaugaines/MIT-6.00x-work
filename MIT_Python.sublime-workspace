@@ -8,14 +8,6 @@
 	"buffers":
 	[
 		{
-			"file": "fileinfo.py",
-			"settings":
-			{
-				"buffer_size": 3032,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "methodSoup.py",
 			"settings":
 			{
@@ -36,6 +28,14 @@
 			"settings":
 			{
 				"buffer_size": 2971,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ProblemSet4/ps4a.py",
+			"settings":
+			{
+				"buffer_size": 8974,
 				"line_ending": "Unix"
 			}
 		}
@@ -80,6 +80,8 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/fileinfo.py",
+		"/home/sircharles/programming/python/MIT course/L11_hand.py",
 		"/home/sircharles/programming/python/MIT course/translateBadly.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
 		"/home/sircharles/programming/python/MIT course/baseHTMLProcessor.py",
@@ -93,7 +95,6 @@
 		"/home/sircharles/programming/python/MIT course/gcdRecur.py",
 		"/home/sircharles/programming/python/MIT course/methodSoup.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/ps4a.py",
-		"/home/sircharles/programming/python/MIT course/fileinfo.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/ps4b.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/test_ps4a.py",
 		"/home/sircharles/programming/python/MIT course/MIT_Python.sublime-workspace",
@@ -237,34 +238,6 @@
 			[
 				{
 					"buffer": 0,
-					"file": "fileinfo.py",
-					"settings":
-					{
-						"buffer_size": 3032,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								493,
-								493
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "methodSoup.py",
 					"settings":
 					{
@@ -292,7 +265,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "dialect.py",
 					"settings":
 					{
@@ -303,8 +276,8 @@
 						"selection":
 						[
 							[
-								237,
-								237
+								233,
+								233
 							]
 						],
 						"settings":
@@ -318,7 +291,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "week_6_method_bouillabaisse.py",
 					"settings":
 					{
@@ -329,8 +302,8 @@
 						"selection":
 						[
 							[
-								645,
-								645
+								641,
+								641
 							]
 						],
 						"settings":
@@ -340,7 +313,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 399.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ProblemSet4/ps4a.py",
+					"settings":
+					{
+						"buffer_size": 8974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5319,
+								5319
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3321.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -393,6 +394,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"l11",
+				"L11_hand.py"
+			],
 			[
 				"soup",
 				"methodSoup.py"
