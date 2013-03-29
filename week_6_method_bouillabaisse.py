@@ -1,3 +1,15 @@
+
+# hashSet fcn - building on earlier intSet class
+
+class HashSet(object):
+
+    '''
+    hacked together class implementing much of the fcnality of Python native
+    hash fcn i.e. dictionaries - but in much less efficient fashion
+    '''
+
+
+
 # primeGen generator fcn
 
 def primeGen():
