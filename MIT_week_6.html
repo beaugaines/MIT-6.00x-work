@@ -2144,5 +2144,74 @@ NameError: name 'e' is not defined
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">0
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">9</span> % <span class="builtin">len</span>(h)
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">9
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> HashSet(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">'''
+</span><span class="prompt">... </span><span class="string">    hacked together class implementing much of the fcnality of Python native
+</span><span class="prompt">... </span><span class="string">    hash fcn i.e. dictionaries
+</span><span class="prompt">... </span><span class="string">    '''</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, numBuckets):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        numBuckets:  int.  The number of buckets this hash set will have.  Raises
+</span><span class="prompt">... </span><span class="string">        ValueError if this value is not an integer, or if it is not greater
+</span><span class="prompt">... </span><span class="string">        than zero.
+</span><span class="prompt">... </span><span class="string">        
+</span><span class="prompt">... </span><span class="string">        Sets up an empty hash set with numBuckets number of buckets.
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">type</span>(numBuckets) != <span class="builtin">int</span> <span class="keyword">or</span> numBuckets &lt;= <span class="number">0</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            hashSet = []
+<span class="prompt">... </span>            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>, numBuckets):
+<span class="prompt">... </span>                hashSet.append([])
+<span class="prompt">... </span>                
+<span class="prompt">... </span>    <span class="keyword">def</span> hashValue(self, e):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        e: an integer
+</span><span class="prompt">... </span><span class="string">        
+</span><span class="prompt">... </span><span class="string">        returns: a hash value for e, which is e mod the number 'o buckets in
+</span><span class="prompt">... </span><span class="string">        this hash set.  Raise ValueError if e is not an int
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">type</span>(e) != <span class="builtin">int</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> e % <span class="builtin">len</span>(hashSet)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> member(self,e):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        e: an integer
+</span><span class="prompt">... </span><span class="string">        
+</span><span class="prompt">... </span><span class="string">        returns: True if e is in self, False otherwise
+</span><span class="prompt">... </span><span class="string">        Raise ValueError if e not an integer
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">type</span>(e) != <span class="builtin">int</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> e <span class="keyword">in</span> self.hashSet
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> insert(self, e):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        e: an integer
+</span><span class="prompt">... </span><span class="string">        
+</span><span class="prompt">... </span><span class="string">        inserts e into appropriate hash bucket.  Raises ValueError
+</span><span class="prompt">... </span><span class="string">        if e is not an integer.
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        v = hashValue(e)
+<span class="prompt">... </span>        self.hashSet[v].append(e)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>h
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">{0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>e = <span class="number">8</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>v = <span class="number">8</span> % <span class="builtin">len</span>(h)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>v
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">11: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>h[<span class="number">8</span>]
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">12: </span><span class="result">[]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>h[<span class="number">8</span>].append(e)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>h
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">13: </span><span class="result">{0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [8], 9: []}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>e = <span class="number">66</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>h[e%<span class="builtin">len</span>(h)].append(e)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>h
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">14: </span><span class="result">{0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [66], 7: [], 8: [8], 9: []}
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

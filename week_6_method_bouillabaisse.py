@@ -48,6 +48,21 @@ class HashSet(object):
                 return e in self.hashSet
 
 
+        def remove(self, e):
+            '''
+            e: an integer
+            
+            removes e from self.  Raises ValueError if e is not in
+            self or if e is not an int.
+            '''
+            if type(e) != int:
+                return ValueError
+            else:
+                for bucket in self.hashSet:
+                    if e in bucket:
+                        bucket.remove(e)
+                    else:
+                        return ValueError
 
 
 # primeGen generator fcn
