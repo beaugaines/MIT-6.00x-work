@@ -45,7 +45,21 @@ class HashSet(object):
             if type(e) != int:
                 raise ValueError
             else:
-                return e in self.hashSet
+                for bucket in self.hashSet
+                    return e in bucket
+
+        def insert(self, e):
+            '''
+            e: an integer
+            
+            inserts e into appropriate hash bucket.  Raises ValueError
+            if e is not an integer.
+            '''
+            v = self.hashValue(e)
+            if self.member(e):
+                pass
+            else:
+                self.hashSet[v].append(e)
 
 
         def remove(self, e):
@@ -64,6 +78,13 @@ class HashSet(object):
                     else:
                         return ValueError
 
+
+        def __str__(self):
+             '''
+            returns the hash itself rather than some vague and useless
+            < function at 90993j3ijoc > gibberish
+            '''
+            return str(self.hashSet)
 
 # primeGen generator fcn
 
