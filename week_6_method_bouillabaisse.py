@@ -161,18 +161,18 @@ class intSet(object):
     def __init__(self):
         self.vals = []
 
-        def intersect(self, other):
-        ''' Returns a set consisting of the intersecting elements
-        of two distinct sets.  Returns an empty set if there is
-        no intersection '''
-        res = []
-        for e in self.vals:
-            if e in other.vals:
-                res.append(e)
-        if len(res) == 0:
-            return '{}'
-        else:
-            return '{' + ','.join([str(e) for e in res]) + '}'
+    def intersect(self, other):
+    ''' Returns a set consisting of the intersecting elements
+    of two distinct sets.  Returns an empty set if there is
+    no intersection '''
+    res = []
+    for e in self.vals:
+        if e in other.vals:
+            res.append(e)
+    if len(res) == 0:
+        return '{}'
+    else:
+        return '{' + ','.join([str(e) for e in res]) + '}'
         
     def __len__(self):
         return len(self.vals)
