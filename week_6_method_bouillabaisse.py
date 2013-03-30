@@ -1,7 +1,7 @@
 
 # hashSet fcn - building on earlier intSet class
 
-class HashSet(object):
+class hashSet(object):
 
     '''
     hacked together class implementing much of the fcnality of Python native
@@ -23,62 +23,70 @@ class HashSet(object):
             for i in range(0, numBuckets):
                 hashSet.append([])
 
-        def hashValue(self, e):
+    def hashValue(self, e):
         '''
         e: an integer
         
         returns: a hash value for e, which is e mod the number 'o buckets in
         this hash set.  Raise ValueError if e is not an int.
         '''
-            if type(e) != int:
-                raise ValueError
-            else:
-                return e % len(hashSet)
+        if type(e) != int:
+            raise ValueError
+        else:
+            return e % len(hashSet)
 
-        def member(self, e):
-            '''
-            e: an integer
+
+    def getNumBuckets(self):
+        '''
+        returns number of buckets in your sorry little hash
+        '''
+        return len(self.hashSet)
+
+
+    def member(self, e):
+        '''
+        e: an integer
+    
+        returns: True if e is in self, False otherwise
+        Raise ValueError if e not an integer
+        '''
+        if type(e) != int:
+            raise ValueError
+        else:
+            for bucket in self.hashSet:
+                return e in bucket
+
+    def insert(self, e):
+        '''
+        e: an integer
         
-            returns: True if e is in self, False otherwise
-            Raise ValueError if e not an integer
-            '''
-            if type(e) != int:
-                raise ValueError
-            else:
-                for bucket in self.hashSet
-                    return e in bucket
-
-        def insert(self, e):
-            '''
-            e: an integer
-            
-            inserts e into appropriate hash bucket.  Raises ValueError
-            if e is not an integer.
-            '''
-            if self.member(e):
-                return
-            else:
-                self.hashSet[self.hashValue(e)].append(e)
+        inserts e into appropriate hash bucket.  Raises ValueError
+        if e is not an integer.
+        '''
+        if self.member(e):
+            return
+        else:
+            self.hashSet[self.hashValue(e)].append(e)
 
 
-        def remove(self, e):
-            '''
-            e: an integer
-            
-            removes e from self.  Raises ValueError if e is not in
-            self or if e is not an int.
-            '''
-            if not self.member(e) or type(e) != int:
-                return ValueError
-            else:
-                self.hashSet[self.hashValue(e)].remove(e)
+    def remove(self, e):
+        '''
+        e: an integer
+        
+        removes e from self.  Raises ValueError if e is not in
+        self or if e is not an int.
+        '''
+        if not self.member(e) or type(e) != int:
+            return ValueError
+        else:
+            self.hashSet[self.hashValue(e)].remove(e)
 
-        def __str__(self):
-             '''
-            returns the hash itself rather than some vague and useless
-            < function at 90993j3ijoc > gibberish
-            '''
-            return str(self.hashSet)
+    def __str__(self):
+        '''
+        returns the hash itself rather than some vague and useless
+        < function at 90993j3ijoc > gibberish
+        '''
+        return str(self.hashSet)
 
 # primeGen generator fcn
 
