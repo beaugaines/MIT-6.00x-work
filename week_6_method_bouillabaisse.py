@@ -54,7 +54,11 @@ class hashSet(object):
             raise ValueError
         else:
             for bucket in self.storage:
-                return e in bucket
+                if e in bucket:
+                    return True
+                else:
+                    continue
+            return False
 
     def insert(self, e):
         '''
@@ -89,7 +93,7 @@ class hashSet(object):
         return str(self.storage)
 
 
-        
+
 
 # primeGen generator fcn
 
