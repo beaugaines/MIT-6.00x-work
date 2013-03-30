@@ -55,11 +55,10 @@ class HashSet(object):
             inserts e into appropriate hash bucket.  Raises ValueError
             if e is not an integer.
             '''
-            v = self.hashValue(e)
             if self.member(e):
-                pass
+                return
             else:
-                self.hashSet[v].append(e)
+                self.hashSet[self.hashValue(e)].append(e)
 
 
         def remove(self, e):
@@ -69,15 +68,10 @@ class HashSet(object):
             removes e from self.  Raises ValueError if e is not in
             self or if e is not an int.
             '''
-            if type(e) != int:
+            if not self.member(e) or type(e) != int:
                 return ValueError
             else:
-                for bucket in self.hashSet:
-                    if e in bucket:
-                        bucket.remove(e)
-                    else:
-                        return ValueError
-
+                self.hashSet[self.hashValue(e)].remove(e)
 
         def __str__(self):
              '''

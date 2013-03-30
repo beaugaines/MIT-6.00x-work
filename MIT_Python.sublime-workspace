@@ -27,15 +27,7 @@
 			"file": "week_6_method_bouillabaisse.py",
 			"settings":
 			{
-				"buffer_size": 2971,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ProblemSet4/ps4a.py",
-			"settings":
-			{
-				"buffer_size": 8974,
+				"buffer_size": 5882,
 				"line_ending": "Unix"
 			}
 		}
@@ -80,13 +72,14 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/ProblemSet3/ps3_hangman.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet4/ps4a.py",
 		"/home/sircharles/programming/python/MIT course/fileinfo.py",
 		"/home/sircharles/programming/python/MIT course/L11_hand.py",
 		"/home/sircharles/programming/python/MIT course/translateBadly.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
 		"/home/sircharles/programming/python/MIT course/baseHTMLProcessor.py",
 		"/home/sircharles/programming/python/MIT course/hardNuts.py",
-		"/home/sircharles/programming/python/MIT course/ProblemSet3/ps3_hangman.py",
 		"/home/sircharles/programming/python/MIT course/get_guessed_word.py",
 		"/home/sircharles/programming/python/MIT course/oddTuples.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_recursion.py",
@@ -94,7 +87,6 @@
 		"/home/sircharles/Dropbox/CODE/Python/MIT Course/is_palindrome.py",
 		"/home/sircharles/programming/python/MIT course/gcdRecur.py",
 		"/home/sircharles/programming/python/MIT course/methodSoup.py",
-		"/home/sircharles/programming/python/MIT course/ProblemSet4/ps4a.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/ps4b.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/test_ps4a.py",
 		"/home/sircharles/programming/python/MIT course/MIT_Python.sublime-workspace",
@@ -276,8 +268,8 @@
 						"selection":
 						[
 							[
-								233,
-								233
+								232,
+								232
 							]
 						],
 						"settings":
@@ -295,15 +287,15 @@
 					"file": "week_6_method_bouillabaisse.py",
 					"settings":
 					{
-						"buffer_size": 2971,
+						"buffer_size": 5882,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								641,
-								641
+								1795,
+								1795
 							]
 						],
 						"settings":
@@ -313,35 +305,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 399.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "ProblemSet4/ps4a.py",
-					"settings":
-					{
-						"buffer_size": 8974,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5319,
-								5319
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3321.0,
+						"translation.y": 532.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -394,6 +358,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"han",
+				"ProblemSet3/ps3_hangman.py"
+			],
+			[
+				"bou",
+				"week_6_method_bouillabaisse.py"
+			],
 			[
 				"l11",
 				"L11_hand.py"
@@ -698,6 +670,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"blog",
+				"/home/sircharles/web_dev/monkey_blog/monkey_blog.sublime-project"
+			],
 			[
 				"compass",
 				"/home/sircharles/web_dev/frontend_hack_project/compass_n_susy_project.sublime-project"
