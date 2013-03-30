@@ -81,7 +81,7 @@ class hashSet(object):
         self or if e is not an int.
         '''
         if not self.member(e) or type(e) != int:
-            return ValueError
+            raise ValueError
         else:
             self.storage[self.hashValue(e)].remove(e)
 
