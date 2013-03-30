@@ -27,7 +27,15 @@
 			"file": "week_6_method_bouillabaisse.py",
 			"settings":
 			{
-				"buffer_size": 5882,
+				"buffer_size": 5799,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "hashSet.py",
+			"settings":
+			{
+				"buffer_size": 2542,
 				"line_ending": "Unix"
 			}
 		}
@@ -225,7 +233,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -268,8 +276,8 @@
 						"selection":
 						[
 							[
-								232,
-								232
+								231,
+								231
 							]
 						],
 						"settings":
@@ -287,15 +295,15 @@
 					"file": "week_6_method_bouillabaisse.py",
 					"settings":
 					{
-						"buffer_size": 5882,
+						"buffer_size": 5799,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1795,
-								1795
+								2486,
+								2486
 							]
 						],
 						"settings":
@@ -305,7 +313,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 532.0,
+						"translation.y": 1101.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "hashSet.py",
+					"settings":
+					{
+						"buffer_size": 2542,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1906,
+								1906
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 854.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
