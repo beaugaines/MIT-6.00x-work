@@ -4027,5 +4027,100 @@ NameError: global name 'hashSet' is not defined
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">62: </span><span class="result">&lt;__main__.HashSet object at 0x1aed890&gt;
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> a
 </span><span class="commandsep"></span><span class="output"><span class="stdout">[[25], [], [], [], []]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> HashSet(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">'''
+</span><span class="prompt">... </span><span class="string">    hacked together class implementing much of the fcnality of Python native
+</span><span class="prompt">... </span><span class="string">    hash fcn i.e. dictionaries
+</span><span class="prompt">... </span><span class="string">    '''</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, numBuckets):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        numBuckets:  int.  The number of buckets this hash set will have.  Raises
+</span><span class="prompt">... </span><span class="string">        ValueError if this value is not an integer, or if it is not greater
+</span><span class="prompt">... </span><span class="string">        than zero.
+</span><span class="prompt">... </span><span class="string">        
+</span><span class="prompt">... </span><span class="string">        Sets up an empty hash set with numBuckets number of buckets.
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">type</span>(numBuckets) != <span class="builtin">int</span> <span class="keyword">or</span> numBuckets &lt;= <span class="number">0</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            self.hashSet = []
+<span class="prompt">... </span>            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">0</span>, numBuckets):
+<span class="prompt">... </span>                self.hashSet.append([])
+<span class="prompt">... </span>                
+<span class="prompt">... </span>    <span class="keyword">def</span> hashValue(self, e):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        e: an integer
+</span><span class="prompt">... </span><span class="string">        
+</span><span class="prompt">... </span><span class="string">        returns: a hash value for e, which is e mod the number 'o buckets in
+</span><span class="prompt">... </span><span class="string">        this hash set.  Raise ValueError if e is not an int
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">type</span>(e) != <span class="builtin">int</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> e % <span class="builtin">len</span>(self.hashSet)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> member(self,e):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        e: an integer
+</span><span class="prompt">... </span><span class="string">        
+</span><span class="prompt">... </span><span class="string">        returns: True if e is in self, False otherwise
+</span><span class="prompt">... </span><span class="string">        Raise ValueError if e not an integer
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">type</span>(e) != <span class="builtin">int</span>:
+<span class="prompt">... </span>            <span class="keyword">raise</span> <span class="builtin">ValueError</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            <span class="keyword">for</span> bucket <span class="keyword">in</span> self.hashSet:
+<span class="prompt">... </span>                <span class="keyword">return</span> e <span class="keyword">in</span> bucket
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> insert(self, e):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        e: an integer
+</span><span class="prompt">... </span><span class="string">        
+</span><span class="prompt">... </span><span class="string">        inserts e into appropriate hash bucket.  Raises ValueError
+</span><span class="prompt">... </span><span class="string">        if e is not an integer.
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        v = self.hashValue(e)
+<span class="prompt">... </span>        <span class="keyword">if</span> self.member(e):
+<span class="prompt">... </span>            <span class="keyword">return</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            self.hashSet[v].append(e)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> remove(self, e):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        e: an int
+</span><span class="prompt">... </span><span class="string">        
+</span><span class="prompt">... </span><span class="string">        removes e from hashBucket. Raises ValueError
+</span><span class="prompt">... </span><span class="string">        if e is not present or if e is not an int
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="keyword">not</span> self.member(e) <span class="keyword">or</span> <span class="builtin">type</span>(e) != <span class="builtin">int</span>:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">ValueError</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            self.hashSet[self.hashValue(e)].remove(e)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getNumBuckets(self):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        returns number of buckets in your sorry little hash
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">len</span>(self.hashSet)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        <span class="string">'''
+</span><span class="prompt">... </span><span class="string">        returns the hash itself rather than some vague and useless
+</span><span class="prompt">... </span><span class="string">        &lt; funcction at 90993j3ijoc &gt; gibberish
+</span><span class="prompt">... </span><span class="string">        '''</span>
+<span class="prompt">... </span>        
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">str</span>(self.hashSet)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.insert(<span class="number">25</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.insert(<span class="number">211</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> a
+</span><span class="commandsep"></span><span class="output"><span class="stdout">[[25], [211], [], [], []]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.member(<span class="number">25</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">63: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.remove(<span class="number">25</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> a
+</span><span class="commandsep"></span><span class="output"><span class="stdout">[[], [211], [], [], []]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.remove(<span class="number">25</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">64: </span><span class="result">&lt;type 'exceptions.ValueError'&gt;
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

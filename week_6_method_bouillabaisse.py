@@ -19,9 +19,9 @@ class hashSet(object):
         if type(numBuckets) != int or numBuckets <= 0:
             raise ValueError
         else:
-            hashSet = []
+            self.storage = []
             for i in range(0, numBuckets):
-                hashSet.append([])
+                self.storage.append([])
 
     def hashValue(self, e):
         '''
@@ -33,14 +33,14 @@ class hashSet(object):
         if type(e) != int:
             raise ValueError
         else:
-            return e % len(hashSet)
+            return e % len(self.storage)
 
 
     def getNumBuckets(self):
         '''
         returns number of buckets in your sorry little hash
         '''
-        return len(self.hashSet)
+        return len(self.storage)
 
 
     def member(self, e):
@@ -53,7 +53,7 @@ class hashSet(object):
         if type(e) != int:
             raise ValueError
         else:
-            for bucket in self.hashSet:
+            for bucket in self.storage:
                 return e in bucket
 
     def insert(self, e):
@@ -66,7 +66,7 @@ class hashSet(object):
         if self.member(e):
             return
         else:
-            self.hashSet[self.hashValue(e)].append(e)
+            self.storage[self.hashValue(e)].append(e)
 
 
     def remove(self, e):
@@ -79,14 +79,17 @@ class hashSet(object):
         if not self.member(e) or type(e) != int:
             return ValueError
         else:
-            self.hashSet[self.hashValue(e)].remove(e)
+            self.storage[self.hashValue(e)].remove(e)
 
     def __str__(self):
         '''
         returns the hash itself rather than some vague and useless
         < function at 90993j3ijoc > gibberish
         '''
-        return str(self.hashSet)
+        return str(self.storage)
+
+
+        
 
 # primeGen generator fcn
 
