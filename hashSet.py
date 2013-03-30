@@ -66,6 +66,8 @@ class hashSet(object):
         inserts e into appropriate hash bucket.  Raises ValueError
         if e is not an integer.
         '''
+        if type(e) != int:
+            raise ValueError
         if self.member(e):
             return
         else:
