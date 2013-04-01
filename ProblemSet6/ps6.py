@@ -53,7 +53,7 @@ class NewsStory(object):
     (guid, title, subject, summary, link).
     """
 
-    def __init__(self, guid, title, subject, summary, link):
+    def __init__(self, *args):
         self.storage = []
         for arg in args:
             self.storage.append(arg)
