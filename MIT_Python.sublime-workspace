@@ -8,10 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "week_6_method_bouillabaisse.py",
+			"file": "ProblemSet6/ps6.py",
 			"settings":
 			{
-				"buffer_size": 5799,
+				"buffer_size": 8451,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ProblemSet6/ps6_test.py",
+			"settings":
+			{
+				"buffer_size": 11790,
 				"line_ending": "Unix"
 			}
 		}
@@ -56,6 +64,8 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
+		"/home/sircharles/programming/python/MIT course/week_6_method_bouillabaisse.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet6/feedparser.py",
 		"/home/sircharles/programming/python/MIT course/dialect.py",
 		"/home/sircharles/programming/python/MIT course/methodSoup.py",
@@ -65,7 +75,6 @@
 		"/home/sircharles/programming/python/MIT course/fileinfo.py",
 		"/home/sircharles/programming/python/MIT course/L11_hand.py",
 		"/home/sircharles/programming/python/MIT course/translateBadly.py",
-		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
 		"/home/sircharles/programming/python/MIT course/baseHTMLProcessor.py",
 		"/home/sircharles/programming/python/MIT course/hardNuts.py",
 		"/home/sircharles/programming/python/MIT course/get_guessed_word.py",
@@ -212,22 +221,23 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "week_6_method_bouillabaisse.py",
+					"file": "ProblemSet6/ps6.py",
 					"settings":
 					{
-						"buffer_size": 5799,
+						"buffer_size": 8451,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								648,
-								648
+								3461,
+								3461
 							]
 						],
 						"settings":
@@ -237,7 +247,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 47.0,
+						"translation.y": 2561.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ProblemSet6/ps6_test.py",
+					"settings":
+					{
+						"buffer_size": 11790,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5283,
+								5283
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1404.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -278,7 +316,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 216.0
+		"height": 332.0
 	},
 	"replace":
 	{
@@ -290,6 +328,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"test",
+				"ProblemSet6/ps6_test.py"
+			],
+			[
+				"bouil",
+				"week_6_method_bouillabaisse.py"
+			],
 			[
 				"feed",
 				"ProblemSet6/feedparser.py"
@@ -337,10 +383,6 @@
 			[
 				"pseu",
 				"ProblemSet5/ps5_pseudo.txt"
-			],
-			[
-				"test",
-				"ProblemSet4/test_ps4a.py"
 			],
 			[
 				"ps4",

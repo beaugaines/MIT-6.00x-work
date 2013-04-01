@@ -155,6 +155,21 @@ class NotTrigger(Trigger):
     def evaluate(self, story):
         return not self.other.evaluate(story)
 
+class AndTrigger(Trigger):
+    """
+    takes two triggers as args to its constructor and fires only if
+    both triggers fire for the story
+    """
+    def __init__(self, trigger1, trigger2):
+        self.trigger1 = trigger1
+        self.trigger2 = trigger2
+
+    def evaluate(self, story):
+        if self.trigger1.evaluate(story) and self.trigger2.evaluate(story):
+            return True
+        else:
+            return False
+
 # TODO: AndTrigger
 # TODO: OrTrigger
 
