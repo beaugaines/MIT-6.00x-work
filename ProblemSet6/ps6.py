@@ -102,13 +102,22 @@ class WordTrigger(Trigger):
     def isWordIn(self, text):
         """returns true if the word 'word' is present
         in text, False otherwise"""
-        text = text.lower()
-        text = text.replace("'s", " ")
-        words = text.split()
-        if self.trigger in words:
-            return True
-        else:
-            return False
+        scrubbedText = ''
+        punct = string.ascii
+        for c in text:
+            if c in string.punctuation:
+                scrubbedText += ' '
+            else:
+                scrubbedText += c
+
+        words = scrubbedText.lower().split()
+
+        searchWord = self.trigger.lower()
+
+        for word in words:
+            if word == searchWord:
+                return True
+        return False
 
 
 class TitleTrigger(WordTrigger):
