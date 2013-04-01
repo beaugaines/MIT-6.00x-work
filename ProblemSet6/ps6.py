@@ -189,8 +189,22 @@ class OrTrigger(Trigger):
 
 
 
-
 # Phrase Trigger
+
+class PhraseTrigger(Trigger):
+    """
+    fires when a given phrase is in any of the story's subject, title, or
+    summary.  the phrase must be an argument to the class's constructor.
+    """
+    def __init__(self, phrase):
+        self.phrase = phrase
+
+    def evaluate(self, story):
+        if self.phrase in story.getSubject() or self.phrase in story.getTitle() or self.phrase in story.getSummary():
+            return True
+        else:
+            return False
+
 # Question 9
 
 # TODO: PhraseTrigger
