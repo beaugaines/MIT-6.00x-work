@@ -145,9 +145,10 @@ class SummaryTrigger(WordTrigger):
 # TODO: NotTrigger
 
 class NotTrigger(Trigger):
-    """ inverts the output of another trigger; the other trigger
-        is taken as an argument to its constructor.  Given trigger
-        t and news item x, the output will be equal to 'NOT T.evaluate(x)'
+    """
+    inverts the output of another trigger; the other trigger
+    is taken as an argument to its constructor.  Given trigger
+    t and news item x, the output will be equal to 'NOT T.evaluate(x)'
     """
     def __init__(self, other):
         self.other = other
@@ -170,8 +171,23 @@ class AndTrigger(Trigger):
         else:
             return False
 
-# TODO: AndTrigger
-# TODO: OrTrigger
+
+class OrTrigger(Trigger):
+    """
+    takes two triggers as args to its constructor and fires if one
+    or the other trigger fires for the story
+    """
+    def __init__(self, trigger1, trigger2):
+        self.trigger1 = trigger1
+        self.trigger2 = trigger2
+
+    def evaluate(self, story):
+        if self.trigger1.evaluate(story) or self.trigger2.evaluate(story):
+            return True
+        else:
+            return False
+
+
 
 
 # Phrase Trigger
