@@ -46,7 +46,33 @@ def process(url):
 
 # Problem 1
 
-# TODO: NewsStory
+class NewsStory(object):
+    """
+    class that takes a set of arguments - the result of parsing a RSS feed -
+    and stores them appropriately.  assumes args will be in the format
+    (guid, title, subject, summary, link).
+    """
+
+    def __init__(self, guid, title, subject, summary, link):
+        self.storage = []
+        for arg in args:
+            self.storage.append(arg)
+
+
+    def getGuid(self):
+        pass
+
+    def getTitle(self):
+        pass
+
+    def getSubject(self):
+        pass
+
+    def getSummary(self):
+        pass
+
+    def getLink(self):
+        pass
 
 #======================
 # Part 2

@@ -8,34 +8,10 @@
 	"buffers":
 	[
 		{
-			"file": "methodSoup.py",
-			"settings":
-			{
-				"buffer_size": 1004,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "dialect.py",
-			"settings":
-			{
-				"buffer_size": 238,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "week_6_method_bouillabaisse.py",
 			"settings":
 			{
 				"buffer_size": 5799,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "hashSet.py",
-			"settings":
-			{
-				"buffer_size": 2542,
 				"line_ending": "Unix"
 			}
 		}
@@ -80,6 +56,10 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/ProblemSet6/feedparser.py",
+		"/home/sircharles/programming/python/MIT course/dialect.py",
+		"/home/sircharles/programming/python/MIT course/methodSoup.py",
+		"/home/sircharles/programming/python/MIT course/hashSet.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet3/ps3_hangman.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/ps4a.py",
 		"/home/sircharles/programming/python/MIT course/fileinfo.py",
@@ -94,7 +74,6 @@
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_pseudo.txt",
 		"/home/sircharles/Dropbox/CODE/Python/MIT Course/is_palindrome.py",
 		"/home/sircharles/programming/python/MIT course/gcdRecur.py",
-		"/home/sircharles/programming/python/MIT course/methodSoup.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/ps4b.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet4/test_ps4a.py",
 		"/home/sircharles/programming/python/MIT course/MIT_Python.sublime-workspace",
@@ -233,65 +212,10 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "methodSoup.py",
-					"settings":
-					{
-						"buffer_size": 1004,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								706,
-								706
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 351.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "dialect.py",
-					"settings":
-					{
-						"buffer_size": 238,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								231,
-								231
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "week_6_method_bouillabaisse.py",
 					"settings":
 					{
@@ -302,8 +226,8 @@
 						"selection":
 						[
 							[
-								2486,
-								2486
+								648,
+								648
 							]
 						],
 						"settings":
@@ -313,35 +237,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1101.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "hashSet.py",
-					"settings":
-					{
-						"buffer_size": 2542,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1906,
-								1906
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 854.0,
+						"translation.y": 47.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -394,6 +290,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"feed",
+				"ProblemSet6/feedparser.py"
+			],
 			[
 				"han",
 				"ProblemSet3/ps3_hangman.py"
