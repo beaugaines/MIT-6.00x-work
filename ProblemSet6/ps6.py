@@ -205,9 +205,6 @@ class PhraseTrigger(Trigger):
         else:
             return False
 
-# Question 9
-
-# TODO: PhraseTrigger
 
 
 #======================
@@ -221,9 +218,15 @@ def filterStories(stories, triggerlist):
 
     Returns: a list of only the stories for which a trigger in triggerlist fires.
     """
-    # TODO: Problem 10
-    # This is a placeholder (we're just returning all the stories, with no filtering) 
-    return stories
+    filteredStories =[]
+    for story in stories:
+        for trigger in triggerlist:
+            if trigger.evaluate(story):
+                filteredStories.append(story)
+            else:
+                continue
+
+    return filteredStories
 
 #======================
 # Part 4
