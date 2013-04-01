@@ -223,8 +223,9 @@ def filterStories(stories, triggerlist):
         for trigger in triggerlist:
             if trigger.evaluate(story):
                 filteredStories.append(story)
-            else:
-                continue
+                # note that I tried continue here but it did not filter the stories
+                # corrently - it returned too many stories in the filtered list
+                break
 
     return filteredStories
 
