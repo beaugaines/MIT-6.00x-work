@@ -140,5 +140,319 @@ AttributeError: 'dict' object has no attribute 'guid'
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">&lt;bound method NewsStory.getGuid of &lt;__main__.NewsStory object at 0x286a3d0&gt;&gt;
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>n.getGuid()
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">'myguid'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> softParse(s):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">import</span> string
+<span class="prompt">... </span>    letts = string.ascii_lowercase
+<span class="prompt">... </span>    s = s.lower()
+<span class="prompt">... </span>    s.replace(<span class="string">"'s"</span>, <span class="string">""</span>)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> s:
+<span class="prompt">... </span>        <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> letts:
+<span class="prompt">... </span>            s.replace(c, <span class="string">""</span>)
+<span class="prompt">... </span>    <span class="keyword">return</span> s</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>softParse(<span class="string">"soft's the word"</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">"soft's the word"
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a =<span class="string">"soft's"</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.replace(<span class="string">"'s"</span>, <span class="string">""</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">'soft'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> softParse(s):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">import</span> string
+<span class="prompt">... </span>    letts = string.ascii_lowercase
+<span class="prompt">... </span>    s = s.lower()
+<span class="prompt">... </span>    s = s.replace(<span class="string">"'s"</span>, <span class="string">""</span>)
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> s:
+<span class="prompt">... </span>        <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> letts:
+<span class="prompt">... </span>            s.replace(c, <span class="string">""</span>)
+<span class="prompt">... </span>    <span class="keyword">return</span> s</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>softParse(<span class="string">"soft's the word"</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">'soft the word'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">"New York City"</span> <span class="keyword">in</span> <span class="string">"In the heart of New York City's famous cafe"</span>
+</span><span class="commandsep"></span><span class="output"><span class="stdout">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'bob'</span> <span class="keyword">in</span> [<span class="string">'is your uncle'</span>, <span class="string">'not the one'</span>, <span class="string">'named phil'</span>]
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'bob'</span> <span class="keyword">in</span> [<span class="string">'is your uncle'</span>, <span class="string">'not the one'</span>, <span class="string">'named bob'</span>]
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>trig = <span class="string">'And'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">'%sTrigger'</span> % trig
+</span><span class="commandsep"></span><span class="output"><span class="stdout">AndTrigger
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">'yo fella{0}'</span>.<span class="builtin">format</span>(<span class="string">' you is cool'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">yo fella you is cool
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> makeTrigger(triggerMap, triggerType, params, name):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Takes in a map of names to trigger instance, the type of trigger to make,
+</span><span class="prompt">... </span><span class="string">    and the list of parameters to the constructor, and adds a new trigger
+</span><span class="prompt">... </span><span class="string">    to the trigger map dictionary.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    triggerMap: dictionary with names as keys (strings) and triggers as values
+</span><span class="prompt">... </span><span class="string">    triggerType: string indicating the type of trigger to make (ex: "TITLE")
+</span><span class="prompt">... </span><span class="string">    params: list of strings with the inputs to the trigger constructor (ex: ["world"])
+</span><span class="prompt">... </span><span class="string">    name: a string representing the name of the new trigger (ex: "t1")
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Modifies triggerMap, adding a new key-value pair for this trigger.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Returns a new instance of a trigger (ex: TitleTrigger, AndTrigger).
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">if</span> triggerType <span class="keyword">in</span> [<span class="string">'SUBJECT'</span>, <span class="string">'TITLE'</span>, <span class="string">'PHRASE'</span>, <span class="string">'SUMMARY'</span>]:
+<span class="prompt">... </span>        trigName = triggerType.capitalize() + <span class="string">'Trigger'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    paramString = <span class="string">' '</span>.join(params)
+<span class="prompt">... </span>    newTrigger = trigName(paramString)
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    triggerMap[name] = newTrigger
+<span class="prompt">... </span>    <span class="keyword">return</span> newTrigger</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>triggerMap = {}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> makeTrigger(triggerMap, triggerType, params, name):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Takes in a map of names to trigger instance, the type of trigger to make,
+</span><span class="prompt">... </span><span class="string">    and the list of parameters to the constructor, and adds a new trigger
+</span><span class="prompt">... </span><span class="string">    to the trigger map dictionary.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    triggerMap: dictionary with names as keys (strings) and triggers as values
+</span><span class="prompt">... </span><span class="string">    triggerType: string indicating the type of trigger to make (ex: "TITLE")
+</span><span class="prompt">... </span><span class="string">    params: list of strings with the inputs to the trigger constructor (ex: ["world"])
+</span><span class="prompt">... </span><span class="string">    name: a string representing the name of the new trigger (ex: "t1")
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Modifies triggerMap, adding a new key-value pair for this trigger.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Returns a new instance of a trigger (ex: TitleTrigger, AndTrigger).
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">if</span> triggerType <span class="keyword">in</span> [<span class="string">'SUBJECT'</span>, <span class="string">'TITLE'</span>, <span class="string">'PHRASE'</span>, <span class="string">'SUMMARY'</span>]:
+<span class="prompt">... </span>        trigName = triggerType.capitalize() + <span class="string">'Trigger'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    paramString = <span class="string">' '</span>.join(params)
+<span class="prompt">... </span>    newTrigger = trigName(paramString)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">print</span> newTrigger
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    triggerMap[name] = newTrigger
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newTrigger</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>makeTrigger(triggerMap, <span class="string">'TITLE'</span>, <span class="string">'Bob is uncle'</span>, <span class="string">'t1'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#24&gt;", line 1, in &lt;module&gt;
+    makeTrigger(triggerMap, 'TITLE', 'Bob is uncle', 't1')
+  File "&lt;pyshell#23&gt;", line 20, in makeTrigger
+    newTrigger = trigName(paramString)
+TypeError: 'str' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> makeTrigger(triggerMap, triggerType, params, name):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Takes in a map of names to trigger instance, the type of trigger to make,
+</span><span class="prompt">... </span><span class="string">    and the list of parameters to the constructor, and adds a new trigger
+</span><span class="prompt">... </span><span class="string">    to the trigger map dictionary.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    triggerMap: dictionary with names as keys (strings) and triggers as values
+</span><span class="prompt">... </span><span class="string">    triggerType: string indicating the type of trigger to make (ex: "TITLE")
+</span><span class="prompt">... </span><span class="string">    params: list of strings with the inputs to the trigger constructor (ex: ["world"])
+</span><span class="prompt">... </span><span class="string">    name: a string representing the name of the new trigger (ex: "t1")
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Modifies triggerMap, adding a new key-value pair for this trigger.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Returns a new instance of a trigger (ex: TitleTrigger, AndTrigger).
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">if</span> triggerType <span class="keyword">in</span> [<span class="string">'SUBJECT'</span>, <span class="string">'TITLE'</span>, <span class="string">'PHRASE'</span>, <span class="string">'SUMMARY'</span>]:
+<span class="prompt">... </span>        trigName = triggerType.capitalize() + <span class="string">'Trigger'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    paramString = <span class="string">"'"</span> + <span class="string">' '</span>.join(params) + <span class="string">"'"</span>
+<span class="prompt">... </span>    newTrigger = trigName(paramString)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">print</span> newTrigger
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    triggerMap[name] = newTrigger
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newTrigger</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>makeTrigger(triggerMap, <span class="string">'TITLE'</span>, <span class="string">'Bob is uncle'</span>, <span class="string">'t1'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#26&gt;", line 1, in &lt;module&gt;
+    makeTrigger(triggerMap, 'TITLE', 'Bob is uncle', 't1')
+  File "&lt;pyshell#25&gt;", line 20, in makeTrigger
+    newTrigger = trigName(paramString)
+TypeError: 'str' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> makeTrigger(triggerMap, triggerType, params, name):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Takes in a map of names to trigger instance, the type of trigger to make,
+</span><span class="prompt">... </span><span class="string">    and the list of parameters to the constructor, and adds a new trigger
+</span><span class="prompt">... </span><span class="string">    to the trigger map dictionary.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    triggerMap: dictionary with names as keys (strings) and triggers as values
+</span><span class="prompt">... </span><span class="string">    triggerType: string indicating the type of trigger to make (ex: "TITLE")
+</span><span class="prompt">... </span><span class="string">    params: list of strings with the inputs to the trigger constructor (ex: ["world"])
+</span><span class="prompt">... </span><span class="string">    name: a string representing the name of the new trigger (ex: "t1")
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Modifies triggerMap, adding a new key-value pair for this trigger.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Returns a new instance of a trigger (ex: TitleTrigger, AndTrigger).
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">if</span> triggerType <span class="keyword">in</span> [<span class="string">'SUBJECT'</span>, <span class="string">'TITLE'</span>, <span class="string">'PHRASE'</span>, <span class="string">'SUMMARY'</span>]:
+<span class="prompt">... </span>        trigName = triggerType.capitalize() + <span class="string">'Trigger'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    paramString = <span class="string">"'"</span> + <span class="string">' '</span>.join(params) + <span class="string">"'"</span>
+<span class="prompt">... </span>    newTrigger = <span class="builtin">eval</span>(trigName(paramString))
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">print</span> newTrigger
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    triggerMap[name] = newTrigger
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newTrigger</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>makeTrigger(triggerMap, <span class="string">'TITLE'</span>, <span class="string">'Bob is uncle'</span>, <span class="string">'t1'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#28&gt;", line 1, in &lt;module&gt;
+    makeTrigger(triggerMap, 'TITLE', 'Bob is uncle', 't1')
+  File "&lt;pyshell#27&gt;", line 20, in makeTrigger
+    newTrigger = eval(trigName(paramString))
+TypeError: 'str' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> makeTrigger(triggerMap, triggerType, params, name):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Takes in a map of names to trigger instance, the type of trigger to make,
+</span><span class="prompt">... </span><span class="string">    and the list of parameters to the constructor, and adds a new trigger
+</span><span class="prompt">... </span><span class="string">    to the trigger map dictionary.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    triggerMap: dictionary with names as keys (strings) and triggers as values
+</span><span class="prompt">... </span><span class="string">    triggerType: string indicating the type of trigger to make (ex: "TITLE")
+</span><span class="prompt">... </span><span class="string">    params: list of strings with the inputs to the trigger constructor (ex: ["world"])
+</span><span class="prompt">... </span><span class="string">    name: a string representing the name of the new trigger (ex: "t1")
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Modifies triggerMap, adding a new key-value pair for this trigger.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Returns a new instance of a trigger (ex: TitleTrigger, AndTrigger).
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">if</span> triggerType <span class="keyword">in</span> [<span class="string">'SUBJECT'</span>, <span class="string">'TITLE'</span>, <span class="string">'PHRASE'</span>, <span class="string">'SUMMARY'</span>]:
+<span class="prompt">... </span>        trigName = triggerType.capitalize() + <span class="string">'Trigger'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    paramString = <span class="string">"'"</span> + <span class="string">' '</span>.join(params) + <span class="string">"'"</span>
+<span class="prompt">... </span>    newTrigger = <span class="builtin">eval</span>(trigName(<span class="string">'%s'</span>)) % paramString
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">print</span> newTrigger
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    triggerMap[name] = newTrigger
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newTrigger</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>makeTrigger(triggerMap, <span class="string">'TITLE'</span>, <span class="string">'Bob is uncle'</span>, <span class="string">'t1'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#30&gt;", line 1, in &lt;module&gt;
+    makeTrigger(triggerMap, 'TITLE', 'Bob is uncle', 't1')
+  File "&lt;pyshell#29&gt;", line 20, in makeTrigger
+    newTrigger = eval(trigName('%s')) % paramString
+TypeError: 'str' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> makeTrigger(triggerMap, triggerType, params, name):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Takes in a map of names to trigger instance, the type of trigger to make,
+</span><span class="prompt">... </span><span class="string">    and the list of parameters to the constructor, and adds a new trigger
+</span><span class="prompt">... </span><span class="string">    to the trigger map dictionary.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    triggerMap: dictionary with names as keys (strings) and triggers as values
+</span><span class="prompt">... </span><span class="string">    triggerType: string indicating the type of trigger to make (ex: "TITLE")
+</span><span class="prompt">... </span><span class="string">    params: list of strings with the inputs to the trigger constructor (ex: ["world"])
+</span><span class="prompt">... </span><span class="string">    name: a string representing the name of the new trigger (ex: "t1")
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Modifies triggerMap, adding a new key-value pair for this trigger.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Returns a new instance of a trigger (ex: TitleTrigger, AndTrigger).
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">if</span> triggerType <span class="keyword">in</span> [<span class="string">'SUBJECT'</span>, <span class="string">'TITLE'</span>, <span class="string">'PHRASE'</span>, <span class="string">'SUMMARY'</span>]:
+<span class="prompt">... </span>        trigName = triggerType.capitalize() + <span class="string">'Trigger'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    paramString = <span class="string">"'"</span> + <span class="string">' '</span>.join(params) + <span class="string">"'"</span>
+<span class="prompt">... </span>    newTrigger = <span class="builtin">eval</span>(trigname(<span class="string">"{0}"</span>).<span class="builtin">format</span>(paramString))
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">print</span> newTrigger
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    triggerMap[name] = newTrigger
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newTrigger</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>makeTrigger(triggerMap, <span class="string">'TITLE'</span>, <span class="string">'Bob is uncle'</span>, <span class="string">'t1'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#32&gt;", line 1, in &lt;module&gt;
+    makeTrigger(triggerMap, 'TITLE', 'Bob is uncle', 't1')
+  File "&lt;pyshell#31&gt;", line 20, in makeTrigger
+    newTrigger = eval(trigname("{0}").format(paramString))
+NameError: global name 'trigname' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> makeTrigger(triggerMap, triggerType, params, name):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Takes in a map of names to trigger instance, the type of trigger to make,
+</span><span class="prompt">... </span><span class="string">    and the list of parameters to the constructor, and adds a new trigger
+</span><span class="prompt">... </span><span class="string">    to the trigger map dictionary.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    triggerMap: dictionary with names as keys (strings) and triggers as values
+</span><span class="prompt">... </span><span class="string">    triggerType: string indicating the type of trigger to make (ex: "TITLE")
+</span><span class="prompt">... </span><span class="string">    params: list of strings with the inputs to the trigger constructor (ex: ["world"])
+</span><span class="prompt">... </span><span class="string">    name: a string representing the name of the new trigger (ex: "t1")
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Modifies triggerMap, adding a new key-value pair for this trigger.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Returns a new instance of a trigger (ex: TitleTrigger, AndTrigger).
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">if</span> triggerType <span class="keyword">in</span> [<span class="string">'SUBJECT'</span>, <span class="string">'TITLE'</span>, <span class="string">'PHRASE'</span>, <span class="string">'SUMMARY'</span>]:
+<span class="prompt">... </span>        trigName = triggerType.capitalize() + <span class="string">'Trigger'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">print</span> trigName
+<span class="prompt">... </span>    paramString = <span class="string">"'"</span> + <span class="string">' '</span>.join(params) + <span class="string">"'"</span>
+<span class="prompt">... </span>    newTrigger = <span class="builtin">eval</span>(trigname(<span class="string">"{0}"</span>).<span class="builtin">format</span>(paramString))
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">print</span> newTrigger
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    triggerMap[name] = newTrigger
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newTrigger</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>makeTrigger(triggerMap, <span class="string">'TITLE'</span>, <span class="string">'Bob is uncle'</span>, <span class="string">'t1'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">TitleTrigger
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#34&gt;", line 1, in &lt;module&gt;
+    makeTrigger(triggerMap, 'TITLE', 'Bob is uncle', 't1')
+  File "&lt;pyshell#33&gt;", line 21, in makeTrigger
+    newTrigger = eval(trigname("{0}").format(paramString))
+NameError: global name 'trigname' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> makeTrigger(triggerMap, triggerType, params, name):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    Takes in a map of names to trigger instance, the type of trigger to make,
+</span><span class="prompt">... </span><span class="string">    and the list of parameters to the constructor, and adds a new trigger
+</span><span class="prompt">... </span><span class="string">    to the trigger map dictionary.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    triggerMap: dictionary with names as keys (strings) and triggers as values
+</span><span class="prompt">... </span><span class="string">    triggerType: string indicating the type of trigger to make (ex: "TITLE")
+</span><span class="prompt">... </span><span class="string">    params: list of strings with the inputs to the trigger constructor (ex: ["world"])
+</span><span class="prompt">... </span><span class="string">    name: a string representing the name of the new trigger (ex: "t1")
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Modifies triggerMap, adding a new key-value pair for this trigger.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    Returns a new instance of a trigger (ex: TitleTrigger, AndTrigger).
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">if</span> triggerType <span class="keyword">in</span> [<span class="string">'SUBJECT'</span>, <span class="string">'TITLE'</span>, <span class="string">'PHRASE'</span>, <span class="string">'SUMMARY'</span>]:
+<span class="prompt">... </span>        trigName = triggerType.capitalize() + <span class="string">'Trigger'</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">print</span> trigName
+<span class="prompt">... </span>    paramString = <span class="string">"'"</span> + <span class="string">' '</span>.join(params) + <span class="string">"'"</span>
+<span class="prompt">... </span>    newTrigger = <span class="builtin">eval</span>(trigName(<span class="string">"{0}"</span>).<span class="builtin">format</span>(paramString))
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">print</span> newTrigger
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    triggerMap[name] = newTrigger
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">return</span> newTrigger</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>makeTrigger(triggerMap, <span class="string">'TITLE'</span>, <span class="string">'Bob is uncle'</span>, <span class="string">'t1'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">TitleTrigger
+</span><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#36&gt;", line 1, in &lt;module&gt;
+    makeTrigger(triggerMap, 'TITLE', 'Bob is uncle', 't1')
+  File "&lt;pyshell#35&gt;", line 21, in makeTrigger
+    newTrigger = eval(trigName("{0}").format(paramString))
+TypeError: 'str' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>params
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#37&gt;", line 1, in &lt;module&gt;
+    params
+NameError: name 'params' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>params = [<span class="string">'SUBJECT'</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">type</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">&lt;type 'type'&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>triggerType = <span class="string">'SUBJECT'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>params = [<span class="string">'Giant squids invading Yellow Sea'</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>triggerCall = triggerType.capitalize() + <span class="string">"Trigger({0})"</span>.<span class="builtin">format</span>(params)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>triggerCall
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">"SubjectTrigger(['Giant squids invading Yellow Sea'])"
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tcall2 = triggerType.capitalize() + <span class="string">"Trigger%s"</span> % params
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tcall2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">"SubjectTrigger['Giant squids invading Yellow Sea']"
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

@@ -249,8 +249,28 @@ def makeTrigger(triggerMap, triggerType, params, name):
 
     Returns a new instance of a trigger (ex: TitleTrigger, AndTrigger).
     """
-    # TODO: Problem 11
+    if triggerType in ['SUBJECT', 'TITLE', 'PHRASE', 'SUMMARY']:
+        trigName = triggerType.capitalize() 
+        paramsList = "'" + " ".join(params) + "'"
+        trigCall = trigName + "Trigger(%s)" % paramsList
+        newTrig= eval(trigCall)
+    else:
+        if triggerType == 'AND':
+            newTrig = AndTrigger(triggerMap[params[0]], triggerMap[params[1]])
+        if triggerType == 'OR':
+            newTrig = OrTrigger(triggerMap[params[0]], triggerMap[params[1]])
+        else:
+            newTrig = NotTrigger(triggerMap[params[0]])
 
+    triggerMap[name] = newTrig
+
+    return newTrig
+
+
+
+
+    triggerMap[name] = newTrigger
+    return newTrigger
 
 def readTriggerConfig(filename):
     """
@@ -307,9 +327,7 @@ def main_thread(master):
         t4 = OrTrigger(t2, t3)
         triggerlist = [t1, t4]
         
-        # TODO: Problem 11
-        # After implementing makeTrigger, uncomment the line below:
-        # triggerlist = readTriggerConfig("triggers.txt")
+        triggerlist = readTriggerConfig("triggers.txt")
 
         # **** from here down is about drawing ****
         frame = Frame(master)
