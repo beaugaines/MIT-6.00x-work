@@ -137,10 +137,24 @@ class SummaryTrigger(WordTrigger):
 
     def evaluate(self, story):
         return self.isWordIn(story.getSummary())
+
+
 # Composite Triggers
 # Problems 6-8
 
 # TODO: NotTrigger
+
+class NotTrigger(Trigger):
+    """ inverts the output of another trigger; the other trigger
+        is taken as an argument to its constructor.  Given trigger
+        t and news item x, the output will be equal to 'NOT T.evaluate(x)'
+    """
+    def __init__(self, other):
+        self.other = other
+
+    def evaluate(self, story):
+        return not self.other.evaluate(story)
+
 # TODO: AndTrigger
 # TODO: OrTrigger
 
