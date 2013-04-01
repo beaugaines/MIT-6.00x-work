@@ -54,25 +54,29 @@ class NewsStory(object):
     """
 
     def __init__(self, *args):
-        self.storage = []
-        for arg in args:
-            self.storage.append(arg)
+        self.storage = {}
+        if args:
+            self.storage['guid'] = args[0]
+            self.storage['title'] = args[1]
+            self.storage['subject'] = args[2]
+            self.storage['summary'] = args[3]
+            self.storage['link'] = args[4]
 
 
     def getGuid(self):
-        pass
+        return self.storage['guid']
 
     def getTitle(self):
-        pass
+        return self.storage['title']
 
     def getSubject(self):
-        pass
-
+        return self.storage['subject']
+ 
     def getSummary(self):
-        pass
+        return self.storage['summary']
 
     def getLink(self):
-        pass
+        return self.storage['link']
 
 #======================
 # Part 2

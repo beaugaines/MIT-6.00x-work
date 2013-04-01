@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="DreamPie Format" content="1">
+<title>DreamPie History</title>
+<style>
+body {
+  white-space: pre-wrap;
+  font-family: Ubuntu Mono;
+  font-size: 14336;
+  color: #ffffff;
+  background-color: #000000;
+}
+span.folded {
+ display: none;
+}
+span.commandsep {
+ display: none;
+}
+span.command-defs {
+}
+span.command {
+}
+span.output {
+}
+span.fold-message {
+  color: #a7a7a7;
+  background-color: #003b6c;
+}
+span.message {
+  color: #ffff00;
+}
+span.prompt {
+  color: #e400b6;
+}
+span.exception {
+  color: #ff8080;
+}
+span.result-ind {
+  color: #0000ff;
+}
+span.result {
+  color: #bcffff;
+}
+span.stderr {
+  color: #ff8080;
+}
+span.stdout {
+  color: #bcffff;
+}
+span.stdin {
+}
+span.error {
+  background-color: #ff0000;
+}
+span.bracket-3 {
+  color: #ffabab;
+}
+span.bracket-2 {
+  color: #dfabff;
+}
+span.bracket-1 {
+  color: #abffab;
+}
+span.bracket-match {
+  background-color: #00008b;
+}
+span.comment {
+  color: #c9a3a0;
+}
+span.number {
+  color: #aeacff;
+}
+span.string {
+  color: #00e400;
+}
+span.builtin {
+  color: #efcfcf;
+}
+span.keyword {
+  color: #ff7700;
+}
+</style>
+</head>
+<body><span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> NewsStory(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    class that takes a set of arguments - the result of parsing a RSS feed -
+</span><span class="prompt">... </span><span class="string">    and stores them appropriately.  assumes args will be in the format
+</span><span class="prompt">... </span><span class="string">    (guid, title, subject, summary, link).
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, *args):
+<span class="prompt">... </span>        self.storage = {}
+<span class="prompt">... </span>        <span class="keyword">if</span> args:
+<span class="prompt">... </span>            self.storage[<span class="string">'guid'</span>] = args[<span class="number">0</span>]
+<span class="prompt">... </span>            self.storage[<span class="string">'title'</span>] = args[<span class="number">1</span>]
+<span class="prompt">... </span>            self.storage[<span class="string">'subject'</span>] = args[<span class="number">2</span>]
+<span class="prompt">... </span>            self.storage[<span class="string">'summary'</span>] = args[<span class="number">3</span>]
+<span class="prompt">... </span>            self.storage[<span class="string">'link'</span>] = args[<span class="number">4</span>]</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>n = NewStory(<span class="string">'myguid'</span>, <span class="string">'mytitle'</span>, <span class="string">'awesome_subject'</span>, <span class="string">'scintillating summary'</span>, <span class="string">'enticing link'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
+    n = NewStory('myguid', 'mytitle', 'awesome_subject', 'scintillating summary', 'enticing link')
+NameError: name 'NewStory' is not defined
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>n = NewsStory(<span class="string">'myguid'</span>, <span class="string">'mytitle'</span>, <span class="string">'awesome_subject'</span>, <span class="string">'scintillating summary'</span>, <span class="string">'enticing link'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>n
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">&lt;__main__.NewsStory object at 0x286a2d0&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>n.storage.guid
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#4&gt;", line 1, in &lt;module&gt;
+    n.storage.guid
+AttributeError: 'dict' object has no attribute 'guid'
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> NewsStory(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    class that takes a set of arguments - the result of parsing a RSS feed -
+</span><span class="prompt">... </span><span class="string">    and stores them appropriately.  assumes args will be in the format
+</span><span class="prompt">... </span><span class="string">    (guid, title, subject, summary, link).
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, *args):
+<span class="prompt">... </span>        self.storage = {}
+<span class="prompt">... </span>        <span class="keyword">if</span> args:
+<span class="prompt">... </span>            self.storage[<span class="string">'guid'</span>] = args[<span class="number">0</span>]
+<span class="prompt">... </span>            self.storage[<span class="string">'title'</span>] = args[<span class="number">1</span>]
+<span class="prompt">... </span>            self.storage[<span class="string">'subject'</span>] = args[<span class="number">2</span>]
+<span class="prompt">... </span>            self.storage[<span class="string">'summary'</span>] = args[<span class="number">3</span>]
+<span class="prompt">... </span>            self.storage[<span class="string">'link'</span>] = args[<span class="number">4</span>]
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getGuid(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.storage[<span class="string">'guid'</span>]</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>n = NewsStory(<span class="string">'myguid'</span>, <span class="string">'mytitle'</span>, <span class="string">'awesome_subject'</span>, <span class="string">'scintillating summary'</span>, <span class="string">'enticing link'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>n.getGuid
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">&lt;bound method NewsStory.getGuid of &lt;__main__.NewsStory object at 0x286a3d0&gt;&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>n.getGuid()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">'myguid'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
+</html>
