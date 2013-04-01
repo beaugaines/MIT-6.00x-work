@@ -54,29 +54,28 @@ class NewsStory(object):
     """
 
     def __init__(self, *args):
-        self.storage = {}
         if args:
-            self.storage['guid'] = args[0]
-            self.storage['title'] = args[1]
-            self.storage['subject'] = args[2]
-            self.storage['summary'] = args[3]
-            self.storage['link'] = args[4]
+            self.guid = args[0]
+            self.title = args[1]
+            self.subject = args[2]
+            self.summary = args[3]
+            self.link = args[4]
 
 
     def getGuid(self):
-        return self.storage['guid']
+        return self.guid
 
     def getTitle(self):
-        return self.storage['title']
+        return self.title
 
     def getSubject(self):
-        return self.storage['subject']
+        return self.subject
  
     def getSummary(self):
-        return self.storage['summary']
+        return self.summary
 
     def getLink(self):
-        return self.storage['link']
+        return self.link
 
 #======================
 # Part 2
@@ -89,14 +88,38 @@ class Trigger(object):
         Returns True if an alert should be generated
         for the given news item, or False otherwise.
         """
-        raise NotImplementedError
+        raise NotImplementedError        
 
 # Whole Word Triggers
 # Problems 2-5
 
-# TODO: WordTrigger
 
-# TODO: TitleTrigger
+class WordTrigger(Trigger):
+
+    def __init__(self, word):
+        self.trigger = word
+
+    def isWordIn(self, text):
+        """returns true if the word 'word' is present
+        in text, False otherwise"""
+        text = text.lower()
+        text = text.replace("'s", " ")
+        words = text.split()
+        if self.trigger in words:
+            return True
+        else:
+            return False
+
+
+class TitleTrigger(WordTrigger):
+    def __init__(self, title):
+        super(TitleTrigger, self).__init__(title)
+
+    def evaluate(self, story):
+        return self.isWordIn(story)
+
+
+
 # TODO: SubjectTrigger
 # TODO: SummaryTrigger
 
