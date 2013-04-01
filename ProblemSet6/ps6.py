@@ -257,7 +257,10 @@ def makeTrigger(triggerMap, triggerType, params, name):
     else:
         if triggerType == 'AND':
             newTrig = AndTrigger(triggerMap[params[0]], triggerMap[params[1]])
-        if triggerType == 'OR':
+            
+        # note this needs to be elif below - if it is plain ole if it will not
+        # reliably process 'AND' triggers
+        elif triggerType == 'OR':
             newTrig = OrTrigger(triggerMap[params[0]], triggerMap[params[1]])
         else:
             newTrig = NotTrigger(triggerMap[params[0]])
