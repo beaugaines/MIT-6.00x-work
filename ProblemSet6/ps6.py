@@ -103,7 +103,6 @@ class WordTrigger(Trigger):
         """returns true if the word 'word' is present
         in text, False otherwise"""
         scrubbedText = ''
-        punct = string.ascii
         for c in text:
             if c in string.punctuation:
                 scrubbedText += ' '
@@ -121,18 +120,23 @@ class WordTrigger(Trigger):
 
 
 class TitleTrigger(WordTrigger):
-    def __init__(self, title):
-        super(TitleTrigger, self).__init__(title)
 
     def evaluate(self, story):
-        return self.isWordIn(story)
+        return self.isWordIn(story.getTitle())
 
 
 
-# TODO: SubjectTrigger
-# TODO: SummaryTrigger
+
+class SubjectTrigger(WordTrigger):
+
+    def evaluate(self, story):
+        return self.isWordIn(story.getSubject())
 
 
+class SummaryTrigger(WordTrigger):
+
+    def evaluate(self, story):
+        return self.isWordIn(story.getSummary())
 # Composite Triggers
 # Problems 6-8
 
