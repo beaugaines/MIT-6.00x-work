@@ -21,15 +21,15 @@
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
 def match_ends(words):
-  """ takes a list of strings and returns the count of the number
-  of strings where the str length is 2 or more and first and
-  last chars of the string are the same """
-
-  res = 0
-  for s in words:
-    if len(s) >= 2 and s[0] == s[-1]:
-      res +=1
-  return res
+    """ takes a list of strings and returns the count of the number
+    of strings where the str length is 2 or more and first and
+    last chars of the string are the same """
+  
+    res = 0
+    for s in words:
+        if len(s) >= 2 and s[0] == s[-1]:
+            res +=1
+    return res
 
 
 # B. front_x
@@ -40,8 +40,18 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-  # +++your code here+++
-  return
+    x_list = []
+    non_x_list = []
+    for w in words:
+        if w[0].lower() == 'x':
+            x_list.append(w)
+        else:
+            non_x_list.append(w)
+    x_list = sorted(x_list)
+    x_list.extend(sorted(non_x_list))
+    return x_list
+
+
 
 
 
