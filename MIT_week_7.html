@@ -454,5 +454,39 @@ NameError: name 'params' is not defined
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tcall2 = triggerType.capitalize() + <span class="string">"Trigger%s"</span> % params
 </span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tcall2
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">"SubjectTrigger['Giant squids invading Yellow Sea']"
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">try</span>:
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="number">5</span>/<span class="number">0</span>
+<span class="prompt">... </span><span class="keyword">except</span> <span class="builtin">ZeroDivisionError</span>, e:
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'exception: '</span>, <span class="builtin">str</span>(e)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">exception:  integer division or modulo by zero
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">try</span>:
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="number">5</span>/<span class="number">0</span>
+<span class="prompt">... </span><span class="keyword">except</span> e:
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'exception: '</span>, <span class="builtin">str</span>(e)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#47&gt;", line 2, in &lt;module&gt;
+    print 5/0
+ZeroDivisionError: integer division or modulo by zero
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> pylab
+</span><span class="commandsep"></span><span class="output"><span class="stderr">Warning: matplotlib in non-interactive mode detected.
+This means that plots will appear only after you run show().
+Use Edit-&gt;Preferences-&gt;Shell to automatically switch to interactive mode 
+or to suppress this warning.
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>princ = <span class="number">10000</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>rate = <span class="number">0.05</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>years = <span class="number">20</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>vals = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(years+<span class="number">1</span>):
+<span class="prompt">... </span>    vals.append(princ)
+<span class="prompt">... </span>    princ += princ * rate
+<span class="prompt">... </span>pylab.plot(<span class="builtin">range</span>(years+<span class="number">1</span>), vals)
+<span class="prompt">... </span>pylab.show()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">[&lt;matplotlib.lines.Line2D object at 0x42cb910&gt;]
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

@@ -11,15 +11,15 @@
 			"file": "ProblemSet6/ps6.py",
 			"settings":
 			{
-				"buffer_size": 8451,
+				"buffer_size": 10644,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ProblemSet6/ps6_test.py",
+			"file": "ProblemSet6/triggers.txt",
 			"settings":
 			{
-				"buffer_size": 11790,
+				"buffer_size": 413,
 				"line_ending": "Unix"
 			}
 		}
@@ -64,6 +64,7 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6_test.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
 		"/home/sircharles/programming/python/MIT course/week_6_method_bouillabaisse.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet6/feedparser.py",
@@ -229,15 +230,15 @@
 					"file": "ProblemSet6/ps6.py",
 					"settings":
 					{
-						"buffer_size": 8451,
+						"buffer_size": 10644,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3461,
-								3461
+								6690,
+								6690
 							]
 						],
 						"settings":
@@ -247,35 +248,33 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2561.0,
+						"translation.y": 4655.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "ProblemSet6/ps6_test.py",
+					"file": "ProblemSet6/triggers.txt",
 					"settings":
 					{
-						"buffer_size": 11790,
+						"buffer_size": 413,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5283,
-								5283
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1404.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -328,6 +327,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"trir",
+				"ProblemSet6/triggers.txt"
+			],
 			[
 				"test",
 				"ProblemSet6/ps6_test.py"
