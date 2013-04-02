@@ -488,5 +488,214 @@ or to suppress this warning.
 <span class="prompt">... </span>pylab.plot(<span class="builtin">range</span>(years+<span class="number">1</span>), vals)
 <span class="prompt">... </span>pylab.show()
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">[&lt;matplotlib.lines.Line2D object at 0x42cb910&gt;]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(years+<span class="number">1</span>):
+<span class="prompt">... </span>    vals.append(princ)
+<span class="prompt">... </span>    princ += princ * rate
+<span class="prompt">... </span>pylab.plot(<span class="builtin">range</span>(years+<span class="number">1</span>), vals)
+<span class="prompt">... </span>pylab.title(<span class="string">'5% Growth, Compounded annually'</span>)
+<span class="prompt">... </span>pylab.show()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#6&gt;", line 4, in &lt;module&gt;
+    pylab.plot(range(years+1), vals)
+  File "/usr/lib/pymodules/python2.7/matplotlib/pyplot.py", line 2467, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 3893, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 322, in _grab_next_args
+    for seg in self._plot_args(remaining, kwargs):
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 300, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 240, in _xy_from_xy
+    raise ValueError("x and y must have same first dimension")
+ValueError: x and y must have same first dimension
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(years+<span class="number">1</span>):
+<span class="prompt">... </span>    vals.append(princ)
+<span class="prompt">... </span>    princ += princ * rate
+<span class="prompt">... </span>pylab.plot(<span class="builtin">range</span>(years+<span class="number">1</span>), vals)
+<span class="prompt">... </span>pylab.title(<span class="string">'5% Growth, Compounded annually'</span>)
+<span class="prompt">... </span>pylab.xlabel(<span class="string">'Years Compounding'</span>)
+<span class="prompt">... </span>pylab.ylabel(<span class="string">'Val of principal'</span>)
+<span class="prompt">... </span>pylab.show()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#7&gt;", line 4, in &lt;module&gt;
+    pylab.plot(range(years+1), vals)
+  File "/usr/lib/pymodules/python2.7/matplotlib/pyplot.py", line 2467, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 3893, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 322, in _grab_next_args
+    for seg in self._plot_args(remaining, kwargs):
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 300, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 240, in _xy_from_xy
+    raise ValueError("x and y must have same first dimension")
+ValueError: x and y must have same first dimension
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(years+<span class="number">1</span>):
+<span class="prompt">... </span>    vals.append(princ)
+<span class="prompt">... </span>    princ += princ * rate
+<span class="prompt">... </span>pylab.plot(<span class="builtin">range</span>(years+<span class="number">1</span>), vals)
+<span class="prompt">... </span>pylab.xlabel(<span class="string">'Years Compounding'</span>)
+<span class="prompt">... </span>pylab.ylabel(<span class="string">'Val of principal'</span>)
+<span class="prompt">... </span>pylab.show()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#8&gt;", line 4, in &lt;module&gt;
+    pylab.plot(range(years+1), vals)
+  File "/usr/lib/pymodules/python2.7/matplotlib/pyplot.py", line 2467, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 3893, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 322, in _grab_next_args
+    for seg in self._plot_args(remaining, kwargs):
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 300, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 240, in _xy_from_xy
+    raise ValueError("x and y must have same first dimension")
+ValueError: x and y must have same first dimension
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>vals
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">[10000,</span></span><span class="folded"><span class="output"><span class="result">
+ 10500.0,
+ 11025.0,
+ 11576.25,
+ 12155.0625,
+ 12762.815625,
+ 13400.95640625,
+ 14071.0042265625,
+ 14774.554437890625,
+ 15513.282159785156,
+ 16288.946267774414,
+ 17103.393581163135,
+ 17958.56326022129,
+ 18856.491423232354,
+ 19799.31599439397,
+ 20789.28179411367,
+ 21828.745883819356,
+ 22920.183178010324,
+ 24066.19233691084,
+ 25269.501953756382,
+ 26532.977051444203,
+ 27859.62590401641,
+ 29252.607199217233,
+ 30715.237559178095,
+ 32250.999437136998,
+ 33863.549408993844,
+ 35556.72687944354,
+ 37334.56322341572,
+ 39201.291384586504,
+ 41161.35595381583,
+ 43219.42375150662,
+ 45380.39493908195,
+ 47649.41468603604,
+ 50031.88542033784,
+ 52533.47969135473,
+ 55160.15367592247,
+ 57918.16135971859,
+ 60814.069427704526,
+ 63854.77289908975,
+ 67047.51154404425,
+ 70399.88712124646,
+ 73919.88147730878,
+ 77615.87555117422,
+ 81496.66932873293,
+ 85571.50279516957,
+ 89850.07793492805,
+ 94342.58183167446,
+ 99059.71092325817,
+ 104012.69646942108,
+ 109213.33129289214,
+ 114673.99785753674,
+ 120407.69775041359,
+ 126428.08263793426,
+ 132749.48676983098,
+ 139386.96110832255,
+ 146356.30916373868,
+ 153674.1246219256,
+ 161357.8308530219,
+ 169425.72239567302,
+ 177897.00851545666,
+ 186791.8589412295,
+ 196131.45188829096,
+ 205938.0244827055,
+ 216234.9257068408,
+ 227046.67199218282,
+ 238399.00559179197,
+ 250318.95587138156,
+ 262834.90366495063,
+ 275976.6488481982,
+ 289775.48129060806,
+ 304264.25535513845,
+ 319477.46812289534,
+ 335451.34152904013,
+ 352223.90860549215,
+ 369835.10403576674,
+ 388326.85923755507,
+ 407743.2021994328,
+ 428130.3623094045,
+ 449536.8804248747,
+ 472013.72444611846,
+ 495614.4106684244,
+ 520395.1312018456,
+ 546414.8877619379,
+ 573735.6321500348]
+</span></span></span><span class="fold-message">[About 83 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>vals = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>principal = <span class="number">10000</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(years+<span class="number">1</span>):
+<span class="prompt">... </span>    vals.append(princ)
+<span class="prompt">... </span>    princ += princ * rate
+<span class="prompt">... </span>pylab.plot(<span class="builtin">range</span>(years+<span class="number">1</span>), vals)
+<span class="prompt">... </span>pylab.title(<span class="string">'5% Growth, Compounded annually'</span>)
+<span class="prompt">... </span>pylab.xlabel(<span class="string">'Years Compounding'</span>)
+<span class="prompt">... </span>pylab.ylabel(<span class="string">'Val of principal'</span>)
+<span class="prompt">... </span>pylab.show()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">&lt;matplotlib.text.Text object at 0x4e12a10&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(years+<span class="number">1</span>):
+<span class="prompt">... </span>    vals.append(princ)
+<span class="prompt">... </span>    princ += princ * rate
+<span class="prompt">... </span>pylab.plot(<span class="builtin">range</span>(years+<span class="number">1</span>), vals, <span class="string">'ro'</span>)
+<span class="prompt">... </span>pylab.title(<span class="string">'5% Growth, Compounded annually'</span>)
+<span class="prompt">... </span>pylab.xlabel(<span class="string">'Years Compounding'</span>)
+<span class="prompt">... </span>pylab.ylabel(<span class="string">'Val of principal'</span>)
+<span class="prompt">... </span>pylab.show()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#13&gt;", line 4, in &lt;module&gt;
+    pylab.plot(range(years+1), vals, 'ro')
+  File "/usr/lib/pymodules/python2.7/matplotlib/pyplot.py", line 2467, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 3893, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 322, in _grab_next_args
+    for seg in self._plot_args(remaining, kwargs):
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 300, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/usr/lib/pymodules/python2.7/matplotlib/axes.py", line 240, in _xy_from_xy
+    raise ValueError("x and y must have same first dimension")
+ValueError: x and y must have same first dimension
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>vals = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>principle = <span class="number">10000</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(years+<span class="number">1</span>):
+<span class="prompt">... </span>    vals.append(princ)
+<span class="prompt">... </span>    princ += princ * rate
+<span class="prompt">... </span>pylab.plot(<span class="builtin">range</span>(years+<span class="number">1</span>), vals, <span class="string">'ro'</span>)
+<span class="prompt">... </span>pylab.title(<span class="string">'5% Growth, Compounded annually'</span>)
+<span class="prompt">... </span>pylab.xlabel(<span class="string">'Years Compounding'</span>)
+<span class="prompt">... </span>pylab.ylabel(<span class="string">'Val of principal'</span>)
+<span class="prompt">... </span>pylab.show()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">&lt;matplotlib.text.Text object at 0x42e8710&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'D'</span>.isdigit()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'-'</span>.isdigit()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">del</span> a[<span class="number">0</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">['b', 'c']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a != <span class="number">2</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.remove(<span class="string">'c'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">['b']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>f = [<span class="string">'------------------'</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(f)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">1
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

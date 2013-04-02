@@ -9,7 +9,6 @@ import pylab
 highs = []
 lows = []
 
-allTemps = []
 
 #read in the file, split the lines, and push the relevant data onto the high/low arrays
 

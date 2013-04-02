@@ -8,18 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "ProblemSet6/ps6.py",
+			"file": "Week 7/temp_plotter.py",
 			"settings":
 			{
-				"buffer_size": 10644,
+				"buffer_size": 834,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ProblemSet6/triggers.txt",
+			"file": "Week 7/julyTemps.txt",
 			"settings":
 			{
-				"buffer_size": 413,
+				"buffer_size": 350,
 				"line_ending": "Unix"
 			}
 		}
@@ -64,10 +64,13 @@
 	},
 	"file_history":
 	[
-		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6_test.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
-		"/home/sircharles/programming/python/MIT course/week_6_method_bouillabaisse.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet6/triggers.txt",
 		"/home/sircharles/programming/python/MIT course/ProblemSet6/feedparser.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet6/project_util.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6_test.py",
+		"/home/sircharles/programming/python/MIT course/week_6_method_bouillabaisse.py",
 		"/home/sircharles/programming/python/MIT course/dialect.py",
 		"/home/sircharles/programming/python/MIT course/methodSoup.py",
 		"/home/sircharles/programming/python/MIT course/hashSet.py",
@@ -227,46 +230,44 @@
 			[
 				{
 					"buffer": 0,
-					"file": "ProblemSet6/ps6.py",
+					"file": "Week 7/temp_plotter.py",
 					"settings":
 					{
-						"buffer_size": 10644,
+						"buffer_size": 834,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6690,
-								6690
+								830,
+								830
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 4655.0,
+						"translation.y": 161.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "ProblemSet6/triggers.txt",
+					"file": "Week 7/julyTemps.txt",
 					"settings":
 					{
-						"buffer_size": 413,
+						"buffer_size": 350,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								61,
+								61
 							]
 						],
 						"settings":
