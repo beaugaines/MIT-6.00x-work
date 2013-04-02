@@ -13,13 +13,13 @@ lows = []
 #read in the file, split the lines, and push the relevant data onto the high/low arrays
 
 with open('julyTemps.txt') as f:
-  for line in f.readlines():
-    fields = line.split()
-    if len(fields) < 3 or not fields[0].isdigit():
-      pass
-    else:
-      highs.append(int(fields[1]))
-      lows.append(int(fields[2]))
+    for line in f.readlines():
+        fields = line.split()
+        if len(fields) < 3 or not fields[0].isdigit():
+            pass
+        else:
+            highs.append(int(fields[1]))
+            lows.append(int(fields[2]))
 
 
 # calculate daily temp differentials
