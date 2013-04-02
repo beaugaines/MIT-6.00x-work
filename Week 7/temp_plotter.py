@@ -16,8 +16,8 @@ with open('julyTemps.txt') as f:
     if len(fields) < 3 or not fields[0].isdigit():
       pass
     else:
-      highs.append(fields[1])
-      lows.append(fields[2])
+      highs.append(int(fields[1]))
+      lows.append(int(fields[2]))
 
 
 
