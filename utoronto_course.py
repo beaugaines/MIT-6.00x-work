@@ -1,6 +1,5 @@
 # more palindromes!
 
-import unittest
 
 def pal_1(s):
     """
@@ -28,7 +27,22 @@ def pal_2(s):
         return True
     return s[:n // 2] == reverse(s[(n - n //2):])
 
-      
+
+def pal_3(s):
+    """
+    (str) -> bool
+    Return True if an only if s is a palindrome
+    pal_1('noon')  ->  True
+    pal_1('fugue')  -> False
+    """
+    if len(s) == 0:
+        return False
+    i = 0
+    j = len(s) - 1
+    while i < j and s[i] == s[j]:
+        i += 1
+        j -= 1
+    return j <= i
 
 def reverse(s):
     """
@@ -74,4 +88,13 @@ test(pal_2('fugue'), False)
 test(pal_2(''), False)
 test(pal_2('dented'), False)
 
+
+# test pal_3
+print 'test pal_3'
+print '----------'
+test(pal_3('bob'), True)
+test(pal_3('a'), True)
+test(pal_3('fugue'), False)
+test(pal_3(''), False)
+test(pal_3('dented'), False)
 
