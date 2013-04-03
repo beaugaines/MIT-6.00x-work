@@ -21,15 +21,12 @@ def pal_2(s):
     """
     if type(s) != str:
         raise ValueError('Must enter a string.')
-    if len(s) == 0:
+    n = len(s)
+    if n == 0:
         return False
-    if len(s) == 1:
+    if n == 1:
         return True
-    divisor = len(s)//2
-    if divisor % 2 == 1:
-        return s[:divisor] == s[divisor+1:]
-    else:
-        return s[:divisor] == s[divisor:]
+    return s[:n // 2] == reverse(s[(n - n //2):])
 
       
 
@@ -75,3 +72,6 @@ test(pal_2('bob'), True)
 test(pal_2('a'), True)
 test(pal_2('fugue'), False)
 test(pal_2(''), False)
+test(pal_2('dented'), False)
+
+
