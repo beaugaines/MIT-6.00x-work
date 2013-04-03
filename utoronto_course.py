@@ -34,3 +34,10 @@ def test(got,expected):
     else:
         prefix = ' FAIL '
     print "{0} got: {1}, expected {2}".format(prefix, repr(got), repr(expected))
+
+
+# test pal_1
+
+test(pal_1('bob'), True)
+test(pal_1('a'), True)
+test(pal_1('fugue'), False)
