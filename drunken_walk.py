@@ -1,13 +1,5 @@
 class Location(object):
 
-    """
-    (int, int) -> str
-
-    Takes two integers describing the initial x and y coordinates of a drunken farmer
-    and returns a string describing his location after stumbling around for awhile
-    l = Location(5,6)
-    print l  -> (5,6)
-    """
 
     def __init__(self):
         """x and y are floats"""
@@ -35,3 +27,29 @@ class Location(object):
     def __str__(self):
         return '<' + str(self.x) + ', ' + str(self.y)
 
+
+
+class Field(object):
+
+    def __init__(self):
+        self.drunks = {}
+
+        def addDrunk(self, drunk, loc):
+            # add a new drunk to the field at location loc
+            if drunk in self.drunks:
+                raise ValueError('Duplicate drunk')
+            else:
+                self.drunks[drunk] = loc
+
+        def moveDrunk(self, drunk):
+            if not drunk in self.drunks:
+                raise ValueError("Drunk not in field")
+            xDist, yDist = drunk.takeStep()
+            currentLocation = self.drunks[drunk]
+            # use move method of Location class to get new location
+            self.drunks[drunk] = currentLocation.move(xDist, yDist)
+
+        def getLoc(self, drunk):
+            if not drunk in self.drunks:
+                raise ValueError("Drunk not in field")
+            return self.drunks[drunk]
