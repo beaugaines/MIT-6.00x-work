@@ -697,5 +697,81 @@ ValueError: x and y must have same first dimension
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>f = [<span class="string">'------------------'</span>]
 </span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">len</span>(f)
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> MortgagePlots(<span class="builtin">object</span>):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> plotPayments(self, style):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>        pylab.plot(self.paid[<span class="number">1</span>], style, label=self.legend)
+<span class="prompt">... </span>        
+</span></span><span class="command"><span class="prompt">... </span>    <span class="keyword">def</span> plotTotPd(self, style):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>        totPd = [self.paid[<span class="number">0</span>]]
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>, <span class="builtin">len</span>(self.paid)):
+<span class="prompt">... </span>            totPd.append(totPd[-<span class="number">1</span>] + self.paid[i])
+<span class="prompt">... </span>        pylab.plot(totPd, styl, label=self.legend)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s = <span class="string">'a'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(s)):
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'ye'</span>
+</span><span class="commandsep"></span><span class="output"><span class="stdout">ye
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> pal4(s):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(s)//<span class="number">2</span>):
+<span class="prompt">... </span>        <span class="keyword">if</span> s[i] != s[<span class="builtin">len</span>(s) - i - <span class="number">1</span>]:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">False</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="builtin">True</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>pal4(<span class="string">'bob'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>pal4(<span class="string">'a'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>pal4(<span class="string">'racecar'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(s)):
+<span class="prompt">... </span>    <span class="keyword">print</span> i
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>s = <span class="string">'aa'</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(s)):
+<span class="prompt">... </span>    <span class="keyword">print</span> i
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0
+1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'racecar'</span>[<span class="number">6</span>]
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">'r'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> pal4(s):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(s)//<span class="number">2</span>):
+<span class="prompt">... </span>        <span class="keyword">if</span> s[i] != s[<span class="builtin">len</span>(s) - i]:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">False</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="builtin">True</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>pal4(<span class="string">'racecar'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#12&gt;", line 1, in &lt;module&gt;
+    pal4('racecar')
+  File "&lt;pyshell#11&gt;", line 3, in pal4
+    if s[i] != s[len(s) - i]:
+IndexError: string index out of range
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> pal4(s):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(s)//<span class="number">2</span>+<span class="number">1</span>):
+<span class="prompt">... </span>        <span class="keyword">if</span> s[i] != s[<span class="builtin">len</span>(s) - i - <span class="number">1</span>]:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">False</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="builtin">True</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>pal4(<span class="string">'racecar'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>pal4(<span class="string">'bob'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>pal4(<span class="string">'drudge'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>pal4(<span class="string">'a'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = {<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d2 = {<span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'a'</span>: <span class="number">1</span>}
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d == d2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l1 = <span class="builtin">sorted</span>(<span class="builtin">list</span>(<span class="string">'listen'</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l1
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">['e', 'i', 'l', 'n', 's', 't']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l2 = <span class="builtin">sorted</span>(<span class="builtin">list</span>(<span class="string">'silent'</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">['e', 'i', 'l', 'n', 's', 't']
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

@@ -7,46 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "Week 7/julyTemps.txt",
-			"settings":
-			{
-				"buffer_size": 350,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/sircharles/Dropbox/PROGRAMMING/Python/Google Python Course/google-python-exercises/hello.py",
-			"settings":
-			{
-				"buffer_size": 970,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/sircharles/Dropbox/PROGRAMMING/Python/Google Python Course/google-python-exercises/basic/list1.py",
-			"settings":
-			{
-				"buffer_size": 3134,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "GoogleExercises/list1.py",
-			"settings":
-			{
-				"buffer_size": 3344,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "week_6_method_bouillabaisse.py",
-			"settings":
-			{
-				"buffer_size": 5799,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -88,14 +48,20 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/.config/sublime-text-2/Packages/User/Python/Python_comment.sublime-snippet",
+		"/home/sircharles/programming/python/MIT course/GoogleExercises/list1.py",
+		"/home/sircharles/Dropbox/PROGRAMMING/Python/Google Python Course/google-python-exercises/hello.py",
+		"/home/sircharles/programming/python/MIT course/Week 7/julyTemps.txt",
+		"/home/sircharles/programming/python/MIT course/utoronto_course.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6.py",
+		"/home/sircharles/Dropbox/PROGRAMMING/Python/Google Python Course/google-python-exercises/basic/list1.py",
+		"/home/sircharles/programming/python/MIT course/week_6_method_bouillabaisse.py",
 		"/home/sircharles/programming/python/MIT course/Week 7/temp_plotter.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet6/triggers.txt",
 		"/home/sircharles/programming/python/MIT course/ProblemSet6/feedparser.py",
-		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet6/project_util.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6_test.py",
-		"/home/sircharles/programming/python/MIT course/week_6_method_bouillabaisse.py",
 		"/home/sircharles/programming/python/MIT course/dialect.py",
 		"/home/sircharles/programming/python/MIT course/methodSoup.py",
 		"/home/sircharles/programming/python/MIT course/hashSet.py",
@@ -250,147 +216,8 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "Week 7/julyTemps.txt",
-					"settings":
-					{
-						"buffer_size": 350,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								60,
-								60
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/sircharles/Dropbox/PROGRAMMING/Python/Google Python Course/google-python-exercises/hello.py",
-					"settings":
-					{
-						"buffer_size": 970,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/sircharles/Dropbox/PROGRAMMING/Python/Google Python Course/google-python-exercises/basic/list1.py",
-					"settings":
-					{
-						"buffer_size": 3134,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3134,
-								3134
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 465.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "GoogleExercises/list1.py",
-					"settings":
-					{
-						"buffer_size": 3344,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1951,
-								1951
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 835.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "week_6_method_bouillabaisse.py",
-					"settings":
-					{
-						"buffer_size": 5799,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -439,6 +266,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"goog",
+				"GoogleExercises/list1.py"
+			],
 			[
 				"boui",
 				"week_6_method_bouillabaisse.py"
