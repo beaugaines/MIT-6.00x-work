@@ -7,6 +7,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "drunken_walk.py",
+			"settings":
+			{
+				"buffer_size": 1457,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -48,6 +56,7 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/.config/sublime-text-2/Packages/User/Python.sublime-settings",
 		"/home/sircharles/.config/sublime-text-2/Packages/User/Python/Python_comment.sublime-snippet",
 		"/home/sircharles/programming/python/MIT course/GoogleExercises/list1.py",
 		"/home/sircharles/Dropbox/PROGRAMMING/Python/Google Python Course/google-python-exercises/hello.py",
@@ -174,8 +183,7 @@
 		"/home/sircharles/rails_projects/shouty-todo/app/models/user.rb",
 		"/home/sircharles/rails_projects/shouty-todo/spec/spec_helper.rb",
 		"/home/sircharles/rails_projects/shouty-todo/.gitignore",
-		"/home/sircharles/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
-		"/home/sircharles/.config/sublime-text-2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt"
+		"/home/sircharles/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap"
 	],
 	"find":
 	{
@@ -216,8 +224,36 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "drunken_walk.py",
+					"settings":
+					{
+						"buffer_size": 1457,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1456,
+								1456
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
