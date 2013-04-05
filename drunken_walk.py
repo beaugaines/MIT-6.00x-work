@@ -66,5 +66,33 @@ class UsualDrunk(Drunk):
     """not to be confused with the unusual drunk"""
     def takeStep(self):
         stepChoices = \
-        [(0.0, 1.0), (0.0, -1.0)], (1.0, 0.0), (-1.0, 0.0)]
+        [(0.0, 1.0), (0.0, -1.0), (1.0, 0.0), (-1.0, 0.0)]
         return random.choice(stepChoices)
+
+
+def walk(f, d, numSteps):
+    # use Field's getLoc fcn to determine drunk's location
+    start = f.getLoc(d)
+    for s in range(numSteps):
+        f.moveDrunk(d)
+    return(start.distFrom(f.getLoc(d)))
+
+def simWalks(numSteps, numTrials):
+    homer = UsualDrunk('Homer')
+    origin = Location(0,0)
+    distances = []
+    for t in range(numTrials):
+        f = Field()
+        f.addDrunk(homer, origin)
+        distances.append(walk(f, homer, numSteps))
+    return distances
+
+def drunkTest(numTrials = 20):
+    for numSteps in [10, 100, 1000, 10000]:
+        distances = simWalks(numSteps, numTrials)
+        print 'Random walk of ' + str(numSteps)
+        print 'Mean = ', sum(distances)/len(distances)
+        print 'Max = ', max(distances) + ", Min = ", min(distances) 
+
+
+drunkTest()

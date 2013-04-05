@@ -1,3 +1,36 @@
+# determinism vs stochasticism - help!
+import random
+
+# fcn no 1. - it's stochastic.  Why?
+mylist = []
+for i in xrange(random.randint(1, 10)):
+    random.seed(0)
+    if random.randint(1, 10) > 3:
+        number = random.randint(1, 10)
+        mylist.append(number)
+print mylist
+
+# fcns A and B - both deterministic.  Why?
+# A
+mylist = []
+for i in xrange(random.randint(1, 10)):
+    random.seed(0)
+    if random.randint(1, 10) > 3:
+        number = random.randint(1, 10)
+        if number not in mylist:
+            mylist.append(number)
+print mylist
+
+# B
+mylist = []
+random.seed(0)
+for i in xrange(random.randint(1, 10)):
+    if random.randint(1, 10) > 3:
+        number = random.randint(1, 10)
+        mylist.append(number)
+print mylist
+
+
 def selSort(L):
     for i in range(len(L) - 1):
         minIndx = i

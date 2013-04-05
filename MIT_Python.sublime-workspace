@@ -11,7 +11,7 @@
 			"file": "drunken_walk.py",
 			"settings":
 			{
-				"buffer_size": 1457,
+				"buffer_size": 1831,
 				"line_ending": "Unix"
 			}
 		}
@@ -232,24 +232,25 @@
 					"file": "drunken_walk.py",
 					"settings":
 					{
-						"buffer_size": 1457,
+						"buffer_size": 1831,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1456,
-								1456
+								1830,
+								1830
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 360.0,
+						"translation.y": 645.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

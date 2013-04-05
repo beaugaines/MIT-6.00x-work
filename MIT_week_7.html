@@ -773,5 +773,128 @@ IndexError: string index out of range
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l2 = <span class="builtin">sorted</span>(<span class="builtin">list</span>(<span class="string">'silent'</span>))
 </span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l2
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">['e', 'i', 'l', 'n', 's', 't']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l2
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;
+    l2
+NameError: name 'l2' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l1 = <span class="builtin">sorted</span>(<span class="builtin">list</span>(<span class="string">'listen'</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l1
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">['e', 'i', 'l', 'n', 's', 't']
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = random.choice(l1)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">'n'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>b = random.choice(l1)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>b
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">'l'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c = random.choice()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#8&gt;", line 1, in &lt;module&gt;
+    c = random.choice()
+TypeError: choice() takes exactly 2 arguments (1 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c = random.choice(<span class="string">'svengali'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">'v'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">0</span>,<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">85
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">0.41384301834849546
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">0.7503406524836684
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">0.18253247327293132
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">0.5442370371693518
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">int</span>(random.random() * <span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">5
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">int</span>(random.random() * <span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">int</span>(random.random() * <span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">11: </span><span class="result">4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">int</span>(random.random() * <span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">12: </span><span class="result">9
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">int</span>(random.random() * <span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">13: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">int</span>(random.random() * <span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">14: </span><span class="result">9
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">0</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">15: </span><span class="result">2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">0</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">16: </span><span class="result">5
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">0</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">17: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">0</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">18: </span><span class="result">7
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">0</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">19: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d1 = {}
+<span class="prompt">... </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">10000</span>):
+<span class="prompt">... </span>    x = random.randrange(<span class="number">10</span>) 
+<span class="prompt">... </span>    d1[x] = d1.get(x, <span class="number">0</span>) + <span class="number">1</span>
+<span class="prompt">... </span>d2 = {}
+<span class="prompt">... </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">10000</span>):
+<span class="prompt">... </span>    x = <span class="builtin">int</span>(random.random*<span class="number">10</span>)
+<span class="prompt">... </span>    d2[x] = d2.get(x, <span class="number">0</span>) + <span class="number">1</span>
+<span class="prompt">... </span>d3 = {}
+<span class="prompt">... </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">10000</span>):
+<span class="prompt">... </span>    x = random.randint(<span class="number">0</span>, <span class="number">10</span>)
+<span class="prompt">... </span>    d3[x] = d3.get(x, <span class="number">0</span>) + <span class="number">1</span>
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#27&gt;", line 7, in &lt;module&gt;
+    x = int(random.random*10)
+TypeError: unsupported operand type(s) for *: 'builtin_function_or_method' and 'int'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d1 = {}
+<span class="prompt">... </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">10000</span>):
+<span class="prompt">... </span>    x = random.randrange(<span class="number">10</span>) 
+<span class="prompt">... </span>    d1[x] = d1.get(x, <span class="number">0</span>) + <span class="number">1</span>
+<span class="prompt">... </span>d2 = {}
+<span class="prompt">... </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">10000</span>):
+<span class="prompt">... </span>    x = <span class="builtin">int</span>(random.random()*<span class="number">10</span>)
+<span class="prompt">... </span>    d2[x] = d2.get(x, <span class="number">0</span>) + <span class="number">1</span>
+<span class="prompt">... </span>d3 = {}
+<span class="prompt">... </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">10000</span>):
+<span class="prompt">... </span>    x = random.randint(<span class="number">0</span>, <span class="number">10</span>)
+<span class="prompt">... </span>    d3[x] = d3.get(x, <span class="number">0</span>) + <span class="number">1</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d1
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">20: </span><span class="result">{0: 961,
+ 1: 991,
+ 2: 971,
+ 3: 1046,
+ 4: 973,
+ 5: 1013,
+ 6: 1026,
+ 7: 1028,
+ 8: 987,
+ 9: 1004}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d2
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">21: </span><span class="result">{0: 988,
+ 1: 1007,
+ 2: 967,
+ 3: 998,
+ 4: 989,
+ 5: 986,
+ 6: 1009,
+ 7: 1039,
+ 8: 983,
+ 9: 1034}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d3
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">22: </span><span class="result">{0: 892,
+ 1: 948,
+ 2: 935,
+ 3: 932,
+ 4: 872,
+ 5: 888,
+ 6: 904,
+ 7: 899,
+ 8: 900,
+ 9: 907,
+ 10: 923}
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
