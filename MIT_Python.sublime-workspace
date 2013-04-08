@@ -11,7 +11,15 @@
 			"file": "drunken_walk.py",
 			"settings":
 			{
-				"buffer_size": 1831,
+				"buffer_size": 2617,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "hardNuts.py",
+			"settings":
+			{
+				"buffer_size": 3005,
 				"line_ending": "Unix"
 			}
 		}
@@ -224,7 +232,6 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
 				{
@@ -232,15 +239,15 @@
 					"file": "drunken_walk.py",
 					"settings":
 					{
-						"buffer_size": 1831,
+						"buffer_size": 2617,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1830,
-								1830
+								2615,
+								2615
 							]
 						],
 						"settings":
@@ -250,7 +257,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 645.0,
+						"translation.y": 1177.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "hardNuts.py",
+					"settings":
+					{
+						"buffer_size": 3005,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								501,
+								501
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -303,6 +338,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"hard",
+				"hardNuts.py"
+			],
 			[
 				"goog",
 				"GoogleExercises/list1.py"

@@ -896,5 +896,180 @@ TypeError: unsupported operand type(s) for *: 'builtin_function_or_method' and '
  8: 900,
  9: 907,
  10: 923}
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">0</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = random.seed(<span class="number">0</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">0</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>mylist = []
+<span class="prompt">... </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">range</span>(random(<span class="number">1</span>,<span class="number">10</span>)):
+<span class="prompt">... </span>    random.seed(<span class="number">0</span>)
+<span class="prompt">... </span>    <span class="keyword">if</span> random.randint(<span class="number">1</span>,<span class="number">10</span>) &gt; <span class="number">3</span>:
+<span class="prompt">... </span>        num = random.randint(<span class="number">1</span>,<span class="number">10</span>)
+<span class="prompt">... </span>        <span class="keyword">if</span> num <span class="keyword">not</span> <span class="keyword">in</span> mylist:
+<span class="prompt">... </span>            mylist.append(num)
+<span class="prompt">... </span><span class="keyword">print</span> mylist
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#36&gt;", line 2, in &lt;module&gt;
+    for x in range(random(1,10)):
+TypeError: 'module' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>mylist = []
+<span class="prompt">... </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">xrange</span>(random(<span class="number">1</span>,<span class="number">10</span>)):
+<span class="prompt">... </span>    random.seed(<span class="number">0</span>)
+<span class="prompt">... </span>    <span class="keyword">if</span> random.randint(<span class="number">1</span>,<span class="number">10</span>) &gt; <span class="number">3</span>:
+<span class="prompt">... </span>        num = random.randint(<span class="number">1</span>,<span class="number">10</span>)
+<span class="prompt">... </span>        <span class="keyword">if</span> num <span class="keyword">not</span> <span class="keyword">in</span> mylist:
+<span class="prompt">... </span>            mylist.append(num)
+<span class="prompt">... </span><span class="keyword">print</span> mylist
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#37&gt;", line 2, in &lt;module&gt;
+    for x in xrange(random(1,10)):
+TypeError: 'module' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>mylist = []
+<span class="prompt">... </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">xrange</span>(random.randint(<span class="number">1</span>,<span class="number">10</span>)):
+<span class="prompt">... </span>    random.seed(<span class="number">0</span>)
+<span class="prompt">... </span>    <span class="keyword">if</span> random.randint(<span class="number">1</span>,<span class="number">10</span>) &gt; <span class="number">3</span>:
+<span class="prompt">... </span>        num = random.randint(<span class="number">1</span>,<span class="number">10</span>)
+<span class="prompt">... </span>        <span class="keyword">if</span> num <span class="keyword">not</span> <span class="keyword">in</span> mylist:
+<span class="prompt">... </span>            mylist.append(num)
+<span class="prompt">... </span><span class="keyword">print</span> mylist
+</span><span class="commandsep"></span><span class="output"><span class="stdout">[8]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">9001</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>randm.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#2&gt;", line 1, in &lt;module&gt;
+    randm.randint(1,10)
+NameError: name 'randm' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">6
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">6
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">7
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">6
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">9
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">7
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">6
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">11: </span><span class="result">10
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">12: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">13: </span><span class="result">6
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> random.randint(<span class="number">1</span>,<span class="number">10</span>):
+<span class="prompt">... </span>    <span class="keyword">print</span> x
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#17&gt;", line 1, in &lt;module&gt;
+    for x in random.randint(1,10):
+TypeError: 'int' object is not iterable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">xrange</span>(random.randint(<span class="number">1</span>,<span class="number">10</span>)):
+<span class="prompt">... </span>    <span class="keyword">print</span> x
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0
+1
+2
+3
+4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">14: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">15: </span><span class="result">7
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">9001</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">16: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">9001</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d = random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>d
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">17: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">9001</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">xrange</span>(random.randint(<span class="number">1</span>,<span class="number">10</span>)):
+<span class="prompt">... </span>    <span class="keyword">print</span> random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">9001</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">xrange</span>(random.randint(<span class="number">1</span>,<span class="number">10</span>)):
+<span class="prompt">... </span>    <span class="keyword">print</span> random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">9001</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">9001</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">xrange</span>(random.randint(<span class="number">1</span>,<span class="number">10</span>)):
+<span class="prompt">... </span>    c.append(x)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">18: </span><span class="result">[0]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">xrange</span>(random.randint(<span class="number">1</span>,<span class="number">10</span>)):
+<span class="prompt">... </span>    c.append(random.randint(<span class="number">1</span>,<span class="number">10</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">19: </span><span class="result">[6, 6, 7]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">xrange</span>(random.randint(<span class="number">1</span>,<span class="number">10</span>)):
+<span class="prompt">... </span>    c.append(random.randint(<span class="number">1</span>,<span class="number">10</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">20: </span><span class="result">[6, 6, 7, 8, 9, 7, 6, 8, 10]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">9001</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">xrange</span>(random.randint(<span class="number">1</span>,<span class="number">10</span>)):
+<span class="prompt">... </span>    c.append(random.randint(<span class="number">1</span>,<span class="number">10</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>c
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">21: </span><span class="result">[3]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.seed(<span class="number">9001</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">1</span>,<span class="number">10</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">22: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">xrange</span>(<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">23: </span><span class="result">xrange(3)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">xrange</span>(<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">24: </span><span class="result">xrange(3)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">xrange</span>(<span class="number">3</span>):
+<span class="prompt">... </span>    <span class="keyword">print</span> i
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0
+1
+2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">25: </span><span class="result">0.2530793701724321
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">26: </span><span class="result">0.5640091169691802
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">27: </span><span class="result">0.5692771585259684
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">28: </span><span class="result">0.606134362411722
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">10</span>):
+<span class="prompt">... </span>    x = random.random
+<span class="prompt">... </span>    <span class="keyword">if</span> x &lt; <span class="number">0.5</span>:
+<span class="prompt">... </span>        <span class="keyword">print</span> -x
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        <span class="keyword">print</span> x
+</span><span class="commandsep"></span><span class="output"><span class="stdout">&lt;built-in method random of Random object at 0x265c2e0&gt;
+&lt;built-in method random of Random object at 0x265c2e0&gt;
+&lt;built-in method random of Random object at 0x265c2e0&gt;
+&lt;built-in method random of Random object at 0x265c2e0&gt;
+&lt;built-in method random of Random object at 0x265c2e0&gt;
+&lt;built-in method random of Random object at 0x265c2e0&gt;
+&lt;built-in method random of Random object at 0x265c2e0&gt;
+&lt;built-in method random of Random object at 0x265c2e0&gt;
+&lt;built-in method random of Random object at 0x265c2e0&gt;
+&lt;built-in method random of Random object at 0x265c2e0&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> random.<span class="builtin">__name__</span>
+</span><span class="commandsep"></span><span class="output"><span class="stdout">random
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
