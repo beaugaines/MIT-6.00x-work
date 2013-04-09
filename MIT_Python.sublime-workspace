@@ -22,6 +22,14 @@
 				"buffer_size": 3005,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "kant_generator.py",
+			"settings":
+			{
+				"buffer_size": 2366,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -232,6 +240,7 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -246,8 +255,8 @@
 						"selection":
 						[
 							[
-								2615,
-								2615
+								2613,
+								2613
 							]
 						],
 						"settings":
@@ -274,8 +283,8 @@
 						"selection":
 						[
 							[
-								501,
-								501
+								499,
+								499
 							]
 						],
 						"settings":
@@ -286,6 +295,34 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "kant_generator.py",
+					"settings":
+					{
+						"buffer_size": 2366,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2363,
+								2363
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 693.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
