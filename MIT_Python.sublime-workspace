@@ -27,7 +27,15 @@
 			"file": "kant_generator.py",
 			"settings":
 			{
-				"buffer_size": 2366,
+				"buffer_size": 7561,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "toolbox.py",
+			"settings":
+			{
+				"buffer_size": 1467,
 				"line_ending": "Unix"
 			}
 		}
@@ -255,8 +263,8 @@
 						"selection":
 						[
 							[
-								2613,
-								2613
+								2612,
+								2612
 							]
 						],
 						"settings":
@@ -283,8 +291,8 @@
 						"selection":
 						[
 							[
-								499,
-								499
+								498,
+								498
 							]
 						],
 						"settings":
@@ -304,15 +312,15 @@
 					"file": "kant_generator.py",
 					"settings":
 					{
-						"buffer_size": 2366,
+						"buffer_size": 7561,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2363,
-								2363
+								2180,
+								2180
 							]
 						],
 						"settings":
@@ -322,7 +330,33 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 693.0,
+						"translation.y": 569.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "toolbox.py",
+					"settings":
+					{
+						"buffer_size": 1467,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1467,
+								1467
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 246.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
