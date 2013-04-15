@@ -126,5 +126,203 @@ DreamPie 1.2.1
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">24L
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hashStr(<span class="string">'billy'</span>, <span class="number">7</span>)
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="keyword">class</span> intDict(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""A dictionary with integer keys"""</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, numBuckets):
+<span class="prompt">... </span>        <span class="string">"""Create an empty dictionary"""</span>
+<span class="prompt">... </span>        self.buckets = []
+<span class="prompt">... </span>        self.numBuckets = numBuckets
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(numBuckets):
+<span class="prompt">... </span>            self.buckets.append([])
+<span class="prompt">... </span>            
+<span class="prompt">... </span>    <span class="keyword">def</span> addEntry(self, dictKey, dictVal):
+<span class="prompt">... </span>        <span class="string">"""Assumes dictKey an int.  Adds an entry."""</span>
+<span class="prompt">... </span>        hashBucket = self.buckets[dictKey%self.numBuckets]
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(hashBucket)):
+<span class="prompt">... </span>            <span class="keyword">if</span> hashBucket[i][<span class="number">0</span>] == dictKey:
+<span class="prompt">... </span>                hashBucket[i] = (dictKey, dictVal)
+<span class="prompt">... </span>                <span class="keyword">return</span>
+<span class="prompt">... </span>        hashBucket.append((dictKey, dictVal))
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> getValue(self, dictKey):
+<span class="prompt">... </span>        <span class="string">"""Assumes dictKey an int.  Returns entry associated
+</span><span class="prompt">... </span><span class="string">           with the key dictKey"""</span>
+<span class="prompt">... </span>        hashBucket = self.buckets[dictKey%self.numBuckets]
+<span class="prompt">... </span>        <span class="keyword">for</span> e <span class="keyword">in</span> hashBucket:
+<span class="prompt">... </span>            <span class="keyword">if</span> e[<span class="number">0</span>] == dictKey:
+<span class="prompt">... </span>                <span class="keyword">return</span> e[<span class="number">1</span>]
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">None</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        res = <span class="string">'{'</span>
+<span class="prompt">... </span>        <span class="keyword">for</span> b <span class="keyword">in</span> self.buckets:
+<span class="prompt">... </span>            <span class="keyword">for</span> t <span class="keyword">in</span> b:
+<span class="prompt">... </span>                res = res + <span class="builtin">str</span>(t[<span class="number">0</span>]) + <span class="string">':'</span> + <span class="builtin">str</span>(t[<span class="number">1</span>]) + <span class="string">','</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> res[:-<span class="number">1</span>] + <span class="string">'}'</span> <span class="comment">#res[:-1] removes the last comma</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> collision_prob(numBuckets, numInsertions):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">'''
+</span><span class="prompt">... </span><span class="string">    Given the number of buckets and the number of items to insert, 
+</span><span class="prompt">... </span><span class="string">    calculates the probability of a collision.
+</span><span class="prompt">... </span><span class="string">    '''</span>
+<span class="prompt">... </span>    prob = <span class="number">1.0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>, numInsertions):
+<span class="prompt">... </span>        prob = prob * ((numBuckets - i) / <span class="builtin">float</span>(numBuckets))
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="number">1</span> - prob
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> sim_insertions(numBuckets, numInsertions):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">'''
+</span><span class="prompt">... </span><span class="string">    Run a simulation for numInsertions insertions into the hash table.
+</span><span class="prompt">... </span><span class="string">    '''</span>
+<span class="prompt">... </span>    choices = <span class="builtin">range</span>(numBuckets)
+<span class="prompt">... </span>    used = []
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(numInsertions):
+<span class="prompt">... </span>        hashVal = random.choice(choices)
+<span class="prompt">... </span>        <span class="keyword">if</span> hashVal <span class="keyword">in</span> used:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">False</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            used.append(hashVal)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="builtin">True</span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> observe_prob(numBuckets, numInsertions, numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">'''
+</span><span class="prompt">... </span><span class="string">    Given the number of buckets and the number of items to insert, 
+</span><span class="prompt">... </span><span class="string">    runs a simulation numTrials times to observe the probability of a collision.
+</span><span class="prompt">... </span><span class="string">    '''</span>
+<span class="prompt">... </span>    probs = []
+<span class="prompt">... </span>    <span class="keyword">for</span> t <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
+<span class="prompt">... </span>        probs.append(sim_insertions(numBuckets, numInsertions))
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="number">1</span> - <span class="builtin">sum</span>(probs)/<span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> main():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    hash_table = intDict(<span class="number">25</span>)
+<span class="prompt">... </span>    hash_table.addEntry(<span class="number">15</span>, <span class="string">'a'</span>)
+<span class="prompt">... </span><span class="comment">#    random.seed(1) # Uncomment for consistent results</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">20</span>):
+<span class="prompt">... </span>       hash_table.addEntry(<span class="builtin">int</span>(random.random() * (<span class="number">10</span> ** <span class="number">9</span>)), i)
+<span class="prompt">... </span>    hash_table.addEntry(<span class="number">15</span>, <span class="string">'b'</span>)
+<span class="prompt">... </span>    <span class="keyword">print</span> hash_table.buckets  <span class="comment">#evil</span>
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'\n'</span>, <span class="string">'hash_table ='</span>, hash_table
+<span class="prompt">... </span>    <span class="keyword">print</span> hash_table.getValue(<span class="number">15</span>)
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">print</span>(collision_prob(<span class="number">1000</span>, <span class="number">50</span>,))
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0.71226865688
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">1000</span>,<span class="number">200</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">0.9999999994781328
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>observe_prob(<span class="number">1000</span>, <span class="number">50</span>, <span class="number">1000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">0.7030000000000001
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>observe_prob(<span class="number">1000</span>, <span class="number">50</span>, <span class="number">1000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">0.72
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>observe_prob(<span class="number">1000</span>, <span class="number">50</span>, <span class="number">1000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">0.696
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>observe_prob(<span class="number">1000</span>, <span class="number">50</span>, <span class="number">2000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">0.6995
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>observe_prob(<span class="number">1000</span>, <span class="number">50</span>, <span class="number">3000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">0.7036666666666667
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>observe_prob(<span class="number">1000</span>, <span class="number">50</span>, <span class="number">3000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">0.7106666666666667
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>observe_prob(<span class="number">1000</span>, <span class="number">50</span>, <span class="number">5000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">0.7030000000000001
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>observe_prob(<span class="number">1000</span>, <span class="number">200</span>, <span class="number">5000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">1.0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">30</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">0.7063162427192688
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">30</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">0.7063162427192688
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">250</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">11: </span><span class="result">1.0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> res != <span class="number">0.99</span>:
+<span class="prompt">... </span>        res = collision_prob(<span class="number">365</span>, class_size)
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#14&gt;", line 1, in &lt;module&gt;
+    max_room_size()
+  File "&lt;pyshell#13&gt;", line 5, in max_room_size
+    res = collision_prob(365, class_size)
+  File "&lt;pyshell#0&gt;", line 46, in collision_prob
+    prob = prob * ((numBuckets - i) / float(numBuckets))
+KeyboardInterrupt
+</span></span></span><span class="fold-message">[About 7 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> res &lt; <span class="number">0.99</span>:
+<span class="prompt">... </span>        res = collision_prob(<span class="number">365</span>, class_size)
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">12: </span><span class="result">58
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">265</span>, <span class="number">58</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">13: </span><span class="result">0.9988236029057695
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> res &lt; <span class="number">0.99</span>:
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>        res = collision_prob(<span class="number">365</span>, class_size)
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">265</span>, <span class="number">58</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">14: </span><span class="result">0.9988236029057695
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">58</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">15: </span><span class="result">0.9916649793892612
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">16: </span><span class="result">57
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">57</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">17: </span><span class="result">0.9901224593411699
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">57</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">18: </span><span class="result">0.9901224593411699
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">58</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">19: </span><span class="result">0.9916649793892612
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">56</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">20: </span><span class="result">0.9883323548852008
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">"%.02f"</span> % <span class="number">0.98334</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">21: </span><span class="result">'0.98'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">"%.02f"</span> % collision_prob(<span class="number">365</span>, <span class="number">56</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">22: </span><span class="result">'0.99'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">"%.02f"</span> % collision_prob(<span class="number">365</span>, <span class="number">55</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">23: </span><span class="result">'0.99'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="string">"%.02f"</span> % collision_prob(<span class="number">365</span>, <span class="number">54</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">24: </span><span class="result">'0.98'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">round</span>(collision_prob(<span class="number">365</span>, <span class="number">56</span>), <span class="number">2</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">25: </span><span class="result">0.99
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">round</span>(collision_prob(<span class="number">365</span>, <span class="number">56</span>), <span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">26: </span><span class="result">0.988
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">round</span>(collision_prob(<span class="number">365</span>, <span class="number">55</span>), <span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">27: </span><span class="result">0.986
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">round</span>(collision_prob(<span class="number">365</span>, <span class="number">56</span>), <span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">28: </span><span class="result">0.988
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">round</span>(collision_prob(<span class="number">365</span>, <span class="number">57</span>), <span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">29: </span><span class="result">0.99
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">30: </span><span class="result">57
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> res != <span class="number">0.99</span>:
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>        res = <span class="builtin">round</span>(collision_prob(<span class="number">365</span>, class_size), <span class="number">2</span>)
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size - <span class="number">1</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">31: </span><span class="result">54
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">32: </span><span class="result">54
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

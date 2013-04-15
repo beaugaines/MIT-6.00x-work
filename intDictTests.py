@@ -1,4 +1,5 @@
 import random
+import re
 
 class intDict(object):
     """A dictionary with integer keys"""
@@ -71,6 +72,20 @@ def observe_prob(numBuckets, numInsertions, numTrials):
     return 1 - sum(probs)/float(numTrials)
 
 
+def max_class_size():
+    """
+    Return the maximum class for which the probability of two students
+    having the same birthday is less than 0.99
+    It's a terrible hack to use a regex but it works
+    """
+    res = 0
+    class_size = 0
+    while re.search('^0.99', str(res)) == None:
+        class_size += 1
+        res = collision_prob(365, class_size)
+    print class_size - 1
+
+
 def main():
     hash_table = intDict(25)
     hash_table.addEntry(15, 'a')
@@ -83,3 +98,5 @@ def main():
     print hash_table.getValue(15)
 
 
+
+max_class_size()
