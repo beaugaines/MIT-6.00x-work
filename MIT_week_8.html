@@ -913,5 +913,208 @@ ValueError: empty range for randrange() (0,0, 0)
 ['r', 'r', 'r']
 </span><span class="result-ind">26: </span><span class="result">('Odds: ', 0.099)
 </span></span></span><span class="fold-message">[About 99 more lines. Double-click to unfold]
-</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">1000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">['g', 'g', 'g']</span></span><span class="folded"><span class="output"><span class="stdout">
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+</span><span class="result-ind">27: </span><span class="result">('Odds: ', 0.105)
+</span></span></span><span class="fold-message">[About 105 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> n <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
+<span class="prompt">... </span>        bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>        choices = []
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>            index = random.randint(<span class="number">0</span>, <span class="builtin">len</span>(bucket) - <span class="number">1</span>)
+<span class="prompt">... </span>            choices.append(bucket.pop(index))
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">all</span>(choices[<span class="number">0</span>] == rest <span class="keyword">for</span> rest <span class="keyword">in</span> choices):
+<span class="prompt">... </span>            yes += <span class="number">1</span>
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">1000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">28: </span><span class="result">('Odds: ', 0.1)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">1000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">29: </span><span class="result">('Odds: ', 0.102)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tiles = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">5</span>):
+<span class="prompt">... </span>    tiles.append([])
+<span class="prompt">... </span>    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">6</span>):
+<span class="prompt">... </span>        tiles.x.append[<span class="string">'false'</span>]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#93&gt;", line 4, in &lt;module&gt;
+    tiles.x.append['false']
+AttributeError: 'list' object has no attribute 'x'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">5</span>):
+<span class="prompt">... </span>    tiles.append([])
+<span class="prompt">... </span>    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">6</span>):
+<span class="prompt">... </span>        tiles[x].append[<span class="string">'false'</span>]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#94&gt;", line 4, in &lt;module&gt;
+    tiles[x].append['false']
+TypeError: 'builtin_function_or_method' object has no attribute '__getitem__'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">5</span>):
+<span class="prompt">... </span>    tiles.append([])
+<span class="prompt">... </span>    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">6</span>):
+<span class="prompt">... </span>        tiles[x].append(<span class="string">'false'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tiles
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">30: </span><span class="result">[['false', 'false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false', 'false'],
+ [],
+ []]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tiles = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">5</span>):
+<span class="prompt">... </span>    tiles.append([])
+<span class="prompt">... </span>    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">5</span>):
+<span class="prompt">... </span>        tiles[x].append(<span class="string">'false'</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tiles
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">31: </span><span class="result">[['false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false']]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tiles[<span class="number">2</span>][<span class="number">3</span>] = <span class="builtin">True</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tiles
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">32: </span><span class="result">[['false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', True, 'false'],
+ ['false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false']]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>clean = <span class="number">0</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> t <span class="keyword">in</span> tiles:
+<span class="prompt">... </span>    <span class="keyword">if</span> t == <span class="builtin">True</span>:
+<span class="prompt">... </span>        clean += <span class="number">1</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>clean
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">33: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> t <span class="keyword">in</span> tiles.flat:
+<span class="prompt">... </span>    <span class="keyword">if</span> t == <span class="builtin">True</span>:
+<span class="prompt">... </span>        clean += <span class="number">1</span>
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#105&gt;", line 1, in &lt;module&gt;
+    for t in tiles.flat:
+AttributeError: 'list' object has no attribute 'flat'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> t <span class="keyword">in</span> tiles:
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> t:
+<span class="prompt">... </span>        <span class="keyword">if</span> t == <span class="builtin">True</span>:
+<span class="prompt">... </span>            clean += <span class="number">1</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>clean
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">34: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tiles
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">35: </span><span class="result">[['false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', True, 'false'],
+ ['false', 'false', 'false', 'false', 'false'],
+ ['false', 'false', 'false', 'false', 'false']]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>x
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">36: </span><span class="result">4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>width
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#110&gt;", line 1, in &lt;module&gt;
+    width
+NameError: name 'width' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
