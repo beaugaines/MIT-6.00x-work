@@ -13,8 +13,12 @@ def redGreenTrial(numTrials):
         bucket = ['r','r','r','g','g','g']
         choices = []
         for i in range(3):
-            index = random.choice(0, len(bucket - 1))
-            choices.append(bucket.pop(index))
+            # index = random.choice(0, len(bucket - 1))
+            # choices.append(bucket.pop(index))
+            # better implemetation here:
+            ball = random.choice(bucket)
+            bucket.remove(ball)
+            choices.append(ball)
         first = choices[0]
         if all(first == next for next in choices):
             yes += 1
