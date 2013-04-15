@@ -324,5 +324,594 @@ KeyboardInterrupt
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">31: </span><span class="result">54
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">32: </span><span class="result">54
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> re.search(<span class="string">'^0.99'</span>, res) == <span class="builtin">None</span>:
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>        res = <span class="builtin">round</span>(collision_prob(<span class="number">365</span>, class_size), <span class="number">2</span>)
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">&lt;function max_room_size at 0x2267848&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#2&gt;", line 1, in &lt;module&gt;
+    max_room_size()
+  File "&lt;pyshell#0&gt;", line 4, in max_room_size
+    while re.search('^0.99', res) == None:
+NameError: global name 're' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> re
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#4&gt;", line 1, in &lt;module&gt;
+    max_room_size()
+  File "&lt;pyshell#0&gt;", line 4, in max_room_size
+    while re.search('^0.99', res) == None:
+  File "/usr/lib/python2.7/re.py", line 142, in search
+    return _compile(pattern, flags).search(string)
+TypeError: expected string or buffer
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> re.search(<span class="string">'^0.99'</span>, <span class="builtin">str</span>(res)) == <span class="builtin">None</span>:
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>        res = <span class="builtin">round</span>(collision_prob(<span class="number">365</span>, class_size), <span class="number">2</span>)
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#6&gt;", line 1, in &lt;module&gt;
+    max_room_size()
+  File "&lt;pyshell#5&gt;", line 6, in max_room_size
+    res = round(collision_prob(365, class_size), 2)
+NameError: global name 'collision_prob' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="keyword">class</span> intDict(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""A dictionary with integer keys"""</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, numBuckets):
+<span class="prompt">... </span>        <span class="string">"""Create an empty dictionary"""</span>
+<span class="prompt">... </span>        self.buckets = []
+<span class="prompt">... </span>        self.numBuckets = numBuckets
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(numBuckets):
+<span class="prompt">... </span>            self.buckets.append([])
+<span class="prompt">... </span>            
+<span class="prompt">... </span>    <span class="keyword">def</span> addEntry(self, dictKey, dictVal):
+<span class="prompt">... </span>        <span class="string">"""Assumes dictKey an int.  Adds an entry."""</span>
+<span class="prompt">... </span>        hashBucket = self.buckets[dictKey%self.numBuckets]
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="builtin">len</span>(hashBucket)):
+<span class="prompt">... </span>            <span class="keyword">if</span> hashBucket[i][<span class="number">0</span>] == dictKey:
+<span class="prompt">... </span>                hashBucket[i] = (dictKey, dictVal)
+<span class="prompt">... </span>                <span class="keyword">return</span>
+<span class="prompt">... </span>        hashBucket.append((dictKey, dictVal))
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> getValue(self, dictKey):
+<span class="prompt">... </span>        <span class="string">"""Assumes dictKey an int.  Returns entry associated
+</span><span class="prompt">... </span><span class="string">           with the key dictKey"""</span>
+<span class="prompt">... </span>        hashBucket = self.buckets[dictKey%self.numBuckets]
+<span class="prompt">... </span>        <span class="keyword">for</span> e <span class="keyword">in</span> hashBucket:
+<span class="prompt">... </span>            <span class="keyword">if</span> e[<span class="number">0</span>] == dictKey:
+<span class="prompt">... </span>                <span class="keyword">return</span> e[<span class="number">1</span>]
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">None</span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):
+<span class="prompt">... </span>        res = <span class="string">'{'</span>
+<span class="prompt">... </span>        <span class="keyword">for</span> b <span class="keyword">in</span> self.buckets:
+<span class="prompt">... </span>            <span class="keyword">for</span> t <span class="keyword">in</span> b:
+<span class="prompt">... </span>                res = res + <span class="builtin">str</span>(t[<span class="number">0</span>]) + <span class="string">':'</span> + <span class="builtin">str</span>(t[<span class="number">1</span>]) + <span class="string">','</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> res[:-<span class="number">1</span>] + <span class="string">'}'</span> <span class="comment">#res[:-1] removes the last comma</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> collision_prob(numBuckets, numInsertions):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">'''
+</span><span class="prompt">... </span><span class="string">    Given the number of buckets and the number of items to insert, 
+</span><span class="prompt">... </span><span class="string">    calculates the probability of a collision.
+</span><span class="prompt">... </span><span class="string">    '''</span>
+<span class="prompt">... </span>    prob = <span class="number">1.0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">1</span>, numInsertions):
+<span class="prompt">... </span>        prob = prob * ((numBuckets - i) / <span class="builtin">float</span>(numBuckets))
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="number">1</span> - prob
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> sim_insertions(numBuckets, numInsertions):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">'''
+</span><span class="prompt">... </span><span class="string">    Run a simulation for numInsertions insertions into the hash table.
+</span><span class="prompt">... </span><span class="string">    '''</span>
+<span class="prompt">... </span>    choices = <span class="builtin">range</span>(numBuckets)
+<span class="prompt">... </span>    used = []
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(numInsertions):
+<span class="prompt">... </span>        hashVal = random.choice(choices)
+<span class="prompt">... </span>        <span class="keyword">if</span> hashVal <span class="keyword">in</span> used:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">False</span>
+<span class="prompt">... </span>        <span class="keyword">else</span>:
+<span class="prompt">... </span>            used.append(hashVal)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="builtin">True</span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> observe_prob(numBuckets, numInsertions, numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">'''
+</span><span class="prompt">... </span><span class="string">    Given the number of buckets and the number of items to insert, 
+</span><span class="prompt">... </span><span class="string">    runs a simulation numTrials times to observe the probability of a collision.
+</span><span class="prompt">... </span><span class="string">    '''</span>
+<span class="prompt">... </span>    probs = []
+<span class="prompt">... </span>    <span class="keyword">for</span> t <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
+<span class="prompt">... </span>        probs.append(sim_insertions(numBuckets, numInsertions))
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="number">1</span> - <span class="builtin">sum</span>(probs)/<span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">def</span> main():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    hash_table = intDict(<span class="number">25</span>)
+<span class="prompt">... </span>    hash_table.addEntry(<span class="number">15</span>, <span class="string">'a'</span>)
+<span class="prompt">... </span><span class="comment">#    random.seed(1) # Uncomment for consistent results</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">20</span>):
+<span class="prompt">... </span>       hash_table.addEntry(<span class="builtin">int</span>(random.random() * (<span class="number">10</span> ** <span class="number">9</span>)), i)
+<span class="prompt">... </span>    hash_table.addEntry(<span class="number">15</span>, <span class="string">'b'</span>)
+<span class="prompt">... </span>    <span class="keyword">print</span> hash_table.buckets  <span class="comment">#evil</span>
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'\n'</span>, <span class="string">'hash_table ='</span>, hash_table
+<span class="prompt">... </span>    <span class="keyword">print</span> hash_table.getValue(<span class="number">15</span>)
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span><span class="keyword">print</span>(collision_prob(<span class="number">1000</span>, <span class="number">50</span>,))
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0.71226865688
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">55
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collsion_prob(<span class="number">365</span>, <span class="number">55</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#9&gt;", line 1, in &lt;module&gt;
+    collsion_prob(365, 55)
+NameError: name 'collsion_prob' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">55</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">0.9862622888164461
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">56</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">0.9883323548852008
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> re.search(<span class="string">'^0.99'</span>, <span class="builtin">str</span>(res)) == <span class="builtin">None</span>:
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>        res = collision_prob(<span class="number">365</span>, class_size)
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">57
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>collision_prob(<span class="number">365</span>, <span class="number">57</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">0.9901224593411699
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> re.search(<span class="string">'^0.99'</span>, <span class="builtin">str</span>(res)) == <span class="builtin">None</span>:
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>        res = collision_prob(<span class="number">365</span>, class_size)
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size - <span class="number">1</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">56
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> re.search(<span class="string">'^0.99'</span>, res) == <span class="builtin">None</span>:
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>        res = collision_prob(<span class="number">365</span>, class_size)
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size - <span class="number">1</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#18&gt;", line 1, in &lt;module&gt;
+    max_room_size()
+  File "&lt;pyshell#17&gt;", line 4, in max_room_size
+    while re.search('^0.99', res) == None:
+  File "/usr/lib/python2.7/re.py", line 142, in search
+    return _compile(pattern, flags).search(string)
+TypeError: expected string or buffer
+</span></span></span><span class="fold-message">[About 7 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> re.search(<span class="string">'^0.99'</span>, <span class="builtin">str</span>(res)) == <span class="builtin">None</span>:
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>        res = collision_prob(<span class="number">365</span>, class_size)
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size - <span class="number">1</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">56
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>n = <span class="number">99</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>n[<span class="number">1</span>]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#22&gt;", line 1, in &lt;module&gt;
+    n[1]
+TypeError: 'int' object has no attribute '__getitem__'
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">str</span>(n)[<span class="number">1</span>]
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">'9'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> max_room_size():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="number">0</span>
+<span class="prompt">... </span>    class_size = <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">while</span> <span class="builtin">True</span>:
+<span class="prompt">... </span>        class_size += <span class="number">1</span>
+<span class="prompt">... </span>        res = collision_prob(<span class="number">365</span>, class_size)
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">str</span>(res)[<span class="number">1</span>] == <span class="string">'9'</span>:
+<span class="prompt">... </span>            <span class="keyword">break</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> class_size - <span class="number">1</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>max_room_size()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#25&gt;", line 1, in &lt;module&gt;
+    max_room_size()
+  File "&lt;pyshell#24&gt;", line 6, in max_room_size
+    res = collision_prob(365, class_size)
+  File "&lt;pyshell#7&gt;", line 46, in collision_prob
+    prob = prob * ((numBuckets - i) / float(numBuckets))
+KeyboardInterrupt
+</span></span></span><span class="fold-message">[About 7 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>res = <span class="number">99</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">str</span>(res)[<span class="number">1</span>]
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">'9'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> rollDie():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">return</span> random.choice([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> checkPascal(numTrials, roll):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0.0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
+<span class="prompt">... </span>        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">24</span>):
+<span class="prompt">... </span>            d1 = roll()
+<span class="prompt">... </span>            d2 = roll()
+<span class="prompt">... </span>            <span class="keyword">if</span> d1 == <span class="number">6</span> <span class="keyword">and</span> d2 == <span class="number">6</span>:
+<span class="prompt">... </span>                yes += <span class="number">1</span>
+<span class="prompt">... </span>                <span class="keyword">break</span>
+<span class="prompt">... </span>    prob = yes / numTrials
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'Prob of rolling two sixes in 24 rolls: '</span>, prob</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">30</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.633333333333
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">30</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.333333333333
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">30</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.5
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">300</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.546666666667
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">300</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.493333333333
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">300</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.503333333333
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">300</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.47
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">3000</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.487666666667
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">3000</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.487333333333
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">3000</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.493333333333
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">4000</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.504
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">4000</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.49275
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">10000</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.4906
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">10000</span>, rollDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.4892
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> rollLoadedDie():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">if</span> random.random() &lt; <span class="number">1.0</span>/<span class="number">5.5</span>:
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="number">6</span>
+<span class="prompt">... </span>    <span class="keyword">else</span>:
+<span class="prompt">... </span>        <span class="keyword">return</span> random.choice([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">1.0</span>/<span class="number">5.5</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">0.18181818181818182
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">1.0</span>/<span class="number">6</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">11: </span><span class="result">0.16666666666666666
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">10000</span>, rollLoadedDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.5445
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>checkPascal(<span class="number">10000</span>, rollLoadedDie)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob of rolling two sixes in 24 rolls:  0.5559
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> flip(numFlips):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    heads = <span class="number">0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(numFlips):
+<span class="prompt">... </span>        <span class="keyword">if</span> random.random() &lt; <span class="number">0.5</span>:
+<span class="prompt">... </span>            heads += <span class="number">1</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> heads/<span class="builtin">float</span>(numFlips)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>flip(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">12: </span><span class="result">0.5
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>flip(<span class="number">10000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">13: </span><span class="result">0.5042
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>flip(<span class="number">100000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">14: </span><span class="result">0.49903
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>flip(<span class="number">1000000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">15: </span><span class="result">0.500285
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>    choices = []
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>        index = randint(<span class="number">6</span>)
+<span class="prompt">... </span>        choices.append(bucket.pop(index))
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#56&gt;", line 1, in &lt;module&gt;
+    redGreenTrial(100)
+  File "&lt;pyshell#55&gt;", line 6, in redGreenTrial
+    index = randint(6)
+NameError: global name 'randint' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>    choices = []
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>        index = random.randint(<span class="number">6</span>)
+<span class="prompt">... </span>        choices.append(bucket.pop(index))
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#60&gt;", line 1, in &lt;module&gt;
+    redGreenTrial(100)
+  File "&lt;pyshell#58&gt;", line 6, in redGreenTrial
+    index = random.randint(6)
+TypeError: randint() takes exactly 3 arguments (2 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">0</span>,<span class="number">5</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">16: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>    choices = []
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>        index = random.randint(<span class="number">0</span>,<span class="number">5</span>)
+<span class="prompt">... </span>        choices.append(bucket.pop(index))
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randint(<span class="number">0</span>,<span class="number">5</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">17: </span><span class="result">4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#64&gt;", line 1, in &lt;module&gt;
+    redGreenTrial(100)
+  File "&lt;pyshell#62&gt;", line 7, in redGreenTrial
+    choices.append(bucket.pop(index))
+IndexError: pop index out of range
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>bucket = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.choice(bucket)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">18: </span><span class="result">6
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.choice(bucket)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">19: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = random.choice(bucket).pop()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#69&gt;", line 1, in &lt;module&gt;
+    a = random.choice(bucket).pop()
+AttributeError: 'int' object has no attribute 'pop'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>    choices = []
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>        index = random.randint(<span class="builtin">len</span>(bucket))
+<span class="prompt">... </span>        choices.append(bucket.pop(index))
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#71&gt;", line 1, in &lt;module&gt;
+    redGreenTrial(100)
+  File "&lt;pyshell#70&gt;", line 6, in redGreenTrial
+    index = random.randint(len(bucket))
+TypeError: randint() takes exactly 3 arguments (2 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>    choices = []
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>        index = random.randint(<span class="number">0</span>, <span class="builtin">len</span>(bucket))
+<span class="prompt">... </span>        choices.append(bucket.pop(index))
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">20: </span><span class="result">('Odds: ', 0.0)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">21: </span><span class="result">('Odds: ', 0.0)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>    choices = []
+<span class="prompt">... </span>    <span class="keyword">for</span> n <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>            index = random.randint(<span class="number">0</span>, <span class="builtin">len</span>(bucket))
+<span class="prompt">... </span>            choices.append(bucket.pop(index))
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">all</span>(first == rest <span class="keyword">for</span> rest <span class="keyword">in</span> choices):
+<span class="prompt">... </span>            yes += <span class="number">1</span>
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#76&gt;", line 1, in &lt;module&gt;
+    redGreenTrial(100)
+  File "&lt;pyshell#75&gt;", line 9, in redGreenTrial
+    if all(first == rest for rest in choices):
+  File "&lt;pyshell#75&gt;", line 9, in &lt;genexpr&gt;
+    if all(first == rest for rest in choices):
+NameError: global name 'first' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>    choices = []
+<span class="prompt">... </span>    <span class="keyword">for</span> n <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>            index = random.randint(<span class="number">0</span>, <span class="builtin">len</span>(bucket))
+<span class="prompt">... </span>            choices.append(bucket.pop(index))
+<span class="prompt">... </span>        first = choices[<span class="number">0</span>]
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">all</span>(first == rest <span class="keyword">for</span> rest <span class="keyword">in</span> choices):
+<span class="prompt">... </span>            yes += <span class="number">1</span>
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#78&gt;", line 1, in &lt;module&gt;
+    redGreenTrial(100)
+  File "&lt;pyshell#77&gt;", line 8, in redGreenTrial
+    choices.append(bucket.pop(index))
+IndexError: pop index out of range
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>    choices = []
+<span class="prompt">... </span>    <span class="keyword">for</span> n <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>            index = random.randint(<span class="number">0</span>, <span class="builtin">len</span>(bucket) - <span class="number">1</span>)
+<span class="prompt">... </span>            choices.append(bucket.pop(index))
+<span class="prompt">... </span>        first = choices[<span class="number">0</span>]
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">all</span>(first == rest <span class="keyword">for</span> rest <span class="keyword">in</span> choices):
+<span class="prompt">... </span>            yes += <span class="number">1</span>
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#80&gt;", line 1, in &lt;module&gt;
+    redGreenTrial(100)
+  File "&lt;pyshell#79&gt;", line 7, in redGreenTrial
+    index = random.randint(0, len(bucket) - 1)
+  File "/usr/lib/python2.7/random.py", line 241, in randint
+    return self.randrange(a, b+1)
+  File "/usr/lib/python2.7/random.py", line 217, in randrange
+    raise ValueError, "empty range for randrange() (%d,%d, %d)" % (istart, istop, width)
+ValueError: empty range for randrange() (0,0, 0)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> n <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
+<span class="prompt">... </span>        bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>        choices = []
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>            index = random.randint(<span class="number">0</span>, <span class="builtin">len</span>(bucket) - <span class="number">1</span>)
+<span class="prompt">... </span>            choices.append(bucket.pop(index))
+<span class="prompt">... </span>        first = choices[<span class="number">0</span>]
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">all</span>(first == rest <span class="keyword">for</span> rest <span class="keyword">in</span> choices):
+<span class="prompt">... </span>            yes += <span class="number">1</span>
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">22: </span><span class="result">('Odds: ', 0.09)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">23: </span><span class="result">('Odds: ', 0.11)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">1000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">24: </span><span class="result">('Odds: ', 0.093)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">1000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">25: </span><span class="result">('Odds: ', 0.087)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> n <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
+<span class="prompt">... </span>        bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
+<span class="prompt">... </span>        choices = []
+<span class="prompt">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">3</span>):
+<span class="prompt">... </span>            index = random.randint(<span class="number">0</span>, <span class="builtin">len</span>(bucket) - <span class="number">1</span>)
+<span class="prompt">... </span>            choices.append(bucket.pop(index))
+<span class="prompt">... </span>        first = choices[<span class="number">0</span>]
+<span class="prompt">... </span>        sanity = <span class="number">0</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> <span class="builtin">all</span>(first == rest <span class="keyword">for</span> rest <span class="keyword">in</span> choices):
+<span class="prompt">... </span>            yes += <span class="number">1</span>
+<span class="prompt">... </span>            <span class="keyword">print</span> choices
+<span class="prompt">... </span>            sanity += <span class="number">1</span>
+<span class="prompt">... </span>    odds = yes / <span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">return</span> <span class="string">'Odds: '</span>, odds</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">1000</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">['g', 'g', 'g']</span></span><span class="folded"><span class="output"><span class="stdout">
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['r', 'r', 'r']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['g', 'g', 'g']
+['r', 'r', 'r']
+</span><span class="result-ind">26: </span><span class="result">('Odds: ', 0.099)
+</span></span></span><span class="fold-message">[About 99 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

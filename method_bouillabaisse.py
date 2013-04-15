@@ -1,3 +1,26 @@
+# method to determine odds of pulling three balls of the same color
+# from a cauldron containing three green and three red balls
+
+def redGreenTrial(numTrials):
+    import random
+    """
+    Returns the odds of pulling three consecutive balls of the same
+    color from a set containing three balls of each color.  Balls
+    are assumed to be removed from the set upon selection.
+    """
+    yes = 0
+    for n in range(numTrials):
+        bucket = ['r','r','r','g','g','g']
+        choices = []
+        for i in range(3):
+            index = random.choice(0, len(bucket - 1))
+            choices.append(bucket.pop(index))
+        first = choices[0]
+        if all(first == next for next in choices):
+            yes += 1
+    odds = yes/float(numTrials)
+    print 'Odds: ', odds
+
 
 # hashSet fcn - building on earlier intSet class
 
