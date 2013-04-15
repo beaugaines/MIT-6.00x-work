@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="DreamPie Format" content="1">
+<title>DreamPie History</title>
+<style>
+body {
+  white-space: pre-wrap;
+  font-family: Ubuntu Mono;
+  font-size: 14336;
+  color: #ffffff;
+  background-color: #000000;
+}
+span.folded {
+ display: none;
+}
+span.commandsep {
+ display: none;
+}
+span.command-defs {
+}
+span.command {
+}
+span.output {
+}
+span.fold-message {
+  color: #a7a7a7;
+  background-color: #003b6c;
+}
+span.message {
+  color: #ffff00;
+}
+span.prompt {
+  color: #e400b6;
+}
+span.exception {
+  color: #ff8080;
+}
+span.result-ind {
+  color: #0000ff;
+}
+span.result {
+  color: #bcffff;
+}
+span.stderr {
+  color: #ff8080;
+}
+span.stdout {
+  color: #bcffff;
+}
+span.stdin {
+}
+span.error {
+  background-color: #ff0000;
+}
+span.bracket-3 {
+  color: #ffabab;
+}
+span.bracket-2 {
+  color: #dfabff;
+}
+span.bracket-1 {
+  color: #abffab;
+}
+span.bracket-match {
+  background-color: #00008b;
+}
+span.comment {
+  color: #c9a3a0;
+}
+span.number {
+  color: #aeacff;
+}
+span.string {
+  color: #00e400;
+}
+span.builtin {
+  color: #efcfcf;
+}
+span.keyword {
+  color: #ff7700;
+}
+</style>
+</head>
+<body><span class="message">================= History Discarded =================
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> strToInt(s):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    number = <span class="string">''</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> s:
+<span class="prompt">... </span>        number += <span class="builtin">str</span>(<span class="builtin">ord</span>(c))
+<span class="prompt">... </span>    index = <span class="builtin">int</span>(number)
+<span class="prompt">... </span>    <span class="keyword">return</span> index</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>strToInt(<span class="string">'bob'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">9811198
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> strToInt(s):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    number = <span class="string">''</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> s:
+<span class="prompt">... </span>        number += <span class="builtin">str</span>(<span class="builtin">ord</span>(c))
+<span class="prompt">... </span>    index = <span class="builtin">int</span>(number)
+<span class="prompt">... </span>    <span class="keyword">print</span> number
+<span class="prompt">... </span>    <span class="keyword">return</span> index</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>strToInt(<span class="string">'bob'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">9811198
+</span><span class="result-ind">1: </span><span class="result">9811198
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">ord</span>(<span class="string">'b'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">98
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> hashStr(s, tableSize = <span class="number">101</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    number = <span class="string">''</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> c <span class="keyword">in</span> s:
+<span class="prompt">... </span>        number += <span class="builtin">str</span>(<span class="builtin">ord</span>(c))
+<span class="prompt">... </span>    index = <span class="builtin">int</span>(number)%tableSize
+<span class="prompt">... </span>    <span class="keyword">return</span> index</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hashStr(<span class="string">'bob'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">58
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hashStr(<span class="string">'bill'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hashStr(<span class="string">'billy'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">81
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hashStr(<span class="string">'billy is an asshole'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">24L
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>hashStr(<span class="string">'billy'</span>, <span class="number">7</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">2
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
+</html>

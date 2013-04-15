@@ -8,34 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "drunken_walk.py",
-			"settings":
-			{
-				"buffer_size": 2617,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "hardNuts.py",
-			"settings":
-			{
-				"buffer_size": 3005,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "kant_generator.py",
-			"settings":
-			{
-				"buffer_size": 7561,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "toolbox.py",
 			"settings":
 			{
 				"buffer_size": 1467,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ProblemSet7/ps7.py",
+			"settings":
+			{
+				"buffer_size": 9210,
 				"line_ending": "Unix"
 			}
 		}
@@ -80,6 +64,11 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/UToronto, wk 2.py",
+		"/home/sircharles/programming/python/MIT course/kant_generator.py",
+		"/home/sircharles/programming/python/MIT course/drunken_walk.py",
+		"/home/sircharles/programming/python/MIT course/hardNuts.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet7/run_pkgtest.py",
 		"/home/sircharles/.config/sublime-text-2/Packages/User/Python.sublime-settings",
 		"/home/sircharles/.config/sublime-text-2/Packages/User/Python/Python_comment.sublime-snippet",
 		"/home/sircharles/programming/python/MIT course/GoogleExercises/list1.py",
@@ -104,7 +93,6 @@
 		"/home/sircharles/programming/python/MIT course/L11_hand.py",
 		"/home/sircharles/programming/python/MIT course/translateBadly.py",
 		"/home/sircharles/programming/python/MIT course/baseHTMLProcessor.py",
-		"/home/sircharles/programming/python/MIT course/hardNuts.py",
 		"/home/sircharles/programming/python/MIT course/get_guessed_word.py",
 		"/home/sircharles/programming/python/MIT course/oddTuples.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_recursion.py",
@@ -203,11 +191,7 @@
 		"/home/sircharles/rails_projects/shouty-todo/db/migrate/20130114222828_create_users.rb",
 		"/home/sircharles/rails_projects/shouty-todo/config/routes.rb",
 		"/home/sircharles/rails_projects/shouty-todo/db/seeds.rb",
-		"/home/sircharles/rails_projects/shouty-todo/app/views/layouts/_header.html.haml",
-		"/home/sircharles/rails_projects/shouty-todo/app/models/user.rb",
-		"/home/sircharles/rails_projects/shouty-todo/spec/spec_helper.rb",
-		"/home/sircharles/rails_projects/shouty-todo/.gitignore",
-		"/home/sircharles/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap"
+		"/home/sircharles/rails_projects/shouty-todo/app/views/layouts/_header.html.haml"
 	],
 	"find":
 	{
@@ -248,95 +232,11 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "drunken_walk.py",
-					"settings":
-					{
-						"buffer_size": 2617,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2612,
-								2612
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1177.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "hardNuts.py",
-					"settings":
-					{
-						"buffer_size": 3005,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								498,
-								498
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "kant_generator.py",
-					"settings":
-					{
-						"buffer_size": 7561,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2180,
-								2180
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 569.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "toolbox.py",
 					"settings":
 					{
@@ -347,16 +247,46 @@
 						"selection":
 						[
 							[
-								1467,
-								1467
+								1463,
+								1463
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 246.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ProblemSet7/ps7.py",
+					"settings":
+					{
+						"buffer_size": 9210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4313,
+								4313
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2631.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -409,6 +339,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"ps7",
+				"ProblemSet7/ps7.py"
+			],
+			[
+				"run",
+				"ProblemSet7/run_pkgtest.py"
+			],
 			[
 				"hard",
 				"hardNuts.py"
@@ -745,6 +683,22 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"mongo",
+				"/home/sircharles/sshfs/webdev/mongodb_course/Mongo_For_Devs.sublime-project"
+			],
+			[
+				"front",
+				"/home/sircharles/web_dev/frontend_hack_project/compass_n_susy_project.sublime-project"
+			],
+			[
+				"java",
+				"/home/sircharles/programming/javascript/javascript_hacking/javascript_hacking.sublime-project"
+			],
+			[
+				"beau",
+				"/home/sircharles/web_dev/beaugaines_site/beaugain.es.sublime-project"
+			],
 			[
 				"blog",
 				"/home/sircharles/web_dev/monkey_blog/monkey_blog.sublime-project"

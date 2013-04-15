@@ -1042,10 +1042,11 @@ TypeError: 'int' object is not iterable
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">24: </span><span class="result">xrange(3)
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">xrange</span>(<span class="number">3</span>):
 <span class="prompt">... </span>    <span class="keyword">print</span> i
-</span><span class="commandsep"></span><span class="output"><span class="stdout">0
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0</span></span><span class="folded"><span class="output"><span class="stdout">
 1
 2
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
+</span></span></span><span class="fold-message">[About 2 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">25: </span><span class="result">0.2530793701724321
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.random()
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">26: </span><span class="result">0.5640091169691802
@@ -1059,7 +1060,7 @@ TypeError: 'int' object is not iterable
 <span class="prompt">... </span>        <span class="keyword">print</span> -x
 <span class="prompt">... </span>    <span class="keyword">else</span>:
 <span class="prompt">... </span>        <span class="keyword">print</span> x
-</span><span class="commandsep"></span><span class="output"><span class="stdout">&lt;built-in method random of Random object at 0x265c2e0&gt;
+</span><span class="commandsep"></span><span class="output"><span class="stdout">&lt;built-in method random of Random object at 0x265c2e0&gt;</span></span><span class="folded"><span class="output"><span class="stdout">
 &lt;built-in method random of Random object at 0x265c2e0&gt;
 &lt;built-in method random of Random object at 0x265c2e0&gt;
 &lt;built-in method random of Random object at 0x265c2e0&gt;
@@ -1069,7 +1070,320 @@ TypeError: 'int' object is not iterable
 &lt;built-in method random of Random object at 0x265c2e0&gt;
 &lt;built-in method random of Random object at 0x265c2e0&gt;
 &lt;built-in method random of Random object at 0x265c2e0&gt;
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> random.<span class="builtin">__name__</span>
+</span></span></span><span class="fold-message">[About 9 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> random.<span class="builtin">__name__</span>
 </span><span class="commandsep"></span><span class="output"><span class="stdout">random
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> RecRoom(<span class="builtin">object</span>):
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, width, height):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>        self.width, self.height = width, height
+<span class="prompt">... </span>        self.tiles = []
+<span class="prompt">... </span>        <span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">range</span>(self.width):
+<span class="prompt">... </span>            self.tiles.append([])
+<span class="prompt">... </span>            <span class="keyword">for</span> y <span class="keyword">in</span> <span class="builtin">range</span>(self.height):
+<span class="prompt">... </span>                self.tiles[x].append(<span class="builtin">False</span>)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = RecRoom(<span class="number">10</span>, <span class="number">15</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.tiles
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">[[False,</span></span><span class="folded"><span class="output"><span class="result">
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False],
+ [False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False],
+ [False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False],
+ [False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False],
+ [False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False],
+ [False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False],
+ [False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False],
+ [False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False],
+ [False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False],
+ [False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False,
+  False]]
+</span></span></span><span class="fold-message">[About 149 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>b = RecRoom(<span class="number">2</span>,<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>b.tiles
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">[[False, False, False], [False, False, False]]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">8</span>**<span class="number">3</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">512
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">52</span>**<span class="number">2</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">2704
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">8</span>/<span class="number">2704</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">4</span>/<span class="number">52</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">13</span>*<span class="number">2</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">26
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">13</span>**<span class="number">2</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">169
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">3.0</span>/<span class="number">51.0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">0.058823529411764705
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>(<span class="number">3</span>/<span class="number">51</span>)*(<span class="number">1</span>/<span class="number">13</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>(<span class="number">3.0</span>/<span class="number">51</span>)*(<span class="number">1.0</span>/<span class="number">13</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">10: </span><span class="result">0.004524886877828055
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> math.factorial(<span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#14&gt;", line 1, in &lt;module&gt;
+    print math.factorial(9)
+NameError: name 'math' is not defined
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> math
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">print</span> math.factorial(<span class="number">9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">362880
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">9</span>+<span class="number">8</span>+<span class="number">7</span>+<span class="number">6</span>+<span class="number">5</span>+<span class="number">4</span>+<span class="number">3</span>+<span class="number">2</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">11: </span><span class="result">44
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">10</span>+<span class="number">9</span>+<span class="number">8</span>+<span class="number">7</span>+<span class="number">6</span>+<span class="number">5</span>+<span class="number">4</span>+<span class="number">3</span>+<span class="number">2</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">12: </span><span class="result">54
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">2704</span>**<span class="number">3</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">13: </span><span class="result">19770609664
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>(<span class="number">2704</span>**<span class="number">3</span>)//<span class="number">512</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">14: </span><span class="result">38614472
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">512</span>//(<span class="number">2704</span>**<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">15: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">512</span>/(<span class="number">2704</span>**<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">16: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">512</span>/(<span class="number">2704.0</span>**<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">17: </span><span class="result">2.589702637912542e-08
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">8</span>**<span class="number">3</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">18: </span><span class="result">512
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>(<span class="number">8.0</span>/(<span class="number">8</span>**<span class="number">3</span>))**<span class="number">3</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">19: </span><span class="result">3.814697265625e-06
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">13</span>/<span class="number">52</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">20: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">13</span>/<span class="number">52.0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">21: </span><span class="result">0.25
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">4</span>/<span class="number">52</span> + <span class="number">3</span>/<span class="number">51</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">22: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">4</span>/<span class="number">52</span> + <span class="number">3</span>/<span class="number">51.0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">23: </span><span class="result">0.058823529411764705
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">4</span>/<span class="number">52.0</span> + <span class="number">3</span>/<span class="number">51.0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">24: </span><span class="result">0.13574660633484165
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">13</span>/<span class="number">52.0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">25: </span><span class="result">0.25
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">9</span>/<span class="number">52.0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">26: </span><span class="result">0.17307692307692307
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">6</span>/<span class="number">52.0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">27: </span><span class="result">0.11538461538461539
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">7</span>/<span class="number">52.0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">28: </span><span class="result">0.1346153846153846
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">52</span>*<span class="number">51</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">29: </span><span class="result">2652
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">12</span>/<span class="number">2652</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">30: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">12</span>/<span class="number">2652.0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">31: </span><span class="result">0.004524886877828055
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">2652</span>/<span class="number">12</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">32: </span><span class="result">221
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">13</span>*<span class="number">12</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">33: </span><span class="result">156
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">52</span>*<span class="number">51</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">34: </span><span class="result">2652
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">2652</span>/<span class="number">156</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">35: </span><span class="result">17
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">13</span>*<span class="number">13</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">36: </span><span class="result">169
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">52</span>*<span class="number">52</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">37: </span><span class="result">2704
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">2704</span>/<span class="number">169</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">38: </span><span class="result">16
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">24</span>/<span class="number">104</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">39: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">26</span>/<span class="number">104</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">40: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">26</span>/<span class="number">104.0</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">41: </span><span class="result">0.25
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">42</span>/<span class="number">3</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">42: </span><span class="result">14
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">6</span>**<span class="number">5</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">43: </span><span class="result">7776
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> rollDie():
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="keyword">return</span> random.choice([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>rollDie()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">44: </span><span class="result">6
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> rollN(n):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    res = <span class="string">''</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(n):
+<span class="prompt">... </span>        res += <span class="builtin">str</span>(rollDie())
+<span class="prompt">... </span>    <span class="keyword">return</span> res</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>rollN(<span class="number">5</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">45: </span><span class="result">'11656'
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getTarget(goal):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    num_tries = <span class="number">0</span>
+<span class="prompt">... </span>    num_rolls = <span class="builtin">len</span>(goal)
+<span class="prompt">... </span>    <span class="keyword">while</span> <span class="builtin">True</span>:
+<span class="prompt">... </span>        num_tries += <span class="number">1</span>
+<span class="prompt">... </span>        res = rollN(num_rools)
+<span class="prompt">... </span>        <span class="keyword">if</span> res == goal:
+<span class="prompt">... </span>            <span class="keyword">return</span> num_tries</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getTarget(<span class="string">'11111'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#56&gt;", line 1, in &lt;module&gt;
+    getTarget('11111')
+  File "&lt;pyshell#55&gt;", line 6, in getTarget
+    res = rollN(num_rools)
+NameError: global name 'num_rools' is not defined
+</span></span></span><span class="fold-message">[About 5 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> getTarget(goal):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    num_tries = <span class="number">0</span>
+<span class="prompt">... </span>    num_rolls = <span class="builtin">len</span>(goal)
+<span class="prompt">... </span>    <span class="keyword">while</span> <span class="builtin">True</span>:
+<span class="prompt">... </span>        num_tries += <span class="number">1</span>
+<span class="prompt">... </span>        res = rollN(num_rolls)
+<span class="prompt">... </span>        <span class="keyword">if</span> res == goal:
+<span class="prompt">... </span>            <span class="keyword">return</span> num_tries</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getTarget(<span class="string">'11111'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">46: </span><span class="result">33061
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>getTarget(<span class="string">'11111'</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">47: </span><span class="result">8478
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> runSim(goal, numTrials):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    total = <span class="number">0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
+<span class="prompt">... </span>        total += getTarget(goal)
+<span class="prompt">... </span>    aveNumTries = total/<span class="builtin">float</span>(numTrials)
+<span class="prompt">... </span>    <span class="keyword">print</span> <span class="string">'Prob = '</span>, <span class="number">1.0</span>/aveNumTries</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>runSim(<span class="string">'11111'</span>, <span class="number">100</span>)
+</span><span class="commandsep"></span><span class="output"><span class="stdout">Prob =  0.000118961513571
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
