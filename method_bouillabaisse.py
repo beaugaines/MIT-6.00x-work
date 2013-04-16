@@ -1,6 +1,5 @@
 # method to determine odds of pulling three balls of the same color
 # from a cauldron containing three green and three red balls
-
 def redGreenTrial(numTrials):
     import random
     """
