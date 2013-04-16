@@ -1116,5 +1116,212 @@ AttributeError: 'list' object has no attribute 'flat'
   File "&lt;pyshell#110&gt;", line 1, in &lt;module&gt;
     width
 NameError: name 'width' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">6</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">37: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">6</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">38: </span><span class="result">3
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">6</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">39: </span><span class="result">1
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">6</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">40: </span><span class="result">0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">5</span>):
+<span class="prompt">... </span>    <span class="keyword">print</span> i
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0
+1
+2
+3
+4
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> RectangularRoom(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    A RectangularRoom represents a rectangular region containing clean or dirty
+</span><span class="prompt">... </span><span class="string">    tiles.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">    A room has a width and a height and contains (width * height) tiles. At any
+</span><span class="prompt">... </span><span class="string">    particular time, each of these tiles is either clean or dirty.
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, width, height):
+<span class="prompt">... </span>        <span class="string">"""
+</span><span class="prompt">... </span><span class="string">        Initializes a rectangular room with the specified width and height.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        Initially, no tiles in the room have been cleaned.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        width: an integer &gt; 0
+</span><span class="prompt">... </span><span class="string">        height: an integer &gt; 0
+</span><span class="prompt">... </span><span class="string">        """</span>
+<span class="prompt">... </span>        self.width = width
+<span class="prompt">... </span>        self.height = height
+<span class="prompt">... </span>        self.tiles = []
+<span class="prompt">... </span>        <span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">range</span>(self.width):
+<span class="prompt">... </span>            self.tiles.append([])
+<span class="prompt">... </span>            <span class="keyword">for</span> y <span class="keyword">in</span> <span class="builtin">range</span>(self.height):
+<span class="prompt">... </span>                self.tiles[x].append(<span class="builtin">False</span>)
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> cleanTileAtPosition(self, pos):
+<span class="prompt">... </span>        <span class="string">"""
+</span><span class="prompt">... </span><span class="string">        Mark the tile under the position POS as cleaned.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        Assumes that POS represents a valid position inside this room.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        pos: a Position
+</span><span class="prompt">... </span><span class="string">        """</span>
+<span class="prompt">... </span>        x = <span class="builtin">int</span>(pos.getX())
+<span class="prompt">... </span>        y = <span class="builtin">int</span>(pos.getY())
+<span class="prompt">... </span>
+<span class="prompt">... </span>        self.tiles[x][y] = <span class="builtin">True</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> isTileCleaned(self, m, n):
+<span class="prompt">... </span>        <span class="string">"""
+</span><span class="prompt">... </span><span class="string">        Return True if the tile (m, n) has been cleaned.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        Assumes that (m, n) represents a valid tile inside the room.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        m: an integer
+</span><span class="prompt">... </span><span class="string">        n: an integer
+</span><span class="prompt">... </span><span class="string">        returns: True if (m, n) is cleaned, False otherwise
+</span><span class="prompt">... </span><span class="string">        """</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> self.tiles[m][n]
+<span class="prompt">... </span>
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getNumTiles(self):
+<span class="prompt">... </span>        <span class="string">"""
+</span><span class="prompt">... </span><span class="string">        Return the total number of tiles in the room.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        returns: an integer
+</span><span class="prompt">... </span><span class="string">        """</span>
+<span class="prompt">... </span>        <span class="keyword">return</span>(self.width*self.height)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> getNumCleanedTiles(self):
+<span class="prompt">... </span>        <span class="string">"""
+</span><span class="prompt">... </span><span class="string">        Return the total number of clean tiles in the room.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        returns: an integer
+</span><span class="prompt">... </span><span class="string">        """</span>
+<span class="prompt">... </span>        cleaned = <span class="number">0</span>
+<span class="prompt">... </span>        <span class="keyword">for</span> x <span class="keyword">in</span> <span class="builtin">range</span>(self.width):
+<span class="prompt">... </span>            <span class="keyword">for</span> y <span class="keyword">in</span> <span class="builtin">range</span>(self.height):
+<span class="prompt">... </span>                <span class="keyword">if</span> self.isTileCleaned(self.x,self.y):
+<span class="prompt">... </span>                    cleaned += <span class="number">1</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> cleaned
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> getRandomPosition(self):
+<span class="prompt">... </span>        <span class="string">"""
+</span><span class="prompt">... </span><span class="string">        Return a random position inside the room.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        returns: a Position object.
+</span><span class="prompt">... </span><span class="string">        """</span>
+<span class="prompt">... </span>        x = random.randint(<span class="number">1</span>, self.width)                        
+<span class="prompt">... </span>        y = random.randint(<span class="number">1</span>, self.height)
+<span class="prompt">... </span>        <span class="keyword">return</span> Position(x,y)        
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> isPositionInRoom(self, pos):
+<span class="prompt">... </span>        <span class="string">"""
+</span><span class="prompt">... </span><span class="string">        Return True if pos is inside the room.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        pos: a Position object.
+</span><span class="prompt">... </span><span class="string">        returns: True if pos is in the room, False otherwise.
+</span><span class="prompt">... </span><span class="string">        """</span>
+<span class="prompt">... </span>        <span class="keyword">if</span> pos.getX() &lt;= self.width <span class="keyword">and</span> pos.getY() &lt;= self.height:
+<span class="prompt">... </span>            <span class="keyword">return</span> <span class="builtin">True</span>
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">False</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a = RectangularRoom(<span class="number">5</span>,<span class="number">5</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">41: </span><span class="result">&lt;__main__.RectangularRoom object at 0x2303890&gt;
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.tiles
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">42: </span><span class="result">[[False, False, False, False, False],
+ [False, False, False, False, False],
+ [False, False, False, False, False],
+ [False, False, False, False, False],
+ [False, False, False, False, False]]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.cleanTileAtPosition(<span class="number">0</span>,<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#120&gt;", line 1, in &lt;module&gt;
+    a.cleanTileAtPosition(0,3)
+TypeError: cleanTileAtPosition() takes exactly 2 arguments (3 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Position(<span class="builtin">object</span>):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
+</span><span class="prompt">... </span><span class="string">    A Position represents a location in a two-dimensional room.
+</span><span class="prompt">... </span><span class="string">    """</span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __init__(self, x, y):
+<span class="prompt">... </span>        <span class="string">"""
+</span><span class="prompt">... </span><span class="string">        Initializes a position with coordinates (x, y).
+</span><span class="prompt">... </span><span class="string">        """</span>
+<span class="prompt">... </span>        self.x = x
+<span class="prompt">... </span>        self.y = y
+<span class="prompt">... </span>        
+<span class="prompt">... </span>    <span class="keyword">def</span> getX(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.x
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getY(self):
+<span class="prompt">... </span>        <span class="keyword">return</span> self.y
+<span class="prompt">... </span>    
+<span class="prompt">... </span>    <span class="keyword">def</span> getNewPosition(self, angle, speed):
+<span class="prompt">... </span>        <span class="string">"""
+</span><span class="prompt">... </span><span class="string">        Computes and returns the new Position after a single clock-tick has
+</span><span class="prompt">... </span><span class="string">        passed, with this object as the current position, and with the
+</span><span class="prompt">... </span><span class="string">        specified angle and speed.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        Does NOT test whether the returned position fits inside the room.
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        angle: number representing angle in degrees, 0 &lt;= angle &lt; 360
+</span><span class="prompt">... </span><span class="string">        speed: positive float representing speed
+</span><span class="prompt">... </span><span class="string">
+</span><span class="prompt">... </span><span class="string">        Returns: a Position object representing the new position.
+</span><span class="prompt">... </span><span class="string">        """</span>
+<span class="prompt">... </span>        old_x, old_y = self.getX(), self.getY()
+<span class="prompt">... </span>        angle = <span class="builtin">float</span>(angle)
+<span class="prompt">... </span>        <span class="comment"># Compute the change in position</span>
+<span class="prompt">... </span>        delta_y = speed * math.cos(math.radians(angle))
+<span class="prompt">... </span>        delta_x = speed * math.sin(math.radians(angle))
+<span class="prompt">... </span>        <span class="comment"># Add that to the existing position</span>
+<span class="prompt">... </span>        new_x = old_x + delta_x
+<span class="prompt">... </span>        new_y = old_y + delta_y
+<span class="prompt">... </span>        <span class="keyword">return</span> Position(new_x, new_y)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">def</span> __str__(self):  
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="string">"(%0.2f, %0.2f)"</span> % (self.x, self.y)</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>b = Position(<span class="number">0</span>,<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.isTileCleaned(<span class="number">0</span>,<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">43: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.isTileCleaned(<span class="number">0</span>,<span class="number">4</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">44: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.isTileCleaned(<span class="number">0</span>,<span class="number">2</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">45: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.getNumTiles()
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">46: </span><span class="result">25
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.cleanTileAtPosition(<span class="number">0</span>,<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#127&gt;", line 1, in &lt;module&gt;
+    a.cleanTileAtPosition(0,3)
+TypeError: cleanTileAtPosition() takes exactly 2 arguments (3 given)
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.tiles()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#128&gt;", line 1, in &lt;module&gt;
+    a.tiles()
+TypeError: 'list' object is not callable
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.tiles
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">47: </span><span class="result">[[False, False, False, False, False],
+ [False, False, False, False, False],
+ [False, False, False, False, False],
+ [False, False, False, False, False],
+ [False, False, False, False, False]]
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.isTileCleaned(<span class="number">0</span>,<span class="number">2</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">48: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> math
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>math.floor(<span class="number">8.5</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">49: </span><span class="result">8.0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">int</span>(<span class="number">8.5</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">50: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">round</span>(<span class="number">6.90</span>, <span class="number">0</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">51: </span><span class="result">7.0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>math.floor(<span class="number">6.9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">52: </span><span class="result">6.0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">int</span>(<span class="number">6.9</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">53: </span><span class="result">6
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">360</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">54: </span><span class="result">198
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">360</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">55: </span><span class="result">181
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">360</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">56: </span><span class="result">163
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
