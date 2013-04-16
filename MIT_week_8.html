@@ -914,7 +914,7 @@ ValueError: empty range for randrange() (0,0, 0)
 </span><span class="result-ind">26: </span><span class="result">('Odds: ', 0.099)
 </span></span></span><span class="fold-message">[About 99 more lines. Double-click to unfold]
 </span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>redGreenTrial(<span class="number">1000</span>)
-</span><span class="commandsep"></span><span class="output"><span class="stdout">['g', 'g', 'g']</span></span><span class="folded"><span class="output"><span class="stdout">
+</span><span class="commandsep"></span><span class="output"><span class="stdout">['g', 'g', 'g']
 ['r', 'r', 'r']
 ['g', 'g', 'g']
 ['g', 'g', 'g']
@@ -1020,8 +1020,7 @@ ValueError: empty range for randrange() (0,0, 0)
 ['r', 'r', 'r']
 ['r', 'r', 'r']
 </span><span class="result-ind">27: </span><span class="result">('Odds: ', 0.105)
-</span></span></span><span class="fold-message">[About 105 more lines. Double-click to unfold]
-</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> redGreenTrial(numTrials):
 </span><span class="command-defs"><span class="command"><span class="prompt">... </span>    yes = <span class="number">0</span>
 <span class="prompt">... </span>    <span class="keyword">for</span> n <span class="keyword">in</span> <span class="builtin">range</span>(numTrials):
 <span class="prompt">... </span>        bucket = [<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>,<span class="string">'g'</span>]
@@ -1294,17 +1293,19 @@ TypeError: cleanTileAtPosition() takes exactly 2 arguments (3 given)
     a.cleanTileAtPosition(0,3)
 TypeError: cleanTileAtPosition() takes exactly 2 arguments (3 given)
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.tiles()
-</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
   File "&lt;pyshell#128&gt;", line 1, in &lt;module&gt;
     a.tiles()
 TypeError: 'list' object is not callable
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.tiles
-</span><span class="commandsep"></span><span class="output"><span class="result-ind">47: </span><span class="result">[[False, False, False, False, False],
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.tiles
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">47: </span><span class="result">[[False, False, False, False, False],</span></span><span class="folded"><span class="output"><span class="result">
  [False, False, False, False, False],
  [False, False, False, False, False],
  [False, False, False, False, False],
  [False, False, False, False, False]]
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.isTileCleaned(<span class="number">0</span>,<span class="number">2</span>)
+</span></span></span><span class="fold-message">[About 4 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.isTileCleaned(<span class="number">0</span>,<span class="number">2</span>)
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">48: </span><span class="result">False
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> math
 </span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>math.floor(<span class="number">8.5</span>)
@@ -1323,5 +1324,13 @@ TypeError: 'list' object is not callable
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">55: </span><span class="result">181
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>random.randrange(<span class="number">360</span>)
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">56: </span><span class="result">163
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">sum</span>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>]
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#140&gt;", line 1, in &lt;module&gt;
+    sum[1,2,5]
+TypeError: 'builtin_function_or_method' object has no attribute '__getitem__'
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">sum</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>])
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">57: </span><span class="result">8
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

@@ -241,8 +241,8 @@
 						"selection":
 						[
 							[
-								9766,
-								9766
+								9765,
+								9765
 							]
 						],
 						"settings":
@@ -658,16 +658,16 @@
 		"selected_items":
 		[
 			[
+				"java",
+				"/home/sircharles/programming/javascript/javascript_hacking/javascript_hacking.sublime-project"
+			],
+			[
 				"mongo",
 				"/home/sircharles/sshfs/webdev/mongodb_course/Mongo_For_Devs.sublime-project"
 			],
 			[
 				"front",
 				"/home/sircharles/web_dev/frontend_hack_project/compass_n_susy_project.sublime-project"
-			],
-			[
-				"java",
-				"/home/sircharles/programming/javascript/javascript_hacking/javascript_hacking.sublime-project"
 			],
 			[
 				"beau",
