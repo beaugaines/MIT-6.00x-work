@@ -11,15 +11,7 @@
 			"file": "ProblemSet7/ps7.py",
 			"settings":
 			{
-				"buffer_size": 10196,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ProblemSet6/ps6.py",
-			"settings":
-			{
-				"buffer_size": 10644,
+				"buffer_size": 11547,
 				"line_ending": "Unix"
 			}
 		}
@@ -64,6 +56,7 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6.py",
 		"/home/sircharles/programming/python/MIT course/method_bouillabaisse.py",
 		"/home/sircharles/wek_7_sols.py",
 		"/home/sircharles/programming/python/MIT course/intDictTests.py",
@@ -80,7 +73,6 @@
 		"/home/sircharles/Dropbox/PROGRAMMING/Python/Google Python Course/google-python-exercises/hello.py",
 		"/home/sircharles/programming/python/MIT course/Week 7/julyTemps.txt",
 		"/home/sircharles/programming/python/MIT course/utoronto_course.py",
-		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6.py",
 		"/home/sircharles/Dropbox/PROGRAMMING/Python/Google Python Course/google-python-exercises/basic/list1.py",
 		"/home/sircharles/programming/python/MIT course/Week 7/temp_plotter.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_encryption.py",
@@ -195,7 +187,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -208,9 +200,10 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"location",
 			"formality",
 			") ",
 			"function",
@@ -222,6 +215,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"position"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -240,15 +234,15 @@
 					"file": "ProblemSet7/ps7.py",
 					"settings":
 					{
-						"buffer_size": 10196,
+						"buffer_size": 11547,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5094,
-								5094
+								9766,
+								9766
 							]
 						],
 						"settings":
@@ -258,35 +252,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3230.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "ProblemSet6/ps6.py",
-					"settings":
-					{
-						"buffer_size": 10644,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8265,
-								8265
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5774.0,
+						"translation.y": 6270.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

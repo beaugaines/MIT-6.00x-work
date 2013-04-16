@@ -254,7 +254,7 @@ class StandardRobot(Robot):
             self.setRobotDirection(self.getRandomDirection())
 
 # Uncomment this line to see your implementation of StandardRobot in action!
-testRobotMovement(StandardRobot, RectangularRoom)
+# testRobotMovement(StandardRobot, RectangularRoom)
 
 
 # === Problem 3
@@ -276,7 +276,32 @@ def runSimulation(num_robots, speed, width, height, min_coverage, num_trials,
     robot_type: class of robot to be instantiated (e.g. StandardRobot or
                 RandomWalkRobot)
     """
-    raise NotImplementedError
+
+    timeSteps = []
+
+    for iTrial in range(num_trials):
+        # Animation, to be removed
+        #anim = ps7_visualize.RobotVisualization(num_robots, width, height)
+
+        room = RectangularRoom(width, height)
+        robots = []
+        for iRobot in range(num_robots):
+            robots.append(robot_type(room, speed))
+
+        time = 0
+        while (float(room.getNumCleanedTiles()) / room.getNumTiles()) < min_coverage:
+            #anim.update(room, robots)
+            for robot in robots:
+                robot.updatePositionAndClean()
+            time += 1
+
+        timeSteps.append(time)
+        #anim.done()
+
+    return float(sum(timeSteps)) / num_trials
+
+
+
 
 
 # === Problem 4
@@ -292,7 +317,15 @@ class RandomWalkRobot(Robot):
         Move the robot to a new position and mark the tile it is on as having
         been cleaned.
         """
-        raise NotImplementedError
+        
+        new_position = self.position.getNewPosition(self.direction, self.speed)
+        if self.room.isPositionInRoom(new_position):
+            self.position = new_position
+            self.room.cleanTileAtPosition(self.position)
+
+        # only diff between rando and standard is rando goes off half-cocked in
+        # some rando direction after every move
+        self.setRobotDirection(self.getRandomDirection())
 
 
 def showPlot1(title, x_label, y_label):
@@ -344,7 +377,7 @@ def showPlot2(title, x_label, y_label):
 #
 #       (... your call here ...)
 #
-
+showPlot1('rando vs normalna', 'xlabel', 'ylabel')
 #
 # 2) Write a function call to showPlot2 that generates an appropriately-labeled
 #     plot.
