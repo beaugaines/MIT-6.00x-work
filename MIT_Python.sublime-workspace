@@ -8,10 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "ProblemSet7/ps7.py",
+			"file": "method_bouillabaisse.py",
 			"settings":
 			{
-				"buffer_size": 11547,
+				"buffer_size": 7735,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web_scraper.py",
+			"settings":
+			{
+				"buffer_size": 444,
 				"line_ending": "Unix"
 			}
 		}
@@ -56,6 +64,8 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/flipPlot.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet7/ps7.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6.py",
 		"/home/sircharles/programming/python/MIT course/method_bouillabaisse.py",
 		"/home/sircharles/wek_7_sols.py",
@@ -181,9 +191,7 @@
 		"/home/sircharles/rails_projects/shouty-todo/app/assets/javascripts/application.js",
 		"/home/sircharles/rails_projects/shouty-todo/app/views/todos/new.js.haml",
 		"/home/sircharles/rails_projects/shouty-todo/app/helpers/application_helper.rb",
-		"/home/sircharles/rails_projects/shouty-todo/app/assets/stylesheets/foundation_and_overrides.scss",
-		"/home/sircharles/rails_projects/shouty-todo/app/controllers/application_controller.rb",
-		"/home/sircharles/rails_projects/shouty-todo/db/schema.rb"
+		"/home/sircharles/rails_projects/shouty-todo/app/assets/stylesheets/foundation_and_overrides.scss"
 	],
 	"find":
 	{
@@ -226,23 +234,22 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "ProblemSet7/ps7.py",
+					"file": "method_bouillabaisse.py",
 					"settings":
 					{
-						"buffer_size": 11547,
+						"buffer_size": 7735,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9764,
-								9764
+								7129,
+								7129
 							]
 						],
 						"settings":
@@ -252,7 +259,33 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6270.0,
+						"translation.y": 4326.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "web_scraper.py",
+					"settings":
+					{
+						"buffer_size": 444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								442,
+								442
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -306,6 +339,10 @@
 		"selected_items":
 		[
 			[
+				"boui",
+				"method_bouillabaisse.py"
+			],
+			[
 				"bouii",
 				"week_6_method_bouillabaisse.py"
 			],
@@ -328,10 +365,6 @@
 			[
 				"goog",
 				"GoogleExercises/list1.py"
-			],
-			[
-				"boui",
-				"week_6_method_bouillabaisse.py"
 			],
 			[
 				"trir",
@@ -657,6 +690,14 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"ruby",
+				"/home/sircharles/programming/ruby/ruby_hacking.sublime-project"
+			],
+			[
+				"app",
+				"/home/sircharles/rails_projects/app/ember_app_1.sublime-project"
+			],
 			[
 				"java",
 				"/home/sircharles/programming/javascript/javascript_hacking/javascript_hacking.sublime-project"

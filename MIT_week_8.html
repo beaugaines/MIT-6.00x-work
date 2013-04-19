@@ -1125,12 +1125,13 @@ NameError: name 'width' is not defined
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">40: </span><span class="result">0
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="builtin">range</span>(<span class="number">5</span>):
 <span class="prompt">... </span>    <span class="keyword">print</span> i
-</span><span class="commandsep"></span><span class="output"><span class="stdout">0
+</span><span class="commandsep"></span><span class="output"><span class="stdout">0</span></span><span class="folded"><span class="output"><span class="stdout">
 1
 2
 3
 4
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> RectangularRoom(<span class="builtin">object</span>):
+</span></span></span><span class="fold-message">[About 4 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> RectangularRoom(<span class="builtin">object</span>):
 </span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
 </span><span class="prompt">... </span><span class="string">    A RectangularRoom represents a rectangular region containing clean or dirty
 </span><span class="prompt">... </span><span class="string">    tiles.
@@ -1226,17 +1227,19 @@ NameError: name 'width' is not defined
 </span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">41: </span><span class="result">&lt;__main__.RectangularRoom object at 0x2303890&gt;
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.tiles
-</span><span class="commandsep"></span><span class="output"><span class="result-ind">42: </span><span class="result">[[False, False, False, False, False],
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">42: </span><span class="result">[[False, False, False, False, False],</span></span><span class="folded"><span class="output"><span class="result">
  [False, False, False, False, False],
  [False, False, False, False, False],
  [False, False, False, False, False],
  [False, False, False, False, False]]
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.cleanTileAtPosition(<span class="number">0</span>,<span class="number">3</span>)
-</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+</span></span></span><span class="fold-message">[About 4 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.cleanTileAtPosition(<span class="number">0</span>,<span class="number">3</span>)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
   File "&lt;pyshell#120&gt;", line 1, in &lt;module&gt;
     a.cleanTileAtPosition(0,3)
 TypeError: cleanTileAtPosition() takes exactly 2 arguments (3 given)
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Position(<span class="builtin">object</span>):
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">class</span> Position(<span class="builtin">object</span>):
 </span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">"""
 </span><span class="prompt">... </span><span class="string">    A Position represents a location in a two-dimensional room.
 </span><span class="prompt">... </span><span class="string">    """</span>
@@ -1288,11 +1291,12 @@ TypeError: cleanTileAtPosition() takes exactly 2 arguments (3 given)
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.getNumTiles()
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">46: </span><span class="result">25
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.cleanTileAtPosition(<span class="number">0</span>,<span class="number">3</span>)
-</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
   File "&lt;pyshell#127&gt;", line 1, in &lt;module&gt;
     a.cleanTileAtPosition(0,3)
 TypeError: cleanTileAtPosition() takes exactly 2 arguments (3 given)
-</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.tiles()
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>a.tiles()
 </span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
   File "&lt;pyshell#128&gt;", line 1, in &lt;module&gt;
     a.tiles()
@@ -1332,5 +1336,83 @@ TypeError: 'builtin_function_or_method' object has no attribute '__getitem__'
 </span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
 </span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">sum</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>])
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">57: </span><span class="result">8
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> random
+<span class="prompt">... </span>
+<span class="prompt">... </span><span class="keyword">def</span> flipPlot(minExp, maxExp):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    <span class="string">''' assumes min and max exp pos ints; minExp &lt; maxExp
+</span><span class="prompt">... </span><span class="string">        Plots results of 2**minExp to 2**maxExp coin flips
+</span><span class="prompt">... </span><span class="string">    '''</span>
+<span class="prompt">... </span>    ratios = []
+<span class="prompt">... </span>    diffs = []
+<span class="prompt">... </span>    xAxis = []
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> exp <span class="keyword">in</span> <span class="builtin">range</span>(minExp, maxExp + <span class="number">1</span>):
+<span class="prompt">... </span>        xAxis.append(<span class="number">2</span>**exp)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="keyword">for</span> numFlips <span class="keyword">in</span> xAxis:
+<span class="prompt">... </span>        numHeads = <span class="number">0</span>
+<span class="prompt">... </span>        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="builtin">range</span>(numFlips):
+<span class="prompt">... </span>            <span class="keyword">if</span> random.random() &lt; <span class="number">0.5</span>:
+<span class="prompt">... </span>                numHeads += <span class="number">1</span>
+<span class="prompt">... </span>        numTails = numFlips - numHeads
+<span class="prompt">... </span>        ratios.append(numHeads/<span class="builtin">float</span>(numTails))
+<span class="prompt">... </span>        diffs.append(<span class="builtin">abs</span>(numHeads - numTails))
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="comment"># plot diffs</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    pylab.title(<span class="string">'Difference between heads and tails'</span>)
+<span class="prompt">... </span>    pylab.xlabel(<span class="string">'Number of Flips'</span>)
+<span class="prompt">... </span>    pylab.ylabel(<span class="string">'Abs(#Heads - #Tails)'</span>)
+<span class="prompt">... </span>    pylab.plot(xAxis, diffs)
+<span class="prompt">... </span>
+<span class="prompt">... </span>    <span class="comment"># plot ratios</span>
+<span class="prompt">... </span>
+<span class="prompt">... </span>    pylab.figure()
+<span class="prompt">... </span>    pylab.title(<span class="string">'Heads/Tails Ratios'</span>)
+<span class="prompt">... </span>    pylab.xlabel(<span class="string">'Number of Flips'</span>)
+<span class="prompt">... </span>    pylab.ylabel(<span class="string">'Heads/Tails'</span>)
+<span class="prompt">... </span>    pylab.plot(xAxis, ratios)
+<span class="prompt">... </span>
+<span class="prompt">... </span>
+</span></span><span class="command"><span class="prompt">... </span>random.seed(<span class="number">0</span>)
+<span class="prompt">... </span>flipPlot(<span class="number">4</span>, <span class="number">20</span>)
+<span class="prompt">... </span>pylab.show()
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):</span></span><span class="folded"><span class="output"><span class="exception">
+  File "&lt;pyshell#0&gt;", line 40, in &lt;module&gt;
+    flipPlot(4, 20)
+  File "&lt;pyshell#0&gt;", line 25, in flipPlot
+    pylab.title('Difference between heads and tails')
+NameError: global name 'pylab' is not defined
+</span></span></span><span class="fold-message">[About 5 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> pylab
+</span><span class="commandsep"></span><span class="output"><span class="stderr">Warning: matplotlib in non-interactive mode detected.</span></span><span class="folded"><span class="output"><span class="stderr">
+This means that plots will appear only after you run show().
+Use Edit-&gt;Preferences-&gt;Shell to automatically switch to interactive mode 
+or to suppress this warning.
+</span></span></span><span class="fold-message">[About 3 more lines. Double-click to unfold]
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span>
+
+<span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.2.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> stdDev(X):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    mean = <span class="builtin">sum</span>(X)/<span class="builtin">float</span>(<span class="builtin">len</span>(X))
+<span class="prompt">... </span>    tot = <span class="number">0.0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> x <span class="keyword">in</span> X:
+<span class="prompt">... </span>        tot += (x - mean)**<span class="number">2</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> (tot/<span class="builtin">len</span>(X))**<span class="number">0.5</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>x = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>stdDev(x)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">1.707825127659933
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>x = [<span class="number">0</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">6</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>stdDev(x)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">2.0615528128088303
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>
