@@ -34,9 +34,16 @@ def plotVowelProportionHistogram(wordList, numBins=15):
             if c in VOWELS:
                 num_vowels += 1
         vowel_proportions.append(num_vowels/float(len(w)))
-    mean = sum(total)/float(len(total))
+    # mean = sum(total)/float(len(total))
     # plot histogram with pyab
-    pylab.hist()
+    pylab.hist(vowel_proportions, numBins)
+    pylab.xlabel('Proportion of vowels')
+    pylab.ylabel('Number of occurrences')
+    # return min and max vals on x axis
+    xmin, xmax = pylab.xlim()
+    # likewise for y axis
+    ymin, ymax = pylab.ylim()
+    pylab.show()
 
 if __name__ == '__main__':
     wordList = loadWords()
