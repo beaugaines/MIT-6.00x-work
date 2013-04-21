@@ -1414,5 +1414,65 @@ DreamPie 1.2.1
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>x = [<span class="number">0</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">6</span>]
 </span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>stdDev(x)
 </span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">2.0615528128088303
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> stdDevOfLengths(L):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    lengths = []
+<span class="prompt">... </span>    <span class="keyword">if</span> <span class="builtin">len</span>(L) == <span class="number">0</span>:
+<span class="prompt">... </span>        <span class="keyword">return</span> <span class="builtin">float</span>(<span class="string">'NaN'</span>)
+<span class="prompt">... </span>    <span class="keyword">for</span> l <span class="keyword">in</span> L:
+<span class="prompt">... </span>        lengths.append(<span class="builtin">len</span>(l))
+<span class="prompt">... </span>    mean = <span class="builtin">sum</span>(lengths)/<span class="builtin">float</span>(<span class="builtin">len</span>(lengths))
+<span class="prompt">... </span>    tot = <span class="number">0.0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> val <span class="keyword">in</span> lengths:
+<span class="prompt">... </span>        tot += (val - mean)**<span class="number">2</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> (tot/<span class="builtin">len</span>(lengths))**<span class="number">0.5</span></span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">list</span> = [<span class="string">'a'</span>, <span class="string">'bob'</span>, <span class="string">'is'</span>, <span class="string">'your'</span>, <span class="string">'avuncular'</span>, <span class="string">'uncle'</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>stdDevOfLengths(<span class="builtin">list</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">2.581988897471611
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>list2 = []
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>stdDevOfLengths(list2)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">nan
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="builtin">sum</span>([<span class="number">10</span>,<span class="number">4</span>,<span class="number">12</span>,<span class="number">15</span>,<span class="number">20</span>,<span class="number">5</span>])
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">66
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>l = [<span class="number">10</span>,<span class="number">4</span>,<span class="number">12</span>,<span class="number">15</span>,<span class="number">20</span>,<span class="number">5</span>]
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tot = <span class="number">0</span>
+<span class="prompt">... </span><span class="keyword">for</span> v <span class="keyword">in</span> l:
+<span class="prompt">... </span>    tot += (v -<span class="number">66</span>)**<span class="number">2</span>
+<span class="prompt">... </span><span class="keyword">print</span> (tot/<span class="builtin">len</span>(l))**<span class="number">0.5</span>
+</span><span class="commandsep"></span><span class="output"><span class="stdout">55.2720544217
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">55.27</span>/<span class="number">66</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">0.8374242424242425
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>(<span class="number">11</span>+<span class="number">12</span>+<span class="number">13</span>)/<span class="number">3</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">12
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="number">55.27</span>/<span class="number">11</span>
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">7: </span><span class="result">5.024545454545454
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>tot = <span class="number">0</span>
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> v <span class="keyword">in</span> l:
+<span class="prompt">... </span>    tot += (v - <span class="number">11</span>)**<span class="number">2</span>
+<span class="prompt">... </span><span class="keyword">print</span> (tot/<span class="builtin">len</span>(l))**<span class="number">0.5</span>
+</span><span class="commandsep"></span><span class="output"><span class="stdout">5.47722557505
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>mean = <span class="builtin">sum</span>(l)/<span class="builtin">float</span>(<span class="builtin">len</span>(l))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>mean
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">8: </span><span class="result">11.0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> coeffOfVar(L):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    mean = <span class="builtin">sum</span>(l)/<span class="builtin">float</span>(<span class="builtin">len</span>(l))
+<span class="prompt">... </span>    tot = <span class="number">0.0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> val <span class="keyword">in</span> L:
+<span class="prompt">... </span>        tot += (val - mean)**<span class="number">2</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> ((tot/<span class="builtin">len</span>(lengths))**<span class="number">0.5</span>)/mean</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>coeffOfVar(l)
+</span><span class="commandsep"></span><span class="output"><span class="exception">Traceback (most recent call last):
+  File "&lt;pyshell#21&gt;", line 1, in &lt;module&gt;
+    coeffOfVar(l)
+  File "&lt;pyshell#20&gt;", line 6, in coeffOfVar
+    return ((tot/len(lengths))**0.5)/mean
+NameError: global name 'lengths' is not defined
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">def</span> coeffOfVar(L):
+</span><span class="command-defs"><span class="command"><span class="prompt">... </span>    mean = <span class="builtin">sum</span>(L)/<span class="builtin">float</span>(<span class="builtin">len</span>(L))
+<span class="prompt">... </span>    tot = <span class="number">0.0</span>
+<span class="prompt">... </span>    <span class="keyword">for</span> val <span class="keyword">in</span> L:
+<span class="prompt">... </span>        tot += (val - mean)**<span class="number">2</span>
+<span class="prompt">... </span>    <span class="keyword">return</span> ((tot/<span class="builtin">len</span>(L))**<span class="number">0.5</span>)/mean</span></span><span class="command">
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>coeffOfVar(l)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">9: </span><span class="result">0.5034317492677621
 </span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
 </html>

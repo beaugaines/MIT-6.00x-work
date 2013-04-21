@@ -8,19 +8,11 @@
 	"buffers":
 	[
 		{
-			"file": "method_bouillabaisse.py",
+			"file": "histogram_problem/histogramfun.py",
 			"settings":
 			{
-				"buffer_size": 7735,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "web_scraper.py",
-			"settings":
-			{
-				"buffer_size": 444,
-				"line_ending": "Unix"
+				"buffer_size": 1430,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -64,10 +56,11 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/method_bouillabaisse.py",
+		"/home/sircharles/programming/python/MIT course/web_scraper.py",
 		"/home/sircharles/programming/python/MIT course/flipPlot.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet7/ps7.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6.py",
-		"/home/sircharles/programming/python/MIT course/method_bouillabaisse.py",
 		"/home/sircharles/wek_7_sols.py",
 		"/home/sircharles/programming/python/MIT course/intDictTests.py",
 		"/home/sircharles/programming/python/MIT course/week_6_method_bouillabaisse.py",
@@ -190,8 +183,7 @@
 		"/home/sircharles/Dropbox/CODE/S'ford DB Course/dtd_exercise.dtd",
 		"/home/sircharles/rails_projects/shouty-todo/app/assets/javascripts/application.js",
 		"/home/sircharles/rails_projects/shouty-todo/app/views/todos/new.js.haml",
-		"/home/sircharles/rails_projects/shouty-todo/app/helpers/application_helper.rb",
-		"/home/sircharles/rails_projects/shouty-todo/app/assets/stylesheets/foundation_and_overrides.scss"
+		"/home/sircharles/rails_projects/shouty-todo/app/helpers/application_helper.rb"
 	],
 	"find":
 	{
@@ -234,22 +226,23 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "method_bouillabaisse.py",
+					"file": "histogram_problem/histogramfun.py",
 					"settings":
 					{
-						"buffer_size": 7735,
+						"buffer_size": 1430,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7129,
-								7129
+								1315,
+								1315
 							]
 						],
 						"settings":
@@ -259,33 +252,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4326.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "web_scraper.py",
-					"settings":
-					{
-						"buffer_size": 444,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								442,
-								442
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 284.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -338,6 +305,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"web",
+				"web_scraper.py"
+			],
+			[
+				"his",
+				"histogram_problem/histogramfun.py"
+			],
 			[
 				"boui",
 				"method_bouillabaisse.py"
@@ -691,6 +666,10 @@
 		"selected_items":
 		[
 			[
+				"mongo",
+				"/home/sircharles/sshfs/webdev/mongodb_course/Mongo_For_Devs.sublime-project"
+			],
+			[
 				"ruby",
 				"/home/sircharles/programming/ruby/ruby_hacking.sublime-project"
 			],
@@ -701,10 +680,6 @@
 			[
 				"java",
 				"/home/sircharles/programming/javascript/javascript_hacking/javascript_hacking.sublime-project"
-			],
-			[
-				"mongo",
-				"/home/sircharles/sshfs/webdev/mongodb_course/Mongo_For_Devs.sublime-project"
 			],
 			[
 				"front",
