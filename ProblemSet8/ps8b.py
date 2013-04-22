@@ -86,7 +86,7 @@ class SimpleVirus(object):
         # reproduction probability declines as population density increases
 
         if random.random() < (self.getMaxBirthProb() * (1 - popDensity)):
-            return SimpleVirus(self.getmaxBirthProb(), self.getclearProb())
+            return SimpleVirus(self.getMaxBirthProb(), self.getClearProb())
         else:
             raise NoChildException
 
@@ -161,7 +161,7 @@ class Patient(object):
         survivors = []
         for v in self.getViruses():
             if not v.doesClear():
-                survivors.append(v2)
+                survivors.append(v)
         self.viruses = survivors[:]
 
         # calculate pop density
@@ -176,6 +176,9 @@ class Patient(object):
 
         # add to poor patient's virus count the survivors
         self.viruses += spawn
+
+
+
 #
 # PROBLEM 3
 #
@@ -195,8 +198,46 @@ def simulationWithoutDrug(numViruses, maxPop, maxBirthProb, clearProb,
     numTrials: number of simulation runs to execute (an integer)
     """
 
-    # TODO
+    # spawn our virus population
+    viruses = []
 
+    for v in range(numViruses):
+        viruses.append(SimpleVirus(maxBirthProb, clearProb))
+
+
+    # set up array to collect outcomes of trial
+    time_steps = 300
+    results = []
+    for trial in range(time_steps):
+        results.append([])
+
+    # run trial
+
+    for t in range(numTrials):
+        patient = Patient(viruses[:], maxPop)
+
+        # iterate through timesteps
+        for step in range(time_steps):
+            patient.update()
+            results[step].append(patient.getTotalPop())
+
+
+    # calculate the avg population of the colony
+    avgPop = []
+    for t in range(time_steps):
+        avgPop.append(sum(results[t]) / float(numTrials)
+
+    # plot results!
+
+    # pylab.figure()
+    pylab.plot(range(time_steps), avgPop, label='Evolution of Simple Virus colony')
+    pylab.xlabel('Time Steps')
+    pylab.ylabel('Avg. Population')
+    pylab.title('Virus Simulation - Sans Drugs')
+    pylab.legend(loc='best')
+    pylab.show()    
+
+simulationWithoutDrug(100, 1000, 0.1, 0.05, 10)
 
 
 #
@@ -225,20 +266,23 @@ class ResistantVirus(SimpleVirus):
         the probability of the offspring acquiring or losing resistance to a drug.
         """
 
-        # TODO
+        self.maxBirthProb = maxBirthProb
+        self.clearProb = clearProb
+        self.resistances = resistances
+        self.mutProb = mutProb
 
 
     def getResistances(self):
         """
         Returns the resistances for this virus.
         """
-        # TODO
+        return self.resistances
 
     def getMutProb(self):
         """
         Returns the mutation probability for this virus.
         """
-        # TODO
+        return self.mutProb
 
     def isResistantTo(self, drug):
         """
@@ -251,8 +295,10 @@ class ResistantVirus(SimpleVirus):
         returns: True if this virus instance is resistant to the drug, False
         otherwise.
         """
-        
-        # TODO
+        try:
+            return (self.getResistances)[drug]
+        except KeyError:
+            return False
 
 
     def reproduce(self, popDensity, activeDrugs):
@@ -300,7 +346,7 @@ class ResistantVirus(SimpleVirus):
         NoChildException if this virus particle does not reproduce.
         """
 
-        # TODO
+        
 
             
 
