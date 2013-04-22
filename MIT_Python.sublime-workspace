@@ -14,6 +14,14 @@
 				"buffer_size": 1430,
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "ProblemSet8/ps8b.py",
+			"settings":
+			{
+				"buffer_size": 14194,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -56,13 +64,13 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/intDictTests.py",
 		"/home/sircharles/programming/python/MIT course/method_bouillabaisse.py",
 		"/home/sircharles/programming/python/MIT course/web_scraper.py",
 		"/home/sircharles/programming/python/MIT course/flipPlot.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet7/ps7.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6.py",
 		"/home/sircharles/wek_7_sols.py",
-		"/home/sircharles/programming/python/MIT course/intDictTests.py",
 		"/home/sircharles/programming/python/MIT course/week_6_method_bouillabaisse.py",
 		"/home/sircharles/programming/python/MIT course/toolbox.py",
 		"/home/sircharles/programming/python/MIT course/UToronto, wk 2.py",
@@ -203,6 +211,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"TODO",
 			"location",
 			"formality",
 			") ",
@@ -226,7 +235,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -253,6 +262,34 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 284.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ProblemSet8/ps8b.py",
+					"settings":
+					{
+						"buffer_size": 14194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5534,
+								5534
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2821.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -306,6 +343,10 @@
 		"selected_items":
 		[
 			[
+				"int",
+				"intDictTests.py"
+			],
+			[
 				"web",
 				"web_scraper.py"
 			],
@@ -320,10 +361,6 @@
 			[
 				"bouii",
 				"week_6_method_bouillabaisse.py"
-			],
-			[
-				"int",
-				"intDictTests.py"
 			],
 			[
 				"ps7",

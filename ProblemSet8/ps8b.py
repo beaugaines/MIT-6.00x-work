@@ -58,8 +58,8 @@ class SimpleVirus(object):
         False.
         """
 
-        if self.clearProb:
-            return self.getClearProb()
+        if random.random() < self.clearProb:
+            return True
         return False 
 
     
@@ -84,9 +84,9 @@ class SimpleVirus(object):
         """
 
         # reproduction probability declines as population density increases
-        self.reproduceProbability = self.getMaxBirthProb * (1 - popDensity)
-        if self.reproduceProbability > 0.5:
-            return SimpleVirus(self.maxBirthProb, self.clearProb)
+
+        if random.random() < (self.getMaxBirthProb() * (1 - popDensity)):
+            return SimpleVirus(self.getmaxBirthProb(), self.getclearProb())
         else:
             raise NoChildException
 
@@ -138,7 +138,7 @@ class Patient(object):
         """
         Returns the population density in this patient.
         """
-        return self.getTotalPop(self)/self.getMaxPop(self)
+        return self.getTotalPop() / float(self.getMaxPop())
 
     def update(self):
         """
@@ -158,15 +158,24 @@ class Patient(object):
         returns: The total virus population at the end of the update (an
         integer)
         """
-        self.survivors = []
-        for v in self.viruses:
-            v2 = v.reproduce()
-            if v2!= 'NoChildException':
-                self.survivors.append(v2)
-        self.popDensity = 
+        survivors = []
+        for v in self.getViruses():
+            if not v.doesClear():
+                survivors.append(v2)
+        self.viruses = survivors[:]
 
+        # calculate pop density
+        popDensity = self.getPopDensity()
+        spawn = []
+        for v in self.getViruses():
+            try:
+                offspring = v.reproduce(popDensity)
+                spawn.append(offspring)
+            except NoChildException:
+                continue
 
-
+        # add to poor patient's virus count the survivors
+        self.viruses += spawn
 #
 # PROBLEM 3
 #
