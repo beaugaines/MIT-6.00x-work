@@ -225,12 +225,12 @@ def simulationWithoutDrug(numViruses, maxPop, maxBirthProb, clearProb,
     # calculate the avg population of the colony
     avgPop = []
     for t in range(time_steps):
-        avgPop.append(sum(results[t]) / float(numTrials)
+        avgPop.append(sum(results[t]) / float(numTrials))
 
     # plot results!
 
-    # pylab.figure()
-    pylab.plot(range(time_steps), avgPop, label='Evolution of Simple Virus colony')
+    pylab.figure(1)
+    pylab.plot(range(time_steps), avgPop)
     pylab.xlabel('Time Steps')
     pylab.ylabel('Avg. Population')
     pylab.title('Virus Simulation - Sans Drugs')
@@ -346,8 +346,26 @@ class ResistantVirus(SimpleVirus):
         NoChildException if this virus particle does not reproduce.
         """
 
-        
+        # is virus resistant to the active drugs?
+        resistant = True
+        for d in activeDrugs:
+            if not self.isResistantTo(d):
+                resistant = False
+        if resistant:
+            if random.random() < self.getMaxBirthProb() * (1 - popDensity):
+                inheritedResistances = self.getResistances().copy()
 
+                for r in inheritedResistances:
+                    if random.random() < self.getMutProb():
+                        inheritedResistances[self.resistance] = not inheritedResistances[self.resistance]
+
+                return ResistantVirus(
+                    self.getMaxBirthProb(),
+                    self.getClearProb(),
+                    inheritedResistances.copy(),
+                    self.getMutProb()
+                    )
+        raise NoChildException
             
 
 class TreatedPatient(Patient):
@@ -364,7 +382,7 @@ class TreatedPatient(Patient):
 
         viruses: The list representing the virus population (a list of
         virus instances)
-
+j
         maxPop: The  maximum virus population for this patient (an integer)
         """
 

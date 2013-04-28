@@ -8,18 +8,10 @@
 	"buffers":
 	[
 		{
-			"file": "histogram_problem/histogramfun.py",
-			"settings":
-			{
-				"buffer_size": 1430,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "ProblemSet8/ps8b.py",
 			"settings":
 			{
-				"buffer_size": 14194,
+				"buffer_size": 16249,
 				"line_ending": "Unix"
 			}
 		}
@@ -64,16 +56,18 @@
 	},
 	"file_history":
 	[
+		"/home/sircharles/programming/python/MIT course/histogram_problem/histogramfun.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6.py",
+		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_recursion.py",
+		"/home/sircharles/programming/python/MIT course/UToronto, wk 2.py",
 		"/home/sircharles/programming/python/MIT course/intDictTests.py",
 		"/home/sircharles/programming/python/MIT course/method_bouillabaisse.py",
 		"/home/sircharles/programming/python/MIT course/web_scraper.py",
 		"/home/sircharles/programming/python/MIT course/flipPlot.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet7/ps7.py",
-		"/home/sircharles/programming/python/MIT course/ProblemSet6/ps6.py",
 		"/home/sircharles/wek_7_sols.py",
 		"/home/sircharles/programming/python/MIT course/week_6_method_bouillabaisse.py",
 		"/home/sircharles/programming/python/MIT course/toolbox.py",
-		"/home/sircharles/programming/python/MIT course/UToronto, wk 2.py",
 		"/home/sircharles/programming/python/MIT course/kant_generator.py",
 		"/home/sircharles/programming/python/MIT course/drunken_walk.py",
 		"/home/sircharles/programming/python/MIT course/hardNuts.py",
@@ -102,7 +96,6 @@
 		"/home/sircharles/programming/python/MIT course/baseHTMLProcessor.py",
 		"/home/sircharles/programming/python/MIT course/get_guessed_word.py",
 		"/home/sircharles/programming/python/MIT course/oddTuples.py",
-		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_recursion.py",
 		"/home/sircharles/programming/python/MIT course/ProblemSet5/ps5_pseudo.txt",
 		"/home/sircharles/Dropbox/CODE/Python/MIT Course/is_palindrome.py",
 		"/home/sircharles/programming/python/MIT course/gcdRecur.py",
@@ -190,8 +183,7 @@
 		"/home/sircharles/rails_projects/shouty-todo/Gemfile",
 		"/home/sircharles/Dropbox/CODE/S'ford DB Course/dtd_exercise.dtd",
 		"/home/sircharles/rails_projects/shouty-todo/app/assets/javascripts/application.js",
-		"/home/sircharles/rails_projects/shouty-todo/app/views/todos/new.js.haml",
-		"/home/sircharles/rails_projects/shouty-todo/app/helpers/application_helper.rb"
+		"/home/sircharles/rails_projects/shouty-todo/app/views/todos/new.js.haml"
 	],
 	"find":
 	{
@@ -211,6 +203,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"    \n",
 			"TODO",
 			"location",
 			"formality",
@@ -235,51 +228,23 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "histogram_problem/histogramfun.py",
-					"settings":
-					{
-						"buffer_size": 1430,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1315,
-								1315
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 284.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "ProblemSet8/ps8b.py",
 					"settings":
 					{
-						"buffer_size": 14194,
+						"buffer_size": 16249,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5534,
-								5534
+								8552,
+								8552
 							]
 						],
 						"settings":
@@ -289,7 +254,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2821.0,
+						"translation.y": 5006.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -702,6 +667,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"nfor",
+				"/home/sircharles/rails_projects/nfoshare.com/nfoshare_project.sublime-project"
+			],
 			[
 				"mongo",
 				"/home/sircharles/sshfs/webdev/mongodb_course/Mongo_For_Devs.sublime-project"
