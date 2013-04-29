@@ -39,7 +39,7 @@ class Rat:
     """
 
     def __init__(self, rat, row, col):
-        self.rat = rat
+        self.symbol = rat
         self.row = row
         self.col = col
         self.num_sprouts_eaten = 0
@@ -55,7 +55,7 @@ class Rat:
 
     def __str__(self):
         '''(Rat) -> str'''
-        return("{0} at ({1}, {2}) ate {3} sprouts.\n".format(self.rat,
+        return("{0} at ({1}, {2}) ate {3} sprouts.".format(self.symbol,
                  str(self.row), str(self.col), str(self.num_sprouts_eaten))) 
 
 class Maze:
@@ -63,12 +63,15 @@ class Maze:
     (Maze, list of list of str, Rat, Rat) -> NoneType
     """
 
-    def __init__(self, maze, rat_1, rat_2, num_sprouts_left):
+    def __init__(self, maze, rat_1, rat_2):
         self.maze = maze
         self.rat_1 = rat_1
         self.rat_2 = rat_2
-        self.num_sprouts_left = num_sprouts_left
-        self.under = False
+        self.num_sprouts_left = 0
+        for row in maze:
+            for c in row:
+                if c == '@':
+                    self.num_sprouts_left += 1
 
     def is_wall(self, row, col):
         '''(Maze, int, int) -> bool'''
@@ -91,13 +94,13 @@ class Maze:
             # if the new location is a sprout or a hall space   
             if new_character in ['@', '.']: 
                 # eat a sprout if it's there for the eating
-                if new_position == '@':
-                    if num_sprouts_left > 0:
+                if new_character == '@':
+                    if self.num_sprouts_left > 0:
                         rat.eat_sprout()
                         self.num_sprouts_left -= 1
                 # set the maze character to the rat - otherwise it was the 'other' rat
                 # and will remain so
-                self.maze[new_row][new_col] = rat
+                self.maze[new_row][new_col] = rat.symbol
                 # no overlapping rats!
                 self.under = False
             else:
@@ -117,8 +120,7 @@ class Maze:
 
     def __str__(self):
         '''(Maze) -> str'''
-        res = '\n'.join(''.join([str(c) for c in list] for list in self.maze))
-        res += self.rat_1.str() + self.rat_2.str()
-        return res
+        res = '\n'.join([''.join([str(c) for c in list]) for list in self.maze])
+        return res + '\n' + str(self.rat_1) + '\n' + str(self.rat_2)
 
 
