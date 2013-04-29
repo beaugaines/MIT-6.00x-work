@@ -85,23 +85,32 @@ class Maze:
         new_row, new_col = old_row + x, old_col + y
         new_character = self.get_character(new_row, new_col)
 
-        # if self.get_character() in ['@', '.']:
+        # if not a wall set rat's new location
         if not self.is_wall(new_row, new_col):
-            rat.set_location(new_row, new_col)   
+            rat.set_location(new_row, new_col)
+            # if the new location is a sprout or a hall space   
             if new_character in ['@', '.']: 
                 # eat a sprout if it's there for the eating
                 if new_position == '@':
-                    rat.eat_sprout()
+                    if num_sprouts_left > 0:
+                        rat.eat_sprout()
+                        self.num_sprouts_left -= 1
+                # set the maze character to the rat - otherwise it was the 'other' rat
+                # and will remain so
                 self.maze[new_row][new_col] = rat
+                # no overlapping rats!
                 self.under = False
             else:
+                # overlapping rats!
                 self.under = True
 
+            # if not overlapping rats, set the old space to a hall space
             if not self.under == True:
                 self.maze[old_row][old_col] = '.'
 
+            # all success, return True
             return True
-            
+
         # it's a wall - no luck, rat
         return False
 
