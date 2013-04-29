@@ -55,8 +55,8 @@ class Rat:
 
     def __str__(self):
         '''(Rat) -> str'''
-        return("{0} at ({1}, {2}) ate {3} sprouts".format(self.rat,
-                 self,row, self.col, self.num_sprouts_eaten) 
+        return("{0} at ({1}, {2}) ate {3} sprouts.\n".format(self.rat,
+                 str(self.row), str(self.col), str(self.num_sprouts_eaten))) 
 
 class Maze:
     """ A 2D maze. 
@@ -69,14 +69,31 @@ class Maze:
         self.rat_2 = rat_2
         self.num_sprouts_left = num_sprouts_left
 
-    def is_wall(self):
-        pass
+    def is_wall(self, row, col):
+        '''(Maze, int, int) -> bool'''
+        return(self.maze[row][col] == '#')
 
-    def get_character(self):
-        pass
+    def get_character(self, row, col):
+        '''(Maze, int, int) -> str'''
+        return(self.maze[row][col])
 
-    def move(self, rat):
-        pass
+    def move(self, rat, row, col):
+        '''(Maze, Rat, int, int) -> bool'''
+        new_row, new_col = self.rat.row + row, self.rat.col + col
+        new_pos = self.maze[new_row][new_col]
+        # eat a sprout if it's there for the eating
+        if new_pos == '@':
+            rat.eat_sprout()
+        # if new position is not a wall, set new position of rat
+        if new_pos != '#':
+            rat.row, rat.col = new_row, new_col
+            return True
+        # it's a wall - no luck, rat
+        return False
+
 
     def __str__(self):
-        pass
+        '''(Maze) -> str'''
+        res = '\n'.join(''.join[str(c) for c in list] for list in self.maze)
+        res += self.rat_1.str() + self.rat_2.str()
+        return res
