@@ -94,6 +94,8 @@ class Maze:
 
     def __str__(self):
         '''(Maze) -> str'''
-        res = '\n'.join(''.join[str(c) for c in list] for list in self.maze)
+        res = '\n'.join(''.join([str(c) for c in list] for list in self.maze))
         res += self.rat_1.str() + self.rat_2.str()
         return res
+
+
