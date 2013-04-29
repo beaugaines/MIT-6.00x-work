@@ -1,4 +1,4 @@
-import UToronto_assignment2
+import a2
 import Tkinter
 import tkFileDialog
 import tkFont
@@ -41,7 +41,7 @@ def read_maze(maze_file):
     return res
 
 
-class MazeApp(tkinter.Frame):
+class MazeApp(Tkinter.Frame):
     """ The frame for the maze in the window. """
 
     def __init__(self, parent, maze):
@@ -55,32 +55,32 @@ class MazeApp(tkinter.Frame):
         self.parent = parent
         self.the_maze = maze
         self.parent.title("Rat Race!")
-        self.pack(fill=tkinter.BOTH, expand=1)
+        self.pack(fill=Tkinter.BOTH, expand=1)
 
-        maze_frame = tkinter.Frame(parent, background="white")
-        maze_frame.pack(fill=tkinter.BOTH, expand=1)
+        maze_frame = Tkinter.Frame(parent, background="white")
+        maze_frame.pack(fill=Tkinter.BOTH, expand=1)
 
         self.make_maze_labels(maze_frame)
         self.bind_player_keys()
 
         # Frame for the scores.
-        score_frame = tkinter.Frame(parent, background="white")
+        score_frame = Tkinter.Frame(parent, background="white")
         score_frame.pack()
 
         # rat_1's and rat_2's scores.
-        self.rat_1_score_var = tkinter.IntVar()
-        self.rat_2_score_var = tkinter.IntVar()
+        self.rat_1_score_var = Tkinter.IntVar()
+        self.rat_2_score_var = Tkinter.IntVar()
 
         # Display rat_1's score.
         self.display_score(score_frame, self.rat_1_score_var, a2.RAT_1_CHAR)
         self.display_score(score_frame, self.rat_2_score_var, a2.RAT_2_CHAR)
 
         # # Display rat_2's score.
-        # tkinter.Label(score_frame, text="rat_2: ", font=FONT).pack(
-        #     side=tkinter.LEFT, padx=(10, 0))
-        # rat_2_score_lbl = tkinter.Label(
+        # Tkinter.Label(score_frame, text="rat_2: ", font=FONT).pack(
+        #     side=Tkinter.LEFT, padx=(10, 0))
+        # rat_2_score_lbl = Tkinter.Label(
         #     score_frame, textvariable=self.rat_2_score_var, font=FONT)
-        # rat_2_score_lbl.pack(side=tkinter.LEFT, padx=(0, 10))
+        # rat_2_score_lbl.pack(side=Tkinter.LEFT, padx=(0, 10))
         # self.rat_2_score_var.set(0)
 
         if PRINT_MAZE:
@@ -121,11 +121,11 @@ class MazeApp(tkinter.Frame):
         Add a label for the label_text and a label for the score_var to score_frame.
         """
 
-        tkinter.Label(score_frame, text=label_text, font=FONT).pack(
-            side=tkinter.LEFT, padx=(10, 0))
-        score_lbl = tkinter.Label(
+        Tkinter.Label(score_frame, text=label_text, font=FONT).pack(
+            side=Tkinter.LEFT, padx=(10, 0))
+        score_lbl = Tkinter.Label(
             score_frame, textvariable=score_var, font=FONT)
-        score_lbl.pack(side=tkinter.LEFT, padx=(0, 10))
+        score_lbl.pack(side=Tkinter.LEFT, padx=(0, 10))
         score_var.set(0)
 
     def make_label(self, r, c, maze_frame):
@@ -136,8 +136,8 @@ class MazeApp(tkinter.Frame):
         move.
         """
         ch = self.the_maze.get_character(r, c)
-        labelvar = tkinter.StringVar()
-        lbl = tkinter.Label(maze_frame, textvariable=labelvar, font=FONT)
+        labelvar = Tkinter.StringVar()
+        lbl = Tkinter.Label(maze_frame, textvariable=labelvar, font=FONT)
         lbl.grid(row=r, column=c)
         labelvar.set(ch)
         self.the_maze_vars[r].append(labelvar)
@@ -204,9 +204,9 @@ def find_rats_replace_hallway(maze_list):
 def main():
     """ Prompt for a maze file, read the maze, and start the game. """
 
-    root = tkinter.Tk()
+    root = Tkinter.Tk()
 
-    maze_filename = tkinter.filedialog.askopenfilename()
+    maze_filename = Tkinter.filedialog.askopenfilename()
     with open(maze_filename, 'r') as maze_file:
         maze_list = read_maze(maze_file)
 

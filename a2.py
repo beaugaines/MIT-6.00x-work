@@ -35,7 +35,7 @@ RAT_2_CHAR = 'P'
 
 class Rat:
     """ A rat caught in a maze. 
-    (Rat, str, int, int) -> NoneTye
+    (Rat, str, int, int) -> NoneType
     """
 
     def __init__(self, rat, row, col):
@@ -68,6 +68,7 @@ class Maze:
         self.rat_1 = rat_1
         self.rat_2 = rat_2
         self.num_sprouts_left = num_sprouts_left
+        self.under = False
 
     def is_wall(self, row, col):
         '''(Maze, int, int) -> bool'''
@@ -77,17 +78,30 @@ class Maze:
         '''(Maze, int, int) -> str'''
         return(self.maze[row][col])
 
-    def move(self, rat, row, col):
+    def move(self, rat, x, y):
         '''(Maze, Rat, int, int) -> bool'''
-        new_row, new_col = self.rat.row + row, self.rat.col + col
-        new_pos = self.maze[new_row][new_col]
-        # eat a sprout if it's there for the eating
-        if new_pos == '@':
-            rat.eat_sprout()
-        # if new position is not a wall, set new position of rat
-        if new_pos != '#':
-            rat.row, rat.col = new_row, new_col
+        old_row, old_col = rat.row, rat.col
+
+        new_row, new_col = old_row + x, old_col + y
+        new_character = self.get_character(new_row, new_col)
+
+        # if self.get_character() in ['@', '.']:
+        if not self.is_wall(new_row, new_col):
+            rat.set_location(new_row, new_col)   
+            if new_character in ['@', '.']: 
+                # eat a sprout if it's there for the eating
+                if new_position == '@':
+                    rat.eat_sprout()
+                self.maze[new_row][new_col] = rat
+                self.under = False
+            else:
+                self.under = True
+
+            if not self.under == True:
+                self.maze[old_row][old_col] = '.'
+
             return True
+            
         # it's a wall - no luck, rat
         return False
 
