@@ -10,33 +10,7 @@ DB = 'best-of.db'
 
 con = None
 
-# try:
-#     con = lite.connect(DB)
-#     cur = con.cursor()
-#     cur.execute('SELECT SQLITE_VERSION()')
-
-#     data = cur.fetchone()
-
-#     print "SQLite version: {0}".format(data)
-# except lite.Error, e:
-#     print "Error {0}".format(e.args[0])
-#     sys.exit(1)
-# finally:
-#     if con:
-#         con.close()
-
-# more compact version using 'with' - which automatically
-# releases the resources and handles errors too
-
 con = lite.connect(DB)
-
-with con:
-    cur = con.cursor()
-    cur.execute('SELECT SQLITE_VERSION()')
-
-    data = cur.fetchone()
-
-    print "SQLite version: {0}".format(data)
 
 
 def make_soup(url):
@@ -55,8 +29,9 @@ def get_category_winner(category_url):
     soup = make_soup(category_url)
     print 'soup!'
     category = soup.find('h1', 'headline').string
-    winner = [h2.string for h2 in soup.findAll('h2', 'boc1')]
-    runners_up = [h2.string for h2 in soup.findAll('h2', 'boc2')]
+    # purge nasty Unicode characters with encode('ascii', 'ignore')
+    winner = [h2.string.encode('ascii', 'ignore') for h2 in soup.findAll('h2', 'boc1')]
+    runners_up = [h2.string.encode('ascii', 'ignore') for h2 in soup.findAll('h2', 'boc2')]
     return {'category': category,
             'category_url': category_url,
             'winner': winner,
@@ -72,11 +47,29 @@ if __name__ == '__main__':
     limit = 0
     data = []
     for category in categories:
+
         winner = get_category_winner(category)
         data.append(winner)
         limit += 1
-        if limit == 5:
+        if limit == 1:
             break
         sleep(1) # be kind to chicago reader site!
 
-    print data
+
+    # print data
+    for item in data:
+        print "Category: {0}\n\n".format(item['category'].strip())
+        index = 1
+        for restaurant in item['runners_up']:
+            print "Runner Up #{0}: {1}".format(index, restaurant.strip())
+            index += 1
+        print "\nWINNER: {0}".format(item['winner'][0].strip())
+    # with con:
+    #     cur = con.cursor()
+    #     cur.execute(''' CREATE TABLE bestof
+    #                     (category text, winner text, runners_up )
+
+    #         ''')
+    #     cur.execute('insert into bestof values (?,?,?', [data['category'], data['winner'], data['runners_up']])
+
+
