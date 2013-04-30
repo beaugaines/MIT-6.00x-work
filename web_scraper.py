@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from urllib2 import urlopen
 from time import sleep
 import sqlite3 as lite
+import json
 
 BASE_URL = "http://www.chicagoreader.com"
 DB = 'best-of.db'
@@ -50,26 +51,35 @@ if __name__ == '__main__':
 
         winner = get_category_winner(category)
         data.append(winner)
-        limit += 1
-        if limit == 1:
-            break
-        sleep(1) # be kind to chicago reader site!
+        # limit += 1
+        # if limit == 1: # be kind to poor print media site!
+        #     break
+        sleep(1) # be kind to poor print media site!
 
 
     # print data
-    for item in data:
-        print "Category: {0}\n\n".format(item['category'].strip())
-        index = 1
-        for restaurant in item['runners_up']:
-            print "Runner Up #{0}: {1}".format(index, restaurant.strip())
-            index += 1
-        print "\nWINNER: {0}".format(item['winner'][0].strip())
-    # with con:
-    #     cur = con.cursor()
-    #     cur.execute(''' CREATE TABLE bestof
-    #                     (category text, winner text, runners_up )
+    with con:
+        cur = con.cursor()
+        cur.execute('DROP TABLE IF EXISTS bestof')
+        cur.execute(''' CREATE TABLE bestof
+                        (id integer primary key autoincrement, category text, winner text, runners_up text)
 
-    #         ''')
-    #     cur.execute('insert into bestof values (?,?,?', [data['category'], data['winner'], data['runners_up']])
+            ''')
+        # cur.execute('insert into bestof values (?,?,?)', [data['category'], data['winner'], data['runners_up']])
+
+        for item in data:
+            category = item['category'].strip()
+            print "Category: {0}\n\n".format(category)
+            run_ups = json.dumps(item['runners_up'])
+            index = 1
+            for restaurant in item['runners_up']:
+                run_up = json.dumps(restaurant.strip())
+                print "Runner Up #{0}: {1}".format(index, restaurant)
+                index += 1
+            winner = item['winner'][0].strip()
+            print "\nWINNER: {0}".format(winner)
+            cur.execute('insert into bestof (category, winner, runners_up) values(?,?,?)',
+                [category, winner, run_ups])
+
 
 
