@@ -1,3 +1,4 @@
+
 class InvalidPasswordException(Exception):
     """
     InvalidPasswordException is raised when an invalid password is entered.
@@ -6,6 +7,28 @@ class InvalidPasswordException(Exception):
     """
     def __str__(self):
         return "Invalid password was entered!"
+
+class courseInfo(object):
+
+    def __init__(self, courseName):
+        self.courseName = courseName
+        self.psetsDone = []
+        self.grade = "No Grade"
+        
+    def setPset(self, pset, score):
+        self.psetsDone.append((pset, score))
+        
+    def getPset(self, pset):
+        for (p, score) in self.psetsDone:
+            if p == pset:
+                return score
+
+    def setGrade(self, grade):
+        if self.grade == "No Grade":
+            self.grade = grade
+
+    def getGrade(self):
+        return self.grade
 
 class edx(object):
     def __init__(self, courses):
@@ -34,8 +57,18 @@ class edx(object):
         The method does not return a value, unless the password is omitted, then a "Password Required"
         message is returned.
         """
-        #   fill in code to set the grade
-        pass
+        assert type(grade) == int and 0 <= grade <= 100
+        assert type(course) == str
+        # assert type(password) == str
+
+        if password == None:
+            return 'Password Required'
+        if password != 'Go Beavers':
+            raise InvalidPasswordException
+
+        for c in self.myCourses:
+            if str(c.courseName) == course:
+                c.setGrade(grade)
 
     def getGrade(self, course="6.02x", password=None):
         """
@@ -55,8 +88,20 @@ class edx(object):
         If `course` was not part of the initialization, returns -1.
         If the password is omitted, returns "Password Required".
         """
-        #   fill in code to get the grade
-        pass
+
+        assert type(course) == str
+        # assert type(password) == str
+
+        if password == None:
+            return 'Password Required'
+        if password != 'edX Rocks':
+            raise InvalidPasswordException
+
+        for c in self.myCourses:
+            if str(c.courseName) == course:
+                return c.getGrade()
+        return -1
+
 
     def setPset(self, pset, score, course="6.00x"):
         """
@@ -70,8 +115,13 @@ class edx(object):
         If `course` is not part of the initialization, then no pset score is set,
         and no error is thrown.
         """
-        #   fill in code to set the pset
-        pass
+        assert type(pset) in [str, int, float]
+        assert type(score) == int and 0 <= score <= 100
+        assert type(course) == str
+
+        for c in self.myCourses:
+            if str(c.courseName) == course:
+                c.setPset(pset, score)
 
     def getPset(self, pset, course="6.00x"):
         """
@@ -83,5 +133,13 @@ class edx(object):
         `course` using the courseInfo object.
         If `course` was not part of the initialization, returns -1.
         """
-        #   fill in code to get the pset
-        pass
+        assert type(pset) in [str, int, float]
+        assert type(score) == int and 0 <= score <= 100
+        assert type(course) == str
+
+        for c in self.myCourses:
+            if str(c.courseName) == course:
+                return c.getPset(pset)
+        return -1
+
+
