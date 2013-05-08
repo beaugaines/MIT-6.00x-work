@@ -56,7 +56,7 @@ def foxGrowth():
                 CURRENTFOXPOP += 1
         if ate_rabbit == False:
             if CURRENTFOXPOP >= 10:
-                if random.random() <= 0.1:
+                if random.random() <= 0.9:
                     CURRENTFOXPOP -= 1
 
             
@@ -88,19 +88,27 @@ def runSimulation(numSteps=200):
     pylab.title('Foxes vs. the Rabbits: after {0} generations'.format(numSteps))
     pylab.xlabel('Time')
     pylab.ylabel('Population')
+
+    # polyfit code for prob 6-2
+    # coeff_rabbit = pylab.polyfit(range(len(rabbitPop)), rabbitPop, 2)
+    # pylab.plot(pylab.polyval(coeff_rabbit, range(len(rabbitPop))))
+    # coeff_fox = pylab.polyfit(range(len(foxPop)), foxPop, 2)
+    # pylab.plot(pylab.polyval(coeff_fox, range(len(foxPop))))
+
+    
     pylab.plot(range(numSteps), rabbitPop, label="Rabbits", linewidth=1.2, color='blue')
     pylab.plot(range(numSteps), foxPop, label="Foxes", linewidth=1.2, color='red')
     pylab.legend(loc='best')
 
     pylab.show()
 
-    return res
+    # return (rabbitPop, foxPop)
 
     # see what the early results look like
     # for it in range(30):
     #     print '{0} rabbits, {1} foxes'.format(rabbitPop[it], foxPop[it])
 
 
-print runSimulation()
+print runSimulation(5000)
 
 
