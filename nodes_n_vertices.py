@@ -23,4 +23,23 @@ class Edge(object):
 
     def __str__(self):
         return str(self.src) + '->' + str(self.dest)
+
+
+class WeightedEdge(Edge):
+    """return a weighted edge object"""
+    def __init__(self, src, dest, weight=1.0):
+        self.src = src
+        self.dest = dest
+        self.weight = weight
+
+    def getWeight(self):
+        return self.weight
+
+    def __str__(self):
+        return str(self.src) + '->('\
+          + str(self.weight) + ')'\
+          + str(self.dest)
+
+
+        
         
