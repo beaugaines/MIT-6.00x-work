@@ -5,6 +5,16 @@ import re
 
 con = None
 
+class CsvMunger(object):
+
+    def __init__(self, infile):
+        self.infile = infile
+
+    def clean_address(self, address):
+        lat, long = infile[]
+
+
+        
 # munge the file!
 with open('../nyc_addresses.csv', 'rb') as infile:
     addresses = list(csv.reader(infile))
@@ -22,7 +32,9 @@ street_num = address[0]
 street = address[1] + ' ' + address[2]
 city = addresses[1][5]
 zip = addresses[1][6]
+phone = addresses[1][7]
 print addresses[1][6]
+
 
 
 
